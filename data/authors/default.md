@@ -1,12 +1,11 @@
 ---
-name: Tails Azimuth
+name: Tadashi Nemoto
 avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
-twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
-github: https://github.com
+occupation: Solutions Engineer
+company: CircleCI(Japan)
+email: tadashi.nemoto0713@gmail.com
+linkedin: https://www.linkedin.com/in/tadashi-nemoto
+github: https://github.com/tadashi0713
 ---
 
 Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
