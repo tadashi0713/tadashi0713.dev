@@ -1,4 +1,4 @@
-import Card from '@/components/Card'
+import MediumCard from '@/components/MediumCard'
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
@@ -34,7 +34,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
             {projectsData.map((d) => (
-              <Card
+              <MediumCard
                 key={d.title}
                 title={d.title}
                 description={d.description}
