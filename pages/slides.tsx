@@ -1,5 +1,5 @@
 import siteMetadata from '@/data/siteMetadata'
-import projectsData from '@/data/projectsData'
+import slidesData from '@/data/slidesData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
 
@@ -18,7 +18,7 @@ export default function Slides() {
         </div>
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
-            {projectsData.map((d) => (
+            {slidesData.map((d) => (
               <Card
                 key={d.title}
                 title={d.title}
