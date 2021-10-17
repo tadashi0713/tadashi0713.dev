@@ -12,7 +12,7 @@ const projectsData = [
       'GitHub - CircleCI-Public/flutter-orb: Easily install Flutter SDK and package dependencies. Also wasily run unit test and lint. Supports Linux and macOS',
     description: `Easily install Flutter SDK and package dependencies. Also wasily run unit test and lint. Supports Linux and macOS - GitHub - CircleCI-Public/flutter-orb: Easily install Flutter SDK and package dependencies. Also wasily run unit test and lint. Supports Linux and macOS`,
     imgSrc:
-      '	https://opengraph.githubassets.com/1415841adafd526a9ac7cbe6363d0e43884a290ace352e42bf7a28b50f42de9f/CircleCI-Public/flutter-orb',
+      'https://opengraph.githubassets.com/1415841adafd526a9ac7cbe6363d0e43884a290ace352e42bf7a28b50f42de9f/CircleCI-Public/flutter-orb',
     href: 'https://github.com/CircleCI-Public/flutter-orb',
   },
 ]
