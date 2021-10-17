@@ -84,6 +84,20 @@ const writingsData = [
       'https://storage.googleapis.com/prd-engineering-asset/2019/08/43f3b174-20190816141725.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2019-08-27-080000',
   },
+  {
+    title:
+      '安定・スケールするAppiumテストを実現するための、最先端のモバイルテスト環境と戦略とは【Appium Conf 2019】',
+    description: `6月14日から15日にかけて、インド・バンガロールでAppium Conf 2019が開催されました。300人を超える自動化エンジニア、QAエンジニアが集い、Appiumを活用した自動テストを中心に30以上ものセッションが行われました。今回は主にAppiumをはじめとしたモバイルテストを実行させるテスト環境についてのセッションをまとめて紹介します。`,
+    imgSrc: 'https://codezine.jp/static/images/article/11609/11609_02a.jpg',
+    href: 'https://codezine.jp/article/detail/11609',
+  },
+  {
+    title:
+      'Appiumを使った、自律的にアプリの情報を収集しバグを探し出すクローラーとは【Appium Conf 2019】 (1/2)：CodeZine（コードジン）',
+    description: `6月14日から15日にかけて、インド・バンガロールでAppium Conf 2019が開催されました。300人を超える自動化エンジニア、QAエンジニアが集い、Appiumを活用した自動テストを中心に30以上ものセッションが行われました。この記事では、Justin Iron氏によるセッション「Appium Native App Crawler」をもとに、機能テストの自動化だけにとどまらないAppiumの可能性について紹介します。`,
+    imgSrc: 'https://codezine.jp/static/images/article/11600/11600_01a.jpg',
+    href: 'https://codezine.jp/article/detail/11600',
+  },
 ]
 
 export default writingsData

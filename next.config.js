@@ -15,6 +15,7 @@ module.exports = withBundleAnalyzer({
       'd2908q01vomqb2.cloudfront.net',
       'cdn-ak.f.st-hatena.com',
       'storage.googleapis.com',
+      'codezine.jp',
     ],
   },
   reactStrictMode: true,
