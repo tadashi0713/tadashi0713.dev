@@ -7,7 +7,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
  **/
 module.exports = withBundleAnalyzer({
   images: {
-    domains: ['files.speakerdeck.com'],
+    domains: [
+      'files.speakerdeck.com',
+      'repository-images.githubusercontent.com',
+      'opengraph.githubassets.com',
+    ],
   },
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
