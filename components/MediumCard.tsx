@@ -1,5 +1,6 @@
 import Image from './Image'
 import Link from './Link'
+import LinesEllipsis from 'react-lines-ellipsis'
 
 const MediumCard = ({ title, description, imgSrc, href }) => (
   <div className="p-4 md:w-1/2 md" style={{ maxWidth: '544px' }}>
@@ -35,7 +36,15 @@ const MediumCard = ({ title, description, imgSrc, href }) => (
             title
           )}
         </h2>
-        <p className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400">{description}</p>
+        <p className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400">
+          <LinesEllipsis
+            text={description}
+            maxLine="3"
+            ellipsis="..."
+            trimRight
+            basedOn="letters"
+          />
+        </p>
         {href && (
           <Link
             href={href}
