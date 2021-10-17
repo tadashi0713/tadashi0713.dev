@@ -60,6 +60,30 @@ const writingsData = [
       'https://cdn-ak.f.st-hatena.com/images/fotolife/t/tadashi-nemoto0713/20201019/20201019135904.png',
     href: 'https://techblog.exawizards.com/entry/2020/10/22/080000',
   },
+  {
+    title:
+      'ポーランドで行われた海外カンファレンス「Agile & Automation Days 2019」に登壇しました！ | メルカリエンジニアリング ToTop',
+    description: `メルカリで QA Automation Engineer をしている 根本 征 です。先日 10/28~29 にポーランド・グダニスクで行われた海外カンファレンス「Agile & Automation Days 2019」にスピーカーとして`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2019/11/645d2d40-20191104165330.jpg',
+    href: 'https://engineering.mercari.com/blog/entry/2019-11-12-060000',
+  },
+  {
+    title:
+      'Speeding up Windows 10 / Microsoft Edge browser testing (Selenium WebDriver) using Azure DevTest Labs | Mercari Engineering ToTop',
+    description: `Note: This is a translation from the Japanese article.tech.mercari.comHello. I'm Tadashi, QA Automation Engineer f`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2019/08/43f3b174-20190816141725.jpg',
+    href: 'https://engineering.mercari.com/en/blog/entry/2019-09-09-113455',
+  },
+  {
+    title:
+      'Windows10 / Microsoft Edge での自動テスト(Selenium WebDriver)を Azure DevTest Labs 上で実行して高速化したお話 | メルカリエンジニアリング ToTop',
+    description: `この記事は、Mercari Bold Challenge Month の 2日目の記事です。メルカリで QA Automation Engineer をしている 根本 征 です。私は現在、メルカリWeb版のUIテスト自動化に取り組んでいます`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2019/08/43f3b174-20190816141725.jpg',
+    href: 'https://engineering.mercari.com/blog/entry/2019-08-27-080000',
+  },
 ]
 
 export default writingsData

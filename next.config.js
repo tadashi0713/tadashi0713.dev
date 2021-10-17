@@ -14,6 +14,7 @@ module.exports = withBundleAnalyzer({
       'circleci.com',
       'd2908q01vomqb2.cloudfront.net',
       'cdn-ak.f.st-hatena.com',
+      'storage.googleapis.com',
     ],
   },
   reactStrictMode: true,
