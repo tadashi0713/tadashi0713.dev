@@ -62,7 +62,7 @@ const articlesData = [
   },
   {
     title:
-      'ポーランドで行われた海外カンファレンス「Agile & Automation Days 2019」に登壇しました！ | メルカリエンジニアリング ToTop',
+      'ポーランドで行われた海外カンファレンス「Agile & Automation Days 2019」に登壇しました！ | メルカリエンジニアリング',
     description: `メルカリで QA Automation Engineer をしている 根本 征 です。先日 10/28~29 にポーランド・グダニスクで行われた海外カンファレンス「Agile & Automation Days 2019」にスピーカーとして`,
     imgSrc:
       'https://storage.googleapis.com/prd-engineering-asset/2019/11/645d2d40-20191104165330.jpg',
@@ -70,7 +70,7 @@ const articlesData = [
   },
   {
     title:
-      'Speeding up Windows 10 / Microsoft Edge browser testing (Selenium WebDriver) using Azure DevTest Labs | Mercari Engineering ToTop',
+      'Speeding up Windows 10 / Microsoft Edge browser testing (Selenium WebDriver) using Azure DevTest Labs | Mercari Engineering',
     description: `Note: This is a translation from the Japanese article.tech.mercari.comHello. I'm Tadashi, QA Automation Engineer f`,
     imgSrc:
       'https://storage.googleapis.com/prd-engineering-asset/2019/08/43f3b174-20190816141725.jpg',
@@ -78,7 +78,7 @@ const articlesData = [
   },
   {
     title:
-      'Windows10 / Microsoft Edge での自動テスト(Selenium WebDriver)を Azure DevTest Labs 上で実行して高速化したお話 | メルカリエンジニアリング ToTop',
+      'Windows10 / Microsoft Edge での自動テスト(Selenium WebDriver)を Azure DevTest Labs 上で実行して高速化したお話 | メルカリエンジニアリング',
     description: `この記事は、Mercari Bold Challenge Month の 2日目の記事です。メルカリで QA Automation Engineer をしている 根本 征 です。私は現在、メルカリWeb版のUIテスト自動化に取り組んでいます`,
     imgSrc:
       'https://storage.googleapis.com/prd-engineering-asset/2019/08/43f3b174-20190816141725.jpg',
@@ -97,6 +97,37 @@ const articlesData = [
     description: `6月14日から15日にかけて、インド・バンガロールでAppium Conf 2019が開催されました。300人を超える自動化エンジニア、QAエンジニアが集い、Appiumを活用した自動テストを中心に30以上ものセッションが行われました。この記事では、Justin Iron氏によるセッション「Appium Native App Crawler」をもとに、機能テストの自動化だけにとどまらないAppiumの可能性について紹介します。`,
     imgSrc: 'https://codezine.jp/static/images/article/11600/11600_01a.jpg',
     href: 'https://codezine.jp/article/detail/11600',
+  },
+  {
+    title:
+      'メルカリWeb版のUIテスト自動化で目指している世界と、そのために作った Selenium Grid・Zalenium 環境 on Azure Kubernetes Service(AKS) | メルカリエンジニアリング',
+    description: `メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）の 根本 征 です。私は普段、テスト自動化・CI / CD 改善・その他社内の生産性を上げるための自動化を行っています。今回は、最近私たちが行なって`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2019/04/fef2e94c-20190411161526.png',
+    href: 'https://engineering.mercari.com/blog/entry/2019-04-16-060000/',
+  },
+  {
+    title: 'How HeadSpin will change mobile testing and monitoring? | Mercari Engineering',
+    description: `This is a translation of the original Japanese article.tech.mercari.comHello. I’m Tadashi, an Automation Engineer`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2019/02/67d10e5e-20190212132627.jpg',
+    href: 'https://engineering.mercari.com/en/blog/entry/2019-02-18-173236',
+  },
+  {
+    title:
+      'HeadSpinでモバイルアプリのテスト・モニタリングはどう変わるか | メルカリエンジニアリング',
+    description: `メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）の 根本 征 です。私は普段、テスト自動化・CI / CD 改善・その他社内の生産性を上げるための自動化を行っています。今回は社内で HeadSpi`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2019/02/67d10e5e-20190212132627.jpg',
+    href: 'https://engineering.mercari.com/blog/entry/2019-02-14-105750',
+  },
+  {
+    title:
+      'Super fast and parallelized Android UITest(Appium) environment using AWS, Docker and Android emulator | Mercari Engineering',
+    description: `Note: This is a translation from the Japanese article.tech.mercari.comHello. I’m Tadashi, an Automation Engineer f`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2018/12/728a44e1-20181129162340.jpg',
+    href: 'https://engineering.mercari.com/en/blog/entry/2018-12-28-175147',
   },
 ]
 

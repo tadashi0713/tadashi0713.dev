@@ -30,10 +30,10 @@ const MediumCard = ({ title, description, imgSrc, href }) => (
         <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
           {href ? (
             <Link href={href} aria-label={`Link to ${title}`}>
-              {title}
+              <LinesEllipsis text={title} maxLine="3" ellipsis="..." trimRight basedOn="letters" />
             </Link>
           ) : (
-            title
+            <LinesEllipsis text={title} maxLine="3" ellipsis="..." trimRight basedOn="letters" />
           )}
         </h2>
         <p className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400">

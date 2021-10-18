@@ -1,6 +1,6 @@
 import siteMetadata from '@/data/siteMetadata'
 import articlesData from '@/data/articlesData'
-import Card from '@/components/MediumCard'
+import SmallCard from '@/components/SmallCard'
 import { PageSEO } from '@/components/SEO'
 
 export default function Articles() {
@@ -19,7 +19,7 @@ export default function Articles() {
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
             {articlesData.map((d) => (
-              <Card
+              <SmallCard
                 key={d.title}
                 title={d.title}
                 description={d.description}

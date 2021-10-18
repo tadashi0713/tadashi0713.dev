@@ -1,5 +1,6 @@
 import Image from './Image'
 import Link from './Link'
+import LinesEllipsis from 'react-lines-ellipsis'
 
 const SmallCard = ({ title, description, imgSrc, href }) => (
   <div className="p-3 md:w-1/3 md" style={{ maxWidth: '544px' }}>
@@ -29,14 +30,20 @@ const SmallCard = ({ title, description, imgSrc, href }) => (
         <h2 className="mb-3 font-bold leading-6 tracking-tight">
           {href ? (
             <Link href={href} aria-label={`Link to ${title}`}>
-              {title}
+              <LinesEllipsis text={title} maxLine="3" ellipsis="..." trimRight basedOn="letters" />
             </Link>
           ) : (
-            title
+            <LinesEllipsis text={title} maxLine="3" ellipsis="..." trimRight basedOn="letters" />
           )}
         </h2>
         <p className="mb-3 prose text-gray-500 max-w-none text-sm dark:text-gray-400">
-          {description}
+          <LinesEllipsis
+            text={description}
+            maxLine="3"
+            ellipsis="..."
+            trimRight
+            basedOn="letters"
+          />
         </p>
         {href && (
           <Link
