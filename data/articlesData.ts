@@ -129,6 +129,29 @@ const articlesData = [
       'https://storage.googleapis.com/prd-engineering-asset/2018/12/728a44e1-20181129162340.jpg',
     href: 'https://engineering.mercari.com/en/blog/entry/2018-12-28-175147',
   },
+  {
+    title:
+      'Docker × Android エミュレータで、自動テスト(Appium)を並列化・爆速にする環境を作ったお話 | メルカリエンジニアリング',
+    description: `これは Mercari Advent Calendar 2018 10日目の記事です。こんにちは、メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA) の 根本 征 です。私は普段、テスト自動化・CI`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2018/12/728a44e1-20181129162340.jpg',
+    href: 'https://engineering.mercari.com/blog/entry/2018-12-10-060000',
+  },
+  {
+    title:
+      'お待たせしました、Mercari Tech Conf 2018 アプリの裏側をお見せします！#mtc18 | メルカリエンジニアリング',
+    description: `こんにちは。MTCアプリチームです。この記事では2018/10/04に行われたMercari Tech Conference (MTC)向けに作ったカンファレンスアプリについて書きます。以前公開したWebの裏側 に引き続きアプリの裏側を紹介`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2018/11/c27e021b-20181126164914.jpg',
+    href: 'https://engineering.mercari.com/blog/entry/2018-11-27-141042',
+  },
+  {
+    title:
+      'AI、サーバーレス、Dockerなど、Seleniumテストを安定化・スケールさせるためのヒントとは？【SeleniumConf Chicago】 (1/2)：CodeZine（コードジン）',
+    description: `10月18日から19日にかけて、アメリカ・シカゴでSeleniumConf Chicagoが開催されました。600人を超える開発者が集い、Selenium／Appiumを活用した自動テストについて20以上のセッションが行われました。この記事では、私が聴講したセッションを基に、Seleniumなどの自動テストを安定化・スケールさせるためにどのようなアプローチができるのかをご紹介します。`,
+    imgSrc: 'https://codezine.jp/static/images/article/11199/11199_01.jpg',
+    href: 'https://codezine.jp/article/detail/11199',
+  },
 ]
 
 export default articlesData
