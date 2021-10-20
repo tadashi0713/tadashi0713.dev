@@ -152,6 +152,12 @@ const articlesData = [
     imgSrc: 'https://codezine.jp/static/images/article/11199/11199_01.jpg',
     href: 'https://codezine.jp/article/detail/11199',
   },
+  {
+    title: 'kintone＋Zapierで社員自ら作業を省力化するメルカリ',
+    description: `kintoneによる業務の省力化・自動化を進めるメルカリ。Zapierを用いることで、kintoneとSlackを連携させた事例を見ていく`,
+    imgSrc: 'https://ascii.jp/img/2017/02/16/571525/l/7b6a3ab3d400a661.jpg?20200122',
+    href: 'https://ascii.jp/elem/000/001/759/1759729',
+  },
 ]
 
 export default articlesData

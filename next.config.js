@@ -16,6 +16,7 @@ module.exports = withBundleAnalyzer({
       'cdn-ak.f.st-hatena.com',
       'storage.googleapis.com',
       'codezine.jp',
+      'ascii.jp',
     ],
   },
   reactStrictMode: true,
