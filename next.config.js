@@ -17,6 +17,7 @@ module.exports = withBundleAnalyzer({
       'storage.googleapis.com',
       'codezine.jp',
       'ascii.jp',
+      'dpd29bjwmgbr8.cloudfront.net',
     ],
   },
   reactStrictMode: true,

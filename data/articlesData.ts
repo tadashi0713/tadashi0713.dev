@@ -158,6 +158,36 @@ const articlesData = [
     imgSrc: 'https://ascii.jp/img/2017/02/16/571525/l/7b6a3ab3d400a661.jpg?20200122',
     href: 'https://ascii.jp/elem/000/001/759/1759729',
   },
+  {
+    title: 'メルカリiOSのUIテスト自動化をまるっとご紹介します！ | メルカリエンジニアリング',
+    description: `こんにちは、メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）の 根本 征 です。私は普段、テスト自動化・CI / CD改善・その他社内の生産性を上げるための自動化を行っています。今回はiOSのUI`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2018/08/64bac66c-20180717180233.png',
+    href: 'https://engineering.mercari.com/blog/entry/2018-08-07-123000',
+  },
+  {
+    title:
+      '「ノンプログラマーでも、自動化はできる」Zapier Automation Meetup Tokyo #0 を開催しました | メルカリエンジニアリング',
+    description: `こんにちは、メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）の 根本 征 です。私は普段、テスト自動化・CI / CD改善・その他社内の生産性を上げるための自動化を行っています。今回は、7/10に`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2018/07/555b6645-20180712192331.png',
+    href: 'https://engineering.mercari.com/blog/entry/2018-07-13-150000',
+  },
+  {
+    title:
+      'AndroidのCI時間を10分短縮し、開発を爆速にするためのKarakuriを作った話 | メルカリエンジニアリング',
+    description: `こんにちは、メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）で、自動化をぶりぶりしている tadashi0713 です。私は普段、テスト自動化・CI(継続的インテグレーション) / CD(継続的デ`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2018/07/849efda6-20180629154905.png',
+    href: 'https://engineering.mercari.com/blog/entry/2018-07-04-110000',
+  },
+  {
+    title:
+      'ノンプログラマーが半年で400以上の業務を自動化！メルカリが作る「Karakuri」とは | SELECK [セレック]',
+    description: `〜ノンプログラマーでも、ルーティン業務を「自動化」できる！社員の3人に1人が「Zapier」を活用し、全社で4…`,
+    imgSrc: 'https://dpd29bjwmgbr8.cloudfront.net/wp-content/uploads/2018/06/25171946/2260.jpg',
+    href: 'https://seleck.cc/1230',
+  },
 ]
 
 export default articlesData
