@@ -188,6 +188,38 @@ const articlesData = [
     imgSrc: 'https://dpd29bjwmgbr8.cloudfront.net/wp-content/uploads/2018/06/25171946/2260.jpg',
     href: 'https://seleck.cc/1230',
   },
+  {
+    title:
+      '社内の面倒な手作業はZapierにやらせよう #2 〜Webhookを使って、自動化の幅を広げる〜 | メルカリエンジニアリング',
+    description: `こんにちは、メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）で、自動化をぶりぶりしている tadashi0713 です。私は普段、テスト自動化・CI / CD改善・その他社内の生産性を上げるための`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2018/06/cf47bf7b-20180218185222.png',
+    href: 'https://engineering.mercari.com/blog/entry/2018-06-12-110000',
+  },
+  {
+    title:
+      '社内の面倒な手作業はZapierにやらせようーーノンプログラマーでも業務自動化ができるツールを導入してみて | メルカリエンジニアリング',
+    description: `これは Mercari Advent Calendar 2017 22日目の記事です。こんにちは、メルカリのQA-SETチームで自動化をぶりぶりしている tadashi0713 です。前回は業務自動化の1つとして、Seleniumを使ったブ`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2017/12/b854104c-20171221142658.png',
+    href: 'https://engineering.mercari.com/blog/entry/2017-12-22-110934',
+  },
+  {
+    title:
+      '退屈なブラウザ作業はSeleniumにやらせようーーはじめてでもできるブラウザ操作自動化 | メルカリエンジニアリング',
+    description: `こんにちは、メルカリのQA-SETチームで自動化をぶりぶりしている tadashi0713 です。これまではモバイルアプリ・WebアプリのE2Eテストを中心に自動化をしていましたが、最近ではプロダクト部門・カスタマーサポート部門・コーポレー`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2017/10/ea1ea6bb-20171026161553.png',
+    href: 'https://engineering.mercari.com/blog/entry/2017-10-31-122018',
+  },
+  {
+    title:
+      'Appiumの新しいGUIツール、appium-desktopがよくなってきてるぞう | メルカリエンジニアリング',
+    description: `こんにちは！ メルカリのテストエンジニアとして、モバイルアプリのテストをぶりぶり自動化している@tadashi0713です。メルカリでは、モバイルアプリのテスト自動化のために、一部、Appiumを使用しています。今回は、現在ベータ版で公開さ`,
+    imgSrc:
+      'https://storage.googleapis.com/prd-engineering-asset/2017/04/668bb72e-20170405102425.png',
+    href: 'https://engineering.mercari.com/blog/entry/2017-04-07-110955',
+  },
 ]
 
 export default articlesData
