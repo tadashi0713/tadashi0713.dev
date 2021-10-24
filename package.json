@@ -44,7 +44,7 @@
     "@next/bundle-analyzer": "11.1.2",
     "@svgr/webpack": "5.5.0",
     "@types/react": "17.0.32",
-    "@types/tailwindcss": "2.2.1",
+    "@types/tailwindcss": "2.2.2",
     "@typescript-eslint/eslint-plugin": "5.1.0",
     "@typescript-eslint/parser": "5.1.0",
     "cross-env": "7.0.3",
