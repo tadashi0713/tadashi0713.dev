@@ -1,18 +1,17 @@
-import { ComponentProps } from 'react'
 import siteMetadata from '@/data/siteMetadata'
-import articlesData from '@/data/articlesData'
+import articles from '@/data/articlesData'
 import { PageSEO } from '@/components/SEO'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import ArticlesListLayout from '@/layouts/ArticlesListLayout'
+import { Article } from 'types/Article'
 
 export const ARTICLES_PER_PAGE = 12
 
 export const getStaticProps: GetStaticProps<{
-  articles: ComponentProps<typeof ArticlesListLayout>['articles']
-  initialDisplayArticles: ComponentProps<typeof ArticlesListLayout>['initialDisplayArticles']
-  pagination: ComponentProps<typeof ArticlesListLayout>['pagination']
+  articles: Article[]
+  initialDisplayArticles: Article[]
+  pagination: { currentPage: number; totalPages: number }
 }> = async () => {
-  const articles = articlesData
   const initialDisplayArticles = articles.slice(0, ARTICLES_PER_PAGE)
   const pagination = {
     currentPage: 1,

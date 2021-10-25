@@ -1,12 +1,11 @@
 import { ComponentProps, useState } from 'react'
-import Pagination from '@/components/Pagination'
 import SmallCard from '@/components/SmallCard'
 import { Article } from 'types/Article'
 import ArticlePagination from '@/components/ArticlePagination'
 interface Props {
   articles: Article[]
   initialDisplayArticles?: Article[]
-  pagination?: ComponentProps<typeof Pagination>
+  pagination?: ComponentProps<typeof ArticlePagination>
 }
 
 export default function ArticlesListLayout({

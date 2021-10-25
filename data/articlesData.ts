@@ -1,4 +1,4 @@
-const articlesData = [
+const articles = [
   {
     title: 'Flutter (フラッター) アプリの CI / CD パイプラインを構築しよう',
     description: `このブログ記事では、CircleCI を使って Flutter (フラッター) アプリの CI / CD パイプラインを構築していく方法について紹介していきます。`,
@@ -222,4 +222,4 @@ const articlesData = [
   },
 ]
 
-export default articlesData
+export default articles

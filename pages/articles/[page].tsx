@@ -3,11 +3,11 @@ import siteMetadata from '@/data/siteMetadata'
 import { ARTICLES_PER_PAGE } from '../articles'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import ArticlesListLayout from '@/layouts/ArticlesListLayout'
-import articlesData from '@/data/articlesData'
+import articles from '@/data/articlesData'
 import { Article } from 'types/Article'
 
 export const getStaticPaths: GetStaticPaths<{ page: string }> = async () => {
-  const totalPages = Math.ceil(articlesData.length / ARTICLES_PER_PAGE)
+  const totalPages = Math.ceil(articles.length / ARTICLES_PER_PAGE)
   const paths = Array.from({ length: totalPages }, (_, i) => ({
     params: { page: (i + 1).toString() },
   }))
@@ -26,7 +26,6 @@ export const getStaticProps: GetStaticProps<{
   const {
     params: { page },
   } = context
-  const articles = articlesData
   const pageNumber = parseInt(page as string)
   const initialDisplayArticles = articles.slice(
     ARTICLES_PER_PAGE * (pageNumber - 1),
