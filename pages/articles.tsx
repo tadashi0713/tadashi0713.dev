@@ -5,7 +5,7 @@ import { PageSEO } from '@/components/SEO'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import ArticlesListLayout from '@/layouts/ArticlesListLayout'
 
-export const POSTS_PER_PAGE = 5
+export const ARTICLES_PER_PAGE = 12
 
 export const getStaticProps: GetStaticProps<{
   articles: ComponentProps<typeof ArticlesListLayout>['articles']
@@ -13,10 +13,10 @@ export const getStaticProps: GetStaticProps<{
   pagination: ComponentProps<typeof ArticlesListLayout>['pagination']
 }> = async () => {
   const articles = articlesData
-  const initialDisplayArticles = articles.slice(0, POSTS_PER_PAGE)
+  const initialDisplayArticles = articles.slice(0, ARTICLES_PER_PAGE)
   const pagination = {
     currentPage: 1,
-    totalPages: Math.ceil(articles.length / POSTS_PER_PAGE),
+    totalPages: Math.ceil(articles.length / ARTICLES_PER_PAGE),
   }
 
   return { props: { initialDisplayArticles, articles, pagination } }
