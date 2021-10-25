@@ -2,6 +2,7 @@ import { ComponentProps, useState } from 'react'
 import Pagination from '@/components/Pagination'
 import SmallCard from '@/components/SmallCard'
 import { Article } from 'types/Article'
+import ArticlePagination from '@/components/ArticlePagination'
 interface Props {
   articles: Article[]
   initialDisplayArticles?: Article[]
@@ -70,10 +71,9 @@ export default function ArticlesListLayout({
         </div>
       </div>
       {pagination && pagination.totalPages > 1 && !searchValue && (
-        <Pagination
+        <ArticlePagination
           currentPage={pagination.currentPage}
           totalPages={pagination.totalPages}
-          slug="articles"
         />
       )}
     </>
