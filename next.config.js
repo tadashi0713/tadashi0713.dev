@@ -1,11 +1,12 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
+// const withBundleAnalyzer = require('@next/bundle-analyzer')({
+//   enabled: process.env.ANALYZE === 'true',
+// })
+const { withPlaiceholder } = require('@plaiceholder/next')
 
 /**
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
-module.exports = withBundleAnalyzer({
+module.exports = withPlaiceholder({
   // Next.js 12
   swcMinify: true,
   images: {
