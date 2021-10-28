@@ -6,6 +6,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
 module.exports = withBundleAnalyzer({
+  // Next.js 12
+  swcMinify: true,
   images: {
     domains: [
       'files.speakerdeck.com',
