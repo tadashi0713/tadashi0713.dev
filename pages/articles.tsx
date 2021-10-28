@@ -1,9 +1,10 @@
 import siteMetadata from '@/data/siteMetadata'
-import articles from '@/data/articlesData'
+import articlesData from '@/data/articlesData'
 import { PageSEO } from '@/components/SEO'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import ArticlesListLayout from '@/layouts/ArticlesListLayout'
 import { Article } from 'types/Article'
+import { getPlaiceholder } from 'plaiceholder'
 
 export const ARTICLES_PER_PAGE = 12
 
@@ -12,6 +13,19 @@ export const getStaticProps: GetStaticProps<{
   initialDisplayArticles: Article[]
   pagination: { currentPage: number; totalPages: number }
 }> = async () => {
+  const articles = await Promise.all(
+    articlesData.map(async (article) => {
+      const { base64 } = await getPlaiceholder(article.imgSrc)
+      return {
+        title: article.title,
+        description: article.description,
+        imgSrc: article.imgSrc,
+        blurDataURL: base64,
+        href: article.href,
+      } as Article
+    })
+  )
+
   const initialDisplayArticles = articles.slice(0, ARTICLES_PER_PAGE)
   const pagination = {
     currentPage: 1,
