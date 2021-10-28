@@ -3,10 +3,32 @@ import siteMetadata from '@/data/siteMetadata'
 import slidesData from '@/data/slidesData'
 import MediumCard from '@/components/MediumCard'
 import { PageSEO } from '@/components/SEO'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { Slide } from 'types/Slide'
+import { getPlaiceholder } from 'plaiceholder'
 
-export default function Slides() {
+export const getStaticProps: GetStaticProps<{
+  slides: Slide[]
+}> = async () => {
+  const slides = await Promise.all(
+    slidesData.map(async (slide) => {
+      const { base64 } = await getPlaiceholder(slide.imgSrc)
+      return {
+        title: slide.title,
+        description: slide.description,
+        imgSrc: slide.imgSrc,
+        blurDataURL: base64,
+        href: slide.href,
+      } as Slide
+    })
+  )
+
+  return { props: { slides } }
+}
+
+export default function Slides({ slides }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [searchValue, setSearchValue] = useState('')
-  const filteredSlides = slidesData.filter((frontMatter) => {
+  const filteredSlides = slides.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.description
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
@@ -52,6 +74,7 @@ export default function Slides() {
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
+                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>
