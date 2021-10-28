@@ -3,10 +3,32 @@ import projectsData from '@/data/projectsData'
 import MediumCard from '@/components/MediumCard'
 import { PageSEO } from '@/components/SEO'
 import { useState } from 'react'
+import { Project } from 'types/Project'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { getPlaiceholder } from 'plaiceholder'
 
-export default function Projects() {
+export const getStaticProps: GetStaticProps<{
+  projects: Project[]
+}> = async () => {
+  const projects = await Promise.all(
+    projectsData.map(async (project) => {
+      const { base64 } = await getPlaiceholder(project.imgSrc)
+      return {
+        title: project.title,
+        description: project.description,
+        imgSrc: project.imgSrc,
+        blurDataURL: base64,
+        href: project.href,
+      } as Project
+    })
+  )
+
+  return { props: { projects } }
+}
+
+export default function Projects({ projects }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [searchValue, setSearchValue] = useState('')
-  const filteredProjects = projectsData.filter((frontMatter) => {
+  const filteredProjects = projects.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.description
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
@@ -52,6 +74,7 @@ export default function Projects() {
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
+                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>
