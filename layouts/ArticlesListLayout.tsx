@@ -1,10 +1,11 @@
 import { ComponentProps, useState } from 'react'
 import SmallCard from '@/components/SmallCard'
-import { Article } from 'types/Article'
 import ArticlePagination from '@/components/ArticlePagination'
+import { Ogp } from 'types/Ogp'
+
 interface Props {
-  articles: Article[]
-  initialDisplayArticles?: Article[]
+  articles: Ogp[]
+  initialDisplayArticles?: Ogp[]
   pagination?: ComponentProps<typeof ArticlePagination>
 }
 
