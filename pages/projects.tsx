@@ -3,10 +3,20 @@ import projectsData from '@/data/projectsData'
 import MediumCard from '@/components/MediumCard'
 import { PageSEO } from '@/components/SEO'
 import { useState } from 'react'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { getBlurConvertedOgps } from '@/lib/ogp'
+import { Ogp } from 'types/Ogp'
 
-export default function Projects() {
+export const getStaticProps: GetStaticProps<{
+  projects: Ogp[]
+}> = async () => {
+  const projects = await getBlurConvertedOgps(projectsData)
+  return { props: { projects } }
+}
+
+export default function Projects({ projects }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [searchValue, setSearchValue] = useState('')
-  const filteredProjects = projectsData.filter((frontMatter) => {
+  const filteredProjects = projects.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.description
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
@@ -52,6 +62,7 @@ export default function Projects() {
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
+                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>

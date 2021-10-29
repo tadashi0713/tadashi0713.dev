@@ -2,7 +2,7 @@ import Image from './Image'
 import Link from './Link'
 import LinesEllipsis from 'react-lines-ellipsis'
 
-const MediumCard = ({ title, description, imgSrc, href }) => (
+const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
   <div className="p-4 md:w-1/2 md" style={{ maxWidth: '544px' }}>
     <div className="h-full overflow-hidden border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700">
       {href ? (
@@ -13,7 +13,9 @@ const MediumCard = ({ title, description, imgSrc, href }) => (
             className="object-cover object-center lg:h-48 md:h-36"
             width={544}
             height={306}
-            quality={25}
+            quality={50}
+            placeholder="blur"
+            blurDataURL={blurDataURL}
           />
         </Link>
       ) : (
@@ -23,7 +25,9 @@ const MediumCard = ({ title, description, imgSrc, href }) => (
           className="object-cover object-center lg:h-48 md:h-36"
           width={544}
           height={306}
-          quality={25}
+          quality={50}
+          placeholder="blur"
+          blurDataURL={blurDataURL}
         />
       )}
       <div className="p-6">

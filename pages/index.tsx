@@ -3,14 +3,33 @@ import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
 import slidesData from '@/data/slidesData'
-import articles from '@/data/articlesData'
+import articlesData from '@/data/articlesData'
 import SmallCard from '@/components/SmallCard'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { Ogp } from 'types/Ogp'
+import { getBlurConvertedOgps } from '@/lib/ogp'
 
 const MAX_DISPLAY_ARTICLES = 6
 const MAX_DISPLAY_SLIDES = 3
 const MAX_DISPLAY_PROJECTS = 3
 
-export default function Home() {
+export const getStaticProps: GetStaticProps<{
+  articles: Ogp[]
+  slides: Ogp[]
+  projects: Ogp[]
+}> = async () => {
+  const articles = await getBlurConvertedOgps(articlesData.slice(0, MAX_DISPLAY_ARTICLES))
+  const slides = await getBlurConvertedOgps(slidesData.slice(0, MAX_DISPLAY_SLIDES))
+  const projects = await getBlurConvertedOgps(projectsData.slice(0, MAX_DISPLAY_PROJECTS))
+
+  return { props: { articles, slides, projects } }
+}
+
+export default function Home({
+  articles,
+  slides,
+  projects,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -38,13 +57,14 @@ export default function Home() {
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
             {!articles.length && 'No articles found.'}
-            {articles.slice(0, MAX_DISPLAY_ARTICLES).map((d) => (
+            {articles.map((d) => (
               <SmallCard
                 key={d.title}
                 title={d.title}
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
+                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>
@@ -69,14 +89,15 @@ export default function Home() {
         </div>
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
-            {!slidesData.length && 'No slides found.'}
-            {slidesData.slice(0, MAX_DISPLAY_SLIDES).map((d) => (
+            {!slides.length && 'No slides found.'}
+            {slides.map((d) => (
               <SmallCard
                 key={d.title}
                 title={d.title}
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
+                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>
@@ -101,14 +122,15 @@ export default function Home() {
         </div>
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
-            {!projectsData.length && 'No projects found.'}
-            {projectsData.slice(0, MAX_DISPLAY_PROJECTS).map((d) => (
+            {!projects.length && 'No projects found.'}
+            {projects.map((d) => (
               <SmallCard
                 key={d.title}
                 title={d.title}
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
+                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>
