@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import siteMetadata from '@/data/siteMetadata'
 import slidesData from '@/data/slidesData'
+import Twemoji from '@/components/Twemoji'
 import MediumCard from '@/components/MediumCard'
 import { PageSEO } from '@/components/SEO'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
@@ -26,7 +27,7 @@ export default function Slides({ slides }: InferGetStaticPropsType<typeof getSta
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Slides
+            <Twemoji emoji="🗣" /> Slides
           </h1>
           <div className="relative max-w-lg">
             <input
