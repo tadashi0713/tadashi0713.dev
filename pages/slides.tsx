@@ -3,10 +3,20 @@ import siteMetadata from '@/data/siteMetadata'
 import slidesData from '@/data/slidesData'
 import MediumCard from '@/components/MediumCard'
 import { PageSEO } from '@/components/SEO'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { getBlurConvertedOgps } from '@/lib/ogp'
+import { Ogp } from 'types/Ogp'
 
-export default function Slides() {
+export const getStaticProps: GetStaticProps<{
+  slides: Ogp[]
+}> = async () => {
+  const slides = await getBlurConvertedOgps(slidesData)
+  return { props: { slides } }
+}
+
+export default function Slides({ slides }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [searchValue, setSearchValue] = useState('')
-  const filteredSlides = slidesData.filter((frontMatter) => {
+  const filteredSlides = slides.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.description
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
@@ -52,6 +62,7 @@ export default function Slides() {
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
+                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>
