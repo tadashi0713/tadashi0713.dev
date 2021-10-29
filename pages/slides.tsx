@@ -4,25 +4,13 @@ import slidesData from '@/data/slidesData'
 import MediumCard from '@/components/MediumCard'
 import { PageSEO } from '@/components/SEO'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { Slide } from 'types/Slide'
-import { getPlaiceholder } from 'plaiceholder'
+import { getBlurConvertedOgps } from '@/lib/ogp'
+import { Ogp } from 'types/Ogp'
 
 export const getStaticProps: GetStaticProps<{
-  slides: Slide[]
+  slides: Ogp[]
 }> = async () => {
-  const slides = await Promise.all(
-    slidesData.map(async (slide) => {
-      const { base64 } = await getPlaiceholder(slide.imgSrc)
-      return {
-        title: slide.title,
-        description: slide.description,
-        imgSrc: slide.imgSrc,
-        blurDataURL: base64,
-        href: slide.href,
-      } as Slide
-    })
-  )
-
+  const slides = await getBlurConvertedOgps(slidesData)
   return { props: { slides } }
 }
 

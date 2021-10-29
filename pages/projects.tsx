@@ -3,26 +3,14 @@ import projectsData from '@/data/projectsData'
 import MediumCard from '@/components/MediumCard'
 import { PageSEO } from '@/components/SEO'
 import { useState } from 'react'
-import { Project } from 'types/Project'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { getPlaiceholder } from 'plaiceholder'
+import { getBlurConvertedOgps } from '@/lib/ogp'
+import { Ogp } from 'types/Ogp'
 
 export const getStaticProps: GetStaticProps<{
-  projects: Project[]
+  projects: Ogp[]
 }> = async () => {
-  const projects = await Promise.all(
-    projectsData.map(async (project) => {
-      const { base64 } = await getPlaiceholder(project.imgSrc)
-      return {
-        title: project.title,
-        description: project.description,
-        imgSrc: project.imgSrc,
-        blurDataURL: base64,
-        href: project.href,
-      } as Project
-    })
-  )
-
+  const projects = await getBlurConvertedOgps(projectsData)
   return { props: { projects } }
 }
 
