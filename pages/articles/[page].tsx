@@ -4,8 +4,8 @@ import { ARTICLES_PER_PAGE } from '../articles'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import ArticlesListLayout from '@/layouts/ArticlesListLayout'
 import articlesData from '@/data/articlesData'
-import { Article } from 'types/Article'
-import { getPlaiceholder } from 'plaiceholder'
+import { getBlurConvertedOgps } from '@/lib/ogp'
+import { Ogp } from 'types/Ogp'
 
 export const getStaticPaths: GetStaticPaths<{ page: string }> = async () => {
   const totalPages = Math.ceil(articlesData.length / ARTICLES_PER_PAGE)
@@ -20,8 +20,8 @@ export const getStaticPaths: GetStaticPaths<{ page: string }> = async () => {
 }
 
 export const getStaticProps: GetStaticProps<{
-  articles: Article[]
-  initialDisplayArticles: Article[]
+  articles: Ogp[]
+  initialDisplayArticles: Ogp[]
   pagination: { currentPage: number; totalPages: number }
 }> = async (context) => {
   const {
@@ -29,18 +29,7 @@ export const getStaticProps: GetStaticProps<{
   } = context
   const pageNumber = parseInt(page as string)
 
-  const articles = await Promise.all(
-    articlesData.map(async (article) => {
-      const { base64 } = await getPlaiceholder(article.imgSrc)
-      return {
-        title: article.title,
-        description: article.description,
-        imgSrc: article.imgSrc,
-        blurDataURL: base64,
-        href: article.href,
-      } as Article
-    })
-  )
+  const articles = await getBlurConvertedOgps(articlesData)
   const initialDisplayArticles = articles.slice(
     ARTICLES_PER_PAGE * (pageNumber - 1),
     ARTICLES_PER_PAGE * pageNumber

@@ -6,58 +6,21 @@ import slidesData from '@/data/slidesData'
 import articlesData from '@/data/articlesData'
 import SmallCard from '@/components/SmallCard'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { Slide } from 'types/Slide'
-import { getPlaiceholder } from 'plaiceholder'
-import { Project } from 'types/Project'
-import { Article } from 'types/Article'
+import { Ogp } from 'types/Ogp'
+import { getBlurConvertedOgps } from '@/lib/ogp'
 
 const MAX_DISPLAY_ARTICLES = 6
 const MAX_DISPLAY_SLIDES = 3
 const MAX_DISPLAY_PROJECTS = 3
 
 export const getStaticProps: GetStaticProps<{
-  articles: Article[]
-  slides: Slide[]
-  projects: Project[]
+  articles: Ogp[]
+  slides: Ogp[]
+  projects: Ogp[]
 }> = async () => {
-  const articles = await Promise.all(
-    articlesData.map(async (article) => {
-      const { base64 } = await getPlaiceholder(article.imgSrc)
-      return {
-        title: article.title,
-        description: article.description,
-        imgSrc: article.imgSrc,
-        blurDataURL: base64,
-        href: article.href,
-      } as Article
-    })
-  )
-
-  const slides = await Promise.all(
-    slidesData.map(async (slide) => {
-      const { base64 } = await getPlaiceholder(slide.imgSrc)
-      return {
-        title: slide.title,
-        description: slide.description,
-        imgSrc: slide.imgSrc,
-        blurDataURL: base64,
-        href: slide.href,
-      } as Slide
-    })
-  )
-
-  const projects = await Promise.all(
-    projectsData.map(async (project) => {
-      const { base64 } = await getPlaiceholder(project.imgSrc)
-      return {
-        title: project.title,
-        description: project.description,
-        imgSrc: project.imgSrc,
-        blurDataURL: base64,
-        href: project.href,
-      } as Project
-    })
-  )
+  const articles = await getBlurConvertedOgps(articlesData.slice(0, MAX_DISPLAY_ARTICLES))
+  const slides = await getBlurConvertedOgps(slidesData.slice(0, MAX_DISPLAY_SLIDES))
+  const projects = await getBlurConvertedOgps(projectsData.slice(0, MAX_DISPLAY_PROJECTS))
 
   return { props: { articles, slides, projects } }
 }
@@ -94,7 +57,7 @@ export default function Home({
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
             {!articles.length && 'No articles found.'}
-            {articles.slice(0, MAX_DISPLAY_ARTICLES).map((d) => (
+            {articles.map((d) => (
               <SmallCard
                 key={d.title}
                 title={d.title}
@@ -127,7 +90,7 @@ export default function Home({
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
             {!slides.length && 'No slides found.'}
-            {slides.slice(0, MAX_DISPLAY_SLIDES).map((d) => (
+            {slides.map((d) => (
               <SmallCard
                 key={d.title}
                 title={d.title}
@@ -160,7 +123,7 @@ export default function Home({
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
             {!projects.length && 'No projects found.'}
-            {projects.slice(0, MAX_DISPLAY_PROJECTS).map((d) => (
+            {projects.map((d) => (
               <SmallCard
                 key={d.title}
                 title={d.title}
