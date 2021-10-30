@@ -65,11 +65,11 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">
             <div>
               <div className="list-reset flex">
-                <div className="-mb-px mr-1">
+                <div className="mr-1">
                   <button
                     className={
                       activeTab === 'en'
-                        ? 'border-gray-200 border-2 rounded-md border-opacity-60 dark:border-gray-700 py-2 px-4 font-semibold'
+                        ? 'border-gray-200 border-t-2 border-r-2 border-l-2  rounded-t border-opacity-60 dark:border-gray-700 py-2 px-4 font-semibold'
                         : 'py-2 px-4'
                     }
                     onClick={() => changeActiveTab('en')}
@@ -81,7 +81,7 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
                   <button
                     className={
                       activeTab === 'ja'
-                        ? 'border-gray-200 border-2 rounded-md border-opacity-60 dark:border-gray-700 py-2 px-4 font-semibold'
+                        ? 'border-gray-200 border-t-2 border-r-2 border-l-2 rounded-t border-opacity-60 dark:border-gray-700 py-2 px-4 font-semibold'
                         : 'py-2 px-4'
                     }
                     onClick={() => changeActiveTab('ja')}
@@ -90,7 +90,7 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
                   </button>
                 </div>
               </div>
-              <div className="px-6 border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700">
+              <div className="px-6 border-2 border-gray-200 rounded-b border-opacity-60 dark:border-gray-700">
                 {activeTab === 'en' && (
                   <p>
                     EN Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab.
