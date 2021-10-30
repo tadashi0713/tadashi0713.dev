@@ -60,26 +60,52 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
               <SocialIcon kind="github" href={siteMetadata.github} />
               <SocialIcon kind="facebook" href={siteMetadata.facebook} />
               <SocialIcon kind="linkedin" href={siteMetadata.linkedin} />
-              <SocialIcon kind="twitter" href={siteMetadata.twitter} />
             </div>
           </div>
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">
-            <div className="px-6 border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700">
-              <p>
-                Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His
-                research interests includes complexity modelling of tailwinds, headwinds and
-                crosswinds.
-              </p>
-              <p>
-                He leads the clean energy group which develops 3D air pollution-climate models,
-                writes differential equation solvers, and manufactures titanium plated air ballons.
-                In his free time he bakes raspberry pi.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique
-                placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem
-                nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
-              </p>
+            <div>
+              <div className="list-reset flex">
+                <div className="-mb-px mr-1">
+                  <button
+                    className={
+                      activeTab === 'en'
+                        ? 'border-gray-200 border-2 rounded-md border-opacity-60 dark:border-gray-700 py-2 px-4 font-semibold'
+                        : 'py-2 px-4'
+                    }
+                    onClick={() => changeActiveTab('en')}
+                  >
+                    English
+                  </button>
+                </div>
+                <div className="mr-1">
+                  <button
+                    className={
+                      activeTab === 'ja'
+                        ? 'border-gray-200 border-2 rounded-md border-opacity-60 dark:border-gray-700 py-2 px-4 font-semibold'
+                        : 'py-2 px-4'
+                    }
+                    onClick={() => changeActiveTab('ja')}
+                  >
+                    日本語
+                  </button>
+                </div>
+              </div>
+              <div className="px-6 border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700">
+                {activeTab === 'en' && (
+                  <p>
+                    EN Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab.
+                    His research interests includes complexity modelling of tailwinds, headwinds and
+                    crosswinds.
+                  </p>
+                )}
+                {activeTab === 'ja' && (
+                  <p>
+                    JA Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab.
+                    His research interests includes complexity modelling of tailwinds, headwinds and
+                    crosswinds.
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>
