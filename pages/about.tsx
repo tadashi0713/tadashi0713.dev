@@ -6,6 +6,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { getFileBySlug } from '@/lib/mdx'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
+import { useState } from 'react'
 
 const DEFAULT_LAYOUT = 'AuthorLayout'
 
@@ -19,6 +20,8 @@ export const getStaticProps: GetStaticProps<{
 }
 
 export default function About({ authorDetails }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const [activeTab, changeActiveTab] = useState('en')
+
   const { mdxSource, frontMatter } = authorDetails
 
   // <MDXLayoutRenderer
@@ -61,21 +64,23 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
             </div>
           </div>
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">
-            <p>
-              Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His
-              research interests includes complexity modelling of tailwinds, headwinds and
-              crosswinds.
-            </p>
-            <p>
-              He leads the clean energy group which develops 3D air pollution-climate models, writes
-              differential equation solvers, and manufactures titanium plated air ballons. In his
-              free time he bakes raspberry pi.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique
-              placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem
-              nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
-            </p>
+            <div className="px-6 border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700">
+              <p>
+                Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His
+                research interests includes complexity modelling of tailwinds, headwinds and
+                crosswinds.
+              </p>
+              <p>
+                He leads the clean energy group which develops 3D air pollution-climate models,
+                writes differential equation solvers, and manufactures titanium plated air ballons.
+                In his free time he bakes raspberry pi.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique
+                placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem
+                nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+              </p>
+            </div>
           </div>
         </div>
       </div>
