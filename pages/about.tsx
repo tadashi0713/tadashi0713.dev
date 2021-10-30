@@ -66,11 +66,11 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">
             <div>
               <div className="list-reset flex">
-                <div className="mr-1">
+                <div className="-mb-2 mr-1">
                   <button
                     className={
                       activeTab === 'en'
-                        ? 'border-gray-200 border-t-2 border-r-2 border-l-2  rounded-t border-opacity-60 dark:border-gray-700 py-2 px-4 font-semibold'
+                        ? 'bg-white border-gray-200 border-t-2 border-r-2 border-l-2 rounded-t border-opacity-60 dark:border-gray-700 dark:bg-gray-900 py-2 px-4 font-semibold'
                         : 'py-2 px-4'
                     }
                     onClick={() => changeActiveTab('en')}
@@ -82,7 +82,7 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
                   <button
                     className={
                       activeTab === 'ja'
-                        ? 'border-gray-200 border-t-2 border-r-2 border-l-2 rounded-t border-opacity-60 dark:border-gray-700 py-2 px-4 font-semibold'
+                        ? 'bg-white border-gray-200 border-t-2 border-r-2 border-l-2 rounded-t border-opacity-60 dark:border-gray-700 dark:bg-gray-900 py-2 px-4 font-semibold'
                         : 'py-2 px-4'
                     }
                     onClick={() => changeActiveTab('ja')}
