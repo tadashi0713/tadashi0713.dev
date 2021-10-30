@@ -1,5 +1,6 @@
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { PageSEO } from '@/components/SEO'
+import Twemoji from '@/components/Twemoji'
 import Image from '@/components/Image'
 import SocialIcon from '@/components/social-icons'
 import siteMetadata from '@/data/siteMetadata'
@@ -38,7 +39,7 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
       <div className="divide-y">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            About
+            <Twemoji emoji="💁‍♂️" /> About
           </h1>
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
@@ -53,8 +54,8 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
               {siteMetadata.author}
             </h3>
-            <div className="text-gray-500 dark:text-gray-400">Professor of Atmospheric Science</div>
-            <div className="text-gray-500 dark:text-gray-400">Stanford University</div>
+            <div className="text-gray-500 dark:text-gray-400">Solutions Engineer</div>
+            <div className="text-gray-500 dark:text-gray-400">CircleCI(Japan)</div>
             <div className="flex pt-6 space-x-3">
               <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} />
               <SocialIcon kind="github" href={siteMetadata.github} />
