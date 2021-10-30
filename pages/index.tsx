@@ -71,7 +71,7 @@ export default function Home({
           </div>
         </div>
       </div>
-      {articles.length > MAX_DISPLAY_ARTICLES && (
+      {articlesData.length > MAX_DISPLAY_ARTICLES && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/articles"
@@ -104,7 +104,7 @@ export default function Home({
           </div>
         </div>
       </div>
-      {articles.length > MAX_DISPLAY_SLIDES && (
+      {slidesData.length > MAX_DISPLAY_SLIDES && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/slides"
