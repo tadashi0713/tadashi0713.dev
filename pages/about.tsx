@@ -66,7 +66,7 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">
             <div>
               <div className="list-reset flex">
-                <div className="-mb-2 mr-1">
+                <div className={activeTab === 'en' ? '-mb-2' : '' + 'mr-1'}>
                   <button
                     className={
                       activeTab === 'en'
@@ -78,7 +78,7 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
                     English
                   </button>
                 </div>
-                <div className="mr-1">
+                <div className={activeTab === 'ja' ? '-mb-2' : '' + 'mr-1'}>
                   <button
                     className={
                       activeTab === 'ja'
@@ -91,22 +91,24 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
                   </button>
                 </div>
               </div>
-              <div className="px-6 border-2 border-gray-200 rounded-b border-opacity-60 dark:border-gray-700">
-                {activeTab === 'en' && (
+              {activeTab === 'en' && (
+                <div className="px-6 border-2 border-gray-200 rounded-b rounded-r border-opacity-60 dark:border-gray-700">
                   <p>
                     EN Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab.
                     His research interests includes complexity modelling of tailwinds, headwinds and
                     crosswinds.
                   </p>
-                )}
-                {activeTab === 'ja' && (
+                </div>
+              )}
+              {activeTab === 'ja' && (
+                <div className="px-6 border-2 border-gray-200 rounded-b rounded-r rounded-l border-opacity-60 dark:border-gray-700">
                   <p>
                     JA Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab.
                     His research interests includes complexity modelling of tailwinds, headwinds and
                     crosswinds.
                   </p>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
