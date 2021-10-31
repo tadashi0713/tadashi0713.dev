@@ -8,19 +8,25 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { useMemo, useState } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
+import { getPlaiceholder } from 'plaiceholder'
 
 export const getStaticProps: GetStaticProps<{
   enSource: string
   jaSource: string
+  blurDataURL: string
 }> = async () => {
   const enSource = await (await getFileBySlug<AuthorFrontMatter>('authors', ['en'])).mdxSource
   const jaSource = await (await getFileBySlug<AuthorFrontMatter>('authors', ['ja'])).mdxSource
-  return { props: { enSource, jaSource } }
+
+  const blurDataURL = await (await getPlaiceholder(siteMetadata.image)).base64
+
+  return { props: { enSource, jaSource, blurDataURL } }
 }
 
 export default function About({
   enSource,
   jaSource,
+  blurDataURL,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [activeTab, changeActiveTab] = useState('en')
   const MdxEn = useMemo(() => getMDXComponent(enSource), [enSource])
@@ -46,6 +52,8 @@ export default function About({
               className="w-48 h-48 rounded-full"
               width={200}
               height={200}
+              placeholder="blur"
+              blurDataURL={blurDataURL}
             />
             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
               {siteMetadata.author}
