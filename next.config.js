@@ -21,6 +21,7 @@ module.exports = withPlaiceholder({
       'codezine.jp',
       'ascii.jp',
       'dpd29bjwmgbr8.cloudfront.net',
+      'assets.st-note.com',
     ],
   },
   reactStrictMode: true,

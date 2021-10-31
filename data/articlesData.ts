@@ -30,6 +30,14 @@ const articlesData = [
   },
   {
     title:
+      '社会課題を解決するサービス群のプラットフォームをゼロから作る。エクサウィザーズDevOpsチーム。　#Talk Wiz｜エクサウィザーズ HR note',
+    description: `求人情報だけでは分からない、エクサウィザーズで一緒に働きたい人についてメンバーに聞く企画「#Talk Wiz」。 今回は、エクサウィザーズのサービス開発・運用の要であるDevOpsチームです。200人規模ながら複数サービスを安定して開発・運用できるプラットフォーム作りをしている同チームの魅力を青木さん、根本さんに伺いました。 ◾️ プロフィール 青木 悠輔（あおき・ゆうすけ） 東北大学工学部、大学院情報科学研究科専攻後、NTTコミュニケーションズにネットワークエンジニアとして入社。その後、楽天のインフラエンジニアなどを経て、エクサウィザーズへ入社。DevOpsエンジニアとして`,
+    imgSrc:
+      'https://assets.st-note.com/production/uploads/images/43568020/rectangle_large_type_2_f73c04d7abcd5bfabb19cff44da67e30.png?fit=bounds&quality=85&width=1280',
+    href: 'https://note.exawizards.com/n/nd10831bbb2da',
+  },
+  {
+    title:
       'Improving Continuous Delivery with GitLab Flow + GitHub Actions - エクサウィザーズ Engineer Blog',
     description: `The Japanese version of this blog post can be found here: techblog.exawizards.com Hello, I'm Tadashi Nemoto from the DevOps team. In this article, I will demonstrate how to improve deployment flows using GitHub Actions. Standard deployment flows and their problems How about GitHub Flow? About GitLab…`,
     imgSrc:
