@@ -1,4 +1,3 @@
-import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { PageSEO } from '@/components/SEO'
 import Twemoji from '@/components/Twemoji'
 import Image from '@/components/Image'
@@ -7,29 +6,26 @@ import siteMetadata from '@/data/siteMetadata'
 import { getFileBySlug } from '@/lib/mdx'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
+import { getMDXComponent } from 'mdx-bundler/client'
 
-const DEFAULT_LAYOUT = 'AuthorLayout'
-
-// @ts-ignore
 export const getStaticProps: GetStaticProps<{
-  authorDetails: { mdxSource: string; frontMatter: AuthorFrontMatter }
+  enSource: string
+  jaSource: string
 }> = async () => {
-  const authorDetails = await getFileBySlug<AuthorFrontMatter>('authors', ['default'])
-  const { mdxSource, frontMatter } = authorDetails
-  return { props: { authorDetails: { mdxSource, frontMatter } } }
+  const enSource = await (await getFileBySlug<AuthorFrontMatter>('authors', ['en'])).mdxSource
+  const jaSource = await (await getFileBySlug<AuthorFrontMatter>('authors', ['ja'])).mdxSource
+  return { props: { enSource, jaSource } }
 }
 
-export default function About({ authorDetails }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function About({
+  enSource,
+  jaSource,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [activeTab, changeActiveTab] = useState('en')
+  const MdxEn = useMemo(() => getMDXComponent(enSource), [enSource])
+  const MdxJa = useMemo(() => getMDXComponent(jaSource), [jaSource])
 
-  const { mdxSource, frontMatter } = authorDetails
-
-  // <MDXLayoutRenderer
-  //   layout={frontMatter.layout || DEFAULT_LAYOUT}
-  //   mdxSource={mdxSource}
-  //   frontMatter={frontMatter}
-  // />
   return (
     <>
       <PageSEO
@@ -93,20 +89,12 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
               </div>
               {activeTab === 'en' && (
                 <div className="px-6 border-2 border-gray-200 rounded-b rounded-r border-opacity-60 dark:border-gray-700">
-                  <p>
-                    EN Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab.
-                    His research interests includes complexity modelling of tailwinds, headwinds and
-                    crosswinds.
-                  </p>
+                  <MdxEn />
                 </div>
               )}
               {activeTab === 'ja' && (
                 <div className="px-6 border-2 border-gray-200 rounded-b rounded-r rounded-l border-opacity-60 dark:border-gray-700">
-                  <p>
-                    JA Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab.
-                    His research interests includes complexity modelling of tailwinds, headwinds and
-                    crosswinds.
-                  </p>
+                  <MdxJa />
                 </div>
               )}
             </div>
