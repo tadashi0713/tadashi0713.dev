@@ -56,10 +56,14 @@ export default function About({
               blurDataURL={blurDataURL}
             />
             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
-              {siteMetadata.author}
+              {activeTab === 'en' ? 'Tadashi Nemoto' : '根本 征'}
             </h3>
-            <div className="text-gray-500 dark:text-gray-400">Solutions Engineer</div>
-            <div className="text-gray-500 dark:text-gray-400">CircleCI (Japan)</div>
+            <div className="text-gray-500 dark:text-gray-400">
+              {activeTab === 'en' ? 'Solutions Engineer' : 'ソリューションズエンジニア'}
+            </div>
+            <div className="text-gray-500 dark:text-gray-400">
+              {activeTab === 'en' ? 'CircleCI (Japan)' : 'CircleCI 合同会社'}
+            </div>
             <div className="flex pt-6 space-x-3">
               <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} />
               <SocialIcon kind="github" href={siteMetadata.github} />
