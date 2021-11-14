@@ -21,7 +21,7 @@
     "github-slugger": "1.4.0",
     "gray-matter": "4.0.3",
     "image-size": "1.0.0",
-    "mdx-bundler": "6.0.3",
+    "mdx-bundler": "7.0.0",
     "next": "12.0.3",
     "next-themes": "0.0.15",
     "plaiceholder": "2.2.0",
@@ -38,7 +38,7 @@
     "remark-footnotes": "4.0.1",
     "remark-gfm": "3.0.1",
     "remark-math": "5.1.1",
-    "sharp": "0.29.2",
+    "sharp": "0.29.3",
     "twemoji": "13.1.0",
     "tailwindcss": "2.2.19",
     "unist-util-visit": "4.1.0"
@@ -61,7 +61,7 @@
     "globby": "11.0.4",
     "husky": "7.0.4",
     "inquirer": "8.2.0",
-    "lint-staged": "11.2.6",
+    "lint-staged": "12.0.2",
     "next-remote-watch": "1.0.0",
     "prettier": "2.4.1",
     "typescript": "4.4.4"
