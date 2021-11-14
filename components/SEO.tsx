@@ -49,22 +49,22 @@ interface PageSEOProps {
 }
 
 export const PageSEO = ({ title, description }: PageSEOProps) => {
-  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
-  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+  const ogImageUrl =
+    'https://og-image.tadashi0713.dev/About.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fvercel-triangle-black.svg'
   return (
     <CommonSEO
       title={title}
       description={description}
       ogType="website"
       ogImage={ogImageUrl}
-      twImage={twImageUrl}
+      twImage={ogImageUrl}
     />
   )
 }
 
 export const TagSEO = ({ title, description }: PageSEOProps) => {
-  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
-  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+  const ogImageUrl =
+    'https://og-image.tadashi0713.dev/About.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fvercel-triangle-black.svg'
   const router = useRouter()
   return (
     <>
@@ -73,7 +73,7 @@ export const TagSEO = ({ title, description }: PageSEOProps) => {
         description={description}
         ogType="website"
         ogImage={ogImageUrl}
-        twImage={twImageUrl}
+        twImage={ogImageUrl}
       />
       <Head>
         <link
