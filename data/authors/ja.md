@@ -15,12 +15,13 @@
 
 DevOps / プラットフォームエンジニア
 
-主に
+主に CI/CD の導入・改善や自動テストの導入支援・布教を行っていました。
 
 - Jenkins から GitHub Actions(self-hosted runners on AWS) への移行
 - デプロイフローの改善(Git Flow → GitLab Flow)
 - SonarCloud(SonarQube のクラウド版)の導入、静的解析とテストカバレッジの導入
-- モバイル(GitHub Actions)
+- モバイル CI/CD の導入(GitHub Actions)
+- 自動テストの導入支援・布教
 
 ### ブログ
 
@@ -35,6 +36,6 @@ DevOps / プラットフォームエンジニア
 
 ## 2016/4 ~ 2020/5 株式会社メルカリ:
 
-SET()
+SET(Software Engineer in Test) / 自動テストエンジニア
 
 2019 年 10 月に
