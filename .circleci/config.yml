@@ -13,7 +13,7 @@ jobs:
       - node/install-packages
       - run: npm run build
       - run: |
-          npm install -g @lhci/cli@0.8.2
+          npm install --prefix=$HOME/.local -g @lhci/cli@0.8.2
           lhci autorun
 
 workflows:
