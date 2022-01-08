@@ -58,7 +58,7 @@
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-prettier": "4.0.0",
     "file-loader": "6.2.0",
-    "globby": "11.0.4",
+    "globby": "11.1.0",
     "husky": "7.0.4",
     "inquirer": "8.2.0",
     "lint-staged": "12.1.7",
