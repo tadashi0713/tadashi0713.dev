@@ -9,6 +9,14 @@ const projectsData = [
   },
   {
     title:
+      'GitHub - tadashi0713/circleci-runner-ec2-mac-terraform: Terraform / Packer template to deploy autoscaling CircleCI Runner of EC2 Mac instances.',
+    description: `	Terraform / Packer template to deploy autoscaling CircleCI Runner of EC2 Mac instances. - GitHub - tadashi0713/circleci-runner-ec2-mac-terraform: Terraform / Packer template to deploy autoscaling CircleCI Runner of EC2 Mac instances.`,
+    imgSrc:
+      'https://repository-images.githubusercontent.com/459023040/6ece0f56-a9c4-4dc9-8563-0fe427eeb5b9',
+    href: 'https://github.com/tadashi0713/circleci-runner-ec2-mac-terraform',
+  },
+  {
+    title:
       'GitHub - CircleCI-Public/flutter-orb: Easily install Flutter SDK and package dependencies. Also wasily run unit test and lint. Supports Linux and macOS',
     description: `Easily install Flutter SDK and package dependencies. Also wasily run unit test and lint. Supports Linux and macOS - GitHub - CircleCI-Public/flutter-orb: Easily install Flutter SDK and package dependencies. Also wasily run unit test and lint. Supports Linux and macOS`,
     imgSrc:
