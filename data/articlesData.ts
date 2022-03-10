@@ -2,14 +2,14 @@ const articlesData = [
   {
     title: 'GitOps とは? ArgoCD による、Kubernetes への継続的デリバリーを実現しよう',
     description: `この記事では、React Native(リアクトネイティブ) アプリの CI/CD パイプラインを CircleCI Orb を活用して効率化する方法について紹介します。`,
-    imgSrc: 'https://circleci.com/ja/blog/media/react-native-hero-2021.png',
+    imgSrc: 'https://circleci.com/ja/blog/media/gitops-argocd-hero.png',
     href: '	https://circleci.com/ja/blog/react-native-cicd/',
   },
   {
     title:
       'React Native(リアクトネイティブ) アプリの CI/CD パイプラインを、CircleCI Orb で効率化しよう',
     description: `この記事では、GitOps とは何か、そして実際に GitOps(ArgoCD) を使った Kubernetes への継続的デリバリーの実現方法について紹介します。`,
-    imgSrc: 'https://circleci.com/ja/blog/media/gitops-argocd-hero.png',
+    imgSrc: 'https://circleci.com/ja/blog/media/react-native-hero-2021.png',
     href: 'https://circleci.com/ja/blog/gitops-argocd/',
   },
   {
