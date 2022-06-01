@@ -22,6 +22,7 @@ module.exports = withPlaiceholder({
       'ascii.jp',
       'dpd29bjwmgbr8.cloudfront.net',
       'assets.st-note.com',
+      'd1.awsstatic.com',
     ],
   },
   reactStrictMode: true,
