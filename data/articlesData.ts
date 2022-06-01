@@ -1,16 +1,24 @@
 const articlesData = [
   {
+    title:
+      '最新のコンテナアプリケーション開発環境でパフォーマンス向上とコスト削減を両立する ~AWS Graviton に対応した CircleCI の CI/CDプラットフォームとは - builders.flash☆ - 変化を求めるデベロッパーを応援するウェブマガジン | AWS',
+    description: `AWS が変化を求めるデベロッパーの皆様を応援するウェブマガジン。毎月更新する記事で新たなスキルや他のデベロッパーが抱える課題と解決方法に迫るインタビューをご覧いただけます。`,
+    imgSrc:
+      'https://d1.awsstatic.com/Developer%20Marketing/jp/magazine/2022/thumb_circle-ci-ci-cd.b3047dfb9ccf0376632f0865e67ea0fa726e0814.jpg',
+    href: 'https://aws.amazon.com/jp/builders-flash/202206/circle-ci-ci-cd',
+  },
+  {
     title: 'GitOps とは? ArgoCD による、Kubernetes への継続的デリバリーを実現しよう',
-    description: `この記事では、React Native(リアクトネイティブ) アプリの CI/CD パイプラインを CircleCI Orb を活用して効率化する方法について紹介します。`,
+    description: `この記事では、GitOps とは何か、そして実際に GitOps(ArgoCD) を使った Kubernetes への継続的デリバリーの実現方法について紹介します。`,
     imgSrc: 'https://circleci.com/ja/blog/media/gitops-argocd-hero.png',
-    href: '	https://circleci.com/ja/blog/react-native-cicd/',
+    href: 'https://circleci.com/ja/blog/gitops-argocd/',
   },
   {
     title:
       'React Native(リアクトネイティブ) アプリの CI/CD パイプラインを、CircleCI Orb で効率化しよう',
-    description: `この記事では、GitOps とは何か、そして実際に GitOps(ArgoCD) を使った Kubernetes への継続的デリバリーの実現方法について紹介します。`,
+    description: `この記事では、React Native(リアクトネイティブ) アプリの CI/CD パイプラインを CircleCI Orb を活用して効率化する方法について紹介します。`,
     imgSrc: 'https://circleci.com/ja/blog/media/react-native-hero-2021.png',
-    href: 'https://circleci.com/ja/blog/gitops-argocd/',
+    href: 'https://circleci.com/ja/blog/react-native-cicd/',
   },
   {
     title: 'Flutter (フラッター) アプリの CI / CD パイプラインを構築しよう',
