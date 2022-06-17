@@ -9,8 +9,16 @@ const projectsData = [
   },
   {
     title:
+      'GitHub - tadashi0713/circleci-graviton-fargate-demo: CircleCI(Arm Executor) + AWS Graviton2 on AWS Fargate Demo',
+    description: `CircleCI(Arm Executor) + AWS Graviton2 on AWS Fargate Demo - GitHub - tadashi0713/circleci-graviton-fargate-demo: CircleCI(Arm Executor) + AWS Graviton2 on AWS Fargate Demo`,
+    imgSrc:
+      'https://repository-images.githubusercontent.com/492660350/8cf99b0b-713b-4c1f-bea7-83d0b46386ca',
+    href: '	https://github.com/tadashi0713/circleci-graviton-fargate-demo',
+  },
+  {
+    title:
       'GitHub - tadashi0713/circleci-runner-ec2-mac-terraform: Terraform / Packer template to deploy autoscaling CircleCI Runner of EC2 Mac instances.',
-    description: `	Terraform / Packer template to deploy autoscaling CircleCI Runner of EC2 Mac instances. - GitHub - tadashi0713/circleci-runner-ec2-mac-terraform: Terraform / Packer template to deploy autoscaling CircleCI Runner of EC2 Mac instances.`,
+    description: `Terraform / Packer template to deploy autoscaling CircleCI Runner of EC2 Mac instances. - GitHub - tadashi0713/circleci-runner-ec2-mac-terraform: Terraform / Packer template to deploy autoscaling CircleCI Runner of EC2 Mac instances.`,
     imgSrc:
       'https://repository-images.githubusercontent.com/459023040/6ece0f56-a9c4-4dc9-8563-0fe427eeb5b9',
     href: 'https://github.com/tadashi0713/circleci-runner-ec2-mac-terraform',
