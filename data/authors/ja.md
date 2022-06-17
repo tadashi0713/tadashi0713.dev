@@ -30,7 +30,7 @@ DevOps / プラットフォームエンジニア
 - [社会課題を解決するサービス群のプラットフォームをゼロから作る。エクサウィザーズ DevOps チーム。](https://note.exawizards.com/n/nd10831bbb2da)
 - [GitHub 上で完結する、GitHub Actions + Fastlane をフル活用した iOS の継続的デリバリー](https://techblog.exawizards.com/entry/2021/03/23/115834)
 
-### スライド
+### 発表
 
 - [デプロイ頻度を 10 倍にした、ブランチ戦略と GitHub Actions on AWS ECS](https://speakerdeck.com/tadashi0713/depuroipin-du-wo10bei-nisita-burantizhan-lue-togithub-actions-on-aws-ecs)
 
