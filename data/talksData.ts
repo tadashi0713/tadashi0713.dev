@@ -1,5 +1,14 @@
 const talksData = [
   {
+    title:
+      '最新のコンテナアプリケーション開発環境でパフォーマンス向上とコスト削減を両立する～AWS Fargate 編～',
+    description:
+      'AWS Graviton プロセッサを採用した AWS Fargate を使用し、どのようにコンテナアプリケーション開発の CI/CD パイプラインを構築できるのか、AWS Graviton に対応した CircleCI の CI/CDツールを使用し、デモを交えて具体的にご説明いたします。',
+    imgSrc:
+      'https://d1.awsstatic.com/International/ja_JP/Partner/circleci/circleci-aws-ipc-webinar-0616.32c31db2dcdbb401f1d9b49207eb52697999abca.jpg',
+    href: 'https://pages.awscloud.com/APAC_PARTNER_OE_ipc_CircleCI_2022_WebinarSeries-0616_LP.html',
+  },
+  {
     title: '10x deployment frequency using GitLab Flow and GitHub Actions on AWS ECS',
     description: `English version of previous presentation slide`,
     imgSrc:
