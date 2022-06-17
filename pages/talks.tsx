@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps<{
   return { props: { slides } }
 }
 
-export default function Slides({ slides }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Talks({ slides }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [searchValue, setSearchValue] = useState('')
   const filteredSlides = slides.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.description
@@ -23,18 +23,18 @@ export default function Slides({ slides }: InferGetStaticPropsType<typeof getSta
   })
   return (
     <>
-      <PageSEO title={`Slides - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO title={`Talks - ${siteMetadata.author}`} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            <Twemoji emoji="🗣" /> Slides
+            <Twemoji emoji="🗣" /> Talks
           </h1>
           <div className="relative max-w-lg">
             <input
-              aria-label="Search slides"
+              aria-label="Search talks"
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Search slides"
+              placeholder="Search talks"
               className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
             />
             <svg
@@ -55,7 +55,7 @@ export default function Slides({ slides }: InferGetStaticPropsType<typeof getSta
         </div>
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
-            {!filteredSlides.length && 'No slides found.'}
+            {!filteredSlides.length && 'No talks found.'}
             {filteredSlides.map((d) => (
               <MediumCard
                 key={d.title}
