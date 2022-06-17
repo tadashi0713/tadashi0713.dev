@@ -47,9 +47,9 @@ export default function Home({
             <br />
             You can know about me in detail in <Link href="/articles">external articles</Link>
             {', '}
-            <Link href="/slides">slides of previous talks</Link>
+            <Link href="/talks">slides of previous talks</Link>
             {', '}
-            <Link href="/slides">side projects</Link>
+            <Link href="/projects">side projects</Link>
             {', and '}
             <Link href="/about">portfolio</Link>
             {'. Have a good read!'}
@@ -92,12 +92,12 @@ export default function Home({
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
           <h2 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-5xl md:leading-14">
-            <Twemoji emoji="🗣" /> Slides
+            <Twemoji emoji="🗣" /> Talks
           </h2>
         </div>
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
-            {!slides.length && 'No slides found.'}
+            {!slides.length && 'No talks found.'}
             {slides.map((d) => (
               <SmallCard
                 key={d.title}
@@ -118,7 +118,7 @@ export default function Home({
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
             aria-label="all slides"
           >
-            All Slides &rarr;
+            All Talks &rarr;
           </Link>
         </div>
       )}
