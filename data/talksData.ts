@@ -9,6 +9,22 @@ const talksData = [
     href: 'https://pages.awscloud.com/APAC_PARTNER_OE_ipc_CircleCI_2022_WebinarSeries-0616_LP.html',
   },
   {
+    title: 'CircleCI Webinar: モバイル開発者向け CircleCI 入門ウェビナー',
+    description:
+      'このウェビナーではモバイル開発者に向けたCircleCIの機能や特徴、アップデートについて紹介します。',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1655456212/tadashi0713.dev/Untitled_presentation_31.png',
+    href: 'https://www.youtube.com/watch?v=3YsbMRbvvNc',
+  },
+  {
+    title: 'はじめてのCircleCI 内製化への第一歩 〜効率的にCircleCIについて学ぼう〜',
+    description:
+      '本セミナーでは、CI/CDツールのーつであるCircleCIにフォーカスをして、CI/CDをはじめる方法をデモやコツを交えながらご紹介いたします。',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1655457399/tadashi0713.dev/unnamed_1.png',
+    href: 'https://www.youtube.com/watch?v=6lQ0AkkiBKk',
+  },
+  {
     title: '10x deployment frequency using GitLab Flow and GitHub Actions on AWS ECS',
     description: `English version of previous presentation slide`,
     imgSrc:

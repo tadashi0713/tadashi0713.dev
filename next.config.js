@@ -23,6 +23,7 @@ module.exports = withPlaiceholder({
       'dpd29bjwmgbr8.cloudfront.net',
       'assets.st-note.com',
       'd1.awsstatic.com',
+      'res.cloudinary.com',
     ],
   },
   reactStrictMode: true,
