@@ -1,4 +1,4 @@
-const slidesData = [
+const talksData = [
   {
     title: '10x deployment frequency using GitLab Flow and GitHub Actions on AWS ECS',
     description: `English version of previous presentation slide`,
@@ -58,4 +58,4 @@ const slidesData = [
   },
 ]
 
-export default slidesData
+export default talksData

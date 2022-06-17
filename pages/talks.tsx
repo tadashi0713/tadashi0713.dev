@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import siteMetadata from '@/data/siteMetadata'
-import slidesData from '@/data/slidesData'
+import talksData from '@/data/talksData'
 import Twemoji from '@/components/Twemoji'
 import MediumCard from '@/components/MediumCard'
 import { PageSEO } from '@/components/SEO'
@@ -9,15 +9,15 @@ import { getBlurConvertedOgps } from '@/lib/ogp'
 import { Ogp } from 'types/Ogp'
 
 export const getStaticProps: GetStaticProps<{
-  slides: Ogp[]
+  talks: Ogp[]
 }> = async () => {
-  const slides = await getBlurConvertedOgps(slidesData)
-  return { props: { slides } }
+  const talks = await getBlurConvertedOgps(talksData)
+  return { props: { talks } }
 }
 
-export default function Talks({ slides }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Talks({ talks }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [searchValue, setSearchValue] = useState('')
-  const filteredSlides = slides.filter((frontMatter) => {
+  const filteredTalks = talks.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.description
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
@@ -55,8 +55,8 @@ export default function Talks({ slides }: InferGetStaticPropsType<typeof getStat
         </div>
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
-            {!filteredSlides.length && 'No talks found.'}
-            {filteredSlides.map((d) => (
+            {!filteredTalks.length && 'No talks found.'}
+            {filteredTalks.map((d) => (
               <MediumCard
                 key={d.title}
                 title={d.title}

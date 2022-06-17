@@ -3,7 +3,7 @@ import { PageSEO } from '@/components/SEO'
 import Twemoji from '@/components/Twemoji'
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
-import slidesData from '@/data/slidesData'
+import talksData from '@/data/talksData'
 import articlesData from '@/data/articlesData'
 import SmallCard from '@/components/SmallCard'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
@@ -11,24 +11,24 @@ import { Ogp } from 'types/Ogp'
 import { getBlurConvertedOgps } from '@/lib/ogp'
 
 const MAX_DISPLAY_ARTICLES = 6
-const MAX_DISPLAY_SLIDES = 3
+const MAX_DISPLAY_TALKS = 3
 const MAX_DISPLAY_PROJECTS = 3
 
 export const getStaticProps: GetStaticProps<{
   articles: Ogp[]
-  slides: Ogp[]
+  talks: Ogp[]
   projects: Ogp[]
 }> = async () => {
   const articles = await getBlurConvertedOgps(articlesData.slice(0, MAX_DISPLAY_ARTICLES))
-  const slides = await getBlurConvertedOgps(slidesData.slice(0, MAX_DISPLAY_SLIDES))
+  const talks = await getBlurConvertedOgps(talksData.slice(0, MAX_DISPLAY_TALKS))
   const projects = await getBlurConvertedOgps(projectsData.slice(0, MAX_DISPLAY_PROJECTS))
 
-  return { props: { articles, slides, projects } }
+  return { props: { articles, talks, projects } }
 }
 
 export default function Home({
   articles,
-  slides,
+  talks,
   projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -47,7 +47,7 @@ export default function Home({
             <br />
             You can know about me in detail in <Link href="/articles">external articles</Link>
             {', '}
-            <Link href="/talks">slides of previous talks</Link>
+            <Link href="/talks">previous talks</Link>
             {', '}
             <Link href="/projects">side projects</Link>
             {', and '}
@@ -97,8 +97,8 @@ export default function Home({
         </div>
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
-            {!slides.length && 'No talks found.'}
-            {slides.map((d) => (
+            {!talks.length && 'No talks found.'}
+            {talks.map((d) => (
               <SmallCard
                 key={d.title}
                 title={d.title}
@@ -111,12 +111,12 @@ export default function Home({
           </div>
         </div>
       </div>
-      {slidesData.length > MAX_DISPLAY_SLIDES && (
+      {talksData.length > MAX_DISPLAY_TALKS && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
-            href="/slides"
+            href="/talks"
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-            aria-label="all slides"
+            aria-label="all talks"
           >
             All Talks &rarr;
           </Link>
