@@ -26,7 +26,7 @@ GitHub Actions / Hashicorp Nomad / Kubernetes / AWS(EKS, ECS, CDK)
 - [Improving Continuous Delivery with GitLab Flow + GitHub Actions](https://techblog.exawizards.com/entry/2021/01/28/113812)
 - [Continuous delivery of iOS using GitHub Actions + Fastlane, complete on GitHub](https://techblog.exawizards.com/entry/2021/04/06/090519)
 
-### Slides
+### Talks
 
 - [10x deployment frequency using GitLab Flow and GitHub Actions on AWS ECS](https://speakerdeck.com/tadashi0713/10x-deployment-frequency-using-gitlab-flow-and-github-actions-on-aws-ecs)
 
@@ -40,6 +40,6 @@ In 2019
 
 ### Blog
 
-### Slides
+### Talks
 
 - [Creating parallelized Android UITest (Appium) environment using Azure, Docker and Android emulator](https://speakerdeck.com/tadashi0713/creating-parallelized-android-uitest-appium-environment-using-azure-docker-and-android-emulator)
