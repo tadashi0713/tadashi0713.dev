@@ -24,6 +24,7 @@ module.exports = withPlaiceholder({
       'assets.st-note.com',
       'd1.awsstatic.com',
       'res.cloudinary.com',
+      'thinkit.co.jp',
     ],
   },
   reactStrictMode: true,

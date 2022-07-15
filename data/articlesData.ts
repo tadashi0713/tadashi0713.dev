@@ -1,6 +1,13 @@
 const articlesData = [
   {
     title:
+      'CI/CDの現場への定着も手厚くサポート─圧倒的なスピードのDevOpsを実現する「CircleCI」のインパクト',
+    description: `開発と運用を一体化させたDevOpsの手法によってソフトウェアのリリースと改善のスピードを高めるうえでは、CI(継続的インテグレーション)/CD(継続的デリバリー)のためのツールとして何を選ぶかが重要なポイントとなる。そのCI/CDツールとして、デジタル時代をリードする新興のテクノロジー企業から製造系・金融系の大手企業に至るまで、幅広い層の企業に支持されているのが「CircleCI(サークルシーアイ)」だ。同製品の持つ強みを開発・提供元であるCircleCI社のキーパーソンに聞いた。`,
+    imgSrc: 'https://thinkit.co.jp/sites/default/files/main_images/f_devops_guide2022_cover_1.jpg',
+    href: 'https://thinkit.co.jp/article/19685',
+  },
+  {
+    title:
       '最新のコンテナアプリケーション開発環境でパフォーマンス向上とコスト削減を両立する ~AWS Graviton に対応した CircleCI の CI/CDプラットフォームとは - builders.flash☆ - 変化を求めるデベロッパーを応援するウェブマガジン | AWS',
     description: `AWS が変化を求めるデベロッパーの皆様を応援するウェブマガジン。毎月更新する記事で新たなスキルや他のデベロッパーが抱える課題と解決方法に迫るインタビューをご覧いただけます。`,
     imgSrc:
