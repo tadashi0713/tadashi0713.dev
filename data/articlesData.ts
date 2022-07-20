@@ -2,7 +2,7 @@ const articlesData = [
   {
     title: 'iOSの自動テスト(iOSシミュレーターを使ったUIテスト)を分割・並列実行しよう',
     description: `この記事では、iOSの自動テスト(iOSシミュレーターを使ったUIテスト)を分割・並列実行することによって、実行時間を短縮する方法について紹介します`,
-    imgSrc: '	https://circleci.com/ja/blog/media/ios-parallel-testing-hero.png',
+    imgSrc: 'https://circleci.com/ja/blog/media/ios-parallel-testing-hero.png',
     href: 'https://circleci.com/ja/blog/ios-parallel-testing/',
   },
   {
