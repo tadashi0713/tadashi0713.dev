@@ -1,5 +1,11 @@
 const articlesData = [
   {
+    title: 'iOSの自動テスト(iOSシミュレーターを使ったUIテスト)を分割・並列実行しよう',
+    description: `この記事では、iOSの自動テスト(iOSシミュレーターを使ったUIテスト)を分割・並列実行することによって、実行時間を短縮する方法について紹介します`,
+    imgSrc: '	https://circleci.com/ja/blog/media/ios-parallel-testing-hero.png',
+    href: 'https://circleci.com/ja/blog/ios-parallel-testing/',
+  },
+  {
     title:
       'CI/CDの現場への定着も手厚くサポート─圧倒的なスピードのDevOpsを実現する「CircleCI」のインパクト',
     description: `開発と運用を一体化させたDevOpsの手法によってソフトウェアのリリースと改善のスピードを高めるうえでは、CI(継続的インテグレーション)/CD(継続的デリバリー)のためのツールとして何を選ぶかが重要なポイントとなる。そのCI/CDツールとして、デジタル時代をリードする新興のテクノロジー企業から製造系・金融系の大手企業に至るまで、幅広い層の企業に支持されているのが「CircleCI(サークルシーアイ)」だ。同製品の持つ強みを開発・提供元であるCircleCI社のキーパーソンに聞いた。`,

@@ -1,7 +1,6 @@
 const talksData = [
   {
-    title:
-      '最新のコンテナアプリケーション開発環境でパフォーマンス向上とコスト削減を両立する～AWS Fargate 編～',
+    title: 'AWS Graviton 環境への CI/CD パイプラインを CircleCI で実現しよう(AWS Fargate 編)',
     description:
       'AWS Graviton プロセッサを採用した AWS Fargate を使用し、どのようにコンテナアプリケーション開発の CI/CD パイプラインを構築できるのか、AWS Graviton に対応した CircleCI の CI/CDツールを使用し、デモを交えて具体的にご説明いたします。',
     imgSrc:
