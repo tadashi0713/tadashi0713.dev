@@ -1,5 +1,6 @@
 {
   "extends": ["config:base"],
+  "ignoreDeps": ["next", "@next/bundle-analyzer", "eslint-config-next"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
