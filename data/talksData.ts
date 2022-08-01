@@ -1,5 +1,13 @@
 const talksData = [
   {
+    title: 'CircleCI Webinar: CircleCIを使いこなそう〜応用編〜',
+    description:
+      'このウェビナーでは既に CircleCI をお使いの方に、CircleCI が近年リリースした機能を中心に応用的な使い方をご紹介します。',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1659319510/tadashi0713.dev/circleci_advanced_webinar.jpg',
+    href: 'https://www.youtube.com/watch?v=7r5ITZiCc9w',
+  },
+  {
     title: 'AWS Graviton 環境への CI/CD パイプラインを CircleCI で実現しよう(AWS Fargate 編)',
     description:
       'AWS Graviton プロセッサを採用した AWS Fargate を使用し、どのようにコンテナアプリケーション開発の CI/CD パイプラインを構築できるのか、AWS Graviton に対応した CircleCI の CI/CDツールを使用し、デモを交えて具体的にご説明いたします。',
