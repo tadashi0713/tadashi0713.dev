@@ -28,6 +28,13 @@ const projectsData = [
     href: 'https://github.com/CircleCI-Public/flutter-orb',
   },
   {
+    title: 'GitHub - tadashi0713/flaky-tests-notify-orb',
+    description: `You can notify(slack) flaky tests of your project, so that you can find and fix them quickly.`,
+    imgSrc:
+      'https://opengraph.githubassets.com/ebfea3020aa96d3d899ec673bddfd0d3be011180fa0bcdda4f7d338d6e317a8f/tadashi0713/flaky-tests-notify-orb',
+    href: 'https://github.com/tadashi0713/flaky-tests-notify-orb',
+  },
+  {
     title: 'GitHub - tadashi0713/circleci_flutter_demo',
     description: `Demo for CI/CD pipeline for Flutter app using CircleCI.`,
     imgSrc:
