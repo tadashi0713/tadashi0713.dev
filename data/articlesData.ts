@@ -112,7 +112,7 @@ const articlesData = [
       'ポーランドで行われた海外カンファレンス「Agile & Automation Days 2019」に登壇しました！ | メルカリエンジニアリング',
     description: `メルカリで QA Automation Engineer をしている 根本 征 です。先日 10/28~29 にポーランド・グダニスクで行われた海外カンファレンス「Agile & Automation Days 2019」にスピーカーとして`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2019/11/645d2d40-20191104165330.jpg',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311983/tadashi0713.dev/645d2d40-20191104165330.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2019-11-12-060000',
   },
   {
@@ -120,7 +120,7 @@ const articlesData = [
       'Speeding up Windows 10 / Microsoft Edge browser testing (Selenium WebDriver) using Azure DevTest Labs | Mercari Engineering',
     description: `Note: This is a translation from the Japanese article.tech.mercari.comHello. I'm Tadashi, QA Automation Engineer f`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2019/08/43f3b174-20190816141725.jpg',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661312011/tadashi0713.dev/43f3b174-20190816141725.jpg',
     href: 'https://engineering.mercari.com/en/blog/entry/2019-09-09-113455',
   },
   {
@@ -128,21 +128,23 @@ const articlesData = [
       'Windows10 / Microsoft Edge での自動テスト(Selenium WebDriver)を Azure DevTest Labs 上で実行して高速化したお話 | メルカリエンジニアリング',
     description: `この記事は、Mercari Bold Challenge Month の 2日目の記事です。メルカリで QA Automation Engineer をしている 根本 征 です。私は現在、メルカリWeb版のUIテスト自動化に取り組んでいます`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2019/08/43f3b174-20190816141725.jpg',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661312011/tadashi0713.dev/43f3b174-20190816141725.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2019-08-27-080000',
   },
   {
     title:
       '安定・スケールするAppiumテストを実現するための、最先端のモバイルテスト環境と戦略とは【Appium Conf 2019】',
     description: `6月14日から15日にかけて、インド・バンガロールでAppium Conf 2019が開催されました。300人を超える自動化エンジニア、QAエンジニアが集い、Appiumを活用した自動テストを中心に30以上ものセッションが行われました。今回は主にAppiumをはじめとしたモバイルテストを実行させるテスト環境についてのセッションをまとめて紹介します。`,
-    imgSrc: 'https://codezine.jp/static/images/article/11609/11609_02a.jpg',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661312046/tadashi0713.dev/11609_02a.jpg',
     href: 'https://codezine.jp/article/detail/11609',
   },
   {
     title:
       'Appiumを使った、自律的にアプリの情報を収集しバグを探し出すクローラーとは【Appium Conf 2019】 (1/2)：CodeZine（コードジン）',
     description: `6月14日から15日にかけて、インド・バンガロールでAppium Conf 2019が開催されました。300人を超える自動化エンジニア、QAエンジニアが集い、Appiumを活用した自動テストを中心に30以上ものセッションが行われました。この記事では、Justin Iron氏によるセッション「Appium Native App Crawler」をもとに、機能テストの自動化だけにとどまらないAppiumの可能性について紹介します。`,
-    imgSrc: 'https://codezine.jp/static/images/article/11600/11600_01a.jpg',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661312081/tadashi0713.dev/11600_01a.jpg',
     href: 'https://codezine.jp/article/detail/11600',
   },
   {
@@ -150,14 +152,14 @@ const articlesData = [
       'メルカリWeb版のUIテスト自動化で目指している世界と、そのために作った Selenium Grid・Zalenium 環境 on Azure Kubernetes Service(AKS) | メルカリエンジニアリング',
     description: `メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）の 根本 征 です。私は普段、テスト自動化・CI / CD 改善・その他社内の生産性を上げるための自動化を行っています。今回は、最近私たちが行なって`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2019/04/fef2e94c-20190411161526.png',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661312119/tadashi0713.dev/fef2e94c-20190411161526.png',
     href: 'https://engineering.mercari.com/blog/entry/2019-04-16-060000/',
   },
   {
     title: 'How HeadSpin will change mobile testing and monitoring? | Mercari Engineering',
     description: `This is a translation of the original Japanese article.tech.mercari.comHello. I’m Tadashi, an Automation Engineer`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2019/02/67d10e5e-20190212132627.jpg',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661312150/tadashi0713.dev/67d10e5e-20190212132627.jpg',
     href: 'https://engineering.mercari.com/en/blog/entry/2019-02-18-173236',
   },
   {
@@ -165,7 +167,7 @@ const articlesData = [
       'HeadSpinでモバイルアプリのテスト・モニタリングはどう変わるか | メルカリエンジニアリング',
     description: `メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）の 根本 征 です。私は普段、テスト自動化・CI / CD 改善・その他社内の生産性を上げるための自動化を行っています。今回は社内で HeadSpi`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2019/02/67d10e5e-20190212132627.jpg',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661312150/tadashi0713.dev/67d10e5e-20190212132627.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2019-02-14-105750',
   },
   {
@@ -173,7 +175,7 @@ const articlesData = [
       'Super fast and parallelized Android UITest(Appium) environment using AWS, Docker and Android emulator | Mercari Engineering',
     description: `Note: This is a translation from the Japanese article.tech.mercari.comHello. I’m Tadashi, an Automation Engineer f`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2018/12/728a44e1-20181129162340.jpg',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661312188/tadashi0713.dev/728a44e1-20181129162340.jpg',
     href: 'https://engineering.mercari.com/en/blog/entry/2018-12-28-175147',
   },
   {
@@ -181,7 +183,7 @@ const articlesData = [
       'Docker × Android エミュレータで、自動テスト(Appium)を並列化・爆速にする環境を作ったお話 | メルカリエンジニアリング',
     description: `これは Mercari Advent Calendar 2018 10日目の記事です。こんにちは、メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA) の 根本 征 です。私は普段、テスト自動化・CI`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2018/12/728a44e1-20181129162340.jpg',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661312188/tadashi0713.dev/728a44e1-20181129162340.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2018-12-10-060000',
   },
   {
@@ -189,27 +191,29 @@ const articlesData = [
       'お待たせしました、Mercari Tech Conf 2018 アプリの裏側をお見せします！#mtc18 | メルカリエンジニアリング',
     description: `こんにちは。MTCアプリチームです。この記事では2018/10/04に行われたMercari Tech Conference (MTC)向けに作ったカンファレンスアプリについて書きます。以前公開したWebの裏側 に引き続きアプリの裏側を紹介`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2018/11/c27e021b-20181126164914.jpg',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661312479/tadashi0713.dev/c27e021b-20181126164914.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2018-11-27-141042',
   },
   {
     title:
       'AI、サーバーレス、Dockerなど、Seleniumテストを安定化・スケールさせるためのヒントとは？【SeleniumConf Chicago】 (1/2)：CodeZine（コードジン）',
     description: `10月18日から19日にかけて、アメリカ・シカゴでSeleniumConf Chicagoが開催されました。600人を超える開発者が集い、Selenium／Appiumを活用した自動テストについて20以上のセッションが行われました。この記事では、私が聴講したセッションを基に、Seleniumなどの自動テストを安定化・スケールさせるためにどのようなアプローチができるのかをご紹介します。`,
-    imgSrc: 'https://codezine.jp/static/images/article/11199/11199_01.jpg',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661312516/tadashi0713.dev/11199_01.jpg',
     href: 'https://codezine.jp/article/detail/11199',
   },
   {
     title: 'kintone＋Zapierで社員自ら作業を省力化するメルカリ',
     description: `kintoneによる業務の省力化・自動化を進めるメルカリ。Zapierを用いることで、kintoneとSlackを連携させた事例を見ていく`,
-    imgSrc: 'https://ascii.jp/img/2017/02/16/571525/l/7b6a3ab3d400a661.jpg?20200122',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661314094/tadashi0713.dev/4015feaa2b75a4d1.jpg',
     href: 'https://ascii.jp/elem/000/001/759/1759729',
   },
   {
     title: 'メルカリiOSのUIテスト自動化をまるっとご紹介します！ | メルカリエンジニアリング',
     description: `こんにちは、メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）の 根本 征 です。私は普段、テスト自動化・CI / CD改善・その他社内の生産性を上げるための自動化を行っています。今回はiOSのUI`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2018/08/64bac66c-20180717180233.png',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661314147/tadashi0713.dev/64bac66c-20180717180233.png',
     href: 'https://engineering.mercari.com/blog/entry/2018-08-07-123000',
   },
   {
@@ -217,7 +221,7 @@ const articlesData = [
       '「ノンプログラマーでも、自動化はできる」Zapier Automation Meetup Tokyo #0 を開催しました | メルカリエンジニアリング',
     description: `こんにちは、メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）の 根本 征 です。私は普段、テスト自動化・CI / CD改善・その他社内の生産性を上げるための自動化を行っています。今回は、7/10に`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2018/07/555b6645-20180712192331.png',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661314184/tadashi0713.dev/555b6645-20180712192331.png',
     href: 'https://engineering.mercari.com/blog/entry/2018-07-13-150000',
   },
   {
@@ -225,14 +229,15 @@ const articlesData = [
       'AndroidのCI時間を10分短縮し、開発を爆速にするためのKarakuriを作った話 | メルカリエンジニアリング',
     description: `こんにちは、メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）で、自動化をぶりぶりしている tadashi0713 です。私は普段、テスト自動化・CI(継続的インテグレーション) / CD(継続的デ`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2018/07/849efda6-20180629154905.png',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661314228/tadashi0713.dev/849efda6-20180629154905.png',
     href: 'https://engineering.mercari.com/blog/entry/2018-07-04-110000',
   },
   {
     title:
       'ノンプログラマーが半年で400以上の業務を自動化！メルカリが作る「Karakuri」とは | SELECK [セレック]',
     description: `〜ノンプログラマーでも、ルーティン業務を「自動化」できる！社員の3人に1人が「Zapier」を活用し、全社で4…`,
-    imgSrc: 'https://dpd29bjwmgbr8.cloudfront.net/wp-content/uploads/2018/06/25171946/2260.jpg',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661314279/tadashi0713.dev/2260.jpg',
     href: 'https://seleck.cc/1230',
   },
   {
@@ -240,7 +245,7 @@ const articlesData = [
       '社内の面倒な手作業はZapierにやらせよう #2 〜Webhookを使って、自動化の幅を広げる〜 | メルカリエンジニアリング',
     description: `こんにちは、メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）で、自動化をぶりぶりしている tadashi0713 です。私は普段、テスト自動化・CI / CD改善・その他社内の生産性を上げるための`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2018/06/cf47bf7b-20180218185222.png',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661314335/tadashi0713.dev/cf47bf7b-20180218185222.png',
     href: 'https://engineering.mercari.com/blog/entry/2018-06-12-110000',
   },
   {
@@ -248,7 +253,7 @@ const articlesData = [
       '社内の面倒な手作業はZapierにやらせようーーノンプログラマーでも業務自動化ができるツールを導入してみて | メルカリエンジニアリング',
     description: `これは Mercari Advent Calendar 2017 22日目の記事です。こんにちは、メルカリのQA-SETチームで自動化をぶりぶりしている tadashi0713 です。前回は業務自動化の1つとして、Seleniumを使ったブ`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2017/12/b854104c-20171221142658.png',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661314398/tadashi0713.dev/b854104c-20171221142658.png',
     href: 'https://engineering.mercari.com/blog/entry/2017-12-22-110934',
   },
   {
@@ -256,7 +261,7 @@ const articlesData = [
       '退屈なブラウザ作業はSeleniumにやらせようーーはじめてでもできるブラウザ操作自動化 | メルカリエンジニアリング',
     description: `こんにちは、メルカリのQA-SETチームで自動化をぶりぶりしている tadashi0713 です。これまではモバイルアプリ・WebアプリのE2Eテストを中心に自動化をしていましたが、最近ではプロダクト部門・カスタマーサポート部門・コーポレー`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2017/10/ea1ea6bb-20171026161553.png',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661314439/tadashi0713.dev/ea1ea6bb-20171026161553.png',
     href: 'https://engineering.mercari.com/blog/entry/2017-10-31-122018',
   },
   {
@@ -264,7 +269,7 @@ const articlesData = [
       'Appiumの新しいGUIツール、appium-desktopがよくなってきてるぞう | メルカリエンジニアリング',
     description: `こんにちは！ メルカリのテストエンジニアとして、モバイルアプリのテストをぶりぶり自動化している@tadashi0713です。メルカリでは、モバイルアプリのテスト自動化のために、一部、Appiumを使用しています。今回は、現在ベータ版で公開さ`,
     imgSrc:
-      'https://storage.googleapis.com/prd-engineering-asset/2017/04/668bb72e-20170405102425.png',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661314486/tadashi0713.dev/668bb72e-20170405102425.png',
     href: 'https://engineering.mercari.com/blog/entry/2017-04-07-110955',
   },
 ]
