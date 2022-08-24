@@ -6,10 +6,7 @@ draft: false
 summary: Example of a markdown file with code blocks and syntax highlighting
 ---
 
-<Image
-  alt="ocean"
-  src="https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png.png"
-/>
+![Flaky Tests Notify Orb](https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png)
 
 # How to see flaky tests in Test Insights Dashboard
 
