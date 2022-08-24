@@ -11,7 +11,6 @@ module.exports = withPlaiceholder({
   swcMinify: true,
   images: {
     domains: [
-      'repository-images.githubusercontent.com',
       'opengraph.githubassets.com',
       'circleci.com',
       'd2908q01vomqb2.cloudfront.net',
