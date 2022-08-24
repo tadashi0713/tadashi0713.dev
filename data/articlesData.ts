@@ -2,14 +2,16 @@ const articlesData = [
   {
     title: 'iOSの自動テスト(iOSシミュレーターを使ったUIテスト)を分割・並列実行しよう',
     description: `この記事では、iOSの自動テスト(iOSシミュレーターを使ったUIテスト)を分割・並列実行することによって、実行時間を短縮する方法について紹介します`,
-    imgSrc: 'https://circleci.com/ja/blog/media/ios-parallel-testing-hero.png',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311492/tadashi0713.dev/ios-parallel-testing-hero.png',
     href: 'https://circleci.com/ja/blog/ios-parallel-testing/',
   },
   {
     title:
       'CI/CDの現場への定着も手厚くサポート─圧倒的なスピードのDevOpsを実現する「CircleCI」のインパクト',
     description: `開発と運用を一体化させたDevOpsの手法によってソフトウェアのリリースと改善のスピードを高めるうえでは、CI(継続的インテグレーション)/CD(継続的デリバリー)のためのツールとして何を選ぶかが重要なポイントとなる。そのCI/CDツールとして、デジタル時代をリードする新興のテクノロジー企業から製造系・金融系の大手企業に至るまで、幅広い層の企業に支持されているのが「CircleCI(サークルシーアイ)」だ。同製品の持つ強みを開発・提供元であるCircleCI社のキーパーソンに聞いた。`,
-    imgSrc: 'https://thinkit.co.jp/sites/default/files/main_images/f_devops_guide2022_cover_1.jpg',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311538/tadashi0713.dev/f_devops_guide2022_cover_1.jpg',
     href: 'https://thinkit.co.jp/article/19685',
   },
   {
@@ -17,26 +19,29 @@ const articlesData = [
       '最新のコンテナアプリケーション開発環境でパフォーマンス向上とコスト削減を両立する ~AWS Graviton に対応した CircleCI の CI/CDプラットフォームとは - builders.flash☆ - 変化を求めるデベロッパーを応援するウェブマガジン | AWS',
     description: `AWS が変化を求めるデベロッパーの皆様を応援するウェブマガジン。毎月更新する記事で新たなスキルや他のデベロッパーが抱える課題と解決方法に迫るインタビューをご覧いただけます。`,
     imgSrc:
-      'https://d1.awsstatic.com/Developer%20Marketing/jp/magazine/2022/thumb_circle-ci-ci-cd.b3047dfb9ccf0376632f0865e67ea0fa726e0814.jpg',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311596/tadashi0713.dev/thumb_circle-ci-ci-cd.b3047dfb9ccf0376632f0865e67ea0fa726e0814.jpg',
     href: 'https://aws.amazon.com/jp/builders-flash/202206/circle-ci-ci-cd',
   },
   {
     title: 'GitOps とは? ArgoCD による、Kubernetes への継続的デリバリーを実現しよう',
     description: `この記事では、GitOps とは何か、そして実際に GitOps(ArgoCD) を使った Kubernetes への継続的デリバリーの実現方法について紹介します。`,
-    imgSrc: 'https://circleci.com/ja/blog/media/gitops-argocd-hero.png',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311625/tadashi0713.dev/gitops-argocd-hero.png',
     href: 'https://circleci.com/ja/blog/gitops-argocd/',
   },
   {
     title:
       'React Native(リアクトネイティブ) アプリの CI/CD パイプラインを、CircleCI Orb で効率化しよう',
     description: `この記事では、React Native(リアクトネイティブ) アプリの CI/CD パイプラインを CircleCI Orb を活用して効率化する方法について紹介します。`,
-    imgSrc: 'https://circleci.com/ja/blog/media/react-native-hero-2021.png',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661307737/tadashi0713.dev/react-native-hero-2021.png',
     href: 'https://circleci.com/ja/blog/react-native-cicd/',
   },
   {
     title: 'Flutter (フラッター) アプリの CI / CD パイプラインを構築しよう',
     description: `このブログ記事では、CircleCI を使って Flutter (フラッター) アプリの CI / CD パイプラインを構築していく方法について紹介していきます。`,
-    imgSrc: 'https://circleci.com/ja/blog/media/flutter-app-cicd-pipeline.png',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311682/tadashi0713.dev/flutter-app-cicd-pipeline.png',
     href: 'https://circleci.com/ja/blog/flutter-cicd/',
   },
   {

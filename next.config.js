@@ -12,7 +12,6 @@ module.exports = withPlaiceholder({
   images: {
     domains: [
       'opengraph.githubassets.com',
-      'circleci.com',
       'd2908q01vomqb2.cloudfront.net',
       'cdn-ak.f.st-hatena.com',
       'storage.googleapis.com',
@@ -21,7 +20,6 @@ module.exports = withPlaiceholder({
       'dpd29bjwmgbr8.cloudfront.net',
       'assets.st-note.com',
       'res.cloudinary.com',
-      'thinkit.co.jp',
     ],
   },
   reactStrictMode: true,
