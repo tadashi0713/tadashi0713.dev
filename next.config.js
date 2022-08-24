@@ -10,22 +10,7 @@ module.exports = withPlaiceholder({
   // Next.js 12
   swcMinify: true,
   images: {
-    domains: [
-      'files.speakerdeck.com',
-      'repository-images.githubusercontent.com',
-      'opengraph.githubassets.com',
-      'circleci.com',
-      'd2908q01vomqb2.cloudfront.net',
-      'cdn-ak.f.st-hatena.com',
-      'storage.googleapis.com',
-      'codezine.jp',
-      'ascii.jp',
-      'dpd29bjwmgbr8.cloudfront.net',
-      'assets.st-note.com',
-      'd1.awsstatic.com',
-      'res.cloudinary.com',
-      'thinkit.co.jp',
-    ],
+    domains: ['opengraph.githubassets.com', 'res.cloudinary.com'],
   },
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
