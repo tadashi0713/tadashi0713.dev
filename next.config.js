@@ -11,7 +11,6 @@ module.exports = withPlaiceholder({
   swcMinify: true,
   images: {
     domains: [
-      'files.speakerdeck.com',
       'repository-images.githubusercontent.com',
       'opengraph.githubassets.com',
       'circleci.com',
@@ -22,7 +21,6 @@ module.exports = withPlaiceholder({
       'ascii.jp',
       'dpd29bjwmgbr8.cloudfront.net',
       'assets.st-note.com',
-      'd1.awsstatic.com',
       'res.cloudinary.com',
       'thinkit.co.jp',
     ],
