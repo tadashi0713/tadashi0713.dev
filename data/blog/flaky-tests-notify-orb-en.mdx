@@ -1,6 +1,6 @@
 ---
 title: Setting up slack notification of detecting flaky tests using CircleCI(Orb)
-date: '2016-03-08'
+date: '2022-08-29'
 tags: ['circleci', 'orb', 'test']
 draft: false
 summary: This blog describes how to set up slack notification of detecting flaky tests using CircleCI(Orb)
@@ -18,7 +18,9 @@ This blog describes how to set up slack notification of detecting flaky tests us
 
 ## How to see flaky tests in Test Insights Dashboard
 
-In 2021, CircleCI released
+In 2021, CircleCI released Test Insights Dashboard.
+
+You can see flaky tests in Test Insights Dashboard so that your team can improve development performance by finding and fixing them quickly.
 
 ![Flaky Tests](https://res.cloudinary.com/tadashi0713/image/upload/v1661742775/tadashi0713.dev/flaky_tests.png)
 
@@ -81,10 +83,24 @@ workflows:
 
 This `notify_flaky_tests` workflow does not trigger until `notify_flaky_tests` parameter is passed.
 
-We will pass this using Scheduled Pipeline.
+We will pass this parameter using Scheduled Pipeline.
 
 ## 3) Set up Scheduled Pipeline
 
-To run this job regularly and
+To run this job regularly and notify flaky tests via Slack, we will use Scheduled Pipelines.
 
-I added the parameter `notify_flaky_tests` so that this scheduled pipeline only triggers the `notify_flaky_tests` job.
+- [Getting started with scheduled pipelines | CircleCI](https://circleci.com/blog/using-scheduled-pipelines)
+
+- [Scheduled Pipelines - CircleCI](https://circleci.com/docs/scheduled-pipelines)
+
+I added the parameter `notify_flaky_tests` so that this scheduled pipeline can trigger the `notify_flaky_tests` job.
+
+![Scheduled Pipelines Parameter](https://res.cloudinary.com/tadashi0713/image/upload/v1661765205/tadashi0713.dev/scheduled_pipelines_parameter.png)
+
+If you configured Scheduled Pipelines correctly, CircleCI will trigger pipelines based on its settings.
+
+![Scheduled Pipelines](https://res.cloudinary.com/tadashi0713/image/upload/v1661765225/tadashi0713.dev/scheduled_pipelines_workflow.png)
+
+If there are flaky tests, you will see a slack notification as below.
+
+![Flaky Tests Notify Orb](https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png)
