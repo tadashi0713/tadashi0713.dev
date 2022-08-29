@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: 'Setting up slack notification of detecting flaky tests using CircleCI(Orb)',
+    description: `This blog describes how to set up slack notification of detecting flaky tests using CircleCI(Orb)`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png',
+    href: '/blog/flaky-tests-notify-orb-en',
+  },
+  {
     title: 'iOSの自動テスト(iOSシミュレーターを使ったUIテスト)を分割・並列実行しよう',
     description: `この記事では、iOSの自動テスト(iOSシミュレーターを使ったUIテスト)を分割・並列実行することによって、実行時間を短縮する方法について紹介します`,
     imgSrc:
