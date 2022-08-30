@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: 'CircleCI Orb を使って不安定なテスト(Flaky Tests)を Slack 通知する方法',
+    description: `この記事では、CircleCI Orb を使って不安定なテスト(Flaky Tests)を Slack 通知する方法について紹介します。`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png',
+    href: '/blog/flaky-tests-notify-orb-ja',
+  },
+  {
     title: 'Setting up slack notification of detecting flaky tests using CircleCI(Orb)',
     description: `This blog describes how to set up slack notification of detecting flaky tests using CircleCI(Orb)`,
     imgSrc:
