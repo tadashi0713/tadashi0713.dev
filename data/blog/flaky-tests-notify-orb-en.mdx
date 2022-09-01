@@ -74,6 +74,11 @@ version: '2.1'
 orbs:
   flaky-tests-notify: tadashi/flaky-tests-notify@1.0.0
 
+parameters:
+  notify_flaky_tests:
+    type: boolean
+    default: false
+
 workflows:
   notify_flaky_tests:
     jobs:
@@ -81,7 +86,7 @@ workflows:
     when: << pipeline.parameters.notify_flaky_tests >>
 ```
 
-This `notify_flaky_tests` workflow does not trigger until `notify_flaky_tests` parameter is passed.
+This `notify_flaky_tests` workflow does not trigger until `notify_flaky_tests` parameter(true) is passed.
 
 We will pass this parameter using Scheduled Pipeline.
 
