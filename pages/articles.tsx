@@ -6,7 +6,7 @@ import ArticlesListLayout from '@/layouts/ArticlesListLayout'
 import { getBlurConvertedOgps } from '@/lib/ogp'
 import { Ogp } from 'types/Ogp'
 
-export const ARTICLES_PER_PAGE = 12
+export const ARTICLES_PER_PAGE = 15
 
 export const getStaticProps: GetStaticProps<{
   articles: Ogp[]
