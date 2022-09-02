@@ -14,7 +14,7 @@
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "3.0.78",
     "@plaiceholder/next": "2.5.0",
-    "@tailwindcss/forms": "0.5.2",
+    "@tailwindcss/forms": "0.5.3",
     "@tailwindcss/typography": "0.5.6",
     "autoprefixer": "10.4.8",
     "esbuild": "0.14.54",
