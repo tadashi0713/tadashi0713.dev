@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 export default function Contact() {
   return (
-    <div>
+    <div className="flex flex-col items-start justify-start md:justify-center md:items-center md:flex-row md:space-x-6 md:mt-24">
       <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js" defer></script>
       <iframe
         className="airtable-embed airtable-dynamic-height"
