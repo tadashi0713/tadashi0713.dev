@@ -7,7 +7,6 @@ export default function Contact() {
         className="airtable-embed airtable-dynamic-height"
         src="https://airtable.com/embed/shrJ0A9ke1QkJZ2wt?backgroundColor=blue"
         frameBorder="0"
-        onmousewheel=""
         width="100%"
         height="1207"
         // style="background: transparent; border: 1px solid #ccc;"
