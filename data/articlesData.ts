@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: 'Speed up XCUITest execution with parallelism and test splitting',
+    description: `Learn how to accelerate XCUITest test runs using parallelism and test splitting.`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1664174857/tadashi0713.dev/Tutorial-Intermediate-RP.jpg',
+    href: 'https://circleci.com/blog/xcuitest-parallel-execution',
+  },
+  {
     title: 'CircleCI Orb を使って不安定なテスト(Flaky Tests)を Slack 通知する方法',
     description: `この記事では、CircleCI Orb を使って不安定なテスト(Flaky Tests)を Slack 通知する方法について紹介します。`,
     imgSrc:
