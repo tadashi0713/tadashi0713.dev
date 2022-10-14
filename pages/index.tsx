@@ -11,7 +11,7 @@ import { Ogp } from 'types/Ogp'
 import { getBlurConvertedOgps } from '@/lib/ogp'
 
 const MAX_DISPLAY_ARTICLES = 9
-const MAX_DISPLAY_TALKS = 3
+const MAX_DISPLAY_TALKS = 6
 const MAX_DISPLAY_PROJECTS = 6
 
 export const getStaticProps: GetStaticProps<{
