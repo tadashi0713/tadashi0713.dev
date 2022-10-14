@@ -1,5 +1,13 @@
 const talksData = [
   {
+    title:
+      'Speed matters: Advanced CI/CD techniques to improve development velocity, quality & security',
+    description: 'Cloud Expo Asia 2022, Singapore',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1665745656/tadashi0713.dev/slide_0.jpg',
+    href: 'https://speakerdeck.com/tadashi0713/cd-techniques-to-improve-development-velocity-quality-and-security',
+  },
+  {
     title: 'CircleCI Webinar: CircleCIを使いこなそう〜応用編〜',
     description:
       'このウェビナーでは既に CircleCI をお使いの方に、CircleCI が近年リリースした機能を中心に応用的な使い方をご紹介します。',
