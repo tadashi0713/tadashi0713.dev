@@ -18,7 +18,7 @@
     "@tailwindcss/typography": "0.5.7",
     "autoprefixer": "10.4.12",
     "esbuild": "0.14.54",
-    "github-slugger": "1.4.0",
+    "github-slugger": "1.5.0",
     "gray-matter": "4.0.3",
     "image-size": "1.0.2",
     "mdx-bundler": "9.0.1",
