@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: 'Unity を使ったモバイルゲーム CI/CD 環境をクラウドネイティブ化しよう(GameCI)',
+    description: `この記事では、GameCI と CircleCI を利用して、Unity を使ったモバイルゲーム CI/CD 環境をクラウドネイティブ化する方法について紹介します。`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1667536372/tadashi0713.dev/unity-mobile-cicd-hero.png',
+    href: 'https://circleci.com/ja/blog/unity-mobile-cicd',
+  },
+  {
     title: 'Speed up XCUITest execution with parallelism and test splitting',
     description: `Learn how to accelerate XCUITest test runs using parallelism and test splitting.`,
     imgSrc:
