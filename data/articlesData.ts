@@ -4,7 +4,7 @@ const articlesData = [
     description: `この記事では、Androidエミュレーターを使ったUIテスト(Espresso)を分割・並列実行することによって、実行時間を短縮する方法について紹介します。`,
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1671603912/tadashi0713.dev/android-parallel-testing-hero.png',
-    href: 'https://circleci.com/ja/blog/unity-mobile-cicd',
+    href: 'https://circleci.com/ja/blog/android-parallel-testing',
   },
   {
     title: 'Unity を使ったモバイルゲーム CI/CD 環境をクラウドネイティブ化しよう(GameCI)',
