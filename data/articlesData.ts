@@ -58,6 +58,13 @@ const articlesData = [
     href: 'https://aws.amazon.com/jp/builders-flash/202206/circle-ci-ci-cd',
   },
   {
+    title: '【社員インタビュー vol.7】Solutions Engineerロードマップ (JPN & ENG) | CircleCI Japan',
+    description: `お世話になっております。人事採用担当の江藤愛です。現在様々な企業がDX化を進めている中で、多くの企業がDevOpsに取り組むようになって参りました。IT企業のみならず製造業界、金融業界、EC、小...`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1672981398/tadashi0713.dev/490f5d0e-8250-4712-b2f9-c9ee663bbae9.jpg',
+    href: 'https://www.wantedly.com/companies/circleci/post_articles/379626',
+  },
+  {
     title: 'GitOps とは? ArgoCD による、Kubernetes への継続的デリバリーを実現しよう',
     description: `この記事では、GitOps とは何か、そして実際に GitOps(ArgoCD) を使った Kubernetes への継続的デリバリーの実現方法について紹介します。`,
     imgSrc:
