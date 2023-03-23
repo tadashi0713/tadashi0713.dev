@@ -1,5 +1,19 @@
 const articlesData = [
   {
+    title: 'CircleCI M1 Mac performance comparison',
+    description: `This article presents a performance comparison of the M1 Mac resource class released by CircleCI.`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1679468120/tadashi0713.dev/circleci-m1-comparison.jpg',
+    href: '/blog/circleci-m1-comparison-en',
+  },
+  {
+    title: 'CircleCI M1 Mac パフォーマンス比較',
+    description: `この記事では、CircleCI でリリースされた M1 Mac リソースクラスのパフォーマンス比較を紹介します。`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1679468120/tadashi0713.dev/circleci-m1-comparison.jpg',
+    href: '/blog/circleci-m1-comparison-ja',
+  },
+  {
     title: 'Androidエミュレーターを使ったUIテスト(Espresso)を分割・並列実行しよう',
     description: `この記事では、Androidエミュレーターを使ったUIテスト(Espresso)を分割・並列実行することによって、実行時間を短縮する方法について紹介します。`,
     imgSrc:
