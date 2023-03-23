@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: 'CircleCI M1 Mac performance comparison',
+    description: `This article presents a performance comparison of the M1 Mac resource class released by CircleCI.`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1679468120/tadashi0713.dev/circleci-m1-comparison.jpg',
+    href: '/blog/circleci-m1-comparison-en',
+  },
+  {
     title: 'CircleCI M1 Mac パフォーマンス比較',
     description: `この記事では、CircleCI でリリースされた M1 Mac リソースクラスのパフォーマンス比較を紹介します。`,
     imgSrc:
