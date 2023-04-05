@@ -26,7 +26,7 @@
     "next-themes": "0.2.1",
     "plaiceholder": "2.5.0",
     "postcss": "8.4.21",
-    "preact": "10.13.1",
+    "preact": "10.13.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-lines-ellipsis": "0.15.3",
@@ -38,21 +38,21 @@
     "remark-footnotes": "4.0.1",
     "remark-gfm": "3.0.1",
     "remark-math": "5.1.1",
-    "sharp": "0.31.3",
-    "tailwindcss": "3.2.7",
+    "sharp": "0.32.0",
+    "tailwindcss": "3.3.1",
     "twemoji": "14.0.2",
     "unist-util-visit": "4.1.2"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "12.1.6",
-    "@svgr/webpack": "6.5.1",
-    "@types/react": "18.0.28",
+    "@svgr/webpack": "7.0.0",
+    "@types/react": "18.0.33",
     "@types/tailwindcss": "3.0.11",
-    "@typescript-eslint/eslint-plugin": "5.56.0",
-    "@typescript-eslint/parser": "5.56.0",
+    "@typescript-eslint/eslint-plugin": "5.57.1",
+    "@typescript-eslint/parser": "5.57.1",
     "cross-env": "7.0.3",
     "dedent": "0.7.0",
-    "eslint": "8.36.0",
+    "eslint": "8.37.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-jsx-a11y": "6.7.1",
@@ -63,8 +63,8 @@
     "inquirer": "9.1.5",
     "lint-staged": "13.2.0",
     "next-remote-watch": "2.0.0",
-    "prettier": "2.8.6",
-    "typescript": "5.0.2"
+    "prettier": "2.8.7",
+    "typescript": "5.0.3"
   },
   "lint-staged": {
     "*.+(js|jsx|ts|tsx)": [
