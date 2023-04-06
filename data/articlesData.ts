@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: 'Create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD and Kustomize',
+    description: `This blog describes how to create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD and Kustomize`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311625/tadashi0713.dev/gitops-argocd-hero.png',
+    href: '/blog/gitops-argocd-en',
+  },
+  {
     title: 'CircleCI M1 Mac performance comparison',
     description: `This article presents a performance comparison of the M1 Mac resource class released by CircleCI.`,
     imgSrc:
