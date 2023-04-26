@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: 'セルフホスト版 GitLab と CircleCI クラウドを IP アドレスベースでセキュアに接続する方法',
+    description: `この記事では、CircleCI が提供する IP アドレス範囲機能を利用して、セルフホスト版 GitLab と CircleCI クラウドを IP アドレスベースでセキュアに接続する方法について紹介します。`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1682243393/tadashi0713.dev/gitlab-ip-ranges.jpg',
+    href: '/blog/gitlab-ip-ranges-ja',
+  },
+  {
     title: 'Create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD and Kustomize',
     description: `This blog describes how to create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD and Kustomize`,
     imgSrc:
