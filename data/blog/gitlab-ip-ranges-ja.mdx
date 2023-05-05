@@ -1,0 +1,84 @@
+---
+title: セルフホスト(self-managed)版 GitLab と CircleCI クラウドを IP アドレスベースでセキュアに接続する方法
+date: '2023-05-08'
+tags: ['circleci', 'gitlab', 'japanese']
+draft: false
+summary: この記事では、CircleCI が提供する IP アドレス範囲機能を利用して、セルフホスト(self-managed)版 GitLab と CircleCI クラウドを IP アドレスベースでセキュアに接続する方法について紹介します。
+images:
+  [
+    'https://res.cloudinary.com/tadashi0713/image/upload/v1682243393/tadashi0713.dev/gitlab-ip-ranges.jpg',
+  ]
+---
+
+![セルフホスト(self-managed)版 GitLab と CircleCI クラウドを IP アドレスベースでセキュアに接続する方法](https://res.cloudinary.com/tadashi0713/image/upload/v1682243393/tadashi0713.dev/gitlab-ip-ranges.jpg)
+
+この記事では、CircleCI が提供する IP アドレス範囲機能を利用して、セルフホスト(self-managed)版 GitLab と CircleCI クラウドを IP アドレスベースでセキュアに接続する方法について紹介します。
+
+<TOCInline toc={props.toc} />
+
+# CircleCI クラウドのセルフホスト(self-managed)版 GitLab サポート
+
+CircleCI は
+
+[GitLab との連携 - CircleCI](https://circleci.com/docs/ja/gitlab-integration/)
+
+> self-managed インスタンスはパブリックインターネットからアクセス可能である必要があります。**ファイアウォールの内側に配置している場合は使用できません。**
+
+# CircleCI の IP アドレス範囲機能
+
+[IP アドレスの範囲機能で、より安心できるセキュリティを確保 | CircleCI](https://circleci.com/ja/blog/ip-ranges-better-security/)
+
+今回は
+
+# 事前準備
+
+- セルフホスト(self-managed)版 GitLab
+
+  - 今回は [GitLab Helm Chart](https://docs.gitlab.com/charts/) を利用してインストールしています。
+
+- CircleCI クラウド
+  - IP アドレス範囲機能を利用するため、Performance プランまたは Scale プランである必要があります。
+
+# セルフホスト(self-managed)版 GitLab
+
+# プロジェクトのセットアップ
+
+[GitLab との連携 - CircleCI](https://circleci.com/docs/ja/gitlab-integration/)
+
+# IP アドレス範囲機能を有効にしたパイプラインを作成する
+
+この
+
+```yaml
+jobs:
+  unit_test:
+    circleci_ip_ranges: true
+    docker:
+      - image: cimg/node:18.14.0
+    steps:
+      - checkout
+      - node/install-packages
+      - run: npm run test:ci
+```
+
+# Docker ビルドを利用したい場合
+
+今回は IP アドレス範囲を利用したソリューションになっています。
+
+現在 IP アドレス範囲は Docker Executor のみの対応になっています。
+
+そのため
+
+# macOS を利用したい場合
+
+CircleCI では
+
+こちらは
+
+[](https://circleci.com/docs/ja/ip-ranges/#circleci-macos-cloud)
+
+# 注意点
+
+- IP アドレス範囲機能は現在 Performance
+
+-
