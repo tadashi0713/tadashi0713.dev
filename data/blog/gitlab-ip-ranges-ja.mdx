@@ -22,13 +22,17 @@ CircleCI は
 
 [GitLab との連携 - CircleCI](https://circleci.com/docs/ja/gitlab-integration/)
 
-> self-managed インスタンスはパブリックインターネットからアクセス可能である必要があります。**ファイアウォールの内側に配置している場合は使用できません。**
+> self-managed インスタンスはパブリックインターネットからアクセス可能である必要があります。ファイアウォールの内側に配置している場合は使用できません。
 
 # CircleCI の IP アドレス範囲機能
+
+通常、CircleCI を含めた SaaS 型の CI/CD ツールでは
 
 [IP アドレスの範囲機能で、より安心できるセキュリティを確保 | CircleCI](https://circleci.com/ja/blog/ip-ranges-better-security/)
 
 今回は
+
+![セルフホスト(self-managed)版 GitLab × IP アドレス範囲アーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1683296290/tadashi0713.dev/gitlab-ip-ranges-architecture-ja.png)
 
 # 事前準備
 
@@ -39,7 +43,7 @@ CircleCI は
 - CircleCI クラウド
   - IP アドレス範囲機能を利用するため、Performance プランまたは Scale プランである必要があります。
 
-# セルフホスト(self-managed)版 GitLab
+# セルフホスト(self-managed)版 GitLab で CircleCI の IP アドレスを許可する
 
 # プロジェクトのセットアップ
 
