@@ -18,15 +18,31 @@ images:
 
 # CircleCI クラウドのセルフホスト(self-managed)版 GitLab サポート
 
-CircleCI は
+CircleCI クラウドは現在
 
-[GitLab との連携 - CircleCI](https://circleci.com/docs/ja/gitlab-integration/)
+そしてこの度、セルフホスト(self-managed)版 GitLab
+
+[CircleCI に GitLab が対応 | CircleCI](https://circleci.com/ja/blog/announcing-gitlab-support/)
+
+これによって、セルフホスト(self-managed)版 GitLab を利用している
+
+-
+
+-
+
+以下の制約があります。
 
 > self-managed インスタンスはパブリックインターネットからアクセス可能である必要があります。ファイアウォールの内側に配置している場合は使用できません。
+
+しかし、特に企業でセルフホスト(self-managed)版 GitLab を利用している場合には、やみくもに
+
+今回は、この問題を
 
 # CircleCI の IP アドレス範囲機能
 
 通常、CircleCI を含めた SaaS 型の CI/CD ツールでは
+
+CircleCI が提供する IP アドレス範囲機能を利用することによって、
 
 [IP アドレスの範囲機能で、より安心できるセキュリティを確保 | CircleCI](https://circleci.com/ja/blog/ip-ranges-better-security/)
 
@@ -45,18 +61,47 @@ CircleCI は
 
 # セルフホスト(self-managed)版 GitLab で CircleCI の IP アドレスを許可する
 
+まずは
+
+上記の図のように、
+
+```yaml
+nginx-ingress:
+  controller:
+    service:
+      loadBalancerSourceRanges: [
+        # Core
+        18.214.70.5/32,
+        52.20.166.242/32,
+        18.214.156.84/32,
+        54.236.156.101/32,
+        ...
+
+        # IP Ranges
+        3.228.39.90/32,
+        18.213.67.41/32,
+        34.194.94.201/32,
+        34.194.144.202/32,
+        34.197.6.234/32,
+        ...
+```
+
 # プロジェクトのセットアップ
+
+次に、IP アドレスを許可したセルフホスト(self-managed)版 GitLab と CircleCI を接続した上で、プロジェクトのセットアップを行います。
+
+以下のドキュメントにある「GITLAB SELF-MANAGED」に従ってセットアップを行なってください。
 
 [GitLab との連携 - CircleCI](https://circleci.com/docs/ja/gitlab-integration/)
 
 # IP アドレス範囲機能を有効にしたパイプラインを作成する
 
-この
+プロジェクトのセットアップが完了したら、
 
 ```yaml
 jobs:
   unit_test:
-    circleci_ip_ranges: true
+    circleci_ip_ranges: true # IP アドレス範囲機能を有効
     docker:
       - image: cimg/node:18.14.0
     steps:
@@ -71,7 +116,34 @@ jobs:
 
 現在 IP アドレス範囲は Docker Executor のみの対応になっています。
 
-そのため
+そのため、
+
+[kaniko](https://github.com/GoogleContainerTools/kaniko) を利用することによって Docker ビルド、そして各レポジトリ()
+
+```yaml
+kaniko-build-push-docker-hub:
+  circleci_ip_ranges: true
+  environment:
+    DOCKER_REGISTRY: docker.io
+  docker:
+    - image: gcr.io/kaniko-project/executor:debug
+      entrypoint: ''
+  steps:
+    - checkout
+    - run:
+        name: add Docker Hub credentials
+        command: |
+          mkdir -p /kaniko/.docker
+          ./config.sh
+          mv config.json /kaniko/.docker
+    - run:
+        name: Build and Push image
+        command: |
+          /kaniko/executor \
+              --context "$(pwd)" \
+              --dockerfile "$(pwd)/Dockerfile" \
+              --destination "${DOCKER_REGISTRY}/tadashi0713/gitlab-kaniko:${CIRCLE_SHA1}"
+```
 
 # macOS を利用したい場合
 
@@ -81,6 +153,22 @@ CircleCI では
 
 [](https://circleci.com/docs/ja/ip-ranges/#circleci-macos-cloud)
 
+```yaml
+nginx-ingress:
+  controller:
+    service:
+      loadBalancerSourceRanges: [
+        # macOS
+
+        ...
+```
+
 # 注意点
 
 - IP アドレス範囲機能は現在 Performance
+
+- IP アドレスの範囲機能の利用には、この機能を有効にしたジョブで使用されるデータ 1GB につき、450 クレジットがかかります。
+
+# まとめ
+
+この記事では、CircleCI が提供する IP アドレス範囲機能を利用して、セルフホスト(self-managed)版 GitLab と CircleCI クラウドを IP アドレスベースでセキュアに接続する方法について紹介しました。
