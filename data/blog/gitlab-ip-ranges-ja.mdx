@@ -18,17 +18,13 @@ images:
 
 # CircleCI クラウドのセルフホスト(self-managed)版 GitLab サポート
 
-CircleCI クラウドは現在
-
-そしてこの度、セルフホスト(self-managed)版 GitLab
+CircleCI クラウドはこの度、セルフホスト(self-managed)版 GitLab をサポートするようになりました。
 
 [CircleCI に GitLab が対応 | CircleCI](https://circleci.com/ja/blog/announcing-gitlab-support/)
 
-これによって、セルフホスト(self-managed)版 GitLab を利用している開発者でも CircleCI の
+これによって、セルフホスト(self-managed)版 GitLab を利用している開発者でも、CircleCI の高性能な CI/CD 環境を利用することができます。
 
--
-
--
+![CircleCIとGitLabCIの比較](https://res.cloudinary.com/tadashi0713/image/upload/v1683680041/tadashi0713.dev/gitlabci-vs-circleci-ja.png)
 
 しかし、セルフホスト(self-managed)版 GitLab と CircleCI クラウドを接続するためには以下の制約があります。
 
@@ -42,11 +38,13 @@ CircleCI クラウドは現在
 
 通常、CircleCI を含めた SaaS 型の CI/CD ツールでは
 
-CircleCI が提供する IP アドレス範囲機能を利用することによって、
+CircleCI が提供する IP アドレス範囲機能を利用することによって、CircleCI で使用される 30 個の IP アドレス (一覧はこちら) のいずれかに、送信トラフィックがルーティングされるようになります。
+
+IP アドレスベースのファイアウォールで環境を守りながら、CircleCI との通信だけを許可することができます。
 
 [IP アドレスの範囲機能で、より安心できるセキュリティを確保 | CircleCI](https://circleci.com/ja/blog/ip-ranges-better-security/)
 
-今回はこの IP アドレス範囲機能を利用して、
+今回はこの IP アドレス範囲機能を利用して、以下の図のようなアーキテクチャーを構成します。
 
 ![セルフホスト(self-managed)版 GitLab × IP アドレス範囲アーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1683296290/tadashi0713.dev/gitlab-ip-ranges-architecture-ja.png)
 
@@ -166,9 +164,10 @@ kaniko-build-push-docker-hub:
 
 CircleCI では
 
-[](https://circleci.com/docs/ja/ip-ranges/#circleci-macos-cloud)
+[IP アドレス範囲が公開されています](https://circleci.com/docs/ja/ip-ranges/#circleci-macos-cloud)
 
-こちらも
+こちらの IP アドレス範囲を先ほどと同じく
+(こちらは IP アドレス範囲機能を有効にしていただくても利用できます)
 
 ```yaml
 nginx-ingress:
@@ -188,7 +187,9 @@ nginx-ingress:
 
 # 注意点
 
-- IP アドレス範囲機能は現在 Performance
+- 現在 IP アドレス範囲機能は、[Performance プランおよび Scale プラン](https://circleci.com/ja/pricing/)で利用できます。
+
+- 現在、IP アドレス範囲機能を使用できるのは、Docker Executor (`remote_docker` を除く) のみです。
 
 - IP アドレスの範囲機能の利用には、この機能を有効にしたジョブで使用されるデータ 1GB につき、450 クレジットがかかります。
 
