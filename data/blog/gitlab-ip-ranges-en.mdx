@@ -1,6 +1,6 @@
 ---
 title: Securely connect self-managed GitLab with CircleCI using IP ranges feature
-date: '2023-05-08'
+date: '2023-05-16'
 tags: ['circleci', 'gitlab', 'english']
 draft: false
 summary: This article describes how to securely connect self-managed GitLab with CircleCI using the IP ranges feature.
@@ -57,6 +57,24 @@ jobs:
 # If you want to build Docker images
 
 # If you want to use macOS
+
+```yaml
+nginx-ingress:
+  controller:
+    service:
+      loadBalancerSourceRanges: [
+        # macOS
+        162.252.208.0/24,
+        162.252.209.0/24,
+        192.206.63.0/24,
+        162.221.90.0/24,
+        38.39.177.0/24,
+        ...
+```
+
+[Build on Apple silicon with M1 support for CI/CD pipelines](https://circleci.com/blog/m1-mac-resource-class/)
+
+[CircleCI M1 Mac パフォーマンス比較](https://tadashi0713.dev/blog/circleci-m1-comparison-ja)
 
 # Notes
 
