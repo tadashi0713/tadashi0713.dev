@@ -18,15 +18,15 @@ This article describes how to securely connect self-managed GitLab with CircleCI
 
 # CircleCI now supports self-managed GitLab
 
-[GitLab integration overview - CircleCI](https://circleci.com/docs/ja/gitlab-integration/)
+[Announcing GitLab support on CircleCI | CircleCI](https://circleci.com/blog/announcing-gitlab-support/)
 
 > Note that the self-managed instance must be accessible via the public internet, it cannot be behind a firewall.
 
 # CircleCI's IP ranges feature
 
-[IP ranges - better security for more confidence | CircleCI](https://circleci.com/ja/blog/ip-ranges-better-security/)
+[IP ranges - better security for more confidence | CircleCI](https://circleci.com/blog/ip-ranges-better-security/)
 
-![self-managed GitLab × IP ranges feature](https://res.cloudinary.com/tadashi0713/image/upload/v1683296290/tadashi0713.dev/gitlab-ip-ranges-architecture-ja.png)
+![self-managed GitLab × IP ranges feature](https://res.cloudinary.com/tadashi0713/image/upload/v1684296395/tadashi0713.dev/gitlab-self-managed-ip-ranges-architecture-en.jpg)
 
 # Prerequisites
 
@@ -35,6 +35,31 @@ This article describes how to securely connect self-managed GitLab with CircleCI
 - CircleCI Cloud
 
 # GitLab Add
+
+```yaml
+nginx-ingress:
+  controller:
+    service:
+      loadBalancerSourceRanges: [
+        # IP Ranges
+        3.228.39.90/32
+        18.213.67.41/32,
+        34.194.94.201/32,
+        34.194.144.202/32,
+        34.197.6.234/32,
+        ...
+
+        # Core
+        18.214.70.5/32,
+        52.20.166.242/32,
+        18.214.156.84/32,
+        54.236.156.101/32,
+        ...
+```
+
+```sh
+helm upgrade --install gitlab gitlab/gitlab --values gitlab_config.yaml
+```
 
 # Set up
 
@@ -45,7 +70,7 @@ This article describes how to securely connect self-managed GitLab with CircleCI
 ```yaml
 jobs:
   unit_test:
-    circleci_ip_ranges: true
+    circleci_ip_ranges: true # Enable IP ranges feature
     docker:
       - image: cimg/node:18.14.0
     steps:
@@ -54,7 +79,36 @@ jobs:
       - run: npm run test:ci
 ```
 
-# If you want to build Docker images
+![GitLab Status](https://res.cloudinary.com/tadashi0713/image/upload/v1683714263/tadashi0713.dev/gitlab-status.png)
+
+# Build and push docker images using kaniko
+
+```yaml
+kaniko-build-push-docker-hub:
+  circleci_ip_ranges: true # Enable IP ranges feature
+  environment:
+    DOCKER_REGISTRY: docker.io
+  docker:
+    - image: gcr.io/kaniko-project/executor:debug
+      entrypoint: ''
+  steps:
+    - checkout
+    - run:
+        name: add Docker Hub credentials
+        command: |
+          mkdir -p /kaniko/.docker
+          ./config.sh
+          mv config.json /kaniko/.docker
+    - run:
+        name: Build and Push image
+        command: |
+          /kaniko/executor \
+              --context "$(pwd)" \
+              --dockerfile "$(pwd)/Dockerfile" \
+              --destination "${DOCKER_REGISTRY}/tadashi0713/gitlab-kaniko:${CIRCLE_SHA1}"
+```
+
+[How-to: build and push Docker images with Kaniko - Tips, Tricks and Hacks - CircleCI Discuss](https://discuss.circleci.com/t/how-to-build-and-push-docker-images-with-kaniko/44923)
 
 # If you want to use macOS
 
@@ -72,6 +126,8 @@ nginx-ingress:
         ...
 ```
 
+- macOS builds are automatically restricted within the IP ranges listed here. In other words, you do not have to explicitly set `circleci_ip_ranges: true` for macOS builds.
+
 [Build on Apple silicon with M1 support for CI/CD pipelines](https://circleci.com/blog/m1-mac-resource-class/)
 
 [CircleCI M1 Mac パフォーマンス比較](https://tadashi0713.dev/blog/circleci-m1-comparison-ja)
@@ -79,5 +135,7 @@ nginx-ingress:
 # Notes
 
 - The IP ranges feature is available to customers on a [Performance or Scale plan](https://circleci.com/pricing/).
+
+- IP ranges feature is currently available exclusively for the Docker executor, not including `remote_docker`. Jobs that attempt to use the IP ranges feature with a Machine executor, or with `setup_remote_docker`, will fail with an error.
 
 # Summary
