@@ -1,7 +1,7 @@
 const articlesData = [
   {
-    title: 'Securely connect self-managed GitLab with CircleCI using IP ranges feature',
-    description: `This article describes how to securely connect self-managed GitLab with CircleCI using the IP ranges feature.`,
+    title: 'Securely connect GitLab Self-managed to CircleCI using IP ranges feature',
+    description: `This article describes how to securely connect GitLab Self-managed to CircleCI using the IP ranges feature.`,
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1682243393/tadashi0713.dev/gitlab-ip-ranges.jpg',
     href: '/blog/gitlab-ip-ranges-en',
