@@ -52,7 +52,7 @@ This allows you to only allow communication with CircleCI while protecting your 
 
 [IP ranges - better security for more confidence | CircleCI](https://circleci.com/blog/ip-ranges-better-security/)
 
-In this case, we will use this IP ranges feature to connect to GitLab Self-managed, as shown in the diagram below.
+This time, we will use this IP ranges feature to connect to GitLab Self-managed, as shown in the diagram below.
 
 ![self-managed GitLab × IP ranges feature](https://res.cloudinary.com/tadashi0713/image/upload/v1684296395/tadashi0713.dev/gitlab-self-managed-ip-ranges-architecture-en.jpg)
 
@@ -70,9 +70,9 @@ In this case, we will use this IP ranges feature to connect to GitLab Self-manag
 
 First, configure GitLab Self-managed to allow the following IP addresses.
 
-- IP addresses associated with IP ranges feature
+- [IP addresses associated with IP ranges feature](https://circleci.com/docs/ip-ranges/#list-of-ip-address-ranges)
 
-- IP addresses for core services
+- [IP addresses for core services](https://circleci.com/docs/ip-ranges/#list-of-ip-address-ranges-for-core-services)
   - Used to trigger jobs, exchange information about users between CircleCI and GitLab etc
 
 Since GitLab Self-managed is installed via Helm Chart this time, allow IP addresses using `loadBalancerSourceRanges` in NGINX Ingress Controller Helm Chart.
@@ -136,11 +136,11 @@ You can check the status from the CircleCI UI as well as from the GitLab UI, suc
 
 # Build and push docker images using Kaniko
 
-The IP ranges feature is currently available exclusively for the Docker executor, not including `remote_docker`.
+The IP ranges feature is currently available exclusively for the [Docker Executor](https://circleci.com/docs/configuration-reference/#docker), not including `remote_docker`.
 
 Therefore, it is usually not possible to build and push Docker images for the following reasons:
 
-- Machine Executor (e.g. Linux VM) cannot be used.
+- [Machine Executor](https://circleci.com/docs/configuration-reference/#machine) (e.g. Linux VM) cannot be used.
 
 - DinD (Docker in Docker) within the Docker executor
 
@@ -211,6 +211,6 @@ CircleCI also offers M1 Macs, which can significantly improve the performance of
 
 - The IP ranges feature is available to customers on a [Performance or Scale plan](https://circleci.com/pricing/).
 
-- The IP ranges feature is currently available exclusively for the Docker executor, not including `remote_docker`. Jobs that attempt to use the IP ranges feature with a Machine executor, or with `setup_remote_docker`, will fail with an error.
+- The IP ranges feature is currently available exclusively for the [Docker Executor](https://circleci.com/docs/configuration-reference/#docker), not including `remote_docker`. Jobs that attempt to use the IP ranges feature with a Machine executor, or with `setup_remote_docker`, will fail with an error.
 
 - The IP ranges feature costs 450 credits per GB of data used by jobs with the feature enabled.
