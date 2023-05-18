@@ -22,6 +22,14 @@ CircleCI upgrades to GitLab integration with support for GitLab self-managed.
 
 [Announcing GitLab support on CircleCI | CircleCI](https://circleci.com/blog/announcing-gitlab-support/)
 
+You can host GitLab CI on your GitLab Self-managed and create a CI/CD pipeline, but you will face these difficulties.
+
+- Computing resource limitations limit the build speed and the number of parallelisms
+
+- Difficulty using macOS for iOS CI/CD pipelines
+
+- Lack of CI/CD features required by developers, such as debugging, visualization, security and test partitioning
+
 Developers who use GitLab self-managed now use CircleCI's best-in-class CI/CD solution.
 
 ![CircleCI vs GitLabCI](https://res.cloudinary.com/tadashi0713/image/upload/v1684300394/tadashi0713.dev/circleci-vs-gitlabci-en.png)
@@ -122,11 +130,25 @@ jobs:
 
 Once the configuration file(`.circleci/config.yml`) is correctly reflected, a pipeline is triggered from GitLab Self-managed to CircleCI.
 
+You can check the status from the CircleCI UI as well as from the GitLab UI, such as Merge Requests.
+
 ![GitLab Status](https://res.cloudinary.com/tadashi0713/image/upload/v1683714263/tadashi0713.dev/gitlab-status.png)
 
-You can check the status from the CircleCI UI as well as from the GitLab UI, such as Merge Request.
-
 # Build and push docker images using Kaniko
+
+The IP ranges feature is currently available exclusively for the Docker executor, not including `remote_docker`.
+
+Therefore, it is usually not possible to build and push Docker images for the following reasons:
+
+- Machine Executor (e.g. Linux VM) cannot be used.
+
+- DinD (Docker in Docker) within the Docker executor
+
+However, DinD (Docker in Docker) can be avoided by using [Kaniko](https://github.com/GoogleContainerTools/kaniko) even in Docker Executor.
+
+This allows you to build and push Docker images to each repository (Docker Hub, Amazon ECR, Azure Container Registry) with the IP ranges feature enabled.
+
+The following is an example of a job that uses Kaniko to build and push a Docker image to DockerHub with the IP ranges feature enabled.
 
 ```yaml
 kaniko-build-push-docker-hub:
@@ -157,7 +179,11 @@ For more information, please refer to the following document.
 
 [How-to: build and push Docker images with Kaniko - Tips, Tricks and Hacks - CircleCI Discuss](https://discuss.circleci.com/t/how-to-build-and-push-docker-images-with-kaniko/44923)
 
-# If you want to use macOS
+# If you want to use macOS for iOS CI/CD pipelines
+
+CircleCI offers cloud-native macOS VMs and [IP address ranges of them are available](https://circleci.com/docs/ip-ranges/#circleci-macos-cloud).
+
+You can connect to these macOS VMs by configuring GitLab Self-managed to allow the above IP address ranges.
 
 ```yaml
 nginx-ingress:
@@ -175,6 +201,8 @@ nginx-ingress:
 
 - macOS builds are automatically restricted within the IP ranges listed here. In other words, you do not have to explicitly set `circleci_ip_ranges: true` for macOS builds.
 
+CircleCI also offers M1 Macs, which can significantly improve the performance of iOS CI/CD pipelines.
+
 [Build on Apple silicon with M1 support for CI/CD pipelines](https://circleci.com/blog/m1-mac-resource-class/)
 
 [CircleCI M1 Mac performance comparison](https://tadashi0713.dev/blog/circleci-m1-comparison-en)
@@ -186,7 +214,3 @@ nginx-ingress:
 - The IP ranges feature is currently available exclusively for the Docker executor, not including `remote_docker`. Jobs that attempt to use the IP ranges feature with a Machine executor, or with `setup_remote_docker`, will fail with an error.
 
 - The IP ranges feature costs 450 credits per GB of data used by jobs with the feature enabled.
-
-# Summary
-
-This article describes how to securely connect GitLab Self-managed with CircleCI using the IP ranges feature.
