@@ -22,37 +22,35 @@ CircleCI upgrades to GitLab integration with support for GitLab self-managed.
 
 [Announcing GitLab support on CircleCI | CircleCI](https://circleci.com/blog/announcing-gitlab-support/)
 
-You can host GitLab CI on your GitLab Self-managed and create a CI/CD pipeline, but you will face these difficulties.
+You can host and run GitLab CI on your GitLab Self-managed server instance, but you will face the following difficulties:
 
-- Computing resource limitations limit the build speed and the number of parallelisms
+- Slower build speeds and limited job parallelism
 
 - Difficulty using macOS for iOS CI/CD pipelines
 
-- Lack of CI/CD features required by developers, such as debugging, visualization, security and test partitioning
+- Lack of core CI/CD features required by developers, such as debugging, visualization, security features, and test partitioning
 
-Developers who use GitLab self-managed can now use CircleCI's best-in-class CI/CD solution.
+Fortunately, developers who use GitLab self-managed can now use CircleCI's best-in-class CI/CD solution.
 
 ![CircleCI vs GitLabCI](https://res.cloudinary.com/tadashi0713/image/upload/v1684300394/tadashi0713.dev/circleci-vs-gitlabci-en.png)
 
-However, there is a limitation to connecting GitLab Self-managed to CircleCI.
+However, there is one challenge when connecting GitLab Self-managed to CircleCI. The GitLab self-managed instance must be accessible via the public internet.
 
-> Note that the self-managed instance must be accessible via the public internet, it cannot be behind a firewall.
+This is rightly seen by engineers as a security risk.
 
-However, you don't want to blindly make your GitLab Self-managed accessible from the public internet, especially if you are using it as a company tool.
-
-To solve this problem, I will show you how to use the IP ranges feature provided by CircleCI to securely connect GitLab Self-managed to CircleCI based on IP addresses.
+Luckily, this risk can be mitigated by using CircleCI’s IP ranges feature to securely connect GitLab Self-managed to CircleCI using IP allowlisting.
 
 # CircleCI's IP ranges feature
 
 SaaS CI/CD tools usually do not have a fixed IP address range and can be difficult to connect to environments with firewalls.
 
-When IP ranges feature is enabled on a Docker job through a config file, CircleCI re-routes any outgoing communication through one of about 30 IP addresses listed in the [documentation](https://circleci.com/docs/ip-ranges/#listofipaddressranges).
+When the IP ranges feature is enabled on a Docker job through a config file, CircleCI re-routes any outgoing communication through one of about 30 IP addresses listed in the [documentation](https://circleci.com/docs/ip-ranges/#listofipaddressranges).
 
-This allows you to only allow communication with CircleCI while protecting your environment with an IP-based firewall.
+This allows you to restrict inbound traffic to your GitLab instance to only CircleCI’s IP address.
 
 [IP ranges - better security for more confidence | CircleCI](https://circleci.com/blog/ip-ranges-better-security/)
 
-This time, we will use this IP ranges feature to connect to GitLab Self-managed, as shown in the diagram below.
+In this article, we will use this IP ranges feature to allow CircleCI to connect to GitLab Self-managed as shown in the diagram below.
 
 ![self-managed GitLab × IP ranges feature](https://res.cloudinary.com/tadashi0713/image/upload/v1684296395/tadashi0713.dev/gitlab-self-managed-ip-ranges-architecture-en.jpg)
 
@@ -60,7 +58,7 @@ This time, we will use this IP ranges feature to connect to GitLab Self-managed,
 
 - GitLab Self-managed
 
-  - Available in both Community Editon and Enterprise Edition
+  - Available in both Community Edition and Enterprise Edition
   - This time, GitLab Self-managed is installed using [Helm Chart](https://docs.gitlab.com/charts/)
 
 - CircleCI
@@ -75,7 +73,7 @@ First, configure GitLab Self-managed to allow the following IP addresses.
 - [IP addresses for core services](https://circleci.com/docs/ip-ranges/#list-of-ip-address-ranges-for-core-services)
   - Used to trigger jobs, exchange information about users between CircleCI and GitLab etc
 
-Since GitLab Self-managed is installed via Helm Chart this time, allow IP addresses using `loadBalancerSourceRanges` in NGINX Ingress Controller Helm Chart.
+In this example, I’ve installed GitLab Self-managed via a Helm Chart. We can allowlist IP addresses using `loadBalancerSourceRanges` in the NGINX Ingress Controller Helm Chart.
 
 ```yaml
 nginx-ingress:
@@ -104,9 +102,9 @@ helm upgrade --install gitlab gitlab/gitlab --values gitlab_config.yaml
 
 # Set up a project
 
-Next, set up your project with GitLab Self-managed connected to CircleCI, with IP addresses allowed.
+Next, set up your project with GitLab Self-managed connected to CircleCI with IP addresses allowed.
 
-Follow the `GITLAB SELF-MANAGED` instructions in the following document to set up.
+Follow the `GITLAB SELF-MANAGED` instructions in the following document to set it up.
 
 [GitLab integration overview - CircleCI](https://circleci.com/docs/ja/gitlab-integration/)
 
@@ -128,9 +126,11 @@ jobs:
       - run: npm run test:ci
 ```
 
-Once the configuration file(`.circleci/config.yml`) is correctly reflected, a pipeline is triggered from GitLab Self-managed to CircleCI.
+Once your pipeline configuration file(`.circleci/config.yml`) has been pushed to GitLab, GitLab sends a webhook to CircleCI to trigger a pipeline.
 
-You can check the status from the CircleCI UI as well as from the GitLab UI, such as Merge Requests.
+You can check the pipeline’s status from the CircleCI UI.
+
+You can also check it in the GitLab UI under “Merge Requests”.
 
 ![GitLab Status](https://res.cloudinary.com/tadashi0713/image/upload/v1683714263/tadashi0713.dev/gitlab-status.png)
 
@@ -140,7 +140,7 @@ The IP ranges feature is currently available exclusively for the [Docker Executo
 
 Therefore, it is usually not possible to build and push Docker images for the following reasons:
 
-- [Machine Executor](https://circleci.com/docs/configuration-reference/#machine) (e.g. Linux VM) cannot be used.
+- [Machine Executor](https://circleci.com/docs/configuration-reference/#machine) (e.g. Linux VM) cannot be used
 
 - DinD (Docker in Docker) within the Docker executor
 
@@ -148,7 +148,7 @@ However, DinD (Docker in Docker) can be avoided by using [Kaniko](https://github
 
 This allows you to build and push Docker images to each repository (Docker Hub, Amazon ECR, Azure Container Registry) with the IP ranges feature enabled.
 
-The following is an example of a job that uses Kaniko to build and push a Docker image to DockerHub with the IP ranges feature enabled.
+The following is an example of a job that uses Kaniko to build and push a Docker image to DockerHub with the IP ranges feature enabled:
 
 ```yaml
 kaniko-build-push-docker-hub:
@@ -183,7 +183,7 @@ For more information, please refer to the following document.
 
 CircleCI offers cloud-native macOS VMs and [IP address ranges of them are available](https://circleci.com/docs/ip-ranges/#circleci-macos-cloud).
 
-You can connect to these macOS VMs by configuring GitLab Self-managed to allow the above IP address ranges.
+You can connect to these macOS VMs by configuring GitLab Self-managed to allow the above IP address ranges, as shown below:
 
 ```yaml
 nginx-ingress:
