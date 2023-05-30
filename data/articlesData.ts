@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: 'Cloud-native mobile game CI/CD environment using Unity',
+    description: `This tutorial provides an easy-to-follow introduction to running your mobile game CI/CD in the cloud using CircleCI, GameCI and Unity.`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1667536372/tadashi0713.dev/unity-mobile-cicd-hero.png',
+    href: '/blog/unity-mobile-cicd-en',
+  },
+  {
     title: 'Securely connect GitLab Self-managed to CircleCI using IP ranges feature',
     description: `This article describes how to securely connect GitLab Self-managed to CircleCI using the IP ranges feature.`,
     imgSrc:

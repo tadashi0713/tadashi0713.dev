@@ -1,0 +1,305 @@
+---
+title: Cloud-native mobile game CI/CD environment using Unity
+date: '2023-05-07'
+tags: ['circleci', 'unity', 'mobile', 'game']
+draft: false
+summary: This tutorial provides an easy-to-follow introduction to running your mobile game CI/CD in the cloud using CircleCI, GameCI and Unity.
+images:
+  [
+    'https://res.cloudinary.com/tadashi0713/image/upload/v1667536372/tadashi0713.dev/unity-mobile-cicd-hero.png',
+  ]
+---
+
+![Unity Mobile CI/CD](https://res.cloudinary.com/tadashi0713/image/upload/v1667536372/tadashi0713.dev/unity-mobile-cicd-hero.png)
+
+This tutorial provides an easy-to-follow introduction to running your mobile game CI/CD in the cloud using CircleCI, GameCI and Unity.
+
+## What is Unity?
+
+Unity is a game development platform developed and sold by [Unity Technologies](https://unity.com/) that enables developers to develop games in C# for the following platform types:
+
+- Desktop PCs (Windows/macOS)
+- Mobile devices (iOS / Android)
+- Video game consoles (PlayStation / Xbox / Nintendo Switch)
+
+Unity provides a library of ready-made resources and tools via the [Unity Asset Store](https://assetstore.unity.com/).
+
+Unity has been adopted as a game development environment for projects of all scales and has a high market share, especially in mobile gaming.
+
+## Implementing Mobile CI/CD in the Cloud with CircleCI and GameCI
+
+Developing consistently high-quality games requires the use of good CI/CD tooling and practices.
+
+Mobile games in particular require high-performance CI/CD tools because of their frequent updates and large user bases.
+
+But the unique and complex requirements of mobile game building, testing, and distribution make configuring mobile CI/CD from scratch a daunting task.
+
+These requirements include:
+
+- Correctly and consistently configuring the build environment (especially for iOS!)
+- Installing the Unity Editor
+- Activating the Unity license
+- Preparing the build script
+
+As a result, many mobile development teams fall into one or more anti-patterns, including:
+
+- Manually building and testing in a local development environment
+- Manually testing, building, and distributing that application
+- Performing CI/CD tasks in a quickly-configurable but difficult-to-scale environment, such as self-hosted Jenkins
+
+[GameCI](https://game.ci/) is an open-source tool that was created to solve these common mobile game development CI/CD challenges.
+
+It boasts the following features:
+
+- CI/CD environment with Unity Editor pre-installed (Docker image)
+- Automated Unity license activation
+- Ability to run builds for any platform supported by Unity
+
+GameCI integrates with CircleCI by using an orb.
+
+With this orb, you can easily create CI/CD pipelines for Unity projects without writing a complex, custom-build script from scratch.
+
+In this tutorial, we will demonstrate how to set up a Unity mobile game CI/CD pipeline with CircleCI and GameCI.
+
+### Prerequisites
+
+[GitHub - tadashi0713/circleci-demo-mobile-unity: Demo for mobile game CI/CD pipeline of Unity using CircleCI.](https://github.com/tadashi0713/circleci-demo-mobile-unity)
+
+(This tutorial assumes you have already set up CircleCI with your VCS. If you have not, please [follow these instructions](https://circleci.com/docs/getting-started/) to set things up.)
+
+## Activating your Unity license
+
+Before we can build a Unity project, we need to activate a Unity license.
+
+In this tutorial, we will be using a Unity Personal license.
+
+(Please note that the activation method differs depending on the license used. Refer to the following GameCI document for more details: [Activation with GameCI](https://game.ci/docs/circleci/activation))
+
+To obtain an activated Unity license file, we first need to generate a Unity activation file.
+
+Let’s create a CircleCI configuration file in our project repo at the path `.circleci/config.yml`.
+
+Next, we’ll add the code shown below, and then commit our change.
+
+CircleCI will run the `create-unity-activation-file` job.
+
+```yaml
+version: 2.1
+
+orbs:
+  unity: game-ci/unity@x.y
+
+workflows:
+  create-unity-activation-file:
+    jobs:
+      - unity/create-activation-file
+```
+
+After the job completes, we can download the activation file (`Unity.alf`) from the ARTIFACTS tab.
+
+![Download Unity.alf](https://res.cloudinary.com/tadashi0713/image/upload/v1685435751/tadashi0713.dev/download-unity-alf.png)
+
+Upload the activation file to this page to activate your Unity license.
+
+![Upload activation file](https://res.cloudinary.com/tadashi0713/image/upload/v1685435850/tadashi0713.dev/update-activation-file.png)
+
+After the activation is complete, we can download the Unity license file (`Unity_v20XX.x.ulf`).
+
+We will store this file as a secret in a CircleCI context so that we can use it in our Unity jobs.
+
+First, we will [create a context](https://circleci.com/docs/contexts/) in CircleCI.
+
+In our new context, we’ll create the following variables with their corresponding values:
+
+- `UNITY_ENCODED_LICENSE`
+  - The license file is encoded as a base64 string; [see here for instructions](https://support.circleci.com/hc/en-us/articles/360003540393-How-to-insert-files-as-environment-variables)
+- `UNITY_USERNAME`
+- `UNITY_PASSWORD`
+
+## Building and distributing (Android)
+
+The next step after activating our Unity license is to run a build.
+
+First, let’s run a build for the Android platform.
+
+Below, I am doing so in a job named `build-android`:
+
+```yaml
+build-android:
+  executor:
+    name: unity/ubuntu
+    editor_version: 2021.3.26f1
+    resource_class: xlarge
+    target_platform: android
+  steps:
+    - checkout
+    - unity/prepare-env
+    - unity/build:
+        build-target: Android
+        compress: false
+        store-artifacts: false
+    - persist_to_workspace:
+        root: .
+        paths:
+          - Builds/Android
+```
+
+Let’s break down the `build-android` job in detail.
+
+The **executor** uses the Unity Orb to select an appropriate execution environment.
+
+The **resource_class** determines the size of the build machine.
+
+We can choose from the Docker resource classes listed in the [relevant CircleCI documentation](https://circleci.com/product/features/resource-classes/).
+
+Building Unity projects often requires provisioning expensive machines with large amounts of CPU and memory.
+
+CircleCI enables you to keep costs low by spinning these machines up only for the duration of the build job.
+
+CircleCI also aids you in rightsizing your build machines by logging each job’s resource usage in a set of intuitive graphs available in the Insights dashboard, shown below.
+
+![CPU/RAM usage graph](https://res.cloudinary.com/tadashi0713/image/upload/v1685450762/tadashi0713.dev/cpu-ram-usage-graph.png)
+
+Continuing our breakdown of the `build-android` job, the **steps** are an ordered list of tasks that make up the job.
+
+This job is doing the following:
+
+1. Checking out the source code (checkout)
+2. Preparing the license file we saved in our context (unity/prepare-env)
+3. Running a build for Android (unity/build)
+
+This will create a binary (.apk) for Android on the build machine.
+
+You could upload this apk as-is to the Google Play Store to release it, distribute it via Firebase App Distribution, or use another distribution method of your choice.
+
+Finally, we will use Fastlane to distribute our apk to Firebase App Distribution:
+
+```yaml
+beta-android:
+  executor:
+    name: ruby/default
+    tag: 3.0.5
+  steps:
+    - checkout
+    - attach_workspace:
+        at: .
+    - ruby/install-deps:
+        key: android
+    - run: bundle exec fastlane android beta
+```
+
+And that’s it! You’ve successfully built and distributed your Android game on the cloud!
+
+## Building and Distributing (iOS)
+
+Next, let’s run a build for iOS.
+
+Below we have a job called `export-ios`:
+
+```yaml
+export-ios:
+  executor:
+    name: unity/ubuntu
+    editor_version: 2021.3.26f1
+    resource_class: xlarge
+    target_platform: ios
+  steps:
+    - checkout
+    - unity/prepare-env
+    - unity/build:
+        build-target: iOS
+        compress: false
+        store-artifacts: false
+    - persist_to_workspace:
+        root: .
+        paths:
+          - Builds/iOS/iOS
+```
+
+This `export-ios` job uses the same Unity orb as our Android job above.
+
+However, unlike the Android job, the unity/build job does not produce a binary (.ipa).
+
+Instead, an Xcode project like the one below is generated on the build machine:
+
+![Unity Xcode project](https://res.cloudinary.com/tadashi0713/image/upload/v1685452374/tadashi0713.dev/example-of-xcode-project.png)
+
+To create our iOS binary (.ipa), we must sign and build this [Xcode project in a macOS environment](https://circleci.com/execution-environments/xcode/).
+
+We will do this in a second job, `build-and-beta-ios`, shown below:
+
+```yaml
+build-and-beta-ios:
+  macos:
+    xcode: 14.2.0
+  resource_class: macos.m1.large.gen1
+  steps:
+    - checkout
+    - attach_workspace:
+        at: .
+    - ruby/install-deps:
+        key: ios
+    - run: bundle exec fastlane ios beta
+```
+
+Because this job requires a macOS environment, we are using a CircleCI M1 macOS VM.
+
+In the final **run** step in the `build-and-beta-ios` job, we are using Fastlane to do the following:
+
+- Perform code signing using Fastlane match
+- Build the Xcode project that we generated
+- Distribute our app to Firebase App Distribution
+
+```ruby
+platform :ios do
+  before_all do
+    setup_circle_ci
+  end
+
+  lane :beta do
+    match(type: "adhoc")
+
+    update_code_signing_settings(
+      use_automatic_signing: true,
+      path: "Builds/iOS/iOS/Unity-iPhone.xcodeproj"
+    )
+
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      team_id: ENV["Team ID"],
+      code_sign_identity: 'iPhone Distribution',
+      targets: 'Unity-iPhone',
+      path: "Builds/iOS/iOS/Unity-iPhone.xcodeproj",
+      profile_name: ENV["Profile Name"],
+      profile_uuid: ENV["Profile UUID"]
+    )
+
+    build_app(
+      project: "Builds/iOS/iOS/Unity-iPhone.xcodeproj",
+      scheme: "Unity-iPhone",
+      configuration: "Debug",
+      export_method: "ad-hoc",
+      xcargs: "-allowProvisioningUpdates",
+      export_options: {
+        compileBitcode: false
+      }
+    )
+
+    firebase_app_distribution(
+      app: "Firebase App ID"
+    )
+  end
+end
+```
+
+## Conclusion
+
+Using CircleCI and GameCI together greatly simplifies the complex task of running Unity builds in a cloud-native environment.
+
+This approach has the following advantages:
+
+- Increased developer productivity via scalable, on-demand, pre-configured build environments
+- Reduce tool maintenance overhead by using GameCI to eliminate the need for complex, customized build scripts
+- Easily rightsize your build machines by checking resource usage with CircleCI’s resource utilization graphs
+
+If you are struggling to automate your Unity builds in an elegant and maintainable fashion, or if you find yourself spending too much time and budget configuring, maintaining, and troubleshooting your self-hosted CI/CD tooling, CircleCI and GameCI are worth a shot.
