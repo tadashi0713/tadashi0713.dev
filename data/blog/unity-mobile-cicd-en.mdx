@@ -43,15 +43,11 @@ These requirements include:
 - Activating the Unity license
 - Preparing the build script
 
-<br />
-
 As a result, many mobile development teams fall into one or more anti-patterns, including:
 
 - Manually building and testing in a local development environment
 - Manually testing, building, and distributing that application
 - Performing CI/CD tasks in a quickly-configurable but difficult-to-scale environment, such as self-hosted Jenkins
-
-<br />
 
 [GameCI](https://game.ci/) is an open-source tool that was created to solve these common mobile game development CI/CD challenges.
 
@@ -60,8 +56,6 @@ It boasts the following features:
 - CI/CD environment with Unity Editor pre-installed (Docker image)
 - Automated Unity license activation
 - Ability to run builds for any platform supported by Unity
-
-<br />
 
 GameCI integrates with CircleCI by using an orb.
 
@@ -255,9 +249,7 @@ Because this job requires a macOS environment, we are using a CircleCI M1 macOS 
 In the final **run** step in the `build-and-beta-ios` job, we are using Fastlane to do the following:
 
 - Perform code signing using Fastlane match
-
 - Build the Xcode project that we generated
-
 - Distribute our app to Firebase App Distribution
 
 ```ruby
