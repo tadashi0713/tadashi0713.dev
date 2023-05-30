@@ -19,10 +19,10 @@ This tutorial provides an easy-to-follow introduction to running your mobile gam
 Unity is a game development platform developed and sold by [Unity Technologies](https://unity.com/) that enables developers to develop games in C# for the following platform types:
 
 - Desktop PCs (Windows/macOS)
-
 - Mobile devices (iOS / Android)
-
 - Video game consoles (PlayStation / Xbox / Nintendo Switch)
+
+<br />
 
 Unity provides a library of ready-made resources and tools via the [Unity Asset Store](https://assetstore.unity.com/).
 
@@ -39,32 +39,33 @@ But the unique and complex requirements of mobile game building, testing, and di
 These requirements include:
 
 - Correctly and consistently configuring the build environment (especially for iOS!)
-
 - Installing the Unity Editor
-
 - Activating the Unity license
-
 - Preparing the build script
+
+<br />
 
 As a result, many mobile development teams fall into one or more anti-patterns, including:
 
 - Manually building and testing in a local development environment
-
 - Manually testing, building, and distributing that application
-
 - Performing CI/CD tasks in a quickly-configurable but difficult-to-scale environment, such as self-hosted Jenkins
+
+<br />
 
 [GameCI](https://game.ci/) is an open-source tool that was created to solve these common mobile game development CI/CD challenges.
 
 It boasts the following features:
 
 - CI/CD environment with Unity Editor pre-installed (Docker image)
-
 - Automated Unity license activation
-
 - Ability to run builds for any platform supported by Unity
 
-GameCI integrates with CircleCI by using an orb. With this orb, you can easily create CI/CD pipelines for Unity projects without writing a complex, custom build script from scratch.
+<br />
+
+GameCI integrates with CircleCI by using an orb.
+
+With this orb, you can easily create CI/CD pipelines for Unity projects without writing a complex, custom-build script from scratch.
 
 In this tutorial, we will demonstrate how to set up a Unity mobile game CI/CD pipeline with CircleCI and GameCI.
 
@@ -119,11 +120,8 @@ First, we will [create a context](https://circleci.com/docs/contexts/) in Circle
 In our new context, we’ll create the following variables with their corresponding values:
 
 - `UNITY_ENCODED_LICENSE`
-
   - The license file is encoded as a base64 string; [see here for instructions](https://support.circleci.com/hc/en-us/articles/360003540393-How-to-insert-files-as-environment-variables)
-
 - `UNITY_USERNAME`
-
 - `UNITY_PASSWORD`
 
 ## Building and distributing (Android)
@@ -175,16 +173,14 @@ Continuing our breakdown of the `build-android` job, the **steps** are an ordere
 This job is doing the following:
 
 1. Checking out the source code (checkout)
-
 2. Preparing the license file we saved in our context (unity/prepare-env)
-
 3. Running a build for Android (unity/build)
 
-This will create a binary (APK) for Android on the build machine.
+This will create a binary (.apk) for Android on the build machine.
 
-You could upload this APK as-is to the Google Play Store to release it, distribute it via Firebase App Distribution, or use another distribution method of your choice.
+You could upload this apk as-is to the Google Play Store to release it, distribute it via Firebase App Distribution, or use another distribution method of your choice.
 
-Finally, we will use Fastlane to distribute our APK to Firebase App Distribution:
+Finally, we will use Fastlane to distribute our apk to Firebase App Distribution:
 
 ```yaml
 beta-android:
@@ -230,13 +226,13 @@ export-ios:
 
 This `export-ios` job uses the same Unity orb as our Android job above.
 
-However, unlike the Android job, the unity/build job does not produce a binary (IPA).
+However, unlike the Android job, the unity/build job does not produce a binary (.ipa).
 
 Instead, an Xcode project like the one below is generated on the build machine:
 
 ![Unity Xcode project](https://res.cloudinary.com/tadashi0713/image/upload/v1685452374/tadashi0713.dev/example-of-xcode-project.png)
 
-To create our iOS binary (IPA), we must sign and build this [Xcode project in a macOS environment](https://circleci.com/execution-environments/xcode/).
+To create our iOS binary (.ipa), we must sign and build this [Xcode project in a macOS environment](https://circleci.com/execution-environments/xcode/).
 
 We will do this in a second job, `build-and-beta-ios`, shown below:
 
@@ -313,9 +309,7 @@ Using CircleCI and GameCI together greatly simplifies the complex task of runnin
 This approach has the following advantages:
 
 - Increased developer productivity via scalable, on-demand, pre-configured build environments
-
 - Reduce tool maintenance overhead by using GameCI to eliminate the need for complex, customized build scripts
-
 - Easily rightsize your build machines by checking resource usage with CircleCI’s resource utilization graphs
 
 If you are struggling to automate your Unity builds in an elegant and maintainable fashion, or if you find yourself spending too much time and budget configuring, maintaining, and troubleshooting your self-hosted CI/CD tooling, CircleCI and GameCI are worth a shot.
