@@ -1,12 +1,9 @@
-// const withBundleAnalyzer = require('@next/bundle-analyzer')({
-//   enabled: process.env.ANALYZE === 'true',
-// })
-const { withPlaiceholder } = require('@plaiceholder/next')
+import withPlaiceholder from '@plaiceholder/next'
 
 /**
- * @type {import('next/dist/next-server/server/config').NextConfig}
+ * @type {import('next').NextConfig}
  **/
-module.exports = withPlaiceholder({
+const config = {
   // Next.js 12
   swcMinify: true,
   images: {
@@ -46,7 +43,8 @@ module.exports = withPlaiceholder({
         'react-dom': 'preact/compat',
       })
     }
-
     return config
   },
-})
+}
+
+export default withPlaiceholder(config)

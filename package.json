@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "3.0.80",
-    "@plaiceholder/next": "2.5.0",
+    "@plaiceholder/next": "3.0.0",
     "@tailwindcss/forms": "0.5.3",
     "@tailwindcss/typography": "0.5.9",
     "autoprefixer": "10.4.14",
@@ -24,7 +24,7 @@
     "mdx-bundler": "9.0.1",
     "next": "12.1.6",
     "next-themes": "0.2.1",
-    "plaiceholder": "2.5.0",
+    "plaiceholder": "3.0.0",
     "postcss": "8.4.24",
     "preact": "10.15.1",
     "react": "17.0.2",
