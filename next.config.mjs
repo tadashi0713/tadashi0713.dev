@@ -43,6 +43,7 @@ const config = {
         'react-dom': 'preact/compat',
       })
     }
+    return config
   },
 }
 
