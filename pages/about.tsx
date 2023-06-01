@@ -1,6 +1,8 @@
 import { PageSEO } from '@/components/SEO'
 import Twemoji from '@/components/Twemoji'
 import Image from '@/components/Image'
+import path from 'node:path'
+import fs from 'node:fs/promises'
 import SocialIcon from '@/components/social-icons'
 import siteMetadata from '@/data/siteMetadata'
 import { getFileBySlug } from '@/lib/mdx'
@@ -18,7 +20,8 @@ export const getStaticProps: GetStaticProps<{
   const enSource = await (await getFileBySlug<AuthorFrontMatter>('authors', ['en'])).mdxSource
   const jaSource = await (await getFileBySlug<AuthorFrontMatter>('authors', ['ja'])).mdxSource
 
-  const blurDataURL = await (await getPlaiceholder(siteMetadata.image)).base64
+  const buffer = await fs.readFile(path.join('./public', siteMetadata.image))
+  const blurDataURL = await (await getPlaiceholder(buffer)).base64
 
   return { props: { enSource, jaSource, blurDataURL } }
 }
