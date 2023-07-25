@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: 'Azure へのアクセスに Open ID Connect(OIDC) を使用する',
+    description: `この記事では、Azure へのアクセスに Open ID Connect(OIDC)を使用することによって、CircleCI側で静的なシークレットを保持することなくAzureへのセキュアなアクセスを実現する方法について紹介します。`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1690264374/tadashi0713.dev/azure-oidc-hero.png',
+    href: 'https://circleci.com/ja/blog/azure-oidc',
+  },
+  {
     title: 'Cloud-native mobile game CI/CD environment using Unity',
     description: `This tutorial provides an easy-to-follow introduction to running your mobile game CI/CD in the cloud using CircleCI, GameCI and Unity.`,
     imgSrc:
