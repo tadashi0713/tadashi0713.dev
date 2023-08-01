@@ -1,5 +1,13 @@
 const talksData = [
   {
+    title: '自動テストをCIで”実行”させるだけでは不十分な理由',
+    description:
+      'CircleCI＆Autify共催セミナー「CI/CD、テスト自動化で実現する高品質・高速なプロダクト開発」',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1690864679/tadashi0713.dev/19a26443fe31c577ccbcf9a99bbef98c0c561c2d.png',
+    href: 'https://www.docswell.com/s/tadashi0713/KP9G32-circleci-autify-webinar',
+  },
+  {
     title:
       'Speed matters: Advanced CI/CD techniques to improve development velocity, quality & security',
     description: 'Cloud Expo Asia 2022, Singapore',
