@@ -1,5 +1,12 @@
 const talksData = [
   {
+    title: 'Unityを使ったモバイルゲームCI/CDパイプラインをクラウドネイティブ化しよう',
+    description: 'Cloud Operator Days Tokyo 2023',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1695013316/tadashi0713.dev/G75YQKKM74.jpg',
+    href: 'https://www.docswell.com/s/tadashi0713/K6Y9N7-unity-mobile-cicd',
+  },
+  {
     title: '自動テストをCIで”実行”させるだけでは不十分な理由',
     description:
       'CircleCI＆Autify共催セミナー「CI/CD、テスト自動化で実現する高品質・高速なプロダクト開発」',
