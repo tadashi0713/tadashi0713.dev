@@ -1,5 +1,19 @@
 const talksData = [
   {
+    title: 'Scalable and cloud-native mobile game CI/CD environment using Unity',
+    description: 'JetBrains GameDev Day 2023',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1697277683/tadashi0713.dev/F6UYeC1WoAAYi7U_1.jpg',
+    href: 'https://speakerdeck.com/tadashi0713/cd-environment-using-unity',
+  },
+  {
+    title: 'Migrating your mobile CI/CD environment to a scalable cloud solution using CircleCI',
+    description: 'Cloud Expo Asia 2023, Singapore',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1697277715/tadashi0713.dev/speaker__33_.png',
+    href: 'https://speakerdeck.com/tadashi0713/cd-environment-to-a-scalable-cloud-solution-using-circleci',
+  },
+  {
     title: 'Unityを使ったモバイルゲームCI/CDパイプラインをクラウドネイティブ化しよう',
     description: 'Cloud Operator Days Tokyo 2023',
     imgSrc:
