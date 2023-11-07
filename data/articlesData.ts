@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: 'Software Design 2023年12月号',
+    description: `開発を加速するCI/CD 生産性と品質を両立させるための鉄則`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1699344011/tadashi0713.dev/642312.png',
+    href: 'https://gihyo.jp/magazine/SD/archive/2023/202312',
+  },
+  {
     title: 'Cloud native mobile game CI/CD with Unity and CircleCI',
     description: `Learn how to build a cloud native mobile game CI/CD environment with CircleCI and Unity.`,
     imgSrc:
