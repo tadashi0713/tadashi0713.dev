@@ -16,7 +16,7 @@
     "@plaiceholder/next": "3.0.0",
     "@tailwindcss/forms": "0.5.6",
     "@tailwindcss/typography": "0.5.10",
-    "autoprefixer": "10.4.15",
+    "autoprefixer": "10.4.16",
     "esbuild": "0.14.54",
     "github-slugger": "1.5.0",
     "gray-matter": "4.0.3",
