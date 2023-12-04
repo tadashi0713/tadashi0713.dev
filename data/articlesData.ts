@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: 'Using OpenID Connect (OIDC) for Azure access',
+    description: `This article describes how to achieve secure access to Azure by using OpenID Connect (OIDC), without having to maintain a static credential on the CircleCI side.`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1701690706/tadashi0713.dev/2023-11-29-azure-oidc.png',
+    href: 'https://circleci.com/blog/azure-oidc/',
+  },
+  {
     title: 'Splitting and Parallelizing Android UI tests with Espresso and CircleCI',
     description: `This article describes how to reduce Android UI test execution time using test splitting, parallelization, and CircleCI’s Android emulator.`,
     imgSrc:
