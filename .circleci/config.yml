@@ -9,8 +9,8 @@ workflows:
       - node/run:
           name: Lint
           npm-run: lint
-          version: 16.17.0
+          version: 20.10
       - node/run:
           name: Build
           npm-run: build
-          version: 16.17.0
+          version: 20.10
