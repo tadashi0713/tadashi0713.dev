@@ -51,7 +51,7 @@ export default function Home({
             {', '}
             <Link href="/projects">side projects</Link>
             {', and '}
-            <Link href="/about">portfolio</Link>
+            <Link href="https://resume.io/r/DdFtcnNf8">resume</Link>
             {'. Have a good read!'}
           </h2>
         </div>
