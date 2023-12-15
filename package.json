@@ -17,7 +17,7 @@
     "@tailwindcss/forms": "0.5.7",
     "@tailwindcss/typography": "0.5.10",
     "autoprefixer": "10.4.16",
-    "esbuild": "0.19.8",
+    "esbuild": "0.19.9",
     "github-slugger": "1.5.0",
     "gray-matter": "4.0.3",
     "image-size": "1.0.2",
@@ -26,7 +26,7 @@
     "next-themes": "0.2.1",
     "plaiceholder": "3.0.0",
     "postcss": "8.4.32",
-    "preact": "10.19.2",
+    "preact": "10.19.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-lines-ellipsis": "0.15.4",
@@ -39,7 +39,7 @@
     "remark-gfm": "3.0.1",
     "remark-math": "6.0.0",
     "sharp": "0.33.0",
-    "tailwindcss": "3.3.5",
+    "tailwindcss": "3.3.6",
     "twemoji": "14.0.2",
     "unist-util-visit": "5.0.0"
   },
@@ -48,8 +48,8 @@
     "@svgr/webpack": "8.1.0",
     "@types/react": "18.2.7",
     "@types/tailwindcss": "3.0.11",
-    "@typescript-eslint/eslint-plugin": "6.13.1",
-    "@typescript-eslint/parser": "6.13.1",
+    "@typescript-eslint/eslint-plugin": "6.14.0",
+    "@typescript-eslint/parser": "6.14.0",
     "cross-env": "7.0.3",
     "dedent": "1.5.1",
     "eslint": "8.55.0",
@@ -63,8 +63,8 @@
     "inquirer": "9.2.12",
     "lint-staged": "15.2.0",
     "next-remote-watch": "2.0.0",
-    "prettier": "3.1.0",
-    "typescript": "5.3.2"
+    "prettier": "3.1.1",
+    "typescript": "5.3.3"
   },
   "lint-staged": {
     "*.+(js|jsx|ts|tsx)": [
