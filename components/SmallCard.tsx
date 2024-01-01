@@ -1,5 +1,5 @@
 import Image from './Image'
-import Link from './Link'
+import Link from 'next/link'
 import LinesEllipsis from 'react-lines-ellipsis'
 
 const SmallCard = ({ title, description, imgSrc, href, blurDataURL }) => (
