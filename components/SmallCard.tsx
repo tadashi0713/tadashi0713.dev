@@ -2,7 +2,7 @@ import Image from './Image'
 import Link from './Link'
 import LinesEllipsis from 'react-lines-ellipsis'
 
-const SmallCard = ({ title, description, imgSrc, href, blurDataURL }) => (
+const SmallCard = ({ title, description, imgSrc, href }) => (
   <div className="p-3 md:w-1/3 md" style={{ maxWidth: '544px' }}>
     <div className="h-full overflow-hidden border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700">
       {href ? (
@@ -15,7 +15,6 @@ const SmallCard = ({ title, description, imgSrc, href, blurDataURL }) => (
             height={306}
             quality={50}
             placeholder="blur"
-            blurDataURL={blurDataURL}
           />
         </Link>
       ) : (
@@ -27,7 +26,6 @@ const SmallCard = ({ title, description, imgSrc, href, blurDataURL }) => (
           height={306}
           quality={50}
           placeholder="blur"
-          blurDataURL={blurDataURL}
         />
       )}
       <div className="p-4">
