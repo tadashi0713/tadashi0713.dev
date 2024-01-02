@@ -4,20 +4,10 @@ import MediumCard from '@/components/MediumCard'
 import Twemoji from '@/components/Twemoji'
 import { PageSEO } from '@/components/SEO'
 import { useState } from 'react'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { getBlurConvertedOgps } from '@/lib/ogp'
-import { Ogp } from 'types/Ogp'
 
-export const getStaticProps: GetStaticProps<{
-  projects: Ogp[]
-}> = async () => {
-  const projects = await getBlurConvertedOgps(projectsData)
-  return { props: { projects } }
-}
-
-export default function Projects({ projects }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Projects() {
   const [searchValue, setSearchValue] = useState('')
-  const filteredProjects = projects.filter((frontMatter) => {
+  const filteredProjects = projectsData.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.description
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
