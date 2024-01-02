@@ -1,8 +1,6 @@
 import { PageSEO } from '@/components/SEO'
 import Twemoji from '@/components/Twemoji'
 import Image from '@/components/Image'
-import path from 'node:path'
-import fs from 'node:fs/promises'
 import SocialIcon from '@/components/social-icons'
 import siteMetadata from '@/data/siteMetadata'
 import { getFileBySlug } from '@/lib/mdx'
@@ -10,26 +8,20 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { useMemo, useState } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
-import { getPlaiceholder } from 'plaiceholder'
 
 export const getStaticProps: GetStaticProps<{
   enSource: string
   jaSource: string
-  blurDataURL: string
 }> = async () => {
   const enSource = await (await getFileBySlug<AuthorFrontMatter>('authors', ['en'])).mdxSource
   const jaSource = await (await getFileBySlug<AuthorFrontMatter>('authors', ['ja'])).mdxSource
 
-  const buffer = await fs.readFile(path.join('./public', siteMetadata.image))
-  const blurDataURL = await (await getPlaiceholder(buffer)).base64
-
-  return { props: { enSource, jaSource, blurDataURL } }
+  return { props: { enSource, jaSource } }
 }
 
 export default function About({
   enSource,
   jaSource,
-  blurDataURL,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [activeTab, changeActiveTab] = useState('en')
   const MdxEn = useMemo(() => getMDXComponent(enSource), [enSource])
@@ -56,7 +48,6 @@ export default function About({
               width={200}
               height={200}
               placeholder="blur"
-              blurDataURL={blurDataURL}
             />
             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
               {activeTab === 'en' ? 'Tadashi Nemoto' : '根本 征'}
