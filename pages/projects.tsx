@@ -63,7 +63,6 @@ export default function Projects({ projects }: InferGetStaticPropsType<typeof ge
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
-                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>

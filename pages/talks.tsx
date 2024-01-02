@@ -63,7 +63,6 @@ export default function Talks({ talks }: InferGetStaticPropsType<typeof getStati
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
-                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>
