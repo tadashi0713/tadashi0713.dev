@@ -53,6 +53,7 @@ export default function Talks() {
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
+                blurHash={d.blurHash}
               />
             ))}
           </div>

@@ -1,4 +1,6 @@
-const talksData = [
+import { Ogp } from 'types/Ogp'
+
+const talksData: Ogp[] = [
   {
     title: 'Scalable and cloud-native mobile game CI/CD environment using Unity',
     description:
@@ -6,6 +8,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1698250385/tadashi0713.dev/maxresdefault.jpg',
     href: 'https://www.youtube.com/watch?v=_EMi84CwdKQ',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Migrating your mobile CI/CD environment to a scalable cloud solution using CircleCI',
@@ -13,6 +16,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1697277715/tadashi0713.dev/speaker__33_.png',
     href: 'https://speakerdeck.com/tadashi0713/cd-environment-to-a-scalable-cloud-solution-using-circleci',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Unityを使ったモバイルゲームCI/CDパイプラインをクラウドネイティブ化しよう',
@@ -20,6 +24,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1695013316/tadashi0713.dev/G75YQKKM74.jpg',
     href: 'https://www.docswell.com/s/tadashi0713/K6Y9N7-unity-mobile-cicd',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: '自動テストをCIで”実行”させるだけでは不十分な理由',
@@ -28,6 +33,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1690864679/tadashi0713.dev/19a26443fe31c577ccbcf9a99bbef98c0c561c2d.png',
     href: 'https://www.docswell.com/s/tadashi0713/KP9G32-circleci-autify-webinar',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -36,6 +42,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1665745656/tadashi0713.dev/slide_0.jpg',
     href: 'https://speakerdeck.com/tadashi0713/cd-techniques-to-improve-development-velocity-quality-and-security',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'CircleCI Webinar: CircleCIを使いこなそう〜応用編〜',
@@ -44,6 +51,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1659319510/tadashi0713.dev/circleci_advanced_webinar.jpg',
     href: 'https://www.youtube.com/watch?v=7r5ITZiCc9w',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'AWS Graviton 環境への CI/CD パイプラインを CircleCI で実現しよう(AWS Fargate 編)',
@@ -52,6 +60,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661304619/tadashi0713.dev/circleci-aws-ipc-webinar-0616.32c31db2dcdbb401f1d9b49207eb52697999abca.jpg',
     href: 'https://speakerdeck.com/tadashi0713/aws-graviton-huan-jing-hefalse-ci-cd-haihurainwo-circleci-teshi-xian-siyou-aws-fargate-bian',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'CircleCI Webinar: モバイル開発者向け CircleCI 入門ウェビナー',
@@ -60,6 +69,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1655456212/tadashi0713.dev/Untitled_presentation_31.png',
     href: 'https://www.youtube.com/watch?v=3YsbMRbvvNc',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'はじめてのCircleCI 内製化への第一歩 〜効率的にCircleCIについて学ぼう〜',
@@ -68,6 +78,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1655457399/tadashi0713.dev/unnamed_1.png',
     href: 'https://www.youtube.com/watch?v=6lQ0AkkiBKk',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: '10x deployment frequency using GitLab Flow and GitHub Actions on AWS ECS',
@@ -75,6 +86,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661304730/tadashi0713.dev/5970ee8f76d947308c9e0a0a148e1e8d.jpg',
     href: 'https://speakerdeck.com/tadashi0713/10x-deployment-frequency-using-gitlab-flow-and-github-actions-on-aws-ecs',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'デプロイ頻度を10倍にした、ブランチ戦略とGitHub Actions on AWS ECS',
@@ -82,6 +94,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661304785/tadashi0713.dev/2c3f9b9d74314082ba440426a9e39f6e.jpg',
     href: 'https://speakerdeck.com/tadashi0713/depuroipin-du-wo10bei-nisita-burantizhan-lue-togithub-actions-on-aws-ecs',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -90,6 +103,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661304838/tadashi0713.dev/b39c847fb0e84047a74d0dee8f76b916.jpg',
     href: 'https://speakerdeck.com/tadashi0713/creating-parallelized-android-uitest-appium-environment-using-azure-docker-and-android-emulator',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'メルカリの開発スピードと品質を支える Selenium on Azure Kubernetes Service',
@@ -97,6 +111,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661306667/tadashi0713.dev/671416e974c145a090ffe6cc4eee9078.jpg',
     href: 'https://speakerdeck.com/tadashi0713/merukarifalsekai-fa-supidotopin-zhi-wozhi-eru-selenium-on-azure-kubernetes-service',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Docker × Androidエミュレーターを使ったAppiumテスト環境',
@@ -104,6 +119,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661306712/tadashi0713.dev/edaba8cd3f6a45a78c65641346eaa4e0.jpg',
     href: 'https://speakerdeck.com/tadashi0713/docker-x-androidemiyuretawoshi-tutaappiumtesutohuan-jing',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Scaling Selenium to Infinity',
@@ -111,6 +127,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661306761/tadashi0713.dev/2500c5c66a524566ba4322827160f139.jpg',
     href: 'https://speakerdeck.com/tadashi0713/scaling-selenium-to-infinity',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: '私がAndroid CI/CDを Bitrise・CircleCIに 移行して得られたもの',
@@ -118,6 +135,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661306810/tadashi0713.dev/4886038189764818b0713fac4ecb7543.jpg',
     href: 'https://speakerdeck.com/tadashi0713/cdwo-bitrisecirclecini-yi-xing-sitede-raretamofalse',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'メルカリのテスト自動化戦略',
@@ -125,6 +143,7 @@ const talksData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661306860/tadashi0713.dev/936c9be3fd7442e3bd1f9d3b3c7327d6.jpg',
     href: 'https://speakerdeck.com/tadashi0713/merukarifalsetesutozi-dong-hua-zhan-lue',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
 ]
 

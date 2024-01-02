@@ -1,10 +1,13 @@
-const articlesData = [
+import { Ogp } from 'types/Ogp'
+
+const articlesData: Ogp[] = [
   {
     title: 'Using OpenID Connect (OIDC) for Azure access',
     description: `This article describes how to achieve secure access to Azure by using OpenID Connect (OIDC), without having to maintain a static credential on the CircleCI side.`,
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1701690706/tadashi0713.dev/2023-11-29-azure-oidc.png',
     href: 'https://circleci.com/blog/azure-oidc/',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Splitting and Parallelizing Android UI tests with Espresso and CircleCI',
@@ -12,6 +15,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1700375616/tadashi0713.dev/android-parallel-testing-hero-en.png',
     href: '/blog/circleci-android-parallel-testing',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Software Design 2023年12月号',
@@ -19,6 +23,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1699344776/tadashi0713.dev/642312.jpg',
     href: 'https://gihyo.jp/magazine/SD/archive/2023/202312',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Cloud native mobile game CI/CD with Unity and CircleCI',
@@ -26,6 +31,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1667536372/tadashi0713.dev/unity-mobile-cicd-hero.png',
     href: 'https://circleci.com/blog/unity-mobile-cicd',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Azure へのアクセスに Open ID Connect(OIDC) を使用する',
@@ -33,6 +39,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1690264374/tadashi0713.dev/azure-oidc-hero.png',
     href: 'https://circleci.com/ja/blog/azure-oidc',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Securely connect GitLab Self-managed to CircleCI using IP ranges feature',
@@ -40,6 +47,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1682243393/tadashi0713.dev/gitlab-ip-ranges.jpg',
     href: '/blog/gitlab-ip-ranges-en',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -48,6 +56,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1682243393/tadashi0713.dev/gitlab-ip-ranges.jpg',
     href: '/blog/gitlab-ip-ranges-ja',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD and Kustomize',
@@ -55,6 +64,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311625/tadashi0713.dev/gitops-argocd-hero.png',
     href: '/blog/gitops-argocd-en',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'CircleCI M1 Mac performance comparison',
@@ -62,6 +72,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1679468120/tadashi0713.dev/circleci-m1-comparison.jpg',
     href: '/blog/circleci-m1-comparison-en',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'CircleCI M1 Mac パフォーマンス比較',
@@ -69,6 +80,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1679468120/tadashi0713.dev/circleci-m1-comparison.jpg',
     href: '/blog/circleci-m1-comparison-ja',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Androidエミュレーターを使ったUIテスト(Espresso)を分割・並列実行しよう',
@@ -76,6 +88,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1671603912/tadashi0713.dev/android-parallel-testing-hero.png',
     href: 'https://circleci.com/ja/blog/android-parallel-testing',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Unity を使ったモバイルゲーム CI/CD 環境をクラウドネイティブ化しよう(GameCI)',
@@ -83,6 +96,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1667536372/tadashi0713.dev/unity-mobile-cicd-hero.png',
     href: 'https://circleci.com/ja/blog/unity-mobile-cicd',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Speed up XCUITest execution with parallelism and test splitting',
@@ -90,6 +104,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1664174857/tadashi0713.dev/Tutorial-Intermediate-RP.jpg',
     href: 'https://circleci.com/blog/xcuitest-parallel-execution',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'CircleCI Orb を使って不安定なテスト(Flaky Tests)を Slack 通知する方法',
@@ -97,6 +112,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png',
     href: '/blog/flaky-tests-notify-orb-ja',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Setting up slack notification of detecting flaky tests using CircleCI(Orb)',
@@ -104,6 +120,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png',
     href: '/blog/flaky-tests-notify-orb-en',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'iOSの自動テスト(iOSシミュレーターを使ったUIテスト)を分割・並列実行しよう',
@@ -111,6 +128,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311492/tadashi0713.dev/ios-parallel-testing-hero.png',
     href: 'https://circleci.com/ja/blog/ios-parallel-testing/',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -119,6 +137,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311538/tadashi0713.dev/f_devops_guide2022_cover_1.jpg',
     href: 'https://thinkit.co.jp/article/19685',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -127,6 +146,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311596/tadashi0713.dev/thumb_circle-ci-ci-cd.b3047dfb9ccf0376632f0865e67ea0fa726e0814.jpg',
     href: 'https://aws.amazon.com/jp/builders-flash/202206/circle-ci-ci-cd',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: '【社員インタビュー vol.7】Solutions Engineerロードマップ (JPN & ENG) | CircleCI Japan',
@@ -134,6 +154,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1672981398/tadashi0713.dev/490f5d0e-8250-4712-b2f9-c9ee663bbae9.jpg',
     href: 'https://www.wantedly.com/companies/circleci/post_articles/379626',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'GitOps とは? ArgoCD による、Kubernetes への継続的デリバリーを実現しよう',
@@ -141,6 +162,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311625/tadashi0713.dev/gitops-argocd-hero.png',
     href: 'https://circleci.com/ja/blog/gitops-argocd/',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -149,6 +171,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661307737/tadashi0713.dev/react-native-hero-2021.png',
     href: 'https://circleci.com/ja/blog/react-native-cicd/',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'Flutter (フラッター) アプリの CI / CD パイプラインを構築しよう',
@@ -156,6 +179,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311682/tadashi0713.dev/flutter-app-cicd-pipeline.png',
     href: 'https://circleci.com/ja/blog/flutter-cicd/',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: '【開催報告】AWS Startup Tech Meetup Online #4 | Amazon Web Services',
@@ -163,6 +187,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311792/tadashi0713.dev/aws-startup-tech-meetup-online-4-1120x630.png',
     href: 'https://aws.amazon.com/jp/blogs/startup/event-report-tech-meetup-online-4/',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -171,6 +196,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311821/tadashi0713.dev/20210224120254.png',
     href: 'https://techblog.exawizards.com/entry/2021/04/06/090519',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -179,6 +205,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311821/tadashi0713.dev/20210224120254.png',
     href: 'https://techblog.exawizards.com/entry/2021/03/23/115834',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -187,6 +214,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311856/tadashi0713.dev/rectangle_large_type_2_f73c04d7abcd5bfabb19cff44da67e30.png',
     href: 'https://note.exawizards.com/n/nd10831bbb2da',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -195,6 +223,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311881/tadashi0713.dev/20201228172750.png',
     href: 'https://techblog.exawizards.com/entry/2021/01/28/113812',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -203,6 +232,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311881/tadashi0713.dev/20201228172750.png',
     href: 'https://techblog.exawizards.com/entry/2021/01/21/111031',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -211,6 +241,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311913/tadashi0713.dev/20201019135904.png',
     href: 'https://techblog.exawizards.com/entry/2020/11/04/100000',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -219,6 +250,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311913/tadashi0713.dev/20201019135904.png',
     href: 'https://techblog.exawizards.com/entry/2020/10/22/080000',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -227,6 +259,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311983/tadashi0713.dev/645d2d40-20191104165330.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2019-11-12-060000',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -235,6 +268,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661312011/tadashi0713.dev/43f3b174-20190816141725.jpg',
     href: 'https://engineering.mercari.com/en/blog/entry/2019-09-09-113455',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -243,6 +277,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661312011/tadashi0713.dev/43f3b174-20190816141725.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2019-08-27-080000',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -251,6 +286,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661312046/tadashi0713.dev/11609_02a.jpg',
     href: 'https://codezine.jp/article/detail/11609',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -259,6 +295,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661312081/tadashi0713.dev/11600_01a.jpg',
     href: 'https://codezine.jp/article/detail/11600',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -267,6 +304,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661312119/tadashi0713.dev/fef2e94c-20190411161526.png',
     href: 'https://engineering.mercari.com/blog/entry/2019-04-16-060000/',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'How HeadSpin will change mobile testing and monitoring? | Mercari Engineering',
@@ -274,6 +312,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661312150/tadashi0713.dev/67d10e5e-20190212132627.jpg',
     href: 'https://engineering.mercari.com/en/blog/entry/2019-02-18-173236',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -282,6 +321,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661312150/tadashi0713.dev/67d10e5e-20190212132627.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2019-02-14-105750',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -290,6 +330,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661312188/tadashi0713.dev/728a44e1-20181129162340.jpg',
     href: 'https://engineering.mercari.com/en/blog/entry/2018-12-28-175147',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -298,6 +339,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661312188/tadashi0713.dev/728a44e1-20181129162340.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2018-12-10-060000',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -306,6 +348,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661312479/tadashi0713.dev/c27e021b-20181126164914.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2018-11-27-141042',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -314,6 +357,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661312516/tadashi0713.dev/11199_01.jpg',
     href: 'https://codezine.jp/article/detail/11199',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'kintone＋Zapierで社員自ら作業を省力化するメルカリ',
@@ -321,6 +365,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661314094/tadashi0713.dev/4015feaa2b75a4d1.jpg',
     href: 'https://ascii.jp/elem/000/001/759/1759729',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title: 'メルカリiOSのUIテスト自動化をまるっとご紹介します！ | メルカリエンジニアリング',
@@ -328,6 +373,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661314147/tadashi0713.dev/64bac66c-20180717180233.png',
     href: 'https://engineering.mercari.com/blog/entry/2018-08-07-123000',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -336,6 +382,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661314184/tadashi0713.dev/555b6645-20180712192331.png',
     href: 'https://engineering.mercari.com/blog/entry/2018-07-13-150000',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -344,6 +391,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661314228/tadashi0713.dev/849efda6-20180629154905.png',
     href: 'https://engineering.mercari.com/blog/entry/2018-07-04-110000',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -352,6 +400,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661314279/tadashi0713.dev/2260.jpg',
     href: 'https://seleck.cc/1230',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -360,6 +409,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661314335/tadashi0713.dev/cf47bf7b-20180218185222.png',
     href: 'https://engineering.mercari.com/blog/entry/2018-06-12-110000',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -368,6 +418,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661314398/tadashi0713.dev/b854104c-20171221142658.png',
     href: 'https://engineering.mercari.com/blog/entry/2017-12-22-110934',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -376,6 +427,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661314439/tadashi0713.dev/ea1ea6bb-20171026161553.png',
     href: 'https://engineering.mercari.com/blog/entry/2017-10-31-122018',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
   {
     title:
@@ -384,6 +436,7 @@ const articlesData = [
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661314486/tadashi0713.dev/668bb72e-20170405102425.png',
     href: 'https://engineering.mercari.com/blog/entry/2017-04-07-110955',
+    blurHash: 'L32F=D%$M{Dh.TyERiI9tmtSa}V@',
   },
 ]
 
