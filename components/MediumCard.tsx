@@ -14,7 +14,7 @@ const MediumCard = ({ title, description, imgSrc, href }) => (
             width={544}
             height={306}
             quality={50}
-            placeholder="blur"
+            // placeholder="blur"
           />
         </Link>
       ) : (
@@ -25,7 +25,7 @@ const MediumCard = ({ title, description, imgSrc, href }) => (
           width={544}
           height={306}
           quality={50}
-          placeholder="blur"
+          // placeholder="blur"
         />
       )}
       <div className="p-6">

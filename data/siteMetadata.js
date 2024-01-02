@@ -8,6 +8,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/tadashi0713/tadashi0713.dev',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
+  imageBlurHash: 'LePZia%M_Nxu-pazx]WBI;oer=of',
   socialBanner: '/static/images/twitter-card.png',
   email: 'tadashi.nemoto0713@gmail.com',
   github: 'https://github.com/tadashi0713',

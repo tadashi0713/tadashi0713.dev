@@ -2,6 +2,6 @@ export type Ogp = {
   title: string
   description: string
   imgSrc: string
-  // blurDataURL: string
+  blurHash: string
   href: string
 }

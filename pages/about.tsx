@@ -8,6 +8,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { useMemo, useState } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
+import useNextBlurhash from 'use-next-blurhash'
 
 export const getStaticProps: GetStaticProps<{
   enSource: string
@@ -26,6 +27,7 @@ export default function About({
   const [activeTab, changeActiveTab] = useState('en')
   const MdxEn = useMemo(() => getMDXComponent(enSource), [enSource])
   const MdxJa = useMemo(() => getMDXComponent(jaSource), [jaSource])
+  const [blurDataUrl] = useNextBlurhash(siteMetadata.imageBlurHash)
 
   return (
     <>
@@ -48,6 +50,7 @@ export default function About({
               width={200}
               height={200}
               placeholder="blur"
+              blurDataURL={blurDataUrl}
             />
             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
               {activeTab === 'en' ? 'Tadashi Nemoto' : '根本 征'}
