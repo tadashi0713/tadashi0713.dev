@@ -1,10 +1,8 @@
 import Image from './Image'
 import Link from './Link'
 import LinesEllipsis from 'react-lines-ellipsis'
-import useNextBlurhash from 'use-next-blurhash'
 
-const MediumCard = ({ title, description, imgSrc, href, blurHash }) => {
-  const [blurDataUrl] = useNextBlurhash(blurHash)
+const MediumCard = ({ title, description, imgSrc, href }) => {
   return (
     <div className="p-4 md:w-1/2 md" style={{ maxWidth: '544px' }}>
       <div className="h-full overflow-hidden border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700">
@@ -18,7 +16,6 @@ const MediumCard = ({ title, description, imgSrc, href, blurHash }) => {
               height={306}
               quality={50}
               placeholder="blur"
-              blurDataURL={blurDataUrl}
             />
           </Link>
         ) : (
@@ -30,7 +27,6 @@ const MediumCard = ({ title, description, imgSrc, href, blurHash }) => {
             height={306}
             quality={50}
             placeholder="blur"
-            blurDataURL={blurDataUrl}
           />
         )}
         <div className="p-6">

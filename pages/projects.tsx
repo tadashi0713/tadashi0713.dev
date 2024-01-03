@@ -53,7 +53,6 @@ export default function Projects() {
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
-                blurHash={d.blurHash}
               />
             ))}
           </div>
