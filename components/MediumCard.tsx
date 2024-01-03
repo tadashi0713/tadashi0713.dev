@@ -15,7 +15,7 @@ const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
             <Image
               alt={title}
               src={imgSrc}
-              className="object-cover object-center lg:h-48 md:h-36"
+              className="object-cover object-center lg:h-60 md:h-36"
               width={544}
               height={306}
               quality={50}
@@ -27,7 +27,7 @@ const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
           <Image
             alt={title}
             src={imgSrc}
-            className="object-cover object-center lg:h-48 md:h-36"
+            className="object-cover object-center lg:h-60 md:h-36"
             width={544}
             height={306}
             quality={50}
