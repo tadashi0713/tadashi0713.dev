@@ -3,10 +3,27 @@ import Link from './Link'
 import LinesEllipsis from 'react-lines-ellipsis'
 
 const SmallCard = ({ title, description, imgSrc, href, blurDataURL }) => (
-  <div className="p-3 md:w-1/3 md" style={{ maxWidth: '544px' }}>
-    <div className="h-full overflow-hidden border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700">
-      {href ? (
-        <Link href={href} aria-label={`Link to ${title}`}>
+  <div className="p-3 md:w-1/3 md max-w-[544px]">
+    <div
+      className={`${
+        imgSrc && 'h-full'
+      } overflow-hidden border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700`}
+    >
+      {imgSrc &&
+        (href ? (
+          <Link href={href} aria-label={`Link to ${title}`}>
+            <Image
+              alt={title}
+              src={imgSrc}
+              className="object-cover object-center lg:h-48 md:h-36"
+              width={544}
+              height={306}
+              quality={50}
+              placeholder="blur"
+              blurDataURL={blurDataURL}
+            />
+          </Link>
+        ) : (
           <Image
             alt={title}
             src={imgSrc}
@@ -17,19 +34,7 @@ const SmallCard = ({ title, description, imgSrc, href, blurDataURL }) => (
             placeholder="blur"
             blurDataURL={blurDataURL}
           />
-        </Link>
-      ) : (
-        <Image
-          alt={title}
-          src={imgSrc}
-          className="object-cover object-center lg:h-48 md:h-36"
-          width={544}
-          height={306}
-          quality={50}
-          placeholder="blur"
-          blurDataURL={blurDataURL}
-        />
-      )}
+        ))}
       <div className="p-4">
         <h2 className="mb-3 font-bold leading-6 tracking-tight">
           {href ? (
