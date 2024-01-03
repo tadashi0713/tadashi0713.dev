@@ -40,7 +40,7 @@ const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
             <LinesEllipsis text={title} maxLine="3" ellipsis="..." trimRight basedOn="letters" />
           )}
         </h2>
-        <p className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400">
+        <span className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400">
           <LinesEllipsis
             text={description}
             maxLine="3"
@@ -48,7 +48,7 @@ const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
             trimRight
             basedOn="letters"
           />
-        </p>
+        </span>
         {href && (
           <Link
             href={href}
