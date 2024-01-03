@@ -10,7 +10,7 @@ const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
           <Image
             alt={title}
             src={imgSrc}
-            className="object-cover object-center lg:h-48 md:h-36"
+            className="object-cover object-center lg:h-60 md:h-36"
             width={544}
             height={306}
             quality={50}
@@ -22,7 +22,7 @@ const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
         <Image
           alt={title}
           src={imgSrc}
-          className="object-cover object-center lg:h-48 md:h-36"
+          className="object-cover object-center lg:h-60 md:h-36"
           width={544}
           height={306}
           quality={50}
@@ -40,7 +40,7 @@ const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
             <LinesEllipsis text={title} maxLine="3" ellipsis="..." trimRight basedOn="letters" />
           )}
         </h2>
-        <p className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400">
+        <span className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400">
           <LinesEllipsis
             text={description}
             maxLine="3"
@@ -48,7 +48,7 @@ const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
             trimRight
             basedOn="letters"
           />
-        </p>
+        </span>
         {href && (
           <Link
             href={href}
