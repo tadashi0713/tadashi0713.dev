@@ -1,21 +1,11 @@
 import { useState } from 'react'
 import siteMetadata from '@/data/siteMetadata'
-import talksData from '@/data/talksData'
+import talks from '@/data/talksData'
 import Twemoji from '@/components/Twemoji'
 import MediumCard from '@/components/MediumCard'
 import { PageSEO } from '@/components/SEO'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { getBlurConvertedOgps } from '@/lib/ogp'
-import { Ogp } from 'types/Ogp'
 
-export const getStaticProps: GetStaticProps<{
-  talks: Ogp[]
-}> = async () => {
-  const talks = await getBlurConvertedOgps(talksData)
-  return { props: { talks } }
-}
-
-export default function Talks({ talks }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Talks() {
   const [searchValue, setSearchValue] = useState('')
   const filteredTalks = talks.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.description
@@ -63,7 +53,6 @@ export default function Talks({ talks }: InferGetStaticPropsType<typeof getStati
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
-                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>
