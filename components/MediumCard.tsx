@@ -1,8 +1,10 @@
+import toBase64 from '@/lib/utils/toBase64'
 import Image from './Image'
 import Link from './Link'
 import LinesEllipsis from 'react-lines-ellipsis'
+import shimmer from '@/lib/shimmer'
 
-const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
+const MediumCard = ({ title, description, imgSrc, href }) => (
   <div className="p-4 md:w-1/2 md max-w-[544px]">
     <div
       className={`${
@@ -19,8 +21,7 @@ const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
               width={544}
               height={306}
               quality={50}
-              placeholder="blur"
-              blurDataURL={blurDataURL}
+              placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(544, 306))}`}
             />
           </Link>
         ) : (
@@ -31,8 +32,7 @@ const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
             width={544}
             height={306}
             quality={50}
-            placeholder="blur"
-            blurDataURL={blurDataURL}
+            placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(544, 306))}`}
           />
         ))}
       <div className="p-6">
