@@ -1,9 +1,8 @@
 import siteMetadata from '@/data/siteMetadata'
-import articlesData from '@/data/articlesData'
+import articles from '@/data/articlesData'
 import { PageSEO } from '@/components/SEO'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import ArticlesListLayout from '@/layouts/ArticlesListLayout'
-import { getBlurConvertedOgps } from '@/lib/ogp'
 import { Ogp } from 'types/Ogp'
 
 export const ARTICLES_PER_PAGE = 15
@@ -13,8 +12,6 @@ export const getStaticProps: GetStaticProps<{
   initialDisplayArticles: Ogp[]
   pagination: { currentPage: number; totalPages: number }
 }> = async () => {
-  const articles = await getBlurConvertedOgps(articlesData)
-
   const initialDisplayArticles = articles.slice(0, ARTICLES_PER_PAGE)
   const pagination = {
     currentPage: 1,

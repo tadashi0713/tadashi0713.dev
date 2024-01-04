@@ -6,31 +6,15 @@ import projectsData from '@/data/projectsData'
 import talksData from '@/data/talksData'
 import articlesData from '@/data/articlesData'
 import SmallCard from '@/components/SmallCard'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { Ogp } from 'types/Ogp'
-import { getBlurConvertedOgps } from '@/lib/ogp'
 
 const MAX_DISPLAY_ARTICLES = 15
 const MAX_DISPLAY_TALKS = 6
 const MAX_DISPLAY_PROJECTS = 6
 
-export const getStaticProps: GetStaticProps<{
-  articles: Ogp[]
-  talks: Ogp[]
-  projects: Ogp[]
-}> = async () => {
-  const articles = await getBlurConvertedOgps(articlesData.slice(0, MAX_DISPLAY_ARTICLES))
-  const talks = await getBlurConvertedOgps(talksData.slice(0, MAX_DISPLAY_TALKS))
-  const projects = await getBlurConvertedOgps(projectsData.slice(0, MAX_DISPLAY_PROJECTS))
-
-  return { props: { articles, talks, projects } }
-}
-
-export default function Home({
-  articles,
-  talks,
-  projects,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home() {
+  const articles = articlesData.slice(0, MAX_DISPLAY_ARTICLES)
+  const talks = talksData.slice(0, MAX_DISPLAY_TALKS)
+  const projects = projectsData.slice(0, MAX_DISPLAY_PROJECTS)
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -72,7 +56,6 @@ export default function Home({
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
-                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>
@@ -105,7 +88,6 @@ export default function Home({
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
-                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>
@@ -138,7 +120,6 @@ export default function Home({
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
-                blurDataURL={d.blurDataURL}
               />
             ))}
           </div>
