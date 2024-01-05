@@ -3,6 +3,7 @@ import GA from './GoogleAnalytics'
 import Plausible from './Plausible'
 import SimpleAnalytics from './SimpleAnalytics'
 import siteMetadata from '@/data/siteMetadata'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 declare global {
   interface Window {
@@ -20,6 +21,7 @@ const Analytics = () => {
       {isProduction && siteMetadata.analytics.plausibleDataDomain && <Plausible />}
       {isProduction && siteMetadata.analytics.simpleAnalytics && <SimpleAnalytics />}
       {isProduction && siteMetadata.analytics.googleAnalyticsId && <GA />}
+      <SpeedInsights />
     </>
   )
 }
