@@ -1,35 +1,40 @@
+import toBase64 from '@/lib/utils/toBase64'
 import Image from './Image'
 import Link from './Link'
 import LinesEllipsis from 'react-lines-ellipsis'
+import shimmer from '@/lib/shimmer'
 
-const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
-  <div className="p-4 md:w-1/2 md" style={{ maxWidth: '544px' }}>
-    <div className="h-full overflow-hidden border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700">
-      {href ? (
-        <Link href={href} aria-label={`Link to ${title}`}>
+const MediumCard = ({ title, description, imgSrc, href }) => (
+  <div className="p-4 md:w-1/2 md max-w-[544px]">
+    <div
+      className={`${
+        imgSrc && 'h-full'
+      } overflow-hidden border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700`}
+    >
+      {imgSrc &&
+        (href ? (
+          <Link href={href} aria-label={`Link to ${title}`}>
+            <Image
+              alt={title}
+              src={imgSrc}
+              className="object-cover object-center lg:h-60 md:h-36"
+              width={544}
+              height={306}
+              quality={50}
+              placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(544, 306))}`}
+            />
+          </Link>
+        ) : (
           <Image
             alt={title}
             src={imgSrc}
-            className="object-cover object-center lg:h-48 md:h-36"
+            className="object-cover object-center lg:h-60 md:h-36"
             width={544}
             height={306}
             quality={50}
-            placeholder="blur"
-            blurDataURL={blurDataURL}
+            placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(544, 306))}`}
           />
-        </Link>
-      ) : (
-        <Image
-          alt={title}
-          src={imgSrc}
-          className="object-cover object-center lg:h-48 md:h-36"
-          width={544}
-          height={306}
-          quality={50}
-          placeholder="blur"
-          blurDataURL={blurDataURL}
-        />
-      )}
+        ))}
       <div className="p-6">
         <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
           {href ? (
@@ -40,7 +45,7 @@ const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
             <LinesEllipsis text={title} maxLine="3" ellipsis="..." trimRight basedOn="letters" />
           )}
         </h2>
-        <p className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400">
+        <span className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400">
           <LinesEllipsis
             text={description}
             maxLine="3"
@@ -48,7 +53,7 @@ const MediumCard = ({ title, description, imgSrc, href, blurDataURL }) => (
             trimRight
             basedOn="letters"
           />
-        </p>
+        </span>
         {href && (
           <Link
             href={href}
