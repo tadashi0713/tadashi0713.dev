@@ -1,0 +1,62 @@
+---
+title: モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました
+date: '2024-01-23'
+tags: ['circleci', 'mobile', 'ios', 'android', 'japanese']
+draft: false
+summary: モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしましたこの記事では、CircleCI でリリースされた M1 Mac リソースクラスのパフォーマンス比較を紹介します。
+images:
+  [
+    'https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg',
+  ]
+---
+
+![CircleCI App Distribution](https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg)
+
+<TOCInline toc={props.toc} />
+
+---
+
+## CircleCI App Distribution とは
+
+![よくある質問と回答](https://res.cloudinary.com/tadashi0713/image/upload/v1704087525/tadashi0713.dev/cci-app-distribution-faq-ja.jpg)
+
+Firebase App Distribution や DeployGate
+
+CircleCI 内だけで
+
+## 使い方
+
+CircleCI App Distribution は CircleCI Orb として公開しています。
+
+[CircleCI Developer Hub - tadashi0713/app-distribution](https://circleci.com/developer/ja/orbs/orb/tadashi0713/app-distribution)
+
+各ステップにおいて
+
+## 特徴
+
+- デバッグ版の配布を CircleCI 上のみで完結することができる
+  - 別途サービスを用意する必要がない
+- 簡単にセットアップ・利用することができる
+  -
+- セキュアに利用することが可能
+  - CircleCI の Artifact を利用しているため
+    - プロジェクトの閲覧権限がある人のみ利用可能
+    - Artifact の保存期間をコントロールすることが可能
+- GitHub, GitLab, BitBucket をサポート
+  - 各VCSのCI/CDツール(GitHub Actions, GitLab CI)に依存せず利用することが可能
+
+## 各プラットフォームにおけるアーキテクチャー
+
+![Androidにおけるアーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1704086206/tadashi0713.dev/cci-app-distribution-android.jpg)
+
+Android におけるアーキテクチャー
+
+![iOSにおけるアーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1704087903/tadashi0713.dev/cci-app-distribution-ios.jpg)
+
+CircleCIのアーティファクト
+
+## おわりに
+
+- 公式Orb(Certified Orb)
+- GitLab Merge Request, Bitbucket Pull Request への対応
+- 他
