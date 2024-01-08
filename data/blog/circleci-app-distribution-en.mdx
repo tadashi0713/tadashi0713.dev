@@ -12,8 +12,66 @@ images:
 
 ![CircleCI App Distribution](https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg)
 
-##
+## Background
 
 [CircleCI Developer Hub - tadashi0713/app-distribution](https://circleci.com/developer/orbs/orb/tadashi0713/app-distribution)
 
 ## How to use?
+
+### Android
+
+```yml
+version: 2.1
+orbs:
+  android: circleci/android@2.3.0
+  app-distribution: tadashi0713/app-distribution@1.0.0
+
+distribute_debug:
+  executor:
+    name: android/android-docker
+    resource-class: xlarge
+    tag: 2023.11.1
+  steps:
+    - checkout
+    - android/restore-gradle-cache
+    - run: ./gradlew buildDebug
+    - android/save-gradle-cache
+    - app-distribution/upload_android:
+        path: app/build/outputs/apk/debug/app-debug.apk
+    - app-distribution/comment_github_pr
+    - app-distribution/notify_slack:
+        channel: test
+
+workflows:
+  android-workflow:
+    jobs:
+      - distribute_debug
+```
+
+### iOS
+
+```yaml
+version: 2.1
+orbs:
+  ruby: circleci/ruby@2.1.0
+  app-distribution: tadashi0713/app-distribution@1.0.0
+
+distribute_debug:
+  macos:
+    xcode: 14.3.1
+  resource_class: macos.m1.large.gen1
+  steps:
+    - checkout
+    - ruby/install-deps
+    - run: bundle exec fastlane beta
+    - app-distribution/upload_ios:
+        path: CircleCIDemo.ipa
+    - app-distribution/comment_github_pr
+    - app-distribution/notify_slack:
+        channel: test
+
+workflows:
+  ios-workflow:
+    jobs:
+      - distribute_debug
+```
