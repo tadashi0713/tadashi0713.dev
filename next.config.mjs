@@ -5,7 +5,19 @@ const config = {
   // Next.js 12
   swcMinify: true,
   images: {
-    domains: ['opengraph.githubassets.com', 'res.cloudinary.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'opengraph.githubassets.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/tadashi0713/image/upload/*/tadashi0713.dev/*',
+      },
+    ],
   },
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
