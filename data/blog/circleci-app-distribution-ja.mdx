@@ -3,14 +3,18 @@ title: モバイルアプリを CircleCI 上のみで簡単に配布すること
 date: '2024-01-23'
 tags: ['circleci', 'mobile', 'ios', 'android', 'japanese']
 draft: false
-summary:
-  モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました。
+summary: モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました。この記事ではこの CircleCI App Distribution の使い方と特徴について紹介します。
+images:
   [
-  'https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg',
+    'https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg',
   ]
 ---
 
 ![CircleCI App Distribution](https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg)
+
+モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました。
+
+この記事ではこの CircleCI App Distribution の使い方と特徴について紹介します。
 
 <TOCInline toc={props.toc} />
 
@@ -20,9 +24,11 @@ summary:
 
 ![よくある質問と回答](https://res.cloudinary.com/tadashi0713/image/upload/v1704087525/tadashi0713.dev/cci-app-distribution-faq-ja.jpg)
 
-Firebase App Distribution や DeployGate
+CircleCI ではモバイルアプリケーション(iOS/Android)のビルド、テスト、そして App Store / Play Store へのリリースを自動化することができます。
 
-CircleCI 内だけで
+しかし、ビルドしたアプリケーション(主にデバック版)を iOS/Android デバイスで、CircleCIだけで完結することができず、Firebase App Distribution や DeployGate などの
+
+これらの配布を CircleCI 内だけで実現できるようにしたのが、今回紹介する CircleCI App Distribution です。
 
 ## 使い方
 
@@ -30,9 +36,61 @@ CircleCI App Distribution は CircleCI Orb として公開しています。
 
 [CircleCI Developer Hub - tadashi0713/app-distribution](https://circleci.com/developer/ja/orbs/orb/tadashi0713/app-distribution)
 
-各ステップにおいて
+CircleCIで iOS/Android プラットフォームへのビルドが完了した後に、このOrbにある `upload_android`, `upload_ios`
 
-### Android
+このステップ自体には別途特別な認証は必要ありません。
+
+```yaml
+# Android
+steps:
+  # Build Android binary
+  - app-distribution/upload_android:
+      path: demo.apk
+
+# iOS
+steps:
+  # Build iOS Binary
+  - app-distribution/upload_ios:
+    path: demo.ipa
+```
+
+実行すると、CircleCI の Job の Steps の中に `Generate QR Code(You can see QR Code in this step)` があり、この
+
+![QR Code](https://res.cloudinary.com/tadashi0713/image/upload/v1704777131/cci-app-distribution-qr_duw5j2.png)
+
+これらの iOS / Android デバイスで読み取ると
+
+![Distribution Page](https://res.cloudinary.com/tadashi0713/image/upload/v1704779650/cci-app-distribution-page_kfwsyo.png)
+
+### GitHub Pull Request へのコメント
+
+CircleCI App Distribution では `comment_github_pr` ステップを用いることによって、この配信情報を GitHub の Pull Request にコメントすることができます。
+
+事前に [Github の Token(GITHUB_TOKEN)を作成](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)し、CircleCIに保存する必要があります。
+
+```yaml
+# Android
+steps:
+  # Build Android binary
+  - app-distribution/upload_android:
+      path: demo.apk
+  - app-distribution/comment_github_pr
+
+# iOS
+steps:
+  # Build iOS Binary
+  - app-distribution/upload_ios:
+    path: demo.ipa
+  - app-distribution/comment_github_pr
+```
+
+![GitHub PR](https://res.cloudinary.com/tadashi0713/image/upload/v1704705084/cci-app-distribution-github-pr_kc6v0u.png)
+
+### Slack への通知
+
+![Slack](https://res.cloudinary.com/tadashi0713/image/upload/v1704777086/cci-app-distribution-slack_ldpfsp.png)
+
+### Android サンプル
 
 ```yml
 version: 2.1
@@ -62,7 +120,7 @@ workflows:
       - distribute_debug
 ```
 
-### iOS
+### iOS サンプル
 
 ```yaml
 version: 2.1
@@ -90,21 +148,12 @@ workflows:
       - distribute_debug
 ```
 
-## 各プラットフォームにおけるアーキテクチャー
-
-![Androidにおけるアーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1704086206/tadashi0713.dev/cci-app-distribution-android.jpg)
-
-Android におけるアーキテクチャー
-
-![iOSにおけるアーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1704087903/tadashi0713.dev/cci-app-distribution-ios.jpg)
-
-CircleCIのアーティファクト
-
 ## 特徴
 
 - デバッグ版の配布を CircleCI 上のみで完結することができる
   - 別途サービスを用意する必要がない
-- ## 簡単にセットアップ・利用することができる
+- 簡単にセットアップ・利用することができる
+  - `upload_android`, `upload_ios` には別途特別な認証
 - セキュアに利用することが可能
   - CircleCI の Artifact を利用しているため
     - プロジェクトの閲覧権限がある人のみ利用可能
@@ -112,8 +161,58 @@ CircleCIのアーティファクト
 - GitHub, GitLab, BitBucket をサポート
   - 各VCSのCI/CDツール(GitHub Actions, GitLab CI)に依存せず利用することが可能
 
+## 注意点
+
+### Executor
+
+CircleCI App Distribution は CircleCI が提供している Executor
+
+- [Android Docker Executor](https://circleci.com/developer/ja/images/image/cimg/android)
+- [Android Machine Executor](https://circleci.com/developer/ja/machine/image/android)
+- [macOS Executor](https://circleci.com/developer/ja/machine/image/xcode)
+
+上で動くことを想定しています。
+
+その他の環境(CircleCI以外が提供しているDockerイメージなど)では、実行に必要なソフトウェアがインストールされずに失敗する可能性があります。
+
+### comment_github_pr と
+
+必ず
+
+###
+
 ## おわりに
 
-- 公式Orb(Certified Orb)
+今後は要望が多ければ以下の改善を行なっていく予定です。
+
+- 公式Orb(Certified Orb)への移行
 - GitLab Merge Request, Bitbucket Pull Request への対応
-- 他
+- Slack通知以外の対応
+
+改善・要望などあれば是非 GitHub の Pull Request・Issue の作成をお願いします。
+
+[GitHub - tadashi0713/circleci-app-distribution: Easiest way to distribute your mobile applications all inside CircleCI](https://github.com/tadashi0713/circleci-app-distribution)
+
+## (補足)各プラットフォームにおけるアーキテクチャー
+
+CircleCI App Distribution は CircleCI Artifact を主に活用しています。
+
+### Android アーキテクチャー
+
+対象のバイナリ()
+
+QRCodeを生成し(qrencoder)、CircleCIのジョブコンソールや GitHub Pull Request に表示させています。
+
+![Androidにおけるアーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1704086206/tadashi0713.dev/cci-app-distribution-android.jpg)
+
+### iOS アーキテクチャー
+
+iOS も同じく取得したバイナリ(.ipa)を解析し、HTMLページを作成・Artifact にアップロードします。
+
+ipa ファイルの解析には [ipa_analyzer](https://github.com/bitrise-io/ipa_analyzer) を利用しています。
+
+Android と大きく違う
+
+HTML → plist(property list) →
+
+![iOSにおけるアーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1704087903/tadashi0713.dev/cci-app-distribution-ios.jpg)
