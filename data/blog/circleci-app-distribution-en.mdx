@@ -1,6 +1,6 @@
 ---
 title: Introducing CircleCI App Distribution, the easiest way to distribute your mobile applications all inside CircleCI
-date: '2024-01-23'
+date: '2024-01-16'
 tags: ['circleci', 'mobile', 'ios', 'android', 'english']
 draft: false
 summary: Introducing CircleCI App Distribution, the easiest way to distribute your mobile applications all inside CircleCI
@@ -14,10 +14,198 @@ images:
 
 Introducing CircleCI App Distribution, the easiest way to distribute your mobile applications all inside CircleCI.
 
+<TOCInline toc={props.toc} />
+
+---
+
 ## Background
+
+![FAQ](https://res.cloudinary.com/tadashi0713/image/upload/v1704087525/tadashi0713.dev/cci-app-distribution-faq-en.jpg)
+
+そのため、これまでは [Firebase App Distribution](https://firebase.google.com/docs/app-distribution) や [DeployGate](https://deploygate.com/) などのサービスと連携する必要がありました。
 
 ## How to use?
 
 [CircleCI Developer Hub - tadashi0713/app-distribution](https://circleci.com/developer/orbs/orb/tadashi0713/app-distribution)
 
-### Android
+```yaml
+# Android
+steps:
+  # Build Android binary
+  - app-distribution/upload_android:
+      path: demo.apk
+
+# iOS
+steps:
+  # Build iOS Binary
+  - app-distribution/upload_ios:
+    path: demo.ipa
+```
+
+![Distribution Page](https://res.cloudinary.com/tadashi0713/image/upload/v1704779650/cci-app-distribution-page_kfwsyo.png)
+
+### GitHub Pull Request
+
+```yaml
+# Android
+steps:
+  # Build Android binary
+  - app-distribution/upload_android:
+      path: demo.apk
+  - app-distribution/comment_github_pr
+
+# iOS
+steps:
+  # Build iOS Binary
+  - app-distribution/upload_ios:
+    path: demo.ipa
+  - app-distribution/comment_github_pr
+```
+
+![GitHub PR](https://res.cloudinary.com/tadashi0713/image/upload/v1704705084/cci-app-distribution-github-pr_kc6v0u.png)
+
+### Notify to Slack
+
+```yaml
+# Android
+steps:
+  # Build Android binary
+  - app-distribution/upload_android:
+      path: demo.apk
+  - app-distribution/notify_slack:
+      channel: test-android
+
+# iOS
+steps:
+  # Build iOS Binary
+  - app-distribution/upload_ios:
+    path: demo.ipa
+  - app-distribution/notify_slack:
+      channel: test-ios
+```
+
+![Slack](https://res.cloudinary.com/tadashi0713/image/upload/v1704777086/cci-app-distribution-slack_ldpfsp.png)
+
+## Cautions
+
+### Executor
+
+### GitHub Pull Request slack
+
+```yaml
+# NG例
+version: 2.1
+
+orbs:
+  app-distribution: tadashi0713/app-distribution@1.0.0
+
+jobs:
+  build_debug:
+    macos:
+      xcode: 14.3.1
+    steps:
+      # Build iOS Binary
+      - app-distribution/upload_ios:
+          path: demo.ipa
+  github_slack:
+    steps:
+      - app-distribution/comment_github_pr
+      - app-distribution/notify_slack:
+          channel: test
+
+workflows:
+  ios-workflow:
+    jobs:
+      - build_debug
+      - github_slack:
+          requires:
+            - build_debug
+```
+
+### iOS
+
+[Set up code signing for iOS projects - CircleCI](https://circleci.com/docs/ios-codesigning/)
+
+## Ending
+
+[GitHub - tadashi0713/circleci-app-distribution: Easiest way to distribute your mobile applications all inside CircleCI](https://github.com/tadashi0713/circleci-app-distribution)
+
+## (Appendix) Sample config file
+
+### Android sample config file
+
+```yaml
+version: 2.1
+
+orbs:
+  android: circleci/android@2.3.0
+  app-distribution: tadashi0713/app-distribution@1.0.0
+
+jobs:
+  distribute_debug:
+    executor:
+      name: android/android-docker
+    steps:
+      - checkout
+      - android/restore-gradle-cache
+      - run: ./gradlew buildDebug
+      - android/save-gradle-cache
+      - app-distribution/upload_android:
+          path: app/build/outputs/apk/debug/app-debug.apk
+      - app-distribution/comment_github_pr
+      - app-distribution/notify_slack:
+          channel: test
+
+workflows:
+  android-workflow:
+    jobs:
+      - distribute_debug
+```
+
+### iOS sample config file
+
+```yaml
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@2.1.0
+  app-distribution: tadashi0713/app-distribution@1.0.0
+
+jobs:
+  distribute_debug:
+    macos:
+      xcode: 14.3.1
+    resource_class: macos.m1.large.gen1
+    steps:
+      - checkout
+      - ruby/install-deps
+      - run: bundle exec fastlane beta
+      - app-distribution/upload_ios:
+          path: CircleCIDemo.ipa
+      - app-distribution/comment_github_pr
+      - app-distribution/notify_slack:
+          channel: test
+
+workflows:
+  ios-workflow:
+    jobs:
+      - distribute_debug
+```
+
+## (Appendix)各プラットフォームにおけるアーキテクチャー Architecture
+
+### Android architecture
+
+### iOS architecture
+
+```html
+<!-- Download the manifest file(.plist) -->
+<a class="button is-dark" href="itms-services://?action=download-manifest&amp;url=${PLIST_URL}">
+  <span class="icon">
+    <i class="fas fa-download"></i>
+  </span>
+  <span>Install App</span>
+</a>
+```
+
+![iOS Architecture](https://res.cloudinary.com/tadashi0713/image/upload/v1704087903/tadashi0713.dev/cci-app-distribution-ios.jpg)
