@@ -5,7 +5,7 @@ const articlesData = [
     description: `モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました。この記事ではこの CircleCI App Distribution の使い方と特徴について紹介します。`,
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg',
-    href: '/blog/circleci-app-distribution-ja',
+    href: '/blog/ja/circleci-app-distribution',
   },
   {
     title: 'Using OpenID Connect (OIDC) for Azure access',
@@ -19,7 +19,7 @@ const articlesData = [
     description: `This article describes how to reduce Android UI test execution time using test splitting, parallelization, and CircleCI’s Android emulator.`,
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1700375616/tadashi0713.dev/android-parallel-testing-hero-en.png',
-    href: '/blog/circleci-android-parallel-testing',
+    href: '/blog/en/circleci-android-parallel-testing',
   },
   {
     title: 'Software Design 2023年12月号',
@@ -47,7 +47,7 @@ const articlesData = [
     description: `This article describes how to securely connect GitLab Self-managed to CircleCI using the IP ranges feature.`,
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1682243393/tadashi0713.dev/gitlab-ip-ranges.jpg',
-    href: '/blog/gitlab-ip-ranges-en',
+    href: '/blog/en/gitlab-ip-ranges',
   },
   {
     title:
@@ -55,28 +55,28 @@ const articlesData = [
     description: `この記事では、CircleCI が提供する IP アドレス範囲機能を利用して、セルフホスト(self-managed)版 GitLab と CircleCI クラウドを IP アドレスベースでセキュアに接続する方法について紹介します。`,
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1682243393/tadashi0713.dev/gitlab-ip-ranges.jpg',
-    href: '/blog/gitlab-ip-ranges-ja',
+    href: '/blog/ja/gitlab-ip-ranges',
   },
   {
     title: 'Create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD and Kustomize',
     description: `This blog describes how to create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD and Kustomize`,
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661311625/tadashi0713.dev/gitops-argocd-hero.png',
-    href: '/blog/gitops-argocd-en',
+    href: '/blog/en/gitops-argocd',
   },
   {
     title: 'CircleCI M1 Mac performance comparison',
     description: `This article presents a performance comparison of the M1 Mac resource class released by CircleCI.`,
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1679468120/tadashi0713.dev/circleci-m1-comparison.jpg',
-    href: '/blog/circleci-m1-comparison-en',
+    href: '/blog/en/circleci-m1-comparison',
   },
   {
     title: 'CircleCI M1 Mac パフォーマンス比較',
     description: `この記事では、CircleCI でリリースされた M1 Mac リソースクラスのパフォーマンス比較を紹介します。`,
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1679468120/tadashi0713.dev/circleci-m1-comparison.jpg',
-    href: '/blog/circleci-m1-comparison-ja',
+    href: '/blog/ja/circleci-m1-comparison',
   },
   {
     title: 'Androidエミュレーターを使ったUIテスト(Espresso)を分割・並列実行しよう',
@@ -104,14 +104,14 @@ const articlesData = [
     description: `この記事では、CircleCI Orb を使って不安定なテスト(Flaky Tests)を Slack 通知する方法について紹介します。`,
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png',
-    href: '/blog/flaky-tests-notify-orb-ja',
+    href: '/blog/ja/flaky-tests-notify-orb',
   },
   {
     title: 'Setting up slack notification of detecting flaky tests using CircleCI(Orb)',
     description: `This blog describes how to set up slack notification of detecting flaky tests using CircleCI(Orb)`,
     imgSrc:
       'https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png',
-    href: '/blog/flaky-tests-notify-orb-en',
+    href: '/blog/en/flaky-tests-notify-orb',
   },
   {
     title: 'iOSの自動テスト(iOSシミュレーターを使ったUIテスト)を分割・並列実行しよう',
