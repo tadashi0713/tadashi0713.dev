@@ -216,7 +216,23 @@ workflows:
 
 ### Android architecture
 
+This is the process of installing the Android app.
+
 ### iOS architecture
+
+Similarly, when executing `upload_ios`, it analyzes the app information from the target binary (.ipa).
+
+It uses [ipa_analyzer](<(https://github.com/bitrise-io/ipa_analyzer)>) for analyzing ipa files.
+
+A significant difference from Android is that, in the case of iOS applications, you cannot install the binary (.ipa) directly by attempting to download it.
+
+To install an iOS application, you need to do so via a manifest file (.plist) that contains the app information and the URL of the binary (.ipa).
+
+Therefore, you need to create and upload both the manifest file (.plist) and HTML file.
+
+This is the process of installing the iOS app.
+
+`QR Code -> Distribution Page (HTML) -> Download Manifest File (.plist) -> Download/Install Binary (.ipa)`
 
 ```html
 <!-- Download the manifest file(.plist) -->
