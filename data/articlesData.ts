@@ -1,5 +1,13 @@
 const articlesData = [
   {
+    title:
+      'モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました！',
+    description: `モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました。この記事ではこの CircleCI App Distribution の使い方と特徴について紹介します。`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg',
+    href: '/blog/circleci-app-distribution-ja',
+  },
+  {
     title: 'Using OpenID Connect (OIDC) for Azure access',
     description: `This article describes how to achieve secure access to Azure by using OpenID Connect (OIDC), without having to maintain a static credential on the CircleCI side.`,
     imgSrc:
