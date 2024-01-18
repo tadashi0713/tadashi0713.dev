@@ -38,7 +38,7 @@ CircleCI App Distribution is available as CircleCI Orb.
 
 [CircleCI Developer Hub - tadashi0713/app-distribution](https://circleci.com/developer/orbs/orb/tadashi0713/app-distribution)
 
-Add this Orb's command `upload_android` or `upload_ios` to CircleCI's CI/CD pipeline to build to iOS/Android platforms.
+Add this Orb's command `upload_android` or `upload_ios` to CircleCI's CI/CD pipeline for iOS/Android platforms.
 
 The parameter `path` should be the path of the built binaries (apk, aab, ipa).
 
@@ -68,9 +68,9 @@ Scanning this QR code on iOS/Android devices will display the distribution page,
 
 ### Comment to GitHub Pull Request
 
-CircleCI App Distribution allows you to post this distribution information to a specific Slack channel by using the `notify_slack` step.
+With CircleCI App Distribution, you can use `comment_github_pr` to comment on GitHub Pull Requests with distribution information.
 
-You need to [generate a Slack Token (SLACK_ACCESS_TOKEN)](https://github.com/CircleCI-Public/slack-orb/wiki/Setup) and save it in CircleCI beforehand.
+You need to create and save a GitHub Token ([GITHUB_TOKEN](<(https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)>)) in advance.
 
 ```yaml
 # Android
@@ -123,7 +123,7 @@ steps:
 - Easy to set up and use.
   - For `upload_android` and `upload_ios`, you only need to specify the path to the binary you want to distribute; no additional setup is required.
   - GitHub Pull Request comments (`comment_github_pr`) and Slack notifications (notify_slack) can be achieved with just a few lines of code.
-- Secure usage is possible, utilizing CircleCI's Artifact.
+- Secure usage is possible, by utilizing CircleCI's Artifact.
   - Limited to users with project viewing permissions.
   - Control over the Artifact's storage duration.
 - Supports GitHub, GitLab, BitBucket.
