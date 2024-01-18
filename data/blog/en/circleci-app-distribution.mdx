@@ -14,6 +14,8 @@ images:
 
 Introducing CircleCI App Distribution, the easiest way to distribute your mobile applications all inside CircleCI.
 
+This article introduces the usage and characteristics of CircleCI App Distribution.
+
 <TOCInline toc={props.toc} />
 
 ---
@@ -54,7 +56,15 @@ steps:
     path: demo.ipa
 ```
 
+When executed, in the CircleCI UI under Job Steps, there will be a "Generate QR Code" step (you can see the QR Code in this step), and clicking on this step will display a QR code on the console screen.
+
+![QR Code](https://res.cloudinary.com/tadashi0713/image/upload/v1704777131/cci-app-distribution-qr_duw5j2.png)
+
+Scanning this QR code on iOS/Android devices will display the distribution page, allowing the installation of the target application.
+
 ![Distribution Page](https://res.cloudinary.com/tadashi0713/image/upload/v1704779650/cci-app-distribution-page_kfwsyo.png)
+
+<Vimeo video="901757871" responsive />
 
 ### Comment to GitHub Pull Request
 
@@ -106,14 +116,38 @@ steps:
 
 ![Slack](https://res.cloudinary.com/tadashi0713/image/upload/v1704777086/cci-app-distribution-slack_ldpfsp.png)
 
+## Characteristics
+
+- Distribute debug versions solely within CircleCI.
+  - No need for additional services or integrations.
+- Easy to set up and use.
+  - For `upload_android` and `upload_ios`, you only need to specify the path to the binary you want to distribute; no additional setup is required.
+  - GitHub Pull Request comments (`comment_github_pr`) and Slack notifications (notify_slack) can be achieved with just a few lines of code.
+- Secure usage is possible, utilizing CircleCI's Artifact.
+  - Limited to users with project viewing permissions.
+  - Control over the Artifact's storage duration.
+- Supports GitHub, GitLab, BitBucket.
+  - Can be used independently of VCS CI/CD tools (GitHub Actions, GitLab CI).
+
 ## Cautions
 
 ### Executor
 
-### GitHub Pull Request slack
+CircleCI App Distribution is intended to run on the Executors provided by CircleCI.
+
+- For Android (`upload_android`), use Android Docker Executor or Android Machine Executor.
+- For iOS (`upload_ios`), use macOS Executor.
+
+In other environments (Docker images provided by entities other than CircleCI), it may fail without the necessary software installed.
+
+### GitHub Pull Request Comments and Slack Notifications
+
+When using GitHub Pull Request comments (comment_github_pr) and Slack notifications (notify_slack), execute upload_android or upload_ios in the same Job in the preceding steps.
+
+It cannot be executed in a separate job as below.
 
 ```yaml
-# NG例
+# NG example
 version: 2.1
 
 orbs:
@@ -142,11 +176,23 @@ workflows:
             - build_debug
 ```
 
-### iOS
+### For Distributing iOS Applications
+
+When distributing iOS applications with CircleCI App Distribution, you need to build the iOS application as an Ad Hoc application.
+
+Refer to the following for setting up code signing and building Ad Hoc applications using CircleCI and fastlane:
 
 [Set up code signing for iOS projects - CircleCI](https://circleci.com/docs/ios-codesigning/)
 
 ## Ending
+
+Future improvements, if requested, may include:
+
+- Transition to the official Orb (Certified Orb).
+- Support for GitLab Merge Requests and Bitbucket Pull Requests.
+- Support for features other than Slack notifications.
+
+Feel free to create Pull Requests or Issues on GitHub for any improvements or requests.
 
 [GitHub - tadashi0713/circleci-app-distribution: Easiest way to distribute your mobile applications all inside CircleCI](https://github.com/tadashi0713/circleci-app-distribution)
 
@@ -212,17 +258,33 @@ workflows:
       - distribute_debug
 ```
 
-## (Appendix)各プラットフォームにおけるアーキテクチャー Architecture
+## (Appendix) Architectures for Each Platform
+
+CircleCI App Distribution primarily utilizes CircleCI Artifacts.
 
 ### Android architecture
 
+When executing `upload_android`, it first analyzes the app information (app name, release version, etc.) from the target binary (.apk, .aab).
+
+It uses [AAPT2](https://developer.android.com/studio/command-line/aapt2), one of the Android SDK Build-Tools, for analysis.
+
+The acquired app information is first written to an HTML file and, along with the binary (.apk, .aab), uploaded to CircleCI Artifacts.
+
+Additionally, to use this information in GitHub Pull Request comments (`comment_github_pr`) and Slack notifications (`notify_slack`), it is stored in environment variables.
+
+Finally, it generates a QR code based on the URL of the uploaded HTML file (using qrencoder) and displays it in CircleCI job console or GitHub Pull Request.
+
 This is the process of installing the Android app.
+
+`QR Code -> Distribution Page (HTML) -> Download/Install Binary (.apk, .aab)`
+
+![Android architecture](https://res.cloudinary.com/tadashi0713/image/upload/v1704086206/tadashi0713.dev/cci-app-distribution-android.jpg)
 
 ### iOS architecture
 
 Similarly, when executing `upload_ios`, it analyzes the app information from the target binary (.ipa).
 
-It uses [ipa_analyzer](<(https://github.com/bitrise-io/ipa_analyzer)>) for analyzing ipa files.
+It uses [ipa_analyzer](https://github.com/bitrise-io/ipa_analyzer) for analyzing ipa files.
 
 A significant difference from Android is that, in the case of iOS applications, you cannot install the binary (.ipa) directly by attempting to download it.
 
