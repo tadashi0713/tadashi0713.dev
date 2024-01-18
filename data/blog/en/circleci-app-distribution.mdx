@@ -1,9 +1,9 @@
 ---
-title: Introducing CircleCI App Distribution, the easiest way to distribute your mobile applications all inside CircleCI
-date: '2024-01-16'
+title: Introducing CircleCI App Distribution - The Easiest Way to Distribute Your Mobile Applications Inside CircleCI
+date: '2024-01-18'
 tags: ['circleci', 'mobile', 'ios', 'android', 'english']
 draft: false
-summary: Introducing CircleCI App Distribution, the easiest way to distribute your mobile applications all inside CircleCI
+summary: This article introduces the usage and characteristics of CircleCI App Distribution, the easiest way to distribute your mobile applications all inside CircleCI
 images:
   [
     'https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg',
@@ -24,13 +24,13 @@ This article introduces the usage and characteristics of CircleCI App Distributi
 
 ![FAQ](https://res.cloudinary.com/tadashi0713/image/upload/v1704087525/tadashi0713.dev/cci-app-distribution-faq-en.jpg)
 
-CircleCI supports CI/CD pipelines of mobile applications, from building, testing, and releasing to the App Store / Play Store.
+CircleCI supports CI/CD pipelines for mobile applications, covering building, testing, and releasing to the App Store/Play Store.
 
-However, CircleCI alone could not distribute applications(mainly debug versions) for installing and debugging on iOS/Android devices.
+However, CircleCI alone couldn't distribute applications (mainly debug versions) for installation and debugging on iOS/Android devices.
 
-Therefore, you need to integrate with CircleCI and other services such as [Firebase App Distribution](https://firebase.google.com/docs/app-distribution?hl=en) or [DeployGate](https://deploygate.com/?locale=en).
+As a result, integration with CircleCI and other services like [Firebase App Distribution](https://firebase.google.com/docs/app-distribution?hl=en) or [DeployGate](https://deploygate.com/?locale=en) was necessary.
 
-CircleCI App Distribution realizes these distributions only within CircleCI.
+CircleCI App Distribution realizes these distributions solely within CircleCI.
 
 ## How to use?
 
@@ -70,7 +70,7 @@ Scanning this QR code on iOS/Android devices will display the distribution page,
 
 With CircleCI App Distribution, you can use `comment_github_pr` to comment on GitHub Pull Requests with distribution information.
 
-You need to create and save a GitHub Token ([GITHUB_TOKEN](<(https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)>)) in advance.
+You need to generate a GitHub Token ([GITHUB_TOKEN](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)) and save it in CircleCI beforehand.
 
 ```yaml
 # Android
