@@ -1,6 +1,14 @@
 const articlesData = [
   {
     title:
+      'Introducing CircleCI App Distribution - The Easiest Way to Distribute Your Mobile Applications Inside CircleCI',
+    description: `This article introduces the usage and characteristics of CircleCI App Distribution, the easiest way to distribute your mobile applications all inside CircleCI`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg',
+    href: '/blog/en/circleci-app-distribution',
+  },
+  {
+    title:
       'モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました！',
     description: `モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました。この記事ではこの CircleCI App Distribution の使い方と特徴について紹介します。`,
     imgSrc:
