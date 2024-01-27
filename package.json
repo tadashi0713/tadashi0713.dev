@@ -20,7 +20,7 @@
     "@vercel/analytics": "1.1.2",
     "@vercel/speed-insights": "1.0.8",
     "autoprefixer": "10.4.17",
-    "esbuild": "0.19.12",
+    "esbuild": "0.20.0",
     "github-slugger": "1.5.0",
     "gray-matter": "4.0.3",
     "image-size": "1.1.1",
