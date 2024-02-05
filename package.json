@@ -62,7 +62,7 @@
     "globby": "11.1.0",
     "husky": "9.0.10",
     "inquirer": "9.2.14",
-    "lint-staged": "15.2.1",
+    "lint-staged": "15.2.2",
     "next-remote-watch": "2.0.0",
     "prettier": "3.2.5",
     "typescript": "5.3.3"
