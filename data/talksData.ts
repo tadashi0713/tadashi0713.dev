@@ -4,7 +4,7 @@ const talksData = [
     description:
       '企業全体でのソフトウェアデリバリーを向上させる手段として、近年プラットフォームエンジニアリングが注目されています。このセッションでは、プラットフォームエンジニアリングを実践・進化させていきたい方に向けたCircleCIの最近機能とベストプラクティスを、デモを交えながらご紹介します。',
     imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1705978314/tadashi0713.dev/platform-engineering.png',
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1705987752/tadashi0713.dev/circleci-platform-engineering.jpg',
     href: 'https://www.docswell.com/s/tadashi0713/ZP9PMX-circleci-platform-engineering',
   },
   {
