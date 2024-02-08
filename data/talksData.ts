@@ -89,7 +89,7 @@ const talksData = [
   {
     title: 'メルカリの開発スピードと品質を支える Selenium on Azure Kubernetes Service',
     description: `【東京】JJUG ナイトセミナー 「Java on Azure まつり＠Microsoft」 6/19(水)開催`,
-    imgSrc: '/static/images/mercari-selenium-aks.jpg',
+    imgSrc: '/static/images/jjug-selenium-aks.jpg',
     href: 'https://speakerdeck.com/tadashi0713/merukarifalsekai-fa-supidotopin-zhi-wozhi-eru-selenium-on-azure-kubernetes-service',
   },
   {
