@@ -296,8 +296,7 @@ const articlesData = [
   {
     title: 'メルカリiOSのUIテスト自動化をまるっとご紹介します！ | メルカリエンジニアリング',
     description: `こんにちは、メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）の 根本 征 です。私は普段、テスト自動化・CI / CD改善・その他社内の生産性を上げるための自動化を行っています。今回はiOSのUI`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661314147/tadashi0713.dev/64bac66c-20180717180233.png',
+    imgSrc: '/static/images/mercari-headspin.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2018-08-07-123000',
   },
   {
@@ -311,8 +310,7 @@ const articlesData = [
     title:
       'AndroidのCI時間を10分短縮し、開発を爆速にするためのKarakuriを作った話 | メルカリエンジニアリング',
     description: `こんにちは、メルカリの自動化＆品質保証グループ（Automation & QA Group：通称AQA）で、自動化をぶりぶりしている tadashi0713 です。私は普段、テスト自動化・CI(継続的インテグレーション) / CD(継続的デ`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661314228/tadashi0713.dev/849efda6-20180629154905.png',
+    imgSrc: '/static/images/mercari-circleci-android.png',
     href: 'https://engineering.mercari.com/blog/entry/2018-07-04-110000',
   },
   {
