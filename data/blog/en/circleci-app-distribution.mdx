@@ -90,6 +90,63 @@ steps:
 
 ![GitHub PR](https://res.cloudinary.com/tadashi0713/image/upload/v1704705084/cci-app-distribution-github-pr_kc6v0u.png)
 
+### Comment to GitLab Merge Request
+
+With CircleCI App Distribution, you can use `comment_gitlab_mr` to comment on GitLab Merge Requests with distribution information.
+
+You need to generate a GitLab Token ([GITLAB_TOKEN](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)) and save it in CircleCI beforehand.
+
+You also need to add `hostname` parameter if you are using GitLab self-hosted.
+
+```yaml
+# Android + GitLab Cloud
+steps:
+  # Build Android binary
+  - app-distribution/upload_android:
+      path: demo.apk
+  - app-distribution/comment_gitlab_mr
+
+# iOS + GitLab self-hosted
+steps:
+  # Build iOS Binary
+  - app-distribution/upload_ios:
+    path: demo.ipa
+  - app-distribution/comment_gitlab_mr:
+      hostname: example.gitlab.com
+```
+
+![GitLab MR](https://res.cloudinary.com/tadashi0713/image/upload/v1707369798/tadashi0713.dev/cci-app-distributuon-gitlab.png)
+
+### Comment to Bitbucket Pull Request
+
+With CircleCI App Distribution, you can use `comment_bitbucket_pr` to comment on Bitbucket Pull Requests with distribution information.
+
+You need to generate a Bitbucket Token ([BITBUCKET_TOKEN](https://support.atlassian.com/bitbucket-cloud/docs/access-tokens/)) and save it in CircleCI beforehand.
+
+You also need to add `repo_slug` and `workspace` parameters of this project
+
+```yaml
+# Android
+steps:
+  # Build Android binary
+  - app-distribution/upload_android:
+      path: demo.apk
+  - app-distribution/comment_bitbucket_pr:
+      repo_slug: circleci-demo-android
+      workspace: tadashi0713
+
+# iOS
+steps:
+  # Build iOS Binary
+  - app-distribution/upload_ios:
+    path: demo.ipa
+  - app-distribution/comment_bitbucket_pr:
+      repo_slug: circleci-demo-ios
+      workspace: tadashi0713
+```
+
+![Bitbucket PR](https://res.cloudinary.com/tadashi0713/image/upload/v1707369774/tadashi0713.dev/cci-app-distribution-bitbucket.png)
+
 ### Notify to Slack
 
 CircleCI App Distribution allows you to post this distribution information to a specific Slack channel by using the `notify_slack` step.
@@ -114,7 +171,7 @@ steps:
       channel: test-ios
 ```
 
-![Slack](https://res.cloudinary.com/tadashi0713/image/upload/v1704777086/cci-app-distribution-slack_ldpfsp.png)
+![Slack](https://res.cloudinary.com/tadashi0713/image/upload/v1707370062/tadashi0713.dev/cci-app-distribution-slack.png)
 
 ## Characteristics
 
@@ -122,7 +179,7 @@ steps:
   - No need for additional services or integrations.
 - Easy to set up and use.
   - For `upload_android` and `upload_ios`, you only need to specify the path to the binary you want to distribute; no additional setup is required.
-  - GitHub Pull Request comments (`comment_github_pr`) and Slack notifications (notify_slack) can be achieved with just a few lines of code.
+  - GitHub / GitLab / Bitbucket comments and Slack notifications can be achieved with just a few lines of code.
 - Secure usage is possible, by utilizing CircleCI's Artifact.
   - Limited to users with project viewing permissions.
   - Control over the Artifact's storage duration.
@@ -140,9 +197,9 @@ CircleCI App Distribution is intended to run on the Executors provided by Circle
 
 In other environments (Docker images provided by entities other than CircleCI), it may fail without the necessary software installed.
 
-### GitHub Pull Request Comments and Slack Notifications
+### GitHub / GitLab / Bitbucket Comments and Slack Notifications
 
-When using GitHub Pull Request comments (comment_github_pr) and Slack notifications (notify_slack), execute upload_android or upload_ios in the same Job in the preceding steps.
+When using GitHub / GitLab / Bitbucket comments and Slack notifications, execute upload_android or upload_ios in the same Job in the preceding steps.
 
 It cannot be executed in a separate job as below.
 
@@ -189,7 +246,6 @@ Refer to the following for setting up code signing and building Ad Hoc applicati
 Future improvements, if requested, may include:
 
 - Transition to the official Orb (Certified Orb).
-- Support for GitLab Merge Requests and Bitbucket Pull Requests.
 - Support for features other than Slack notifications.
 
 Feel free to create Pull Requests or Issues on GitHub for any improvements or requests.
@@ -205,7 +261,7 @@ version: 2.1
 
 orbs:
   android: circleci/android@2.3.0
-  app-distribution: tadashi0713/app-distribution@1.0.0
+  app-distribution: tadashi0713/app-distribution@1.1.0
 
 jobs:
   distribute_debug:
@@ -235,7 +291,7 @@ version: 2.1
 
 orbs:
   ruby: circleci/ruby@2.1.0
-  app-distribution: tadashi0713/app-distribution@1.0.0
+  app-distribution: tadashi0713/app-distribution@1.1.0
 
 jobs:
   distribute_debug:
