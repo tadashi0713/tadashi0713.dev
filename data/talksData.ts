@@ -1,5 +1,12 @@
 const talksData = [
   {
+    title: 'Best Practice CI/CD Pipeline for Deploying Container Apps to AWS',
+    description: 'AWS User Group Singapore: AWS Meetup March 2024 (AWS Office)',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1711009315/tadashi0713.dev/Best_Practice_CI_CD_Pipeline_for_Deploying_Container_Apps_to_AWS.jpg',
+    href: 'https://speakerdeck.com/tadashi0713/cd-pipeline-for-deploying-container-apps-to-aws',
+  },
+  {
     title: 'プラットフォームエンジニアリングを加速させるCircleCI',
     description:
       '企業全体でのソフトウェアデリバリーを向上させる手段として、近年プラットフォームエンジニアリングが注目されています。このセッションでは、プラットフォームエンジニアリングを実践・進化させていきたい方に向けたCircleCIの最近機能とベストプラクティスを、デモを交えながらご紹介します。',
