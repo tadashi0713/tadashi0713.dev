@@ -47,7 +47,7 @@
   "devDependencies": {
     "@next/bundle-analyzer": "14.1.4",
     "@svgr/webpack": "8.1.0",
-    "@types/react": "18.2.7",
+    "@types/react": "18.2.73",
     "@types/tailwindcss": "3.1.0",
     "@typescript-eslint/eslint-plugin": "7.4.0",
     "@typescript-eslint/parser": "7.4.0",
