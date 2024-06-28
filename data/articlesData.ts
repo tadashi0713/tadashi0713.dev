@@ -1,6 +1,14 @@
 const articlesData = [
   {
     title:
+      'Argo Rollouts と CircleCI を統合した、Amazon EKS への安全なプログレッシブデリバリー(カナリアリリース)の実現 #kubernetes - Qiita',
+    description: `この記事では、Argo Rollouts と CircleCI のリリース機能(CircleCI Releases)を統合することによって、Amazon EKS への安全なプログレッシブデリバリー(カナリアリリース)を実現する方法について紹介します。`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1719557445/tadashi0713.dev/argo-rollouts-eks.jpg',
+    href: 'https://qiita.com/CircleCIJapan/items/99e935600bc8ec322819',
+  },
+  {
+    title:
       'Introducing CircleCI App Distribution - The Easiest Way to Distribute Your Mobile Applications Inside CircleCI',
     description: `This article introduces the usage and characteristics of CircleCI App Distribution, the easiest way to distribute your mobile applications all inside CircleCI`,
     imgSrc:
