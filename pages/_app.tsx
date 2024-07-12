@@ -14,6 +14,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider attribute="class">
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <script
+          src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+          crossOrigin="anonymous"
+          async
+        />
       </Head>
       <Analytics />
       <LayoutWrapper>
