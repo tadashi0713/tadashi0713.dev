@@ -29,7 +29,7 @@
     "next": "14.2.5",
     "next-themes": "0.2.1",
     "postcss": "8.4.39",
-    "preact": "10.22.1",
+    "preact": "10.23.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-lines-ellipsis": "0.15.4",
