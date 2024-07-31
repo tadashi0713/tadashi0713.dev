@@ -1,5 +1,13 @@
 const talksData = [
   {
+    title: 'https://www.docswell.com/s/tadashi0713/KNREWL-google-cloud-next-2024',
+    description:
+      'GKEをはじめとしたKubernetesへのCI/CDには様々なアプローチがありますが、多くの場合CIとCDツールが別々になり管理や可視化が難しくなります。本セッションではCircleCIとArgo Rolloutsを連携し、CI(ビルド・テスト)からCD(デプロイ・段階リリース)までを統合されたワークフローにすることによって、安全かつ効率的なアプリケーション開発を実現する方法をご紹介します。',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1722416890/tadashi0713.dev/google-cloud-next-2024.png',
+    href: 'https://www.docswell.com/s/tadashi0713/KNREWL-google-cloud-next-2024',
+  },
+  {
     title: 'Best Practice CI/CD Pipeline for Deploying Container Apps to AWS',
     description: 'AWS User Group Singapore: AWS Meetup March 2024 (AWS Office)',
     imgSrc:
