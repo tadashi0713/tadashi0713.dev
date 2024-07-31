@@ -1,6 +1,6 @@
 const talksData = [
   {
-    title: 'https://www.docswell.com/s/tadashi0713/KNREWL-google-cloud-next-2024',
+    title: 'CircleCI と Argo Rollouts を統合した GKE への継続的リリース基盤',
     description:
       'GKEをはじめとしたKubernetesへのCI/CDには様々なアプローチがありますが、多くの場合CIとCDツールが別々になり管理や可視化が難しくなります。本セッションではCircleCIとArgo Rolloutsを連携し、CI(ビルド・テスト)からCD(デプロイ・段階リリース)までを統合されたワークフローにすることによって、安全かつ効率的なアプリケーション開発を実現する方法をご紹介します。',
     imgSrc:
