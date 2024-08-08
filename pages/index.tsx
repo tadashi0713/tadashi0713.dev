@@ -24,10 +24,11 @@ export default function Home() {
             Hi <Twemoji emoji="👋" />, I’m Tadashi
           </h1>
           <h2 className="text-lg prose text-gray-600 dark:text-gray-400">
-            Welcome to my site. I'm currently Senior Solutions Engineer at CircleCI.
-            <br />I was previously DevOps Enginner / Software Enginner in Test. My interest is CI/CD
-            and DevOps and experienced various projects, mobile CI/CD, E2E test automation of
-            mobile/web applications, continuous delivery to Kubernetes.
+            Welcome to my site. I'm currently Strategic Solutions Engineer at Docker{' '}
+            <Twemoji emoji="🐳" />.
+            <br />
+            Previously I was Senior Solutions Engineer at CircleCI, and DevOps Enginner at several
+            Japanese companies.
             <br />
             You can know about me in detail in <Link href="/articles">external articles</Link>
             {', '}
