@@ -24,8 +24,7 @@ export default function Home() {
             Hi <Twemoji emoji="👋" />, I’m Tadashi
           </h1>
           <h2 className="text-lg prose text-gray-600 dark:text-gray-400">
-            Welcome to my site. I'm currently Strategic Solutions Engineer at Docker{' '}
-            <Twemoji emoji="🐳" />.
+            Welcome to my site. I'm currently Strategic Solutions Engineer at Docker.
             <br />
             Previously I was Senior Solutions Engineer at CircleCI, and DevOps Enginner at several
             Japanese companies.
