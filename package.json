@@ -29,7 +29,7 @@
     "next": "14.2.5",
     "next-themes": "0.2.1",
     "postcss": "8.4.41",
-    "preact": "10.23.1",
+    "preact": "10.23.2",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-lines-ellipsis": "0.15.4",
@@ -41,7 +41,7 @@
     "remark-footnotes": "4.0.1",
     "remark-gfm": "3.0.1",
     "remark-math": "6.0.0",
-    "tailwindcss": "3.4.9",
+    "tailwindcss": "3.4.10",
     "unist-util-visit": "5.0.0"
   },
   "devDependencies": {
@@ -61,7 +61,7 @@
     "globby": "11.1.0",
     "husky": "9.1.4",
     "inquirer": "10.1.8",
-    "lint-staged": "15.2.8",
+    "lint-staged": "15.2.9",
     "next-remote-watch": "2.0.0",
     "prettier": "3.3.3",
     "typescript": "5.5.4"
