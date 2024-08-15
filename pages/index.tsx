@@ -4,6 +4,7 @@ import Twemoji from '@/components/Twemoji'
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
 import talksData from '@/data/talksData'
+import featuredItems from '@/data/featuredItemsData'
 import articlesData from '@/data/articlesData'
 import SmallCard from '@/components/SmallCard'
 
@@ -38,6 +39,26 @@ export default function Home() {
             <Link href="https://resume.io/r/DdFtcnNf8">resume</Link>
             {'. Have a good read!'}
           </h2>
+        </div>
+      </div>
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="pt-6 pb-8 space-y-2 md:space-y-5">
+          <h2 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-5xl md:leading-14">
+            <Twemoji emoji="💡" /> Featured
+          </h2>
+        </div>
+        <div className="container py-12">
+          <div className="flex flex-wrap -m-4">
+            {featuredItems.map((d) => (
+              <SmallCard
+                key={d.title}
+                title={d.title}
+                description={d.description}
+                imgSrc={d.imgSrc}
+                href={d.href}
+              />
+            ))}
+          </div>
         </div>
       </div>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
