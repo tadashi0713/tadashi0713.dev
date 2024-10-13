@@ -1,5 +1,5 @@
 import { PageSEO } from '@/components/SEO'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 import { ARTICLES_PER_PAGE } from '../articles'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import ArticlesListLayout from '@/layouts/ArticlesListLayout'
