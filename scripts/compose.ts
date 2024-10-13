@@ -1,17 +1,17 @@
-const fs = require('fs')
-const path = require('path')
-const inquirer = require('inquirer')
-const dedent = require('dedent')
+import fs from 'fs'
+import path from 'path'
+import inquirer from 'inquirer'
+import dedent from 'dedent'
 
 const root = process.cwd()
 
-const getAuthors = () => {
+const getAuthors = (): string[] => {
   const authorPath = path.join(root, 'data', 'authors')
   const authorList = fs.readdirSync(authorPath).map((filename) => path.parse(filename).name)
   return authorList
 }
 
-const getLayouts = () => {
+const getLayouts = (): string[] => {
   const layoutPath = path.join(root, 'layouts')
   const layoutList = fs
     .readdirSync(layoutPath)
@@ -20,8 +20,18 @@ const getLayouts = () => {
   return layoutList
 }
 
-const genFrontMatter = (answers) => {
-  let d = new Date()
+interface Answers {
+  title: string
+  extension: 'mdx' | 'md'
+  authors: string[]
+  summary: string
+  draft: 'yes' | 'no'
+  tags: string
+  layout: string
+}
+
+const genFrontMatter = (answers: Answers): string => {
+  const d = new Date()
   const date = [
     d.getFullYear(),
     ('0' + (d.getMonth() + 1)).slice(-2),
@@ -52,7 +62,7 @@ const genFrontMatter = (answers) => {
 }
 
 inquirer
-  .prompt([
+  .prompt<Answers>([
     {
       name: 'title',
       message: 'Enter post title:',
