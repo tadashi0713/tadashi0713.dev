@@ -1,6 +1,6 @@
 import { Widget } from '@typeform/embed-react'
 import { PageSEO } from '@/components/SEO'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 
 /* eslint-disable jsx-a11y/iframe-has-title */
 export default function Contact() {

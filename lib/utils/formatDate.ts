@@ -1,4 +1,4 @@
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 
 const formatDate = (date: string) => {
   const options: Intl.DateTimeFormatOptions = {

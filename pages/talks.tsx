@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 import talks from '@/data/talksData'
 import Twemoji from '@/components/Twemoji'
 import MediumCard from '@/components/MediumCard'

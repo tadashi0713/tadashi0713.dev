@@ -1,7 +1,7 @@
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Twemoji from '@/components/Twemoji'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 import projectsData from '@/data/projectsData'
 import talksData from '@/data/talksData'
 import featuredItems from '@/data/featuredItemsData'

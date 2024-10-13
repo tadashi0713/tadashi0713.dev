@@ -1,4 +1,4 @@
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 import projects from '@/data/projectsData'
 import MediumCard from '@/components/MediumCard'
 import Twemoji from '@/components/Twemoji'
