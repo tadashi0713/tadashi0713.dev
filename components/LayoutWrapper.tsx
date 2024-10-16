@@ -6,7 +6,7 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 interface Props {
   children: ReactNode

@@ -2,8 +2,8 @@ import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
 import { PageSEO } from '@/components/SEO'
 import Twemoji from '@/components/Twemoji'
-import { ReactNode } from 'react'
-import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
+import type { ReactNode } from 'react'
+import type { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 
 interface Props {
   children: ReactNode

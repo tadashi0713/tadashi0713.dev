@@ -6,9 +6,9 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { getAllTags } from '@/lib/tags'
 import kebabCase from '@/lib/utils/kebabCase'
 import fs from 'fs'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import path from 'path'
-import { PostFrontMatter } from 'types/PostFrontMatter'
+import type { PostFrontMatter } from 'types/PostFrontMatter'
 
 const root = process.cwd()
 

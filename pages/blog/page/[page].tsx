@@ -3,8 +3,8 @@ import siteMetadata from '@/data/siteMetadata.mjs'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import ListLayout from '@/layouts/ListLayout'
 import { POSTS_PER_PAGE } from '../../blog'
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
-import { PostFrontMatter } from 'types/PostFrontMatter'
+import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import type { PostFrontMatter } from 'types/PostFrontMatter'
 
 export const getStaticPaths: GetStaticPaths<{ page: string }> = async () => {
   const totalPosts = await getAllFilesFrontMatter('blog')
@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps<{
     params: { page },
   } = context
   const posts = await getAllFilesFrontMatter('blog')
-  const pageNumber = parseInt(page as string)
+  const pageNumber = Number.parseInt(page as string)
   const initialDisplayPosts = posts.slice(
     POSTS_PER_PAGE * (pageNumber - 1),
     POSTS_PER_PAGE * pageNumber
