@@ -44,6 +44,7 @@
     "unist-util-visit": "5.0.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.3",
     "@next/bundle-analyzer": "14.2.15",
     "@svgr/webpack": "8.1.0",
     "@types/react": "18.2.7",
