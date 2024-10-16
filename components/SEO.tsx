@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata.mjs'
-import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
-import { PostFrontMatter } from 'types/PostFrontMatter'
+import type { AuthorFrontMatter } from 'types/AuthorFrontMatter'
+import type { PostFrontMatter } from 'types/PostFrontMatter'
 
 interface CommonSEOProps {
   title: string

@@ -1,6 +1,6 @@
 import siteMetadata from '@/data/siteMetadata.mjs'
 import dynamic from 'next/dynamic'
-import { PostFrontMatter } from 'types/PostFrontMatter'
+import type { PostFrontMatter } from 'types/PostFrontMatter'
 
 interface Props {
   frontMatter: PostFrontMatter

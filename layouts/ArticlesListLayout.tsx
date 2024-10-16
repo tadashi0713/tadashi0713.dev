@@ -1,8 +1,8 @@
-import { ComponentProps, useState } from 'react'
+import { type ComponentProps, useState } from 'react'
 import Twemoji from '@/components/Twemoji'
 import SmallCard from '@/components/SmallCard'
 import ArticlePagination from '@/components/ArticlePagination'
-import { Ogp } from 'types/Ogp'
+import type { Ogp } from 'types/Ogp'
 
 interface Props {
   articles: Ogp[]

@@ -2,8 +2,8 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import siteMetadata from '@/data/siteMetadata.mjs'
 import ListLayout from '@/layouts/ListLayout'
 import { PageSEO } from '@/components/SEO'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { ComponentProps } from 'react'
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
+import type { ComponentProps } from 'react'
 
 export const POSTS_PER_PAGE = 5
 

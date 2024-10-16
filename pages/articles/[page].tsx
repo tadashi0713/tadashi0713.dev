@@ -1,10 +1,10 @@
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata.mjs'
 import { ARTICLES_PER_PAGE } from '../articles'
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import ArticlesListLayout from '@/layouts/ArticlesListLayout'
 import articles from '@/data/articlesData'
-import { Ogp } from 'types/Ogp'
+import type { Ogp } from 'types/Ogp'
 
 export const getStaticPaths: GetStaticPaths<{ page: string }> = async () => {
   const totalPages = Math.ceil(articles.length / ARTICLES_PER_PAGE)
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps<{
   const {
     params: { page },
   } = context
-  const pageNumber = parseInt(page as string)
+  const pageNumber = Number.parseInt(page as string)
 
   const initialDisplayArticles = articles.slice(
     ARTICLES_PER_PAGE * (pageNumber - 1),

@@ -1,5 +1,5 @@
 //@ts-nocheck
-import { Parent } from 'unist'
+import type { Parent } from 'unist'
 import { visit } from 'unist-util-visit'
 import { slug } from 'github-slugger'
 import { toString } from 'hast-util-to-string'

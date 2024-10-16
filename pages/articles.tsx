@@ -1,9 +1,9 @@
 import siteMetadata from '@/data/siteMetadata.mjs'
 import articles from '@/data/articlesData'
 import { PageSEO } from '@/components/SEO'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import ArticlesListLayout from '@/layouts/ArticlesListLayout'
-import { Ogp } from 'types/Ogp'
+import type { Ogp } from 'types/Ogp'
 
 export const ARTICLES_PER_PAGE = 15
 
