@@ -2,8 +2,6 @@
  * @type {import('next').NextConfig}
  **/
 const config = {
-  // Next.js 12
-  swcMinify: true,
   images: {
     remotePatterns: [
       {

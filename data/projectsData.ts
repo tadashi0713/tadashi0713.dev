@@ -2,13 +2,13 @@ const projectsData = [
   {
     title: 'Docker Scout',
     description: `Docker Scout を使ってソフトウェアサプライチェーンのセキュリティを積極的に強化しましょう。`,
-    imgSrc: 'https://res.cloudinary.com/tadashi0713/image/upload/v1731666372/docker-scout.png',
+    imgSrc: 'https://docs.tadashi0713.dev/api/og?title=Docker%20Scout',
     href: 'https://docs.tadashi0713.dev/scout-ja',
   },
   {
     title: 'Docker Build Cloud',
     description: `Docker Build Cloud に関するドキュメントを見つけて、ローカルおよびCIでコンテナイメージをより速くビルドするために役立てましょう`,
-    imgSrc: 'https://res.cloudinary.com/tadashi0713/image/upload/v1731758807/og_hezgxr.png',
+    imgSrc: 'https://docs.tadashi0713.dev/api/og?title=Docker%20Build%20Cloud',
     href: 'https://docs.tadashi0713.dev/build-cloud-ja',
   },
   {
