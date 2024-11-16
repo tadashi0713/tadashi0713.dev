@@ -2,8 +2,7 @@ const projectsData = [
   {
     title: 'Docker Scout',
     description: `Docker Scout を使ってソフトウェアサプライチェーンのセキュリティを積極的に強化しましょう。`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661307223/tadashi0713.dev/c2e04280-9b99-11ea-9ada-2270bd8dc602.png',
+    imgSrc: 'https://res.cloudinary.com/tadashi0713/image/upload/v1731666372/docker-scout.png',
     href: 'https://docs.tadashi0713.dev/scout-ja',
   },
   {
