@@ -2,7 +2,7 @@ const featuredItemsData = [
   {
     title: 'Docker Scout',
     description: `Docker Scout を使ってソフトウェアサプライチェーンのセキュリティを積極的に強化しましょう。`,
-    imgSrc: 'https://docs.tadashi0713.dev/api/og?title=Docker%20Scout',
+    imgSrc: 'https://res.cloudinary.com/tadashi0713/image/upload/v1731811672/scout-ja_bsmayf.png',
     href: 'https://docs.tadashi0713.dev/scout-ja',
   },
   {
