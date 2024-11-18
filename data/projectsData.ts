@@ -8,8 +8,8 @@ const projectsData = [
   {
     title: 'Docker Build Cloud',
     description: `Docker Build Cloud に関するドキュメントを見つけて、ローカルおよびCIでコンテナイメージをより速くビルドするために役立てましょう`,
-    imgSrc: 'https://docs.tadashi0713.dev/api/og?title=Docker%20Build%20Cloud',
-    href: '/static/images/build-cloud-ja.png',
+    imgSrc: '/static/images/build-cloud-ja.png',
+    href: 'https://docs.tadashi0713.dev/build-cloud-ja',
   },
   {
     title: 'GitHub - tadashi0713/howtheytest-jp',
