@@ -1,5 +1,13 @@
 const articlesData = [
   {
+    title: 'AWS CodeBuild を使ったコンテナイメージビルドを Docker Build Cloud で高速化しよう',
+    description:
+      'この記事では AWS CodeBuild を使ったコンテナイメージビルドを Docker Build Cloud で高速化する方法についてご紹介していきます。',
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1728792015/tadashi0713.dev/qctidaagofggtglt26t3.png',
+    href: 'https://zenn.dev/tadashi/articles/5ca8b822e167ce',
+  },
+  {
     title: 'Microsoft Dev Box を使って Docker Desktop on Windows を動かしてみる',
     description:
       'この記事では Microsoft Dev Box を使って Docker Desktop on Windows を実現する方法と注意点をご紹介していきます。',
