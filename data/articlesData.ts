@@ -3,8 +3,7 @@ const articlesData = [
     title: 'AWS CodeBuild を使ったコンテナイメージビルドを Docker Build Cloud で高速化しよう',
     description:
       'この記事では AWS CodeBuild を使ったコンテナイメージビルドを Docker Build Cloud で高速化する方法についてご紹介していきます。',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1728792015/tadashi0713.dev/dbc-aws-codebuild.png',
+    imgSrc: '/static/images/dbc-aws-codebuild.png',
     href: 'https://zenn.dev/tadashi/articles/5ca8b822e167ce',
   },
   {
