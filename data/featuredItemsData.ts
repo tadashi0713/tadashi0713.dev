@@ -1,5 +1,11 @@
 const featuredItemsData = [
   {
+    title: 'Accelerate Your Docker Builds Using AWS CodeBuild and Docker Build Cloud | Docker',
+    description: `Learn how integrating Docker Build Cloud into a CI/CD pipeline using AWS CodeBuild can dramatically reduce build times and improve release frequency.`,
+    imgSrc: '/static/images/2400x1260_generic-dbc-blog_e.png',
+    href: 'https://www.docker.com/blog/accelerate-your-docker-builds-using-aws-codebuild-and-docker-build-cloud/',
+  },
+  {
     title: 'Docker Scout',
     description: `Docker Scout を使ってソフトウェアサプライチェーンのセキュリティを積極的に強化しましょう。`,
     imgSrc: '/static/images/scout-ja.png',
@@ -10,13 +16,6 @@ const featuredItemsData = [
     description: `Docker Build Cloud に関するドキュメントを見つけて、ローカルおよびCIでコンテナイメージをより速くビルドするために役立てましょう`,
     imgSrc: '/static/images/build-cloud-ja.png',
     href: 'https://docs.tadashi0713.dev/build-cloud-ja',
-  },
-  {
-    title: 'Software Design 2023年12月号',
-    description: `開発を加速するCI/CD 生産性と品質を両立させるための鉄則\n第2章：本番／検証環境を意識したCDデザイン`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1699344776/tadashi0713.dev/642312.jpg',
-    href: 'https://gihyo.jp/magazine/SD/archive/2023/202312',
   },
 ]
 

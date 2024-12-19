@@ -1,5 +1,11 @@
 const articlesData = [
   {
+    title: 'Accelerate Your Docker Builds Using AWS CodeBuild and Docker Build Cloud | Docker',
+    description: `Learn how integrating Docker Build Cloud into a CI/CD pipeline using AWS CodeBuild can dramatically reduce build times and improve release frequency.`,
+    imgSrc: '/static/images/2400x1260_generic-dbc-blog_e.png',
+    href: 'https://www.docker.com/blog/accelerate-your-docker-builds-using-aws-codebuild-and-docker-build-cloud/',
+  },
+  {
     title: 'AWS CodeBuild を使ったコンテナイメージビルドを Docker Build Cloud で高速化しよう',
     description:
       'この記事では AWS CodeBuild を使ったコンテナイメージビルドを Docker Build Cloud で高速化する方法についてご紹介していきます。',
