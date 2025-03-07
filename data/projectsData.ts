@@ -1,5 +1,11 @@
 const projectsData = [
   {
+    title: 'Docker セキュリティ',
+    description: `Docker が提供するセキュリティ機能を学び、ベストプラクティスを探求しましょう。`,
+    imgSrc: '/static/images/docker-security-ja.png',
+    href: 'https://docs.tadashi0713.dev/docker-security-ja',
+  },
+  {
     title: 'Testcontainers ガイド',
     description: `以下のガイドでは、実践的なプロジェクトを通じて Testcontainers を学ぶことができます。初心者から上級者まで、どのレベルの方にも役立つガイドが用意されているはずです。スキルをゼロから習得したい方も、すでに専門的な知識をお持ちの方も、ぜひお試しください。`,
     imgSrc: '/static/images/testcontainers-guides-ja.png',

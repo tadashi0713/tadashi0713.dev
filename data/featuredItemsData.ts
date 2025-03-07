@@ -6,16 +6,16 @@ const featuredItemsData = [
     href: 'https://www.docker.com/blog/accelerate-your-docker-builds-using-aws-codebuild-and-docker-build-cloud/',
   },
   {
+    title: 'Testcontainers ガイド',
+    description: `以下のガイドでは、実践的なプロジェクトを通じて Testcontainers を学ぶことができます。初心者から上級者まで、どのレベルの方にも役立つガイドが用意されているはずです。スキルをゼロから習得したい方も、すでに専門的な知識をお持ちの方も、ぜひお試しください。`,
+    imgSrc: '/static/images/testcontainers-guides-ja.png',
+    href: 'https://docs.tadashi0713.dev/testcontainers-guides-ja',
+  },
+  {
     title: 'Docker Scout',
     description: `Docker Scout を使ってソフトウェアサプライチェーンのセキュリティを積極的に強化しましょう。`,
     imgSrc: '/static/images/scout-ja.png',
     href: 'https://docs.tadashi0713.dev/scout-ja',
-  },
-  {
-    title: 'Docker Build Cloud',
-    description: `Docker Build Cloud に関するドキュメントを見つけて、ローカルおよびCIでコンテナイメージをより速くビルドするために役立てましょう`,
-    imgSrc: '/static/images/build-cloud-ja.png',
-    href: 'https://docs.tadashi0713.dev/build-cloud-ja',
   },
 ]
 
