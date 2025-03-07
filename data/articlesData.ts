@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: 'CI における Docker Hub Pull Rate Limit を Organization Access Tokens で回避しよう',
+    description:
+      'この記事では Docker Hub Pull Rate Limit の CI への影響を避けるために、パーソナルアクセストークンに代替する Organization Access Token を利用する方法について紹介します。',
+    imgSrc: '/static/images/ci-organization-token-ja.png',
+    href: 'https://zenn.dev/tadashi/articles/dcb5b917ec1c09',
+  },
+  {
     title: 'Accelerate Your Docker Builds Using AWS CodeBuild and Docker Build Cloud | Docker',
     description: `Learn how integrating Docker Build Cloud into a CI/CD pipeline using AWS CodeBuild can dramatically reduce build times and improve release frequency.`,
     imgSrc: '/static/images/2400x1260_generic-dbc-blog_e.png',
