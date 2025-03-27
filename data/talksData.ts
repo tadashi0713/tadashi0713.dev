@@ -1,5 +1,13 @@
 const talksData = [
   {
+    title: 'Docker Scout を使ったコンテナセキュリティの可視化と管理',
+    description:
+      'Docker Scoutは、コンテナのセキュリティ管理を効率化し、ソフトウェアサプライチェーン全体の安全性を確保するための最新ツールです。本ウェビナーでは、Docker Scoutの最新機能や脆弱性の特定や対応方法、運用のベストプラクティスについて詳しく解説します。',
+    imgSrc:
+      '/static/images/docker-scout-webinar-ja.jpeg',
+    href: 'https://www.docswell.com/s/tadashi0713/ZN18EQ-docker-scout-webinar-ja',
+  },
+  {
     title: 'CircleCI と Argo Rollouts を統合した GKE への継続的リリース基盤',
     description:
       'GKEをはじめとしたKubernetesへのCI/CDには様々なアプローチがありますが、多くの場合CIとCDツールが別々になり管理や可視化が難しくなります。本セッションではCircleCIとArgo Rolloutsを連携し、CI(ビルド・テスト)からCD(デプロイ・段階リリース)までを統合されたワークフローにすることによって、安全かつ効率的なアプリケーション開発を実現する方法をご紹介します。',
