@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: `Solve Docker Hub's Pull Rate Limit on CI/CD Pipelines using Organization Access Tokens`,
+    description:
+      'This article explains how to solve Docker Hub’s Pull Rate Limit on CI/CD pipelines using Organization Access Tokens.',
+    imgSrc: '/static/images/dockerhub-oats-ci.png',
+    href: '/blog/en/dockerhub-oats-ci',
+  },
+  {
     title: 'CI における Docker Hub Pull Rate Limit を Organization Access Tokens で回避しよう',
     description:
       'この記事では Docker Hub Pull Rate Limit の CI への影響を避けるために、パーソナルアクセストークンに代替する Organization Access Token を利用する方法について紹介します。',
