@@ -8,7 +8,7 @@ import featuredItems from '@/data/featuredItemsData'
 import articlesData from '@/data/articlesData'
 import SmallCard from '@/components/SmallCard'
 
-const MAX_DISPLAY_ARTICLES = 15
+const MAX_DISPLAY_ARTICLES = 12
 const MAX_DISPLAY_TALKS = 6
 const MAX_DISPLAY_PROJECTS = 6
 

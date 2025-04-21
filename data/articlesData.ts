@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: `LLM を簡単にローカルで実行できる Docker Model Runner 〜Docker が提案する新しい生成AIアプリ開発体験〜 | DevOps Hub | SB C&S`,
+    description:
+      'Docker Model Runner は弊社 COO Mark Cavage が Java One 2025 の基調講演にて発表を行い、Docker Desktop 4.40 にてベータ版としてリリースされました。',
+    imgSrc: '/static/images/docker_model_command_630x360.png',
+    href: 'https://licensecounter.jp/devops-hub/blog/docker-modelrunner/',
+  },
+  {
     title: `Solve Docker Hub's Pull Rate Limit on CI/CD Pipelines using Organization Access Tokens`,
     description:
       'This article explains how to solve Docker Hub’s Pull Rate Limit on CI/CD pipelines using Organization Access Tokens.',

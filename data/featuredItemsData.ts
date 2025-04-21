@@ -1,5 +1,12 @@
 const featuredItemsData = [
   {
+    title: `LLM を簡単にローカルで実行できる Docker Model Runner 〜Docker が提案する新しい生成AIアプリ開発体験〜 | DevOps Hub | SB C&S`,
+    description:
+      'Docker Model Runner は弊社 COO Mark Cavage が Java One 2025 の基調講演にて発表を行い、Docker Desktop 4.40 にてベータ版としてリリースされました。',
+    imgSrc: '/static/images/docker_model_command_630x360.png',
+    href: 'https://licensecounter.jp/devops-hub/blog/docker-modelrunner/',
+  },
+  {
     title: 'Docker Model Runner 〜ローカル環境で LLM を簡単に実行、Docker が提案する新しい生成AIアプリ開発体験〜',
     description:
       'Docker Model Runner は 大規模言語モデル(LLM) をDocker を使ったコンテナ開発と同じ体験でローカル環境で実行することができる、Docker Desktop の新たな機能です。',
@@ -16,11 +23,25 @@ const featuredItemsData = [
     href: 'https://www.youtube.com/watch?v=wuV8hO3Tm_0',
   },
   {
+    title: `Solve Docker Hub's Pull Rate Limit on CI/CD Pipelines using Organization Access Tokens`,
+    description:
+      'This article explains how to solve Docker Hub’s Pull Rate Limit on CI/CD pipelines using Organization Access Tokens.',
+    imgSrc: '/static/images/dockerhub-oats-ci.png',
+    href: '/blog/en/dockerhub-oats-ci',
+  },
+  {
     title: 'Accelerate Your Docker Builds Using AWS CodeBuild and Docker Build Cloud | Docker',
     description: `Learn how integrating Docker Build Cloud into a CI/CD pipeline using AWS CodeBuild can dramatically reduce build times and improve release frequency.`,
     imgSrc: '/static/images/2400x1260_generic-dbc-blog_e.png',
     href: 'https://www.docker.com/blog/accelerate-your-docker-builds-using-aws-codebuild-and-docker-build-cloud/',
-  }
+  },
+  {
+    title: 'Software Design 2023年12月号',
+    description: `開発を加速するCI/CD 生産性と品質を両立させるための鉄則\n第2章：本番／検証環境を意識したCDデザイン`,
+    imgSrc:
+      'https://res.cloudinary.com/tadashi0713/image/upload/v1699344776/tadashi0713.dev/642312.jpg',
+    href: 'https://gihyo.jp/magazine/SD/archive/2023/202312',
+  },
 ]
 
 export default featuredItemsData
