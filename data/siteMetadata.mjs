@@ -13,7 +13,7 @@ const siteMetadata = {
   github: 'https://github.com/tadashi0713',
   // twitter: 'https://twitter.com/Twitter',
   facebook: 'https://www.facebook.com/nemoto.tadashi',
-  // youtube: 'https://youtube.com',
+  youtube: 'https://www.youtube.com/@tadashi0713',
   linkedin: 'https://www.linkedin.com/in/tadashi-nemoto',
   locale: 'en-US',
   analytics: {
