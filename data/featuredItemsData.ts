@@ -29,7 +29,7 @@ const featuredItemsData = [
     imgSrc:
       '/static/images/docker-scout-webinar-ja.jpeg',
     href: 'https://www.youtube.com/watch?v=wuV8hO3Tm_0',
-  }
+  },
   {
     title: 'Accelerate Your Docker Builds Using AWS CodeBuild and Docker Build Cloud | Docker',
     description: `Learn how integrating Docker Build Cloud into a CI/CD pipeline using AWS CodeBuild can dramatically reduce build times and improve release frequency.`,
