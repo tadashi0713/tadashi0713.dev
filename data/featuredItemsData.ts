@@ -1,5 +1,13 @@
 const featuredItemsData = [
   {
+    title: 'Docker MCP Catalog and Toolkit 〜Docker コンテナで実現する、簡単・安全な MCP サーバーの管理〜',
+    description:
+      '信頼性の高いコンテナイメージ化されたMCPサーバーを Docker MCP Catalogより選択し、Docker MCP Toolkit を用いて複数のMCPクライアントとの接続および認証情報の一元管理を可能にすることで、運用の簡素化とセキュリティ強化を実現することができます。',
+    imgSrc:
+      '/static/images/docker_mcp_toolkit_youtube.png',
+    href: 'https://www.youtube.com/watch?v=ldLVCdyiChI',
+  },
+  {
     title: `LLM を簡単にローカルで実行できる Docker Model Runner 〜Docker が提案する新しい生成AIアプリ開発体験〜 | DevOps Hub | SB C&S`,
     description:
       'Docker Model Runner は弊社 COO Mark Cavage が Java One 2025 の基調講演にて発表を行い、Docker Desktop 4.40 にてベータ版としてリリースされました。',
@@ -21,14 +29,7 @@ const featuredItemsData = [
     imgSrc:
       '/static/images/docker-scout-webinar-ja.jpeg',
     href: 'https://www.youtube.com/watch?v=wuV8hO3Tm_0',
-  },
-  {
-    title: `Solve Docker Hub's Pull Rate Limit on CI/CD Pipelines using Organization Access Tokens`,
-    description:
-      'This article explains how to solve Docker Hub’s Pull Rate Limit on CI/CD pipelines using Organization Access Tokens.',
-    imgSrc: '/static/images/dockerhub-oats-ci.png',
-    href: '/blog/en/dockerhub-oats-ci',
-  },
+  }
   {
     title: 'Accelerate Your Docker Builds Using AWS CodeBuild and Docker Build Cloud | Docker',
     description: `Learn how integrating Docker Build Cloud into a CI/CD pipeline using AWS CodeBuild can dramatically reduce build times and improve release frequency.`,

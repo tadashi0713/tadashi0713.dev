@@ -1,5 +1,13 @@
 const talksData = [
   {
+    title: 'Docker MCP Catalog and Toolkit 〜Docker コンテナで実現する、簡単・安全な MCP サーバーの管理〜',
+    description:
+      '信頼性の高いコンテナイメージ化されたMCPサーバーを Docker MCP Catalogより選択し、Docker MCP Toolkit を用いて複数のMCPクライアントとの接続および認証情報の一元管理を可能にすることで、運用の簡素化とセキュリティ強化を実現することができます。',
+    imgSrc:
+      '/static/images/docker_mcp_toolkit_youtube.png',
+    href: 'https://www.youtube.com/watch?v=ldLVCdyiChI',
+  },
+  {
     title: 'Docker Model Runner 〜ローカル環境で LLM を簡単に実行、Docker が提案する新しい生成AIアプリ開発体験〜',
     description:
       'Docker Model Runner は 大規模言語モデル(LLM) をDocker を使ったコンテナ開発と同じ体験でローカル環境で実行することができる、Docker Desktop の新たな機能です。',
