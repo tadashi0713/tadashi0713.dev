@@ -1,5 +1,12 @@
 const articlesData = [
   {
+    title: `Docker MCP Catalog and Toolkit ではじめる、コンテナを使った 簡単・安全な MCP サーバーの管理 | DevOps Hub | SB C&S`,
+    description:
+      '本ブログでは Docker で新たにリリースされた、MCP サーバーを簡単・安全に管理ができる「Docker MCP Catalog and Toolkit」を紹介します。',
+    imgSrc: '/static/images/docker_mcp_toolkit_blog.png',
+    href: 'https://licensecounter.jp/devops-hub/blog/docker-mcp/',
+  },
+  {
     title: `LLM を簡単にローカルで実行できる Docker Model Runner 〜Docker が提案する新しい生成AIアプリ開発体験〜 | DevOps Hub | SB C&S`,
     description:
       'Docker Model Runner は弊社 COO Mark Cavage が Java One 2025 の基調講演にて発表を行い、Docker Desktop 4.40 にてベータ版としてリリースされました。',

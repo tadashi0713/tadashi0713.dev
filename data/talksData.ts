@@ -1,5 +1,13 @@
 const talksData = [
   {
+    title: 'Docker Hardened Images (DHI) Introduction 〜本番環境向けに構築した、デフォルトで安全なコンテナイメージ〜',
+    description:
+      'この動画では Docker Hardened Images (DHI) がどのようにソフトウェアサプライチェーンの課題を解決することができるのか、その背景からご紹介しています。',
+    imgSrc:
+      '/static/images/dhi_introduction_youtube.jpg',
+    href: 'https://www.youtube.com/watch?v=OFPo0LmRMlg',
+  },
+  {
     title: 'Docker MCP Catalog and Toolkit 〜Docker コンテナで実現する、簡単・安全な MCP サーバーの管理〜',
     description:
       '信頼性の高いコンテナイメージ化されたMCPサーバーを Docker MCP Catalogより選択し、Docker MCP Toolkit を用いて複数のMCPクライアントとの接続および認証情報の一元管理を可能にすることで、運用の簡素化とセキュリティ強化を実現することができます。',
