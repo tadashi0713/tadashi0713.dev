@@ -12,11 +12,23 @@ export default function Home({ posts }) {
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100">
-            Latest
+            Hi, I’m Tadashi
           </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
-          </p>
+          <h2 className="prose text-lg text-gray-500 dark:text-gray-400">
+            Welcome to my site. I'm currently Strategic Solutions Engineer at Docker.
+            <br />
+            Previously I was Senior Solutions Engineer at CircleCI, and DevOps Enginner at several
+            Japanese companies.
+            <br />
+            You can know about me in detail in <Link href="/articles">external articles</Link>
+            {', '}
+            <Link href="/talks">previous talks</Link>
+            {', '}
+            <Link href="/projects">side projects</Link>
+            {', and '}
+            <Link href="https://resume.io/r/DdFtcnNf8">resume</Link>
+            {'. Have a good read!'}
+          </h2>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
