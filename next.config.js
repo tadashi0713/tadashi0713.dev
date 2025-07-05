@@ -78,6 +78,17 @@ module.exports = () => {
           protocol: 'https',
           hostname: 'picsum.photos',
         },
+        {
+          protocol: 'https',
+          hostname: 'opengraph.githubassets.com',
+          port: '',
+        },
+        {
+          protocol: 'https',
+          hostname: 'res.cloudinary.com',
+          port: '',
+          pathname: '/tadashi0713/image/upload/*/tadashi0713.dev/*',
+        },
       ],
       unoptimized,
     },
