@@ -1,8 +1,8 @@
 import talks from '@/data/talksData'
 import { notFound } from 'next/navigation'
-import ArticlesListLayout from '@/layouts/ArticlesListLayout'
+import TalkListLayout from '@/layouts/TalksListLayout'
 
-const TALKS_PER_PAGE = 15
+const TALKS_PER_PAGE = 10
 
 export const generateStaticParams = async () => {
   const totalPages = Math.ceil(talks.length / TALKS_PER_PAGE)
@@ -30,9 +30,9 @@ export default async function Page(props: { params: Promise<{ page: string }> })
   }
 
   return (
-    <ArticlesListLayout
-      articles={talks}
-      initialDisplayArticles={initialDisplayTalks}
+    <TalkListLayout
+      talks={talks}
+      initialDisplayTalks={initialDisplayTalks}
       pagination={pagination}
     />
   )

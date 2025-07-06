@@ -1,4 +1,4 @@
-interface Talk {
+export type Talk = {
   title: string
   description: string
   href?: string

@@ -1,8 +1,8 @@
 import { genPageMetadata } from 'app/seo'
 import talks from '@/data/talksData'
-import ArticlesListLayout from '@/layouts/ArticlesListLayout'
+import TalkListLayout from '@/layouts/TalksListLayout'
 
-const TALKS_PER_PAGE = 15
+const TALKS_PER_PAGE = 10
 
 export const metadata = genPageMetadata({ title: 'Articles' })
 
@@ -16,9 +16,9 @@ export default async function ArticlePage(props: { searchParams: Promise<{ page:
   }
 
   return (
-    <ArticlesListLayout
-      articles={talks}
-      initialDisplayArticles={initialDisplayTalks}
+    <TalkListLayout
+      talks={talks}
+      initialDisplayTalks={initialDisplayTalks}
       pagination={pagination}
     />
   )
