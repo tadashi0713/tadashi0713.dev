@@ -97,8 +97,7 @@ const articlesData: Article[] = [
   {
     title: 'Splitting and Parallelizing Android UI tests with Espresso and CircleCI',
     description: `This article describes how to reduce Android UI test execution time using test splitting, parallelization, and CircleCI’s Android emulator.`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1700375616/tadashi0713.dev/android-parallel-testing-hero-en.png',
+    imgSrc: '/static/images/android-parallel-testing-hero.png',
     href: '/blog/en/circleci-android-parallel-testing',
   },
   {
@@ -160,8 +159,7 @@ const articlesData: Article[] = [
   {
     title: 'Androidエミュレーターを使ったUIテスト(Espresso)を分割・並列実行しよう',
     description: `この記事では、Androidエミュレーターを使ったUIテスト(Espresso)を分割・並列実行することによって、実行時間を短縮する方法について紹介します。`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1671603912/tadashi0713.dev/android-parallel-testing-hero.png',
+    imgSrc: '/static/images/android-parallel-testing-hero.png',
     href: 'https://circleci.com/ja/blog/android-parallel-testing',
   },
   {

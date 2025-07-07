@@ -56,16 +56,14 @@ const talksData: Talk[] = [
     title: 'プラットフォームエンジニアリングを加速させるCircleCI',
     description:
       '企業全体でのソフトウェアデリバリーを向上させる手段として、近年プラットフォームエンジニアリングが注目されています。このセッションでは、プラットフォームエンジニアリングを実践・進化させていきたい方に向けたCircleCIの最近機能とベストプラクティスを、デモを交えながらご紹介します。',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1705987752/tadashi0713.dev/circleci-platform-engineering.jpg',
+    imgSrc: '/static/images/circleci-platform-engineering.jpg',
     href: 'https://www.docswell.com/s/tadashi0713/ZP9PMX-circleci-platform-engineering',
   },
   {
     title: 'Scalable and cloud-native mobile game CI/CD environment using Unity',
     description:
       'This talk was part of the JetBrains GameDev Day 2023: https://jb.gg/gamedevday2023 Description: Developing continuously high-quality mobile games, with their ...',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1698250385/tadashi0713.dev/maxresdefault.jpg',
+    imgSrc: '/static/images/jetbrains_gamedev_day_2023.jpg',
     href: 'https://www.youtube.com/watch?v=_EMi84CwdKQ',
   },
   {
