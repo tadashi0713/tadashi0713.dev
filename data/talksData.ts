@@ -67,8 +67,7 @@ const talksData: Talk[] = [
   {
     title: 'Migrating your mobile CI/CD environment to a scalable cloud solution using CircleCI',
     description: 'Cloud Expo Asia 2023, Singapore',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1697277715/tadashi0713.dev/speaker__33_.png',
+    imgSrc: '/static/images/speaker__33_.png',
     href: 'https://speakerdeck.com/tadashi0713/cd-environment-to-a-scalable-cloud-solution-using-circleci',
   },
   {
@@ -133,8 +132,7 @@ const talksData: Talk[] = [
   {
     title: 'デプロイ頻度を10倍にした、ブランチ戦略とGitHub Actions on AWS ECS',
     description: `AWS Startup Tech Meetup Online #4`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661304785/tadashi0713.dev/2c3f9b9d74314082ba440426a9e39f6e.jpg',
+    imgSrc: '/static/images/2c3f9b9d74314082ba440426a9e39f6e.jpg',
     href: 'https://speakerdeck.com/tadashi0713/depuroipin-du-wo10bei-nisita-burantizhan-lue-togithub-actions-on-aws-ecs',
   },
   {
@@ -148,8 +146,7 @@ const talksData: Talk[] = [
   {
     title: 'メルカリの開発スピードと品質を支える Selenium on Azure Kubernetes Service',
     description: `【東京】JJUG ナイトセミナー 「Java on Azure まつり＠Microsoft」 6/19(水)開催`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661306667/tadashi0713.dev/671416e974c145a090ffe6cc4eee9078.jpg',
+    imgSrc: '/static/images/671416e974c145a090ffe6cc4eee9078.jpg',
     href: 'https://speakerdeck.com/tadashi0713/merukarifalsekai-fa-supidotopin-zhi-wozhi-eru-selenium-on-azure-kubernetes-service',
   },
   {

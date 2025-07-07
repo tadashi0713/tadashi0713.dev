@@ -300,8 +300,7 @@ const articlesData: Article[] = [
     title:
       'ポーランドで行われた海外カンファレンス「Agile & Automation Days 2019」に登壇しました！ | メルカリエンジニアリング',
     description: `メルカリで QA Automation Engineer をしている 根本 征 です。先日 10/28~29 にポーランド・グダニスクで行われた海外カンファレンス「Agile & Automation Days 2019」にスピーカーとして`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311983/tadashi0713.dev/645d2d40-20191104165330.jpg',
+    imgSrc: '/static/images/645d2d40-20191104165330.jpg',
     href: 'https://engineering.mercari.com/blog/entry/2019-11-12-060000',
   },
   {
