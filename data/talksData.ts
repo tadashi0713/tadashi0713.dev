@@ -118,8 +118,7 @@ const talksData: Talk[] = [
     title: 'CircleCI Webinar: モバイル開発者向け CircleCI 入門ウェビナー',
     description:
       'このウェビナーではモバイル開発者に向けたCircleCIの機能や特徴、アップデートについて紹介します。',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1655456212/tadashi0713.dev/Untitled_presentation_31.png',
+    imgSrc: '/static/images/mobile_cicd_webinar.png',
     href: 'https://www.youtube.com/watch?v=3YsbMRbvvNc',
   },
   {
