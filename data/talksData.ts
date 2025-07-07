@@ -48,24 +48,21 @@ const talksData: Talk[] = [
   {
     title: 'Best Practice CI/CD Pipeline for Deploying Container Apps to AWS',
     description: 'AWS User Group Singapore: AWS Meetup March 2024 (AWS Office)',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1711009315/tadashi0713.dev/Best_Practice_CI_CD_Pipeline_for_Deploying_Container_Apps_to_AWS.jpg',
+    imgSrc: '/static/images/Best_Practice_CI_CD_Pipeline_for_Deploying_Container_Apps_to_AWS.jpg',
     href: 'https://speakerdeck.com/tadashi0713/cd-pipeline-for-deploying-container-apps-to-aws',
   },
   {
     title: 'プラットフォームエンジニアリングを加速させるCircleCI',
     description:
       '企業全体でのソフトウェアデリバリーを向上させる手段として、近年プラットフォームエンジニアリングが注目されています。このセッションでは、プラットフォームエンジニアリングを実践・進化させていきたい方に向けたCircleCIの最近機能とベストプラクティスを、デモを交えながらご紹介します。',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1705987752/tadashi0713.dev/circleci-platform-engineering.jpg',
+    imgSrc: '/static/images/circleci-platform-engineering.jpg',
     href: 'https://www.docswell.com/s/tadashi0713/ZP9PMX-circleci-platform-engineering',
   },
   {
     title: 'Scalable and cloud-native mobile game CI/CD environment using Unity',
     description:
       'This talk was part of the JetBrains GameDev Day 2023: https://jb.gg/gamedevday2023 Description: Developing continuously high-quality mobile games, with their ...',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1698250385/tadashi0713.dev/maxresdefault.jpg',
+    imgSrc: '/static/images/jetbrains_gamedev_day_2023.jpg',
     href: 'https://www.youtube.com/watch?v=_EMi84CwdKQ',
   },
   {
@@ -102,8 +99,7 @@ const talksData: Talk[] = [
     title: 'CircleCI Webinar: CircleCIを使いこなそう〜応用編〜',
     description:
       'このウェビナーでは既に CircleCI をお使いの方に、CircleCI が近年リリースした機能を中心に応用的な使い方をご紹介します。',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1659319510/tadashi0713.dev/circleci_advanced_webinar.jpg',
+    imgSrc: '/static/images/circleci_advanced_webinar.jpg',
     href: 'https://www.youtube.com/watch?v=7r5ITZiCc9w',
   },
   {
@@ -111,15 +107,14 @@ const talksData: Talk[] = [
     description:
       'AWS Graviton プロセッサを採用した AWS Fargate を使用し、どのようにコンテナアプリケーション開発の CI/CD パイプラインを構築できるのか、AWS Graviton に対応した CircleCI の CI/CDツールを使用し、デモを交えて具体的にご説明いたします。',
     imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661304619/tadashi0713.dev/circleci-aws-ipc-webinar-0616.32c31db2dcdbb401f1d9b49207eb52697999abca.jpg',
+      '/static/images/circleci-aws-ipc-webinar-0616.32c31db2dcdbb401f1d9b49207eb52697999abca.jpg',
     href: 'https://speakerdeck.com/tadashi0713/aws-graviton-huan-jing-hefalse-ci-cd-haihurainwo-circleci-teshi-xian-siyou-aws-fargate-bian',
   },
   {
     title: 'CircleCI Webinar: モバイル開発者向け CircleCI 入門ウェビナー',
     description:
       'このウェビナーではモバイル開発者に向けたCircleCIの機能や特徴、アップデートについて紹介します。',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1655456212/tadashi0713.dev/Untitled_presentation_31.png',
+    imgSrc: '/static/images/mobile_cicd_webinar.png',
     href: 'https://www.youtube.com/watch?v=3YsbMRbvvNc',
   },
   {

@@ -1,19 +1,19 @@
 {
+  "docker": 1,
+  "dockerhub": 1,
+  "cicd": 1,
+  "english": 7,
   "circleci": 10,
   "mobile": 2,
   "ios": 4,
   "android": 3,
   "japanese": 4,
-  "mac": 2,
-  "orb": 2,
   "test": 3,
   "gitlab": 2,
-  "english": 7,
-  "docker": 1,
-  "dockerhub": 1,
-  "cicd": 1,
   "gitops": 1,
   "argocd": 1,
   "kubernetes": 1,
-  "aws": 1
+  "aws": 1,
+  "mac": 2,
+  "orb": 2
 }

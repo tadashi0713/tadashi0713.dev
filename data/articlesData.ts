@@ -59,16 +59,14 @@ const articlesData: Article[] = [
     title:
       'Argo Rollouts と CircleCI を統合した、Google Kubernetes Engine(GKE) への安全なプログレッシブデリバリー(カナリアリリース)の実現 - Qiita',
     description: `この記事では、Argo Rollouts と CircleCI のリリース機能(CircleCI Releases)を統合することによって、Google Kubernetes Engine(GKE) への安全なプログレッシブデリバリー(カナリアリリース)を実現する方法について紹介します。`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1720424381/tadashi0713.dev/argo-rollouts-gke.jpg',
+    imgSrc: '/static/images/argo-rollouts-gke.jpg',
     href: 'https://qiita.com/CircleCIJapan/items/1e4ad6cddbdf60fc4851',
   },
   {
     title:
       'Argo Rollouts と CircleCI を統合した、Amazon EKS への安全なプログレッシブデリバリー(カナリアリリース)の実現 #kubernetes - Qiita',
     description: `この記事では、Argo Rollouts と CircleCI のリリース機能(CircleCI Releases)を統合することによって、Amazon EKS への安全なプログレッシブデリバリー(カナリアリリース)を実現する方法について紹介します。`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1719557445/tadashi0713.dev/argo-rollouts-eks.jpg',
+    imgSrc: '/static/images/argo-rollouts-eks.jpg',
     href: 'https://qiita.com/CircleCIJapan/items/99e935600bc8ec322819',
   },
   {
@@ -97,8 +95,7 @@ const articlesData: Article[] = [
   {
     title: 'Splitting and Parallelizing Android UI tests with Espresso and CircleCI',
     description: `This article describes how to reduce Android UI test execution time using test splitting, parallelization, and CircleCI’s Android emulator.`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1700375616/tadashi0713.dev/android-parallel-testing-hero-en.png',
+    imgSrc: '/static/images/android-parallel-testing-hero.png',
     href: '/blog/en/circleci-android-parallel-testing',
   },
   {
@@ -111,8 +108,7 @@ const articlesData: Article[] = [
   {
     title: 'Cloud native mobile game CI/CD with Unity and CircleCI',
     description: `Learn how to build a cloud native mobile game CI/CD environment with CircleCI and Unity.`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1667536372/tadashi0713.dev/unity-mobile-cicd-hero.png',
+    imgSrc: '/static/images/unity-mobile-cicd-hero.png',
     href: 'https://circleci.com/blog/unity-mobile-cicd',
   },
   {
@@ -161,15 +157,13 @@ const articlesData: Article[] = [
   {
     title: 'Androidエミュレーターを使ったUIテスト(Espresso)を分割・並列実行しよう',
     description: `この記事では、Androidエミュレーターを使ったUIテスト(Espresso)を分割・並列実行することによって、実行時間を短縮する方法について紹介します。`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1671603912/tadashi0713.dev/android-parallel-testing-hero.png',
+    imgSrc: '/static/images/android-parallel-testing-hero.png',
     href: 'https://circleci.com/ja/blog/android-parallel-testing',
   },
   {
     title: 'Unity を使ったモバイルゲーム CI/CD 環境をクラウドネイティブ化しよう(GameCI)',
     description: `この記事では、GameCI と CircleCI を利用して、Unity を使ったモバイルゲーム CI/CD 環境をクラウドネイティブ化する方法について紹介します。`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1667536372/tadashi0713.dev/unity-mobile-cicd-hero.png',
+    imgSrc: '/static/images/unity-mobile-cicd-hero.png',
     href: 'https://circleci.com/ja/blog/unity-mobile-cicd',
   },
   {
@@ -241,8 +235,7 @@ const articlesData: Article[] = [
   {
     title: 'Flutter (フラッター) アプリの CI / CD パイプラインを構築しよう',
     description: `このブログ記事では、CircleCI を使って Flutter (フラッター) アプリの CI / CD パイプラインを構築していく方法について紹介していきます。`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311682/tadashi0713.dev/flutter-app-cicd-pipeline.png',
+    imgSrc: '/static/images/flutter-app-cicd-pipeline.png',
     href: 'https://circleci.com/ja/blog/flutter-cicd/',
   },
   {
