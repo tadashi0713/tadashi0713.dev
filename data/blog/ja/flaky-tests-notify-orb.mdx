@@ -1,0 +1,111 @@
+---
+title: CircleCI Orb を使って不安定なテスト(Flaky Tests)を Slack 通知する方法
+date: '2022-08-30'
+tags: ['circleci', 'orb', 'test', 'japanese']
+draft: false
+summary: この記事では、CircleCI Orb を使って不安定なテスト(Flaky Tests)を Slack 通知する方法について紹介します。
+images:
+  [
+    'https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png',
+  ]
+---
+
+![Flaky Tests Notify Orb](https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png)
+
+この記事では、CircleCI Orb を使って不安定なテスト(Flaky Tests)を Slack 通知する方法について紹介します。
+
+<TOCInline toc={props.toc} />
+
+## Test Insights ダッシュボードから不安定なテスト(Flaky Tests)を確認する方法
+
+2021 年に CircleCI は Test Insights ダッシュボードをリリースしました。
+
+このダッシュボードでは Flaky Tests を検出することができ、これらのテストを素早く直すことによって開発スピードを高く保つことができます。
+
+![Flaky Tests](https://res.cloudinary.com/tadashi0713/image/upload/v1661742775/tadashi0713.dev/flaky_tests.png)
+
+詳細については以下のブログ・ドキュメントを参考にしてください。
+
+- [結果が不安定なテスト(Flaky Test)を検出できるテスト インサイト機能が登場](https://circleci.com/ja/blog/introducing-test-insights-with-flaky-test-detection)
+
+- [テストインサイト - CircleCI](https://circleci.com/docs/ja/insights-tests)
+
+## flaky-tests-notify Orb について
+
+通常は、この Test Insights ダッシュボードを定期的に確認して Flaky Tests を見つけることになります。
+
+今回これらの Flaky Tests をより早く発見・修正するために、Slack 通知を簡単に実装できる CircleCI Orb(設定ファイルのパッケージ)を作成しました。
+
+- [CircleCI Developer Hub - tadashi0713/flaky-tests-notify](https://circleci.com/developer/ja/orbs/orb/tadashi0713/flaky-tests-notify)
+
+- [GitHub - tadashi0713/flaky-tests-notify-orb](https://github.com/tadashi0713/flaky-tests-notify-orb)
+
+## 1) CircleCI Token と Slack Token を作成する
+
+この Orb を使うには、CircleCI Token と Slack Token が必要になります。
+
+この Orb は [Slack Orb](https://circleci.com/developer/ja/orbs/orb/circleci/slack) をベースに作られているため、以下のドキュメントを参考に Slack Token を作成してください。
+
+- [Setup · CircleCI-Public/slack-orb Wiki · GitHub](https://github.com/CircleCI-Public/slack-orb/wiki/Setup)
+
+CircleCI Token は [Flaky Tests を API 経由で取得する](https://circleci.com/docs/api/v2/index.html#operation/getFlakyTests)ために利用します。
+
+- [API トークンの管理 - CircleCI](https://circleci.com/ja/docs/managing-api-tokens)
+
+次のステップに進む前に、以下の環境変数が CircleCI に入っていることを確認してください。
+
+- `CIRCLE_TOKEN`
+- `SLACK_ACCESS_TOKEN`
+- `SLACK_DEFAULT_CHANNEL`(どの channel にメッセージを送るか)
+
+![Flaky Tests Env](https://res.cloudinary.com/tadashi0713/image/upload/v1661751435/tadashi0713.dev/flaky_tests_env.png)
+
+## 2) CircleCI 設定ファイルを作成する
+
+この Orb は Certified Orb ではないため、お使いの Organization が Uncertified Orb を許可しているか確認してください。
+
+![Uncertified Orb](https://res.cloudinary.com/tadashi0713/image/upload/v1661752223/tadashi0713.dev/uncertified_orb.png)
+
+次に、CircleCI の設定ファイル(`.circleci/config.yml`)を記述します。
+
+```yaml
+version: '2.1'
+
+orbs:
+  flaky-tests-notify: tadashi/flaky-tests-notify@1.0.0
+
+parameters:
+  notify_flaky_tests:
+    type: boolean
+    default: false
+
+workflows:
+  notify_flaky_tests:
+    jobs:
+      - flaky-tests-notify/notify
+    when: << pipeline.parameters.notify_flaky_tests >>
+```
+
+この `notify_flaky_tests` ワークフローは `when` の部分で記述されていますが、外部から `notify_flaky_tests` パラメーター(true)が渡されていないと起動されません。
+
+次の Scheduled Pipeline(パイプラインのスケジュール実行) の設定でこのパラメーターを渡します。
+
+## 3) Scheduled Pipeline(パイプラインのスケジュール実行) を設定する
+
+先ほど作成したワークフローを定期実行させるために、Scheduled Pipeline(パイプラインのスケジュール実行) を設定します。
+
+- [パイプラインのスケジュール実行機能の使い方 | CircleCI](https://circleci.com/ja/blog/using-scheduled-pipelines)
+
+- [パイプラインのスケジュール実行 - CircleCI](https://circleci.com/docs/ja/scheduled-pipelines)
+
+`notify_flaky_tests` パラメーターを追加することによって、この Scheduled Pipeline の実行時のみ `notify_flaky_tests` ワークフローが実行されるようにします。
+
+![Scheduled Pipelines Parameter](https://res.cloudinary.com/tadashi0713/image/upload/v1661765205/tadashi0713.dev/scheduled_pipelines_parameter.png)
+
+Scheduled Pipelines が正しく設定されていれば、指定した定期実行のタイミングでワークフローが動いているのが確認できるかと思います。
+
+![Scheduled Pipelines](https://res.cloudinary.com/tadashi0713/image/upload/v1661765225/tadashi0713.dev/scheduled_pipelines_workflow.png)
+
+不安定なテストがある場合には下記のような Slack メッセージが送信されます。
+
+![Flaky Tests Notify Orb](https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png)

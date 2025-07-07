@@ -1,0 +1,177 @@
+---
+title: Solve Docker Hub's Pull Rate Limit on CI/CD Pipelines using Organization Access Tokens
+date: '2025-04-08'
+tags: ['docker', 'dockerhub', 'cicd', 'english']
+draft: false
+summary: This article explains how to solve Docker Hub’s Pull Rate Limit on CI/CD pipelines using Organization Access Tokens.
+images: ['https://tadashi0713.dev/static/images/dockerhub-oats-ci.png']
+---
+
+![Solve Docker Hub's Pull Rate Limit on CI/CD Pipelines using Organization Access Tokens](/static/images/dockerhub-oats-ci.png)
+
+This article explains how to solve Docker Hub’s Pull Rate Limit on CI/CD pipelines using Organization Access Tokens.
+
+## The Impact of Docker Hub's Pull Rate Limit on CI/CD pipelines
+
+Starting April 1, 2025, [unauthenticated Docker users will be limited to 10 pulls per hour from Docker Hub](https://docs.docker.com/docker-hub/usage/) (Pull Rate Limit).
+
+If the Pull Rate Limit is exceeded, the following message will be displayed.
+
+```console
+You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit
+```
+
+If you are already using Docker Desktop in your local development environment, simply signing in to Docker Desktop will resolve this issue.
+
+However, **if your CI/CD pipelines rely on pulling images from Docker Hub, be aware that they are more susceptible to the impact of the Pull Rate Limit**.
+
+This is because:
+
+- Various parts of the CI/CD pipelines require pulling images from Docker Hub.
+  - Docker build → The base image needs to be pulled from Docker Hub.
+  - Using Docker containers as the CI/CD execution environment (e.g., Docker Executor in CircleCI).
+  - Running tests using Docker containers, such as with Testcontainers, Selenium.
+- Since multiple developers trigger the CI/CD pipelines, the number of pulls from Docker Hub tends to be higher than in local development environments.
+- In particular, managed CI/CD services provide a clean environment for each pipeline execution, meaning that local images are not retained in a cache, and pulling from Docker Hub is often necessary.
+
+* Some CI/CD services (such as [CircleCI](https://circleci.com/docs/private-images/)) may currently be exempt from the limit. However, if you are using a self-hosted runner, you may be subject to the limit.
+
+In the past, a solution was to [create a Docker Personal Access Token](https://docs.docker.com/security/for-developers/access-tokens/) and log in to Docker Hub within the CI/CD pipelines.
+
+However, **since a Personal Access Token is tied to an individual user, it is preferable to avoid using it in CI/CD pipelines**.
+
+This use case is an example of what Organization Access Tokens are designed to address.
+
+## What are Organization Access Tokens?
+
+The Organization Access Token is a feature available to users with a [Docker Team or Business subscription](https://www.docker.com/pricing).
+
+The Organization Access Token allows access tokens to be issued and managed at the Organization level within a subscription, rather than being tied to an individual user.
+
+As a result, **there is no need to worry about tokens being linked to personal user accounts like Personal Access Tokens, making it possible to manage access tokens for CI/CD pipelines more securely**.
+
+## Create Organization Access Tokens
+
+The steps to create an Organization Access Token are as follows:
+
+- Only users with Owner permissions for the Organization or Company can perform this operation.
+
+1. Sign in to the [Admin Console](https://app.docker.com/admin)
+2. Select the organization you want to create an access token for.
+3. Under **Security and access**, select **Access tokens**.
+4. Select **Generate access token**.
+5. Enter the Label, Access Token Description, and Expiration Date.
+6. Configure the repository access permissions for the token.
+   - **Public repositories (read only)**
+   - **All repositories**: You can select read access, or read and write access.
+   - **Select repositories**: You can select up to 50 repositories, and then select read access, or read and write access for each repository.
+7. Select **Generate token** and then copy the token that appears on the screen and save it.
+
+![Create Organization Access Token](/static/images/create-organization-access-tokens.png)
+
+## Use Organization Access Tokens in CI/CD pipelines
+
+Once the Organization Access Token has been issued, save it as a secret in each CI/CD platform and ensure that `docker login` is executed before the step that pulls the image from Docker Hub.
+
+### Using Docker CLI (AWS CodeBuild, Jenkins, GitLab CI)
+
+You can log in using the Docker CLI `docker login` command by specifying `--username` as the target Organization name and `--password` as the Organization Access Token.
+
+Here is an example pipeline for AWS CodeBuild:
+
+```yaml
+version: 0.2
+
+env:
+  secrets-manager:
+    DOCKER_ORG: ${SECRETS_NAME}:DOCKER_ORG
+    DOCKER_ORG_TOKEN: ${SECRETS_NAME}:DOCKER_ORG_TOKEN
+
+phases:
+  pre_build:
+    commands:
+      - echo "$DOCKER_ORG_TOKEN" | docker login --username $DOCKER_ORG --password-stdin
+
+  build:
+    commands:
+      - docker build --push --tag user/app:latest .
+```
+
+Here is an example pipeline for Jenkins:
+
+```groovy
+pipeline {
+  agent any
+
+  environment {
+    DOCKER_ORG: credentials('docker-org')
+    DOCKER_ORG_TOKEN: credentials('docker-org-token')
+  }
+
+  stages {
+    stage('Build') {
+      steps {
+        sh 'echo "$DOCKER_ORG_TOKEN" | docker login --username $DOCKER_ORG --password-stdin'
+        sh 'docker build --push --tag user/app:latest .'
+      }
+    }
+  }
+}
+```
+
+Here is an example pipeline for GitLab CI:
+
+```yaml
+docker-build:
+  image: docker:cli
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - echo "$DOCKER_ORG_TOKEN" | docker login --username $DOCKER_ORG --password-stdin
+  script:
+    - docker build --push --tag user/app:latest .
+```
+
+### GitHub Actions (docker/login-action)
+
+Set the `username` in [docker/login-action](https://github.com/docker/login-action) to the target Organization name and the `password` to the Organization Access Token.
+
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKER_ORG }}
+          password: ${{ secrets.DOCKER_ORG_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: user/app:latest
+```
+
+### The CI execution environment uses Docker containers (CircleCI Docker Executor)
+
+When using a Docker container as the CI/CD execution environment, such as the CircleCI Docker Executor, configure the workflow to authenticate with Docker Hub before pulling images.
+
+Set `auth.username` to the target Organization name and `auth.password` to the Organization Access Token.
+
+```yaml
+jobs:
+  build:
+    docker:
+      - image: myorg/myrepo
+        auth:
+          username: $DOCKER_ORG
+          password: $DOCKER_ORG_TOKEN
+    steps:
+      - run: echo "hello"
+```
+
+## Conclusion
+
+In this article, we explored how Docker Hub's Pull Rate Limit can impact CI/CD pipelines and how Organization Access Tokens provide a secure and scalable solution. By using these tokens, teams can ensure uninterrupted access to Docker Hub while improving security and manageability. Implementing this approach will help streamline CI/CD workflows and prevent disruptions caused by rate limits. Start using Organization Access Tokens today to enhance your CI/CD pipeline efficiency.

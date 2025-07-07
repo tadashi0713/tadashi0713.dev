@@ -1,0 +1,243 @@
+---
+title: Create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD and Kustomize
+date: '2023-04-07'
+tags: ['circleci', 'gitops', 'argocd', 'kubernetes', 'aws', 'english']
+draft: false
+summary: This blog describes how to create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD and Kustomize
+images:
+  [
+    'https://res.cloudinary.com/tadashi0713/image/upload/v1661311625/tadashi0713.dev/gitops-argocd-hero.png',
+  ]
+---
+
+![GitOps](https://res.cloudinary.com/tadashi0713/image/upload/v1661311625/tadashi0713.dev/gitops-argocd-hero.png)
+
+## What is GitOps?
+
+These days, there are various tools and methods for continuous delivery to Kubernetes.
+
+You can create a consistent CI/CD pipeline to Kubernetes using CircleCI.
+
+On the other hand, we are seeing more and more cases of CircleCI being combined with OSS tools such as FluxCD and ArgoCD.
+
+These tools are also called GitOps tools.
+
+GitOps is a CD methodology [introduced by Weaveworks in 2017 in their blog](https://www.weave.works/blog/gitops-operations-by-pull-request).
+
+GitOps uses Git to declaratively describe and manage Kubernetes resource configuration information.
+
+The benefits of GitOps are as follows:
+
+### Improving productivity
+
+In GitOps, you can manage Kubernetes resource configuration by Git operations(commit, approve, merge, etc)
+
+Therefore, the same change process can be applied for common application development.
+
+You can also git revert, create a Pull Request, and merge it.
+
+It also eliminates the need to manually run `kubectl` commands, etc.
+
+### Improving visibility
+
+Because in GitOps, Git is the "Single Source of Truth".
+
+Therefore, you can easily determine who did what based on the commit history.
+
+## Push GitOps / Pull GitOps
+
+GitOps can be achieved, for example, by putting manifests in Git and applying changes to Kubernetes via CircleCI.
+
+This type of GitOps is called "Push" GitOps.
+
+For "Push" GitOps, you need to pass credentials to the tool to manipulate the Kubernetes API.
+
+<br />
+
+On the other hand, FluxCD and ArgoCD are called "Pull" GitOps.
+
+"Pull" GitOps tools periodically poll Git to detect differences and apply changes.
+
+The advantage of this "Pull" GitOps tool is that you do not need to pass credentials to manipulate the Kubernetes API.
+
+Therefore, if you do not want to pass the credentials to manipulate the Kubernetes API to CI/CD tools, we recommend using "Pull" GitOps tools.
+
+In such a case, to realize a CI/CD pipeline, CI and CD should be divided as follows:
+
+CI(CircleCI)
+
+- Run automated tests(unit tests, integration tests, E2E/UI tests), static analysis, vulnerability diagnosis, etc.
+- Build docker image, push to container registry(Amazon ECR, etc)
+- Create a Pull Request to the manifest repository to change the Docker image tag
+
+CD(FluxCD, ArgoCD)
+
+- (Approve & merge the above Pull Request)
+- Detect Git diff by Git polling
+- Apply these changes to the Kubernetes cluster
+
+![CI/CD pipeline combined with ArgoCD](https://res.cloudinary.com/tadashi0713/image/upload/v1680755181/tadashi0713.dev/argocd-cicd-pipeline.png)
+
+This time will use CircleCI as a CI tool, and ArgoCD as a CD tool, to achieve CI/CD pipeline to Kubernetes.
+
+## Install ArgoCD and apply manifest files
+
+This time, we will use ArgoCD as a GitOps tool.
+
+ArgoCD is unique compared to other GitOps tools in that it has a GUI.
+
+The GUI allows users to configure settings, check status, and perform a manual synchronization.
+
+[The demo site](https://cd.apps.argoproj.io/) is also available.
+
+<br />
+
+To achieve continuous delivery with ArgoCD, first, install ArgoCD on a Kubernetes cluster.
+
+Please refer to [the official documentation for installation procedures](https://argo-cd.readthedocs.io/en/stable/getting_started/).
+
+Here is the repository that will be deployed(it uses [Kustomize](https://kustomize.io/)).
+
+[GitHub - tadashi0713/circleci-demo-eks-argocd-manifest](https://github.com/tadashi0713/circleci-demo-eks-argocd-manifest)
+
+Once the Application is registered and Sync is executed, it will be deployed and updated based on the manifest in the repository.
+
+![ArgoCD](https://res.cloudinary.com/tadashi0713/image/upload/v1680755451/tadashi0713.dev/argocd-status.png)
+
+You can sync manually, or you can set the Sync Policy to Automatic to automatically deploy and update changes in Git.
+
+## Build a CI/CD pipeline in combination with CircleCI
+
+The previous step alone only deploys the Kubernetes manifest but does not complete the CI/CD pipeline.
+
+The next step is to create the CI/CD pipeline from application build to deployment to Kubernetes.
+
+The application code repository and configuration file can be found here.
+
+- [GitHub - tadashi0713/circleci-demo-eks-argocd-app](https://github.com/tadashi0713/circleci-demo-eks-argocd-app)
+- [Config file](https://github.com/tadashi0713/circleci-demo-eks-argocd-app/blob/master/.circleci/config.yml)
+
+### Build Docker image & push the image to Amazon ECR
+
+The `build_and_push_image` job builds the application (Next.js) in Docker and pushes it to Amazon ECR.
+
+```yaml
+build_push_ecr:
+  machine:
+    docker_layer_caching: true
+    resource_class: large
+    image: ubuntu-2004:current
+  steps:
+    - checkout
+    - aws-ecr/build-and-push-image:
+        assume-web-identity: true
+        role-arn: arn:aws:iam::660990364978:role/tadashi_oidc_fargate
+        repo: tadashi-eks-argocd-demo
+        tag: '${CIRCLE_SHA1:0:7}'
+```
+
+There are CircleCI's features to optimize this pipeline.
+
+- [Customizeable compute built(Resource Classes)](https://circleci.com/product/features/resource-classes/) to build Docker images faster.
+- [Docker Layer Caching](https://circleci.com/docs/2.0/docker-layer-caching) to build Docker images faster.
+- [CircleCI Orb(Amazon ECR)](https://circleci.com/developer/orbs/orb/circleci/aws-ecr) to simplify config file / setup pipeline easily.
+- [OpenID Connect](https://circleci.com/blog/openid-connect-identity-tokens/) to create CI/CD pipeline to Cloud Providers more securely
+
+![Amazon ECR](https://res.cloudinary.com/tadashi0713/image/upload/v1680755500/tadashi0713.dev/amazon-ecr.png)
+
+CitcleCI provides Orbs not just Amazon ECR, but also [GCR(Google Container Registry)](https://circleci.com/developer/ja/orbs/orb/circleci/gcp-gcr) and [ACR(Azure Container Registry)](https://circleci.com/developer/ja/orbs/orb/circleci/azure-acr).
+
+### Create a Pull Request to apply changes
+
+After the `build_and_push_image` job completes, the `create_release_pr` job runs next.
+
+The `create_release_pr` job changes the image tag of the Kubernetes manifest to the new tag for this release and creates a Pull Request on GitHub.
+
+First, it is needed to clone the manifest repository.
+
+Therefore, instead of the usual `checkout` command, we will use the [GitHub CLI Orb](https://circleci.com/developer/ja/orbs/orb/circleci/github-cli) to clone the repository.
+
+```yaml
+steps:
+  - github-cli/setup
+  - github-cli/clone:
+      repo: git@github.com:tadashi0713/circleci-demo-eks-argocd-manifest.git
+```
+
+Beforehand, you need to set the GitHub Token ($GITHUB_TOKEN) as an environment variable in CircleCI.
+
+<br />
+
+Then, change the target image tag.
+
+Since we use Kustomize this time, we can use `kustomize edit set image` command.
+
+```yaml
+- run:
+    name: Change image tag
+    working_directory: base
+    command: |
+      curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
+      ./kustomize edit set image circleci-demo-eks-argocd-app=${ECR_REPO}:${CIRCLE_SHA1:0:7}
+```
+
+Next, we will create a new branch, and git push.
+
+```yaml
+- add_ssh_keys:
+    fingerprints:
+      - $SSH_KEY_FINGERPRINT
+- run:
+    name: Commit file
+    command: |
+      git config --global user.email "gitops@example.com"
+      git config --global user.name "GitOps Bot"
+      git remote set-url --push origin git@github.com:tadashi0713/circleci-demo-eks-argocd-manifest.git
+      git checkout -b release-${CIRCLE_SHA1:0:7}
+      git add .
+      git commit -m"Release circleci-demo-eks-argocd-app ${CIRCLE_SHA1:0:7}"
+      git push origin HEAD
+```
+
+In CircleCI, the SSH key generated and registered by default is read-only for the target repository.
+
+Therefore, the following two settings must be made to git push to the manifest repository.
+
+- [Use GitHub user key instead to check out additional private repositories](https://circleci.com/docs/2.0/github-integration#enable-your-project-to-check-out-additional-private-repositories)
+
+![User Key](https://res.cloudinary.com/tadashi0713/image/upload/v1680815749/tadashi0713.dev/gitops-user-key.png)
+
+- [Add add_ssh_key step](https://circleci.com/docs/2.0/configuration-reference#add-ssh-keys)
+
+<br />
+
+Finally, use the gh(github-cli) command to create the Pull Request to the repository where the manifest is located.
+
+Since github-cli authentication has already been done in the previous step, there is no need to perform additional authentication.
+
+```yaml
+- run:
+    name: Create a Pull Request
+    command: gh pr create -t "Release circleci-demo-eks-argocd-app ${CIRCLE_SHA1:0:7}" -b ""
+```
+
+If the job succeeds, you will see the Pull Request created in the manifest repository.
+
+![ArgoCD new tag](https://res.cloudinary.com/tadashi0713/image/upload/v1680815806/tadashi0713.dev/argocd-new-tag.png)
+
+After you merge this Pull Request, ArgoCD will apply these changes.
+
+## Summary
+
+This time, I will introduce how to create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD, Kustomize, and CircleCI.
+
+I hope this article will be helpful for those who have been considering how to implement CI/CD pipeline to Kubernetes.
+
+In this article, I introduced several CircleCI features to improve CI(Continuous Integration)
+
+- [Customizeable compute built(Resource Classes)](https://circleci.com/product/features/resource-classes/)
+- [Docker Layer Caching](https://circleci.com/docs/2.0/docker-layer-caching)
+- [CircleCI Orb(Amazon ECR)](https://circleci.com/developer/orbs/orb/circleci/aws-ecr)
+- [OpenID Connect](https://circleci.com/blog/openid-connect-identity-tokens/)
+
+Therefore, I believe that combined with CircleCI and ArgoCD, you can develop quality Kubernetes applications continuously.

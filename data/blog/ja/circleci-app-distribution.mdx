@@ -1,0 +1,367 @@
+---
+title: モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました！
+date: '2024-01-16'
+tags: ['circleci', 'mobile', 'ios', 'android', 'japanese']
+draft: false
+summary: モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました。この記事ではこの CircleCI App Distribution の使い方と特徴について紹介します。
+images:
+  [
+    'https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg',
+  ]
+---
+
+![CircleCI App Distribution](https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg)
+
+モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました。
+
+この記事ではこの CircleCI App Distribution の使い方と特徴について紹介します。
+
+<TOCInline toc={props.toc} />
+
+---
+
+## 背景
+
+![よくある質問と回答](https://res.cloudinary.com/tadashi0713/image/upload/v1704087525/tadashi0713.dev/cci-app-distribution-faq-ja.jpg)
+
+CircleCI ではモバイルアプリケーション(iOS/Android)のビルド、テスト、そして App Store / Play Store へのリリースを自動化することができます。
+
+しかし、ビルドしたアプリケーション(主にデバック版)を iOS/Android デバイスに配布し検証するためには、CircleCI だけで完結することができませんでした。
+
+そのため、これまでは [Firebase App Distribution](https://firebase.google.com/docs/app-distribution?hl=ja) や [DeployGate](https://deploygate.com/?locale=ja) などのサービスと連携する必要がありました。
+
+これらの配布を CircleCI 内だけで実現できるようにしたのが、今回紹介する CircleCI App Distribution です。
+
+## 使い方
+
+CircleCI App Distribution は CircleCI Orb として公開しています。
+
+[CircleCI Developer Hub - tadashi0713/app-distribution](https://circleci.com/developer/ja/orbs/orb/tadashi0713/app-distribution)
+
+iOS/Android プラットフォームへビルドする CircleCI の CI/CD パイプラインの中に、この Orb が提供している `upload_android`, `upload_ios` を追加します。
+
+パラメーターの `path` にはビルドしたバイナリ(apk, aab, ipa)のパスを指定してください。
+
+```yaml
+# Android
+steps:
+  # Build Android binary
+  - app-distribution/upload_android:
+      path: demo.apk
+
+# iOS
+steps:
+  # Build iOS Binary
+  - app-distribution/upload_ios:
+    path: demo.ipa
+```
+
+実行すると、CircleCI UI の Job の Steps の中に `Generate QR Code(You can see QR Code in this step)` があり、この Step をクリックするとコンソール画面に QR コードが表示されます。
+
+![QR Code](https://res.cloudinary.com/tadashi0713/image/upload/v1704777131/cci-app-distribution-qr_duw5j2.png)
+
+この QR コードを iOS / Android デバイスで読み取ると配布ページが表示され、対象のアプリケーションをインストールすることが可能です。
+
+![Distribution Page](https://res.cloudinary.com/tadashi0713/image/upload/v1704779650/cci-app-distribution-page_kfwsyo.png)
+
+<Vimeo video="901757871" responsive />
+
+### GitHub Pull Request へのコメント
+
+CircleCI App Distribution では `comment_github_pr` を用いることによって、この配信情報を GitHub の Pull Request へコメントすることができます。
+
+事前に [Github の Token(GITHUB_TOKEN)を作成](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)し、CircleCIに保存する必要があります。
+
+```yaml
+# Android
+steps:
+  # Build Android binary
+  - app-distribution/upload_android:
+      path: demo.apk
+  - app-distribution/comment_github_pr
+
+# iOS
+steps:
+  # Build iOS Binary
+  - app-distribution/upload_ios:
+    path: demo.ipa
+  - app-distribution/comment_github_pr
+```
+
+![GitHub PR](https://res.cloudinary.com/tadashi0713/image/upload/v1704705084/cci-app-distribution-github-pr_kc6v0u.png)
+
+### GitLab Merge Request へのコメント
+
+CircleCI App Distribution では `comment_gitlab_mr` を用いることによって、この配信情報を GitLab の Merge Request へコメントすることができます。
+
+事前に [GitLab の Token(GITLAB_TOKEN)を作成](https://docs.gitlab.co.jp/ee/security/token_overview.html)し、CircleCIに保存する必要があります。
+
+また、セルフホスト版の GitLab を利用している場合には、`hostname` をパラメーターに追加する必要があります。
+
+```yaml
+# Android + GitLab Cloud
+steps:
+  # Build Android binary
+  - app-distribution/upload_android:
+      path: demo.apk
+  - app-distribution/comment_gitlab_mr
+
+# iOS + GitLab self-hosted
+steps:
+  # Build iOS Binary
+  - app-distribution/upload_ios:
+    path: demo.ipa
+  - app-distribution/comment_gitlab_mr:
+      hostname: example.gitlab.com
+```
+
+![GitLab MR](https://res.cloudinary.com/tadashi0713/image/upload/v1707369798/tadashi0713.dev/cci-app-distributuon-gitlab.png)
+
+### Bitbucket Pull Request へのコメント
+
+CircleCI App Distribution では `comment_bitbucket_pr` を用いることによって、この配信情報を Bitbucket の Pull Request へコメントすることができます。
+
+事前に [Bitbucket の Token(BITBUCKET_TOKEN)を作成](https://support.atlassian.com/ja/bitbucket-cloud/docs/access-tokens/)し、CircleCIに保存する必要があります。
+
+また、パラメーターとして対象のプロジェクトの `repo_slug` と `workspace` を追加する必要があります。
+
+```yaml
+# Android
+steps:
+  # Build Android binary
+  - app-distribution/upload_android:
+      path: demo.apk
+  - app-distribution/comment_bitbucket_pr:
+      repo_slug: circleci-demo-android
+      workspace: tadashi0713
+
+# iOS
+steps:
+  # Build iOS Binary
+  - app-distribution/upload_ios:
+    path: demo.ipa
+  - app-distribution/comment_bitbucket_pr:
+      repo_slug: circleci-demo-ios
+      workspace: tadashi0713
+```
+
+![Bitbucket PR](https://res.cloudinary.com/tadashi0713/image/upload/v1707369774/tadashi0713.dev/cci-app-distribution-bitbucket.png)
+
+### Slack への通知
+
+CircleCI App Distribution では `notify_slack` ステップを用いることによって、この配信情報を特定の Slack チャンネルに投稿することができます。
+
+事前に [Slack の Token(SLACK_ACCESS_TOKEN)を作成](https://github.com/CircleCI-Public/slack-orb/wiki/Setup)し、CircleCIに保存する必要があります。
+
+```yaml
+# Android
+steps:
+  # Build Android binary
+  - app-distribution/upload_android:
+      path: demo.apk
+  - app-distribution/notify_slack:
+      channel: test-android
+
+# iOS
+steps:
+  # Build iOS Binary
+  - app-distribution/upload_ios:
+    path: demo.ipa
+  - app-distribution/notify_slack:
+      channel: test-ios
+```
+
+![Slack](https://res.cloudinary.com/tadashi0713/image/upload/v1707370062/tadashi0713.dev/cci-app-distribution-slack.png)
+
+## 特徴
+
+- デバッグ版の配布を CircleCI 上のみで完結することができる
+  - 別途サービスを用意・連携する必要がない
+- 簡単にセットアップ・利用することができる
+  - `upload_android`, `upload_ios` は配布したいバイナリのパスのみ指定すればよく、別途特別なセットアップの必要がない
+  - GitHub / GitLab / Bitbucket へのコメントと Slack への通知も数行追加するだけで実現することが可能
+- セキュアに利用することが可能
+  - CircleCI の Artifact を利用しているため
+    - プロジェクトの閲覧権限がある人のみ利用可能
+    - Artifact の保存期間をコントロールすることが可能
+- GitHub, GitLab, BitBucket をサポート
+  - 各VCSのCI/CDツール(GitHub Actions, GitLab CI)に依存せず利用することが可能
+
+## 注意点
+
+### 実行環境(Executor)
+
+CircleCI App Distribution は CircleCI が提供している Executor で動くことを想定しています。
+
+- Androidの場合(`upload_android`)は [Android Docker Executor](https://circleci.com/developer/ja/images/image/cimg/android) もしくは [Android Machine Executor](https://circleci.com/developer/ja/machine/image/android)
+
+- iOSの場合(`upload_ios`)は [macOS Executor](https://circleci.com/developer/ja/machine/image/xcode)
+
+その他の環境(CircleCI以外が提供しているDockerイメージなど)では、実行に必要なソフトウェアがインストールされずに失敗する可能性があります。
+
+### GitHub / GitLab / Bitbucket へのコメントと Slack への通知を利用する場合
+
+GitHub / GitLab / Bitbucket へのコメントと Slack への通知を利用する場合には、同じJobの前のステップで `upload_android` もしくは `upload_ios` を実行してください。
+
+下記のように別の Job で実行することはできません。
+
+```yaml
+# NG例
+version: 2.1
+
+orbs:
+  app-distribution: tadashi0713/app-distribution@1.1.0
+
+jobs:
+  build_debug:
+    macos:
+      xcode: 14.3.1
+    steps:
+      # Build iOS Binary
+      - app-distribution/upload_ios:
+          path: demo.ipa
+  github_slack:
+    steps:
+      - app-distribution/comment_github_pr
+      - app-distribution/notify_slack:
+          channel: test
+
+workflows:
+  ios-workflow:
+    jobs:
+      - build_debug
+      - github_slack:
+          requires:
+            - build_debug
+```
+
+### iOSアプリケーションを配布する場合
+
+iOS アプリケーションを CircleCI App Distribution で配布する場合には、アドホック(Ad Hoc)アプリケーションとしてビルドしておく必要があります。
+
+CircleCI と fastlane を使ってアドホック(Ad Hoc)アプリケーションのコード署名・ビルドを行う方法は下記を参考にしてください。
+
+[iOS プロジェクトのコード署名のセットアップ - CircleCI](https://circleci.com/docs/ja/ios-codesigning/)
+
+## おわりに
+
+今後は要望が多ければ以下の改善を行なっていく予定です。
+
+- 公式Orb(Certified Orb)への移行
+- Slack通知以外の対応
+
+改善・要望などあれば是非 GitHub の Pull Request・Issue の作成をお願いします。
+
+[GitHub - tadashi0713/circleci-app-distribution: Easiest way to distribute your mobile applications all inside CircleCI](https://github.com/tadashi0713/circleci-app-distribution)
+
+## (補足) サンプルの設定ファイル
+
+### Android サンプル
+
+```yaml
+version: 2.1
+
+orbs:
+  android: circleci/android@2.3.0
+  app-distribution: tadashi0713/app-distribution@1.1.0
+
+jobs:
+  distribute_debug:
+    executor:
+      name: android/android-docker
+    steps:
+      - checkout
+      - android/restore-gradle-cache
+      - run: ./gradlew buildDebug
+      - android/save-gradle-cache
+      - app-distribution/upload_android:
+          path: app/build/outputs/apk/debug/app-debug.apk
+      - app-distribution/comment_github_pr
+      - app-distribution/notify_slack:
+          channel: test
+
+workflows:
+  android-workflow:
+    jobs:
+      - distribute_debug
+```
+
+### iOS サンプル
+
+```yaml
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@2.1.0
+  app-distribution: tadashi0713/app-distribution@1.1.0
+
+jobs:
+  distribute_debug:
+    macos:
+      xcode: 14.3.1
+    resource_class: macos.m1.large.gen1
+    steps:
+      - checkout
+      - ruby/install-deps
+      - run: bundle exec fastlane beta
+      - app-distribution/upload_ios:
+          path: CircleCIDemo.ipa
+      - app-distribution/comment_github_pr
+      - app-distribution/notify_slack:
+          channel: test
+
+workflows:
+  ios-workflow:
+    jobs:
+      - distribute_debug
+```
+
+## (補足)各プラットフォームにおけるアーキテクチャー
+
+CircleCI App Distribution は CircleCI Artifact を主に活用しています。
+
+### Android アーキテクチャー
+
+`upload_android` を実行すると、まず対象のバイナリ(.apk, .aab)からアプリ情報(アプリ名、リリースバージョンなど)を解析します。
+
+Android SDK Build-Tools の1つである[AAPT2](https://developer.android.com/studio/command-line/aapt2) を使って解析します。
+
+取得したアプリ情報は、まず HTML ファイルに書き出し、バイナリ(.apk, .aab)と共に CircleCI Artifact にアップロードします。
+
+また、GitHub / GitLab / Bitbucket へのコメントと Slack への通知でこの情報を利用するために、環境変数に保存しておきます。
+
+最後に、アップロードしたHTMLファイルのURLを元にQRCodeを生成し(qrencoder)、CircleCIのジョブコンソールや GitHub Pull Request に表示させます。
+
+`QRコード→配布ページ(HTML)→バイナリ(.apk, .aab)をダウンロード・インストール`
+
+といった形で、配布された Android アプリケーションをインストールすることができます。
+
+![Androidにおけるアーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1704086206/tadashi0713.dev/cci-app-distribution-android.jpg)
+
+### iOS アーキテクチャー
+
+iOS も同じく`upload_ios` を実行すると、対象のバイナリ(.ipa)からアプリ情報を解析します。
+
+ipa ファイルの解析には [ipa_analyzer](https://github.com/bitrise-io/ipa_analyzer) を利用しています。
+
+Android と大きく違う部分としては、iOSアプリケーションの場合には直接バイナリ(.ipa)をダウンロードしようとしても正しくインストールすることができません。
+
+iOSアプリケーションをインストールする場合には、アプリ情報とバイナリ(.ipa)のURLが記載されたマニフェストファイル(.plist)経由でインストールする必要があります。
+
+そのため、マニフェストファイル(.plist)・HTMLファイルの2つを作成・アップロードし、
+
+`QRコード→配布ページ(HTML)→マニフェストファイル(.plist)をダウンロード→マニフェストファイルに記載されているバイナリ(.ipa)をダウンロード・インストール`
+
+といった形で、配布された iOS アプリケーションをインストールする必要があります。
+
+```html
+<!-- マニフェストファイル(.plist)をダウンロード -->
+<a class="button is-dark" href="itms-services://?action=download-manifest&amp;url=${PLIST_URL}">
+  <span class="icon">
+    <i class="fas fa-download"></i>
+  </span>
+  <span>Install App</span>
+</a>
+```
+
+![iOSにおけるアーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1704087903/tadashi0713.dev/cci-app-distribution-ios.jpg)
