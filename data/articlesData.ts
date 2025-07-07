@@ -88,8 +88,7 @@ const articlesData: Article[] = [
   {
     title: 'Using OpenID Connect (OIDC) for Azure access',
     description: `This article describes how to achieve secure access to Azure by using OpenID Connect (OIDC), without having to maintain a static credential on the CircleCI side.`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1701690706/tadashi0713.dev/2023-11-29-azure-oidc.png',
+    imgSrc: '/static/images/2023-11-29-azure-oidc.png',
     href: 'https://circleci.com/blog/azure-oidc/',
   },
   {
@@ -114,8 +113,7 @@ const articlesData: Article[] = [
   {
     title: 'Azure へのアクセスに Open ID Connect(OIDC) を使用する',
     description: `この記事では、Azure へのアクセスに Open ID Connect(OIDC)を使用することによって、CircleCI側で静的なシークレットを保持することなくAzureへのセキュアなアクセスを実現する方法について紹介します。`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1690264374/tadashi0713.dev/azure-oidc-hero.png',
+    imgSrc: '/static/images/2023-11-29-azure-oidc.png',
     href: 'https://circleci.com/ja/blog/azure-oidc',
   },
   {
@@ -136,8 +134,7 @@ const articlesData: Article[] = [
   {
     title: 'Create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD and Kustomize',
     description: `This blog describes how to create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD and Kustomize`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311625/tadashi0713.dev/gitops-argocd-hero.png',
+    imgSrc: '/static/images/gitops-argocd-hero.png',
     href: '/blog/en/gitops-argocd',
   },
   {
@@ -198,8 +195,7 @@ const articlesData: Article[] = [
     title:
       'CI/CDの現場への定着も手厚くサポート─圧倒的なスピードのDevOpsを実現する「CircleCI」のインパクト',
     description: `開発と運用を一体化させたDevOpsの手法によってソフトウェアのリリースと改善のスピードを高めるうえでは、CI(継続的インテグレーション)/CD(継続的デリバリー)のためのツールとして何を選ぶかが重要なポイントとなる。そのCI/CDツールとして、デジタル時代をリードする新興のテクノロジー企業から製造系・金融系の大手企業に至るまで、幅広い層の企業に支持されているのが「CircleCI(サークルシーアイ)」だ。同製品の持つ強みを開発・提供元であるCircleCI社のキーパーソンに聞いた。`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311538/tadashi0713.dev/f_devops_guide2022_cover_1.jpg',
+    imgSrc: '/static/images/f_devops_guide2022_cover_1.jpg',
     href: 'https://thinkit.co.jp/article/19685',
   },
   {
@@ -241,8 +237,7 @@ const articlesData: Article[] = [
   {
     title: '【開催報告】AWS Startup Tech Meetup Online #4 | Amazon Web Services',
     description: `（この投稿は AWS Startup Community から寄稿頂いたものです。） こんにちは、O-KUN の sumi です。 前回に引き続き、AWS Startup Tech Meetup #4 のイベント開催レポートを投稿します。（動画は最下部に掲載しています。） オープニング オープニングは、毎度おなじみ AWS の 松田さん (@mats16k) より、コミュニティの紹介からスタートです。 AWS Startup Community では、AWS を利用するスタートアップ同士が、交流や知見の共有を通じて、スタートアップならではの悩みや課題を解消、そしてサポートできるコミュニティを目指しています。 また、コミュニティの中でスタートアップ企業の露出機会を提供することにより、企業名やプロダクトの知名度向上に寄与できれば嬉しいなと思っています。 そう、これは… スタートアップの、 スタートアップによる、 スタートアップのためのコミュニティです!!! と、AWS Startup Community をさらっと紹介したところでいつもの連絡事項です。   連絡１. コミュニティロゴが爆誕しました！！ 冒頭でお気づきの方もいらっしゃったかと思いますが、コミュニティのロゴがしれっと爆誕しました。モチーフはスタートアップらしさのあるユニコーンです。 ※ ただ、デザイナーでもなんでもない一般の情シスが、なんとなく作ったものなので、今後コミュニティの皆さんでアイデアや意見を出し合いながら、より良いアイコンをつくっていけたらいいなと思います。   連絡２. Discord を採用します これまで Slackと併用で運用しておりましたが、コミュニティスペースとして Discord を正式採用し、今後も活動していきたいと思いますのでよろしくお願いいたします。   連絡３. AWS Summit Online […]`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311792/tadashi0713.dev/aws-startup-tech-meetup-online-4-1120x630.png',
+    imgSrc: '/static/images/aws-startup-tech-meetup-online-4-1120x630.png',
     href: 'https://aws.amazon.com/jp/blogs/startup/event-report-tech-meetup-online-4/',
   },
   {
