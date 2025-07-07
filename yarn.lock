@@ -2331,6 +2331,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@formspree/core@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@formspree/core@npm:4.0.0"
+  dependencies:
+    "@stripe/stripe-js": ^5.7.0
+  checksum: 33495daf5fd4feaabaf3b4ddee8f8dda17ad251b5b953ffc31d85afe9a4a9a73d7a31a8e9f32c6dec8ca1ab44450586d7ff0721ad1bd9d091ccd2ee3273d4dce
+  languageName: node
+  linkType: hard
+
+"@formspree/react@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@formspree/react@npm:3.0.0"
+  dependencies:
+    "@formspree/core": ^4.0.0
+    "@stripe/react-stripe-js": ^3.1.1
+    "@stripe/stripe-js": ^5.7.0
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
+  checksum: 7c07db605fbde31fec9c3acfe4e7ad848f963897c97528318f92170ce49a3b6ed0796f001e0a74fa077d5031b5f44d8750904fcbc92a1ce422d9c73301a268e1
+  languageName: node
+  linkType: hard
+
 "@giscus/react@npm:^3.0.0":
   version: 3.1.0
   resolution: "@giscus/react@npm:3.1.0"
@@ -3412,6 +3435,26 @@ __metadata:
   version: 1.10.5
   resolution: "@rushstack/eslint-patch@npm:1.10.5"
   checksum: c7df90efeb77e4311f70549c1b0c41455e3a4f0c0cf2696e560d9a535f129d63ab84c98d0a3de95ed2d369d5281b541af819f99002bfd38e185e59c355b58d69
+  languageName: node
+  linkType: hard
+
+"@stripe/react-stripe-js@npm:^3.1.1":
+  version: 3.7.0
+  resolution: "@stripe/react-stripe-js@npm:3.7.0"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    "@stripe/stripe-js": ">=1.44.1 <8.0.0"
+    react: ">=16.8.0 <20.0.0"
+    react-dom: ">=16.8.0 <20.0.0"
+  checksum: 6546460a4dee52a941ee6db8c2cdeed32609ecfd8f6520399427d020fec1c0653a10196230649c580f56c05cf1f4564470e9124e9f2cf5f9835de009e81bbcc6
+  languageName: node
+  linkType: hard
+
+"@stripe/stripe-js@npm:^5.7.0":
+  version: 5.10.0
+  resolution: "@stripe/stripe-js@npm:5.10.0"
+  checksum: e3e0025dae8b406eec981fb41100dcf2d30bfaec63411001e1af78b0495497ca18f3a95869e6ae0346264072fe763a752f5d7424af9378ff441ea85eb572fcd3
   languageName: node
   linkType: hard
 
@@ -10058,7 +10101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.8.1":
+"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -11774,6 +11817,7 @@ __metadata:
   dependencies:
     "@eslint/eslintrc": ^3.2.0
     "@eslint/js": ^9.16.0
+    "@formspree/react": ^3.0.0
     "@headlessui/react": 2.2.4
     "@next/bundle-analyzer": 15.3.5
     "@svgr/webpack": ^8.0.1
