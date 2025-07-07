@@ -59,16 +59,14 @@ const articlesData: Article[] = [
     title:
       'Argo Rollouts と CircleCI を統合した、Google Kubernetes Engine(GKE) への安全なプログレッシブデリバリー(カナリアリリース)の実現 - Qiita',
     description: `この記事では、Argo Rollouts と CircleCI のリリース機能(CircleCI Releases)を統合することによって、Google Kubernetes Engine(GKE) への安全なプログレッシブデリバリー(カナリアリリース)を実現する方法について紹介します。`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1720424381/tadashi0713.dev/argo-rollouts-gke.jpg',
+    imgSrc: '/static/images/argo-rollouts-gke.jpg',
     href: 'https://qiita.com/CircleCIJapan/items/1e4ad6cddbdf60fc4851',
   },
   {
     title:
       'Argo Rollouts と CircleCI を統合した、Amazon EKS への安全なプログレッシブデリバリー(カナリアリリース)の実現 #kubernetes - Qiita',
     description: `この記事では、Argo Rollouts と CircleCI のリリース機能(CircleCI Releases)を統合することによって、Amazon EKS への安全なプログレッシブデリバリー(カナリアリリース)を実現する方法について紹介します。`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1719557445/tadashi0713.dev/argo-rollouts-eks.jpg',
+    imgSrc: '/static/images/argo-rollouts-eks.jpg',
     href: 'https://qiita.com/CircleCIJapan/items/99e935600bc8ec322819',
   },
   {
@@ -237,8 +235,7 @@ const articlesData: Article[] = [
   {
     title: 'Flutter (フラッター) アプリの CI / CD パイプラインを構築しよう',
     description: `このブログ記事では、CircleCI を使って Flutter (フラッター) アプリの CI / CD パイプラインを構築していく方法について紹介していきます。`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661311682/tadashi0713.dev/flutter-app-cicd-pipeline.png',
+    imgSrc: '/static/images/flutter-app-cicd-pipeline.png',
     href: 'https://circleci.com/ja/blog/flutter-cicd/',
   },
   {
