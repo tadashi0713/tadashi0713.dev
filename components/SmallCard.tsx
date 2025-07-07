@@ -17,6 +17,7 @@ const SmallCard = ({ title, description, imgSrc, href }) => (
               className="object-cover object-center md:h-36 lg:h-48"
               width={544}
               height={306}
+              quality={50}
             />
           </Link>
         ) : (
@@ -26,10 +27,11 @@ const SmallCard = ({ title, description, imgSrc, href }) => (
             className="object-cover object-center md:h-36 lg:h-48"
             width={544}
             height={306}
+            quality={50}
           />
         ))}
       <div className="p-6">
-        <h2 className="mb-3 line-clamp-3 text-2xl leading-8 font-bold tracking-tight">
+        <h2 className="mb-3 line-clamp-3 leading-6 font-bold tracking-tight">
           {href ? (
             <Link href={href} aria-label={`Link to ${title}`}>
               {title}
@@ -38,7 +40,7 @@ const SmallCard = ({ title, description, imgSrc, href }) => (
             title
           )}
         </h2>
-        <p className="prose mb-3 line-clamp-3 max-w-none text-gray-500 dark:text-gray-400">
+        <p className="prose mb-3 line-clamp-3 max-w-none text-sm text-gray-500 dark:text-gray-400">
           {description}
         </p>
         {href && (
