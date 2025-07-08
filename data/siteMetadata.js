@@ -1,9 +1,10 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Tadashi Nemoto',
+  title: 'Tadashi Nemoto - Solutions Engineer & DevOps Expert',
   author: 'Tadashi Nemoto',
-  headerTitle: 'Tadashi Nemoto',
-  description: 'Portfolio site of Tadashi Nemoto',
+  headerTitle: 'Tadashi Nemoto - Solutions Engineer & DevOps Expert',
+  description:
+    'Solutions Engineering Expert sharing insights on DevOps and cloud-native technologies. Technical articles, talks, and open-source projects.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tadashi0713.dev',
