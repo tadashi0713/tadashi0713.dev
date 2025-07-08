@@ -8,5 +8,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: pnpm/action-setup@v4
+      with:
+        run_install: true
+    - run: pnpm install
     - run: pnpm lint
     - run: pnpm build
