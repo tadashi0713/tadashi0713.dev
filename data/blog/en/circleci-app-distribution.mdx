@@ -4,13 +4,10 @@ date: '2024-01-18'
 tags: ['circleci', 'mobile', 'ios', 'android', 'english']
 draft: false
 summary: This article introduces the usage and characteristics of CircleCI App Distribution, the easiest way to distribute your mobile applications all inside CircleCI
-images:
-  [
-    'https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg',
-  ]
+images: ['/static/images/cci_app_distribution.jpg']
 ---
 
-![CircleCI App Distribution](https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg)
+![CircleCI App Distribution](/static/images/cci_app_distribution.jpg)
 
 Introducing CircleCI App Distribution, the easiest way to distribute your mobile applications all inside CircleCI.
 
@@ -22,7 +19,7 @@ This article introduces the usage and characteristics of CircleCI App Distributi
 
 ## Background
 
-![FAQ](https://res.cloudinary.com/tadashi0713/image/upload/v1704087525/tadashi0713.dev/cci-app-distribution-faq-en.jpg)
+![FAQ](/static/images/cci-app-distribution-faq-en.jpg)
 
 CircleCI supports CI/CD pipelines for mobile applications, covering building, testing, and releasing to the App Store/Play Store.
 
@@ -115,7 +112,7 @@ steps:
       hostname: example.gitlab.com
 ```
 
-![GitLab MR](https://res.cloudinary.com/tadashi0713/image/upload/v1707369798/tadashi0713.dev/cci-app-distributuon-gitlab.png)
+![GitLab MR](/static/images/cci-app-distributuon-gitlab.png)
 
 ### Comment to Bitbucket Pull Request
 
@@ -145,7 +142,7 @@ steps:
       workspace: tadashi0713
 ```
 
-![Bitbucket PR](https://res.cloudinary.com/tadashi0713/image/upload/v1707369774/tadashi0713.dev/cci-app-distribution-bitbucket.png)
+![Bitbucket PR](/static/images/cci-app-distribution-bitbucket.png)
 
 ### Notify to Slack
 
@@ -171,7 +168,7 @@ steps:
       channel: test-ios
 ```
 
-![Slack](https://res.cloudinary.com/tadashi0713/image/upload/v1707370062/tadashi0713.dev/cci-app-distribution-slack.png)
+![Slack](/static/images/cci-app-distribution-slack.png)
 
 ## Characteristics
 
@@ -334,7 +331,7 @@ This is the process of installing the Android app.
 
 `QR Code -> Distribution Page (HTML) -> Download/Install Binary (.apk, .aab)`
 
-![Android architecture](https://res.cloudinary.com/tadashi0713/image/upload/v1704086206/tadashi0713.dev/cci-app-distribution-android.jpg)
+![Android architecture](/static/images/cci-app-distribution-android.jpg)
 
 ### iOS architecture
 
@@ -362,4 +359,4 @@ This is the process of installing the iOS app.
 </a>
 ```
 
-![iOS Architecture](https://res.cloudinary.com/tadashi0713/image/upload/v1704087903/tadashi0713.dev/cci-app-distribution-ios.jpg)
+![iOS Architecture](/static/images/cci-app-distribution-ios.jpg)

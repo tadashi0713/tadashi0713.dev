@@ -4,13 +4,10 @@ date: '2024-01-16'
 tags: ['circleci', 'mobile', 'ios', 'android', 'japanese']
 draft: false
 summary: モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました。この記事ではこの CircleCI App Distribution の使い方と特徴について紹介します。
-images:
-  [
-    'https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg',
-  ]
+images: ['/static/images/cci_app_distribution.jpg']
 ---
 
-![CircleCI App Distribution](https://res.cloudinary.com/tadashi0713/image/upload/v1704021307/tadashi0713.dev/cci_app_distribution.jpg)
+![CircleCI App Distribution](/static/images/cci_app_distribution.jpg)
 
 モバイルアプリを CircleCI 上のみで簡単に配布することができる CircleCI App Distribution をリリースしました。
 
@@ -22,7 +19,7 @@ images:
 
 ## 背景
 
-![よくある質問と回答](https://res.cloudinary.com/tadashi0713/image/upload/v1704087525/tadashi0713.dev/cci-app-distribution-faq-ja.jpg)
+![よくある質問と回答](/static/images/cci-app-distribution-faq-ja.jpg)
 
 CircleCI ではモバイルアプリケーション(iOS/Android)のビルド、テスト、そして App Store / Play Store へのリリースを自動化することができます。
 
@@ -115,7 +112,7 @@ steps:
       hostname: example.gitlab.com
 ```
 
-![GitLab MR](https://res.cloudinary.com/tadashi0713/image/upload/v1707369798/tadashi0713.dev/cci-app-distributuon-gitlab.png)
+![GitLab MR](/static/images/cci-app-distributuon-gitlab.png)
 
 ### Bitbucket Pull Request へのコメント
 
@@ -145,7 +142,7 @@ steps:
       workspace: tadashi0713
 ```
 
-![Bitbucket PR](https://res.cloudinary.com/tadashi0713/image/upload/v1707369774/tadashi0713.dev/cci-app-distribution-bitbucket.png)
+![Bitbucket PR](/static/images/cci-app-distribution-bitbucket.png)
 
 ### Slack への通知
 
@@ -171,7 +168,7 @@ steps:
       channel: test-ios
 ```
 
-![Slack](https://res.cloudinary.com/tadashi0713/image/upload/v1707370062/tadashi0713.dev/cci-app-distribution-slack.png)
+![Slack](/static/images/cci-app-distribution-slack.png)
 
 ## 特徴
 
@@ -336,7 +333,7 @@ Android SDK Build-Tools の1つである[AAPT2](https://developer.android.com/st
 
 といった形で、配布された Android アプリケーションをインストールすることができます。
 
-![Androidにおけるアーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1704086206/tadashi0713.dev/cci-app-distribution-android.jpg)
+![Androidにおけるアーキテクチャー](/static/images/cci-app-distribution-android.jpg)
 
 ### iOS アーキテクチャー
 
@@ -364,4 +361,4 @@ iOSアプリケーションをインストールする場合には、アプリ�
 </a>
 ```
 
-![iOSにおけるアーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1704087903/tadashi0713.dev/cci-app-distribution-ios.jpg)
+![iOSにおけるアーキテクチャー](/static/images/cci-app-distribution-ios.jpg)

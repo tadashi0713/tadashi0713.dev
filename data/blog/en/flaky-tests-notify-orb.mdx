@@ -4,13 +4,10 @@ date: '2022-08-29'
 tags: ['circleci', 'orb', 'test', 'english']
 draft: false
 summary: This blog describes how to set up slack notification of detecting flaky tests using CircleCI(Orb)
-images:
-  [
-    'https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png',
-  ]
+images: ['/static/images/flaky-tests-notify.png']
 ---
 
-![Flaky Tests Notify Orb](https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png)
+![Flaky Tests Notify Orb](/static/images/flaky-tests-notify.png)
 
 This blog describes how to set up slack notification of detecting flaky tests using CircleCI(Orb)
 
@@ -22,7 +19,7 @@ In 2021, CircleCI released Test Insights Dashboard.
 
 You can see flaky tests in Test Insights Dashboard so that your team can improve development performance by finding and fixing them quickly.
 
-![Flaky Tests](https://res.cloudinary.com/tadashi0713/image/upload/v1661742775/tadashi0713.dev/flaky_tests.png)
+![Flaky Tests](/static/images/flaky_tests.png)
 
 For more information, please refer to the blog post and documentation
 
@@ -58,13 +55,13 @@ Please make sure to put these environment variables before moving to the next st
 - `SLACK_ACCESS_TOKEN`
 - `SLACK_DEFAULT_CHANNEL`(Which slack channel to post)
 
-![Flaky Tests Env](https://res.cloudinary.com/tadashi0713/image/upload/v1661751435/tadashi0713.dev/flaky_tests_env.png)
+![Flaky Tests Env](/static/images/flaky_tests_env.png)
 
 ## 2) Create a CircleCI config file
 
 Before using this orb, please make sure that your organization allows uncertified Orb.
 
-![Uncertified Orb](https://res.cloudinary.com/tadashi0713/image/upload/v1661752223/tadashi0713.dev/uncertified_orb.png)
+![Uncertified Orb](/static/images/uncertified_orb.png)
 
 Next, create such a CircleCI config file using this orb.
 
@@ -100,12 +97,12 @@ To run this job regularly and notify flaky tests via Slack, we will use Schedule
 
 I added the parameter `notify_flaky_tests` so that this scheduled pipeline can trigger the `notify_flaky_tests` workflow.
 
-![Scheduled Pipelines Parameter](https://res.cloudinary.com/tadashi0713/image/upload/v1661765205/tadashi0713.dev/scheduled_pipelines_parameter.png)
+![Scheduled Pipelines Parameter](/static/images/scheduled_pipelines_parameter.png)
 
 If you configured Scheduled Pipelines correctly, CircleCI will trigger pipelines based on its settings.
 
-![Scheduled Pipelines](https://res.cloudinary.com/tadashi0713/image/upload/v1661765225/tadashi0713.dev/scheduled_pipelines_workflow.png)
+![Scheduled Pipelines](/static/images/scheduled_pipelines_workflow.png)
 
 If there are flaky tests, you will see a slack notification as below.
 
-![Flaky Tests Notify Orb](https://res.cloudinary.com/tadashi0713/image/upload/v1661315964/tadashi0713.dev/flaky-tests-notify.png)
+![Flaky Tests Notify Orb](/static/images/flaky-tests-notify.png)

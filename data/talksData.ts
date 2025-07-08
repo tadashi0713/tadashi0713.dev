@@ -73,8 +73,7 @@ const talksData: Talk[] = [
   {
     title: 'Unityを使ったモバイルゲームCI/CDパイプラインをクラウドネイティブ化しよう',
     description: 'Cloud Operator Days Tokyo 2023',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1695013316/tadashi0713.dev/G75YQKKM74.jpg',
+    imgSrc: '/static/images/G75YQKKM74.jpg',
     href: 'https://www.docswell.com/s/tadashi0713/K6Y9N7-unity-mobile-cicd',
   },
   {
@@ -88,8 +87,7 @@ const talksData: Talk[] = [
     title:
       'Speed matters: Advanced CI/CD techniques to improve development velocity, quality & security',
     description: 'Cloud Expo Asia 2022, Singapore',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1665745656/tadashi0713.dev/slide_0.jpg',
+    imgSrc: '/static/images/slide_0.jpg',
     href: 'https://speakerdeck.com/tadashi0713/cd-techniques-to-improve-development-velocity-quality-and-security',
   },
   {
@@ -118,15 +116,13 @@ const talksData: Talk[] = [
     title: 'はじめてのCircleCI 内製化への第一歩 〜効率的にCircleCIについて学ぼう〜',
     description:
       '本セミナーでは、CI/CDツールのーつであるCircleCIにフォーカスをして、CI/CDをはじめる方法をデモやコツを交えながらご紹介いたします。',
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1655457399/tadashi0713.dev/unnamed_1.png',
+    imgSrc: '/static/images/unnamed_1.png',
     href: 'https://www.youtube.com/watch?v=6lQ0AkkiBKk',
   },
   {
     title: '10x deployment frequency using GitLab Flow and GitHub Actions on AWS ECS',
     description: `English version of previous presentation slide`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661304730/tadashi0713.dev/5970ee8f76d947308c9e0a0a148e1e8d.jpg',
+    imgSrc: '/static/images/5970ee8f76d947308c9e0a0a148e1e8d.jpg',
     href: 'https://speakerdeck.com/tadashi0713/10x-deployment-frequency-using-gitlab-flow-and-github-actions-on-aws-ecs',
   },
   {
@@ -139,8 +135,7 @@ const talksData: Talk[] = [
     title:
       'Creating parallelized Android UITest (Appium) environment using Azure, Docker and Android emulator',
     description: `Agile & Automation Days 2019 #aadays2019`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661304838/tadashi0713.dev/b39c847fb0e84047a74d0dee8f76b916.jpg',
+    imgSrc: '/static/images/b39c847fb0e84047a74d0dee8f76b916.jpg',
     href: 'https://speakerdeck.com/tadashi0713/creating-parallelized-android-uitest-appium-environment-using-azure-docker-and-android-emulator',
   },
   {
@@ -152,29 +147,25 @@ const talksData: Talk[] = [
   {
     title: 'Docker × Androidエミュレーターを使ったAppiumテスト環境',
     description: `システムテスト自動化カンファレンス2018`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661306712/tadashi0713.dev/edaba8cd3f6a45a78c65641346eaa4e0.jpg',
+    imgSrc: '/static/images/edaba8cd3f6a45a78c65641346eaa4e0.jpg',
     href: 'https://speakerdeck.com/tadashi0713/docker-x-androidemiyuretawoshi-tutaappiumtesutohuan-jing',
   },
   {
     title: 'Scaling Selenium to Infinity',
     description: `[人気につき増枠]AQA POP TALK #3 ~海外カンファレンスから見えたテスト自動化の未来~`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661306761/tadashi0713.dev/2500c5c66a524566ba4322827160f139.jpg',
+    imgSrc: '/static/images/2500c5c66a524566ba4322827160f139.jpg',
     href: 'https://speakerdeck.com/tadashi0713/scaling-selenium-to-infinity',
   },
   {
     title: '私がAndroid CI/CDを Bitrise・CircleCIに 移行して得られたもの',
     description: `CI/CD Test Night #2`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661306810/tadashi0713.dev/4886038189764818b0713fac4ecb7543.jpg',
+    imgSrc: '/static/images/4886038189764818b0713fac4ecb7543.jpg',
     href: 'https://speakerdeck.com/tadashi0713/cdwo-bitrisecirclecini-yi-xing-sitede-raretamofalse',
   },
   {
     title: 'メルカリのテスト自動化戦略',
     description: `AQA POP TALK #2 〜マニュアルテスト VS 自動テストの巻〜 ＠博多`,
-    imgSrc:
-      'https://res.cloudinary.com/tadashi0713/image/upload/v1661306860/tadashi0713.dev/936c9be3fd7442e3bd1f9d3b3c7327d6.jpg',
+    imgSrc: '/static/images/936c9be3fd7442e3bd1f9d3b3c7327d6.jpg',
     href: 'https://speakerdeck.com/tadashi0713/merukarifalsetesutozi-dong-hua-zhan-lue',
   },
 ]
