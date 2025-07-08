@@ -1,6 +1,6 @@
 import Image from './Image'
 import Link from './Link'
-import { generateBlurDataURL } from './utils/image-placeholder'
+import { toBase64, shimmer } from './utils/image-placeholder'
 
 const SmallCard = ({ title, description, imgSrc, href }) => (
   <div className="md max-w-[544px] p-3 md:w-1/3">
@@ -19,7 +19,7 @@ const SmallCard = ({ title, description, imgSrc, href }) => (
               width={544}
               height={306}
               quality={50}
-              placeholder={generateBlurDataURL(544, 306)}
+              placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(544, 306))}`}
             />
           </Link>
         ) : (
@@ -30,7 +30,7 @@ const SmallCard = ({ title, description, imgSrc, href }) => (
             width={544}
             height={306}
             quality={50}
-            placeholder={generateBlurDataURL(544, 306)}
+            placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(544, 306))}`}
           />
         ))}
       <div className="p-6">

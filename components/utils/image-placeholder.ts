@@ -14,7 +14,3 @@ export const shimmer = (w: number, h: number): string => `
 
 export const toBase64 = (str: string): string =>
   typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str)
-
-export const generateBlurDataURL = (width: number, height: number): string => {
-  return `data:image/svg+xml;base64,${toBase64(shimmer(width, height))}`
-}
