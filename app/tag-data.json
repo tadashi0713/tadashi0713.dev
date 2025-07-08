@@ -1,19 +1,19 @@
 {
+  "circleci": 10,
+  "test": 3,
+  "android": 3,
+  "english": 7,
+  "mobile": 2,
+  "ios": 4,
+  "mac": 2,
   "docker": 1,
   "dockerhub": 1,
   "cicd": 1,
-  "english": 7,
-  "circleci": 10,
-  "mobile": 2,
-  "ios": 4,
-  "android": 3,
-  "japanese": 4,
-  "test": 3,
+  "orb": 2,
   "gitlab": 2,
   "gitops": 1,
   "argocd": 1,
   "kubernetes": 1,
   "aws": 1,
-  "mac": 2,
-  "orb": 2
+  "japanese": 4
 }

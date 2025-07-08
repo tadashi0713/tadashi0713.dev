@@ -4,13 +4,10 @@ date: '2023-05-16'
 tags: ['circleci', 'gitlab', 'english']
 draft: false
 summary: This article describes how to securely connect GitLab Self-managed to CircleCI using the IP ranges feature.
-images:
-  [
-    'https://res.cloudinary.com/tadashi0713/image/upload/v1682243393/tadashi0713.dev/gitlab-ip-ranges.jpg',
-  ]
+images: ['/static/images/gitlab-ip-ranges.jpg']
 ---
 
-![Securely connect GitLab Self-managed to CircleCI using IP ranges](https://res.cloudinary.com/tadashi0713/image/upload/v1682243393/tadashi0713.dev/gitlab-ip-ranges.jpg)
+![Securely connect GitLab Self-managed to CircleCI using IP ranges](/static/images/gitlab-ip-ranges.jpg)
 
 This article describes how to securely connect GitLab Self-managed to CircleCI using the IP ranges feature.
 
@@ -32,7 +29,7 @@ You can host and run GitLab CI on your GitLab Self-managed server instance, but 
 
 Fortunately, developers who use GitLab self-managed can now use CircleCI's best-in-class CI/CD solution.
 
-![CircleCI vs GitLabCI](https://res.cloudinary.com/tadashi0713/image/upload/v1684300394/tadashi0713.dev/circleci-vs-gitlabci-en.png)
+![CircleCI vs GitLabCI](/static/images/circleci-vs-gitlabci-en.png)
 
 However, there is one challenge when connecting GitLab Self-managed to CircleCI. The GitLab self-managed instance must be accessible via the public internet.
 
@@ -52,7 +49,7 @@ This allows you to restrict inbound traffic to your GitLab instance to only Circ
 
 In this article, we will use this IP ranges feature to allow CircleCI to connect to GitLab Self-managed as shown in the diagram below.
 
-![self-managed GitLab × IP ranges feature](https://res.cloudinary.com/tadashi0713/image/upload/v1684296395/tadashi0713.dev/gitlab-self-managed-ip-ranges-architecture-en.jpg)
+![self-managed GitLab × IP ranges feature](/static/images/gitlab-self-managed-ip-ranges-architecture-en.jpg)
 
 # Prerequisites
 
@@ -132,7 +129,7 @@ You can check the pipeline’s status from the CircleCI UI.
 
 You can also check it in the GitLab UI under “Merge Requests”.
 
-![GitLab Status](https://res.cloudinary.com/tadashi0713/image/upload/v1683714263/tadashi0713.dev/gitlab-status.png)
+![GitLab Status](/static/images/gitlab-status.png)
 
 # Build and push docker images using Kaniko
 

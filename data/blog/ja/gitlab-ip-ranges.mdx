@@ -4,13 +4,10 @@ date: '2023-05-16'
 tags: ['circleci', 'gitlab', 'japanese']
 draft: false
 summary: この記事では、CircleCI が提供する IP アドレス範囲機能を利用して、セルフホスト(self-managed)版 GitLab と CircleCI クラウドを IP アドレスベースでセキュアに接続する方法について紹介します。
-images:
-  [
-    'https://res.cloudinary.com/tadashi0713/image/upload/v1682243393/tadashi0713.dev/gitlab-ip-ranges.jpg',
-  ]
+images: ['/static/images/gitlab-ip-ranges.jpg']
 ---
 
-![セルフホスト(self-managed)版 GitLab と CircleCI クラウドを IP アドレスベースでセキュアに接続する方法](https://res.cloudinary.com/tadashi0713/image/upload/v1682243393/tadashi0713.dev/gitlab-ip-ranges.jpg)
+![セルフホスト(self-managed)版 GitLab と CircleCI クラウドを IP アドレスベースでセキュアに接続する方法](/static/images/gitlab-ip-ranges.jpg)
 
 この記事では、CircleCI が提供する IP アドレス範囲機能を利用して、セルフホスト(self-managed)版 GitLab と CircleCI クラウドを IP アドレスベースでセキュアに接続する方法について紹介します。
 
@@ -32,7 +29,7 @@ CircleCI クラウドはこの度、セルフホスト(self-managed)版 GitLab �
 
 今回の CircleCI のサポートによって、セルフホスト(self-managed)版 GitLab を利用している開発者でも高性能な CI/CD 環境を利用することができます。
 
-![CircleCIとGitLabCIの比較](https://res.cloudinary.com/tadashi0713/image/upload/v1684300353/tadashi0713.dev/circleci-vs-gitlabci-ja.png)
+![CircleCIとGitLabCIの比較](/static/images/circleci-vs-gitlabci-ja.png)
 
 しかし、セルフホスト(self-managed)版 GitLab と CircleCI クラウドを接続するためには以下の制約があります。
 
@@ -54,7 +51,7 @@ CircleCI が提供する IP アドレス範囲機能を利用することによ�
 
 今回はこの IP アドレス範囲機能を利用して、以下の図のような形でセルフホスト(self-managed)版 GitLab と接続をします。
 
-![セルフホスト(self-managed)版 GitLab × IP アドレス範囲アーキテクチャー](https://res.cloudinary.com/tadashi0713/image/upload/v1684196039/tadashi0713.dev/gitlab-self-managed-ip-ranges-architecture-ja.jpg)
+![セルフホスト(self-managed)版 GitLab × IP アドレス範囲アーキテクチャー](/static/images/gitlab-self-managed-ip-ranges-architecture-ja.jpg)
 
 # 事前準備
 
@@ -132,7 +129,7 @@ jobs:
 
 CircleCI の UI だけではなく、GitLab の Merge Request などの UI からステータスを確認することができます。
 
-![GitLabのステータス](https://res.cloudinary.com/tadashi0713/image/upload/v1683714263/tadashi0713.dev/gitlab-status.png)
+![GitLabのステータス](/static/images/gitlab-status.png)
 
 # Docker イメージのビルド・プッシュを行いたい場合(kaniko)
 

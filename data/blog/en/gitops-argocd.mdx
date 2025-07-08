@@ -4,13 +4,10 @@ date: '2023-04-07'
 tags: ['circleci', 'gitops', 'argocd', 'kubernetes', 'aws', 'english']
 draft: false
 summary: This blog describes how to create GitOps CI/CD pipeline to Kubernetes(Amazon EKS) using ArgoCD and Kustomize
-images:
-  [
-    'https://res.cloudinary.com/tadashi0713/image/upload/v1661311625/tadashi0713.dev/gitops-argocd-hero.png',
-  ]
+images: ['/static/images/gitops-argocd-hero.png']
 ---
 
-![GitOps](https://res.cloudinary.com/tadashi0713/image/upload/v1661311625/tadashi0713.dev/gitops-argocd-hero.png)
+![GitOps](/static/images/gitops-argocd-hero.png)
 
 ## What is GitOps?
 
@@ -76,7 +73,7 @@ CD(FluxCD, ArgoCD)
 - Detect Git diff by Git polling
 - Apply these changes to the Kubernetes cluster
 
-![CI/CD pipeline combined with ArgoCD](https://res.cloudinary.com/tadashi0713/image/upload/v1680755181/tadashi0713.dev/argocd-cicd-pipeline.png)
+![CI/CD pipeline combined with ArgoCD](/static/images/argocd-cicd-pipeline.png)
 
 This time will use CircleCI as a CI tool, and ArgoCD as a CD tool, to achieve CI/CD pipeline to Kubernetes.
 
@@ -102,7 +99,7 @@ Here is the repository that will be deployed(it uses [Kustomize](https://kustomi
 
 Once the Application is registered and Sync is executed, it will be deployed and updated based on the manifest in the repository.
 
-![ArgoCD](https://res.cloudinary.com/tadashi0713/image/upload/v1680755451/tadashi0713.dev/argocd-status.png)
+![ArgoCD](/static/images/argocd-status.png)
 
 You can sync manually, or you can set the Sync Policy to Automatic to automatically deploy and update changes in Git.
 
@@ -143,7 +140,7 @@ There are CircleCI's features to optimize this pipeline.
 - [CircleCI Orb(Amazon ECR)](https://circleci.com/developer/orbs/orb/circleci/aws-ecr) to simplify config file / setup pipeline easily.
 - [OpenID Connect](https://circleci.com/blog/openid-connect-identity-tokens/) to create CI/CD pipeline to Cloud Providers more securely
 
-![Amazon ECR](https://res.cloudinary.com/tadashi0713/image/upload/v1680755500/tadashi0713.dev/amazon-ecr.png)
+![Amazon ECR](/static/images/amazon-ecr.png)
 
 CitcleCI provides Orbs not just Amazon ECR, but also [GCR(Google Container Registry)](https://circleci.com/developer/ja/orbs/orb/circleci/gcp-gcr) and [ACR(Azure Container Registry)](https://circleci.com/developer/ja/orbs/orb/circleci/azure-acr).
 
@@ -205,7 +202,7 @@ Therefore, the following two settings must be made to git push to the manifest r
 
 - [Use GitHub user key instead to check out additional private repositories](https://circleci.com/docs/2.0/github-integration#enable-your-project-to-check-out-additional-private-repositories)
 
-![User Key](https://res.cloudinary.com/tadashi0713/image/upload/v1680815749/tadashi0713.dev/gitops-user-key.png)
+![User Key](/static/images/gitops-user-key.png)
 
 - [Add add_ssh_key step](https://circleci.com/docs/2.0/configuration-reference#add-ssh-keys)
 
@@ -223,7 +220,7 @@ Since github-cli authentication has already been done in the previous step, ther
 
 If the job succeeds, you will see the Pull Request created in the manifest repository.
 
-![ArgoCD new tag](https://res.cloudinary.com/tadashi0713/image/upload/v1680815806/tadashi0713.dev/argocd-new-tag.png)
+![ArgoCD new tag](/static/images/argocd-new-tag.png)
 
 After you merge this Pull Request, ArgoCD will apply these changes.
 
