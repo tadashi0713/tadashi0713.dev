@@ -1,5 +1,6 @@
 import Image from './Image'
 import Link from './Link'
+import { generateBlurDataURL } from './utils/image-placeholder'
 
 const Card = ({ title, description, imgSrc, href }) => (
   <div className="md max-w-[544px] p-4 md:w-1/2">
@@ -18,6 +19,7 @@ const Card = ({ title, description, imgSrc, href }) => (
               width={544}
               height={306}
               quality={50}
+              placeholder={generateBlurDataURL(544, 306)}
             />
           </Link>
         ) : (
@@ -28,6 +30,7 @@ const Card = ({ title, description, imgSrc, href }) => (
             width={544}
             height={306}
             quality={50}
+            placeholder={generateBlurDataURL(544, 306)}
           />
         ))}
       <div className="p-6">
