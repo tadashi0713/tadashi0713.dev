@@ -74,13 +74,6 @@ export default () => {
       dirs: ['app', 'components', 'layouts', 'scripts'],
     },
     images: {
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: 'opengraph.githubassets.com',
-          port: '',
-        }
-      ],
       unoptimized,
     },
     async headers() {
