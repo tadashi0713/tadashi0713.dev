@@ -63,7 +63,7 @@ const unoptimized = process.env.UNOPTIMIZED ? true : undefined
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
 export default () => {
-  const plugins = [withContentlayer, withBundleAnalyzer]
+  const plugins = [withContentlayer, bundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), {
     output,
     basePath,
