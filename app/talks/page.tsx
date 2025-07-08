@@ -4,7 +4,7 @@ import TalkListLayout from '@/layouts/TalksListLayout'
 
 const TALKS_PER_PAGE = 10
 
-export const metadata = genPageMetadata({ title: 'Articles' })
+export const metadata = genPageMetadata({ title: 'Talks' })
 
 export default async function ArticlePage(props: { searchParams: Promise<{ page: string }> }) {
   const pageNumber = 1

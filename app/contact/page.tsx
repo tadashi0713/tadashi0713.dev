@@ -1,5 +1,8 @@
 import ContactForm from '@/components/ContactForm'
 import Twemoji from '@/components/Twemoji'
+import { genPageMetadata } from 'app/seo'
+
+export const metadata = genPageMetadata({ title: 'Contact / お問い合わせ' })
 
 export default function ContactPage() {
   return (
