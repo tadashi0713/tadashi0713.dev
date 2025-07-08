@@ -2,7 +2,7 @@
 const siteMetadata = {
   title: 'Tadashi Nemoto - Solutions Engineer & DevOps Expert',
   author: 'Tadashi Nemoto',
-  headerTitle: 'Tadashi Nemoto - Solutions Engineer & DevOps Expert',
+  headerTitle: 'Tadashi Nemoto',
   description:
     'Solutions Engineering Expert sharing insights on DevOps and cloud-native technologies. Technical articles, talks, and open-source projects.',
   language: 'en-us',
