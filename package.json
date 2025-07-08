@@ -20,6 +20,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "@twemoji/api": "^16.0.1",
     "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "body-scroll-lock": "^4.0.0-beta.0",
     "contentlayer2": "0.5.8",
     "esbuild": "0.25.6",

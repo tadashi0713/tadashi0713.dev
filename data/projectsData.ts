@@ -81,19 +81,19 @@ const projectsData: Project[] = [
   {
     title: 'GitHub - tadashi0713/circleci_flutter_demo',
     description: `Demo for CI/CD pipeline for Flutter app using CircleCI.`,
-    imgSrc: '/static/images/flutter-demo.png',
+    imgSrc: '/static/images/circleci_flutter_demo.png',
     href: 'https://github.com/tadashi0713/circleci_flutter_demo',
   },
   {
     title: 'GitHub - tadashi0713/circleci-reactnative-detox-demo',
     description: `Demo for CI/CD pipeline for React Native + Detox app using CircleCI.`,
-    imgSrc: '/static/images/reactnative-detox-demo.png',
+    imgSrc: '/static/images/circleci-reactnative-detox-demo.png',
     href: 'https://github.com/tadashi0713/circleci-reactnative-detox-demo',
   },
   {
     title: 'GitHub - tadashi0713/circleci-demo-ip-ranges',
     description: `Demo to run CircleCI jobs(Cypress) to IP-based restricted application using IP Ranges feature.`,
-    imgSrc: '/static/images/ip-ranges-demo.png',
+    imgSrc: '/static/images/circleci-demo-ip-ranges.png',
     href: 'https://github.com/tadashi0713/circleci-demo-ip-ranges',
   },
 ]
