@@ -1,5 +1,12 @@
 const featuredItemsData = [
   {
+    title: `脆弱性管理を大幅に削減する、安全で強化されたコンテナイメージ「Docker Hardened Images」 | DevOps Hub | SB C&S`,
+    description:
+      '本ブログでは Docker で新たにリリースされた、本番環境向けに構築されたデフォルトで安全なコンテナイメージ「Docker Hardened Images」を紹介します。',
+    imgSrc: '/static/images/dhi_blog.png',
+    href: 'https://licensecounter.jp/devops-hub/blog/docker-hardenedimages/',
+  },
+  {
     title:
       'Docker Hardened Images (DHI) Introduction 〜本番環境向けに構築した、デフォルトで安全なコンテナイメージ〜',
     description:
