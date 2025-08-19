@@ -7,6 +7,13 @@ export type Article = {
 
 const articlesData: Article[] = [
   {
+    title: `脆弱性管理を大幅に削減する、安全で強化されたコンテナイメージ「Docker Hardened Images」 | DevOps Hub | SB C&S`,
+    description:
+      '本ブログでは Docker で新たにリリースされた、本番環境向けに構築されたデフォルトで安全なコンテナイメージ「Docker Hardened Images」を紹介します。',
+    imgSrc: '/static/images/dhi_blog.png',
+    href: 'https://licensecounter.jp/devops-hub/blog/docker-hardenedimages/',
+  },
+  {
     title: `Docker MCP Catalog and Toolkit ではじめる、コンテナを使った 簡単・安全な MCP サーバーの管理 | DevOps Hub | SB C&S`,
     description:
       '本ブログでは Docker で新たにリリースされた、MCP サーバーを簡単・安全に管理ができる「Docker MCP Catalog and Toolkit」を紹介します。',
