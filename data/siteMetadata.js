@@ -17,7 +17,7 @@ const siteMetadata = {
   // x: 'https://twitter.com/x',
   // twitter: 'https://twitter.com/Twitter',
   facebook: 'https://www.facebook.com/nemoto.tadashi',
-  youtube: 'https://www.youtube.com/@tadashi0713',
+  youtube: 'https://www.youtube.com/@tadashi0713dev',
   linkedin: 'https://www.linkedin.com/in/tadashi-nemoto',
   // threads: 'https://www.threads.net',
   // instagram: 'https://www.instagram.com',
