@@ -1,5 +1,13 @@
 const featuredItemsData = [
   {
+    title:
+      '脆弱性を大幅に削減する、Docker 提供のセキュリティ強化コンテナイメージ「Docker Hardened Images」への移行方法',
+    description:
+      'この動画では、Docker で提供している脆弱性の少ない、セキュリティが強化されたコンテナイメージ Docker Hardened Images(DHI) への移行方法についてご紹介します。',
+    imgSrc: '/static/images/dhi_migration_youtube.jpg',
+    href: 'https://www.youtube.com/watch?v=lukHCq1aVqs',
+  },
+  {
     title: `脆弱性管理を大幅に削減する、安全で強化されたコンテナイメージ「Docker Hardened Images」 | DevOps Hub | SB C&S`,
     description:
       '本ブログでは Docker で新たにリリースされた、本番環境向けに構築されたデフォルトで安全なコンテナイメージ「Docker Hardened Images」を紹介します。',
@@ -56,12 +64,6 @@ const featuredItemsData = [
     description: `Learn how integrating Docker Build Cloud into a CI/CD pipeline using AWS CodeBuild can dramatically reduce build times and improve release frequency.`,
     imgSrc: '/static/images/2400x1260_generic-dbc-blog_e.png',
     href: 'https://www.docker.com/blog/accelerate-your-docker-builds-using-aws-codebuild-and-docker-build-cloud/',
-  },
-  {
-    title: 'Software Design 2023年12月号',
-    description: `開発を加速するCI/CD 生産性と品質を両立させるための鉄則\n第2章：本番／検証環境を意識したCDデザイン`,
-    imgSrc: '/static/images/642312.jpg',
-    href: 'https://gihyo.jp/magazine/SD/archive/2023/202312',
   },
 ]
 
