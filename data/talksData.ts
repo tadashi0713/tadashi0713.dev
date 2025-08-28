@@ -8,6 +8,14 @@ export type Talk = {
 const talksData: Talk[] = [
   {
     title:
+      '脆弱性を大幅に削減する、Docker 提供のセキュリティ強化コンテナイメージ「Docker Hardened Images」への移行方法',
+    description:
+      'この動画では、Docker で提供している脆弱性の少ない、セキュリティが強化されたコンテナイメージ Docker Hardened Images(DHI) への移行方法についてご紹介します。',
+    imgSrc: '/static/images/dhi_migration_youtube.jpg',
+    href: 'https://www.youtube.com/watch?v=lukHCq1aVqs',
+  },
+  {
+    title:
       'Docker Hardened Images (DHI) Introduction 〜本番環境向けに構築した、デフォルトで安全なコンテナイメージ〜',
     description:
       'この動画では Docker Hardened Images (DHI) がどのようにソフトウェアサプライチェーンの課題を解決することができるのか、その背景からご紹介しています。',
