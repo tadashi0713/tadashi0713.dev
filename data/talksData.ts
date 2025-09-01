@@ -15,6 +15,13 @@ const talksData: Talk[] = [
     href: 'https://www.youtube.com/watch?v=lukHCq1aVqs',
   },
   {
+    title: 'CircleCI と Docker が実践解説：AI・LLM 時代のCI CDとMCP基盤運用',
+    description:
+      '生成 AI・LLM の活用が進む今、開発運用の最適化が求められています。本セミナーでは、CircleCI と Docker より、CI/CD と MCP 基盤の最新動向と実践事例をご紹介します。',
+    imgSrc: '/static/images/docker_circleci_mcp_webinar.jpeg',
+    href: 'https://www.youtube.com/watch?v=3ajMdKxpmvQ',
+  },
+  {
     title:
       'Docker Hardened Images (DHI) Introduction 〜本番環境向けに構築した、デフォルトで安全なコンテナイメージ〜',
     description:
