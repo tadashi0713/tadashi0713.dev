@@ -7,6 +7,13 @@ export type Talk = {
 
 const talksData: Talk[] = [
   {
+    title: 'コンテナ脆弱性管理を大幅に削減する新しいアプローチ ー Docker Hardened Images',
+    description:
+      '本セミナーでは、「CVEほとんどゼロ」「最大95%の攻撃対象領域削減」「エンタープライズSLAによる迅速な修復」 を実現する 安全で強化されたコンテナイメージDocker Hardened Images をご紹介します。 セキュリティと開発の両立を可能にする新しい戦略を学んでいただけます。',
+    imgSrc: '/static/images/dhi_webinar.png',
+    href: 'https://youtu.be/CSaRh7-oh3A',
+  },
+  {
     title:
       '脆弱性を大幅に削減する、Docker 提供のセキュリティ強化コンテナイメージ「Docker Hardened Images」への移行方法',
     description:
