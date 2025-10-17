@@ -11,7 +11,7 @@ const talksData: Talk[] = [
       '進化した Docker Compose ではじめるAI エージェント開発 〜ローカル LLM・MCP サーバー・アプリケーションを 1 つの Compose ファイルで〜',
     description:
       '多くの開発者がコンテナ開発で利用している Docker Compose がアップデートされ、Agentic Compose として AI エージェント開発に対応しました。',
-    imgSrc: '/static/images/dhi_migration_youtube.jpg',
+    imgSrc: '/static/images/agentic_compose_youtube.jpg',
     href: 'https://www.youtube.com/watch?v=YrY--rpZH_g',
   },
   {
