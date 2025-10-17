@@ -7,6 +7,14 @@ export type Talk = {
 
 const talksData: Talk[] = [
   {
+    title:
+      '進化した Docker Compose ではじめるAI エージェント開発 〜ローカル LLM・MCP サーバー・アプリケーションを 1 つの Compose ファイルで〜',
+    description:
+      '多くの開発者がコンテナ開発で利用している Docker Compose がアップデートされ、Agentic Compose として AI エージェント開発に対応しました。',
+    imgSrc: '/static/images/dhi_migration_youtube.jpg',
+    href: 'https://www.youtube.com/watch?v=YrY--rpZH_g',
+  },
+  {
     title: 'コンテナ脆弱性管理を大幅に削減する新しいアプローチ ー Docker Hardened Images',
     description:
       '本セミナーでは、「CVEほとんどゼロ」「最大95%の攻撃対象領域削減」「エンタープライズSLAによる迅速な修復」 を実現する 安全で強化されたコンテナイメージDocker Hardened Images をご紹介します。 セキュリティと開発の両立を可能にする新しい戦略を学んでいただけます。',
