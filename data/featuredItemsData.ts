@@ -1,6 +1,14 @@
 const featuredItemsData = [
   {
     title:
+      '進化した Docker Compose ではじめるAI エージェント開発 〜ローカル LLM・MCP サーバー・アプリケーションを 1 つの Compose ファイルで〜',
+    description:
+      '多くの開発者がコンテナ開発で利用している Docker Compose がアップデートされ、Agentic Compose として AI エージェント開発に対応しました。',
+    imgSrc: '/static/images/dhi_migration_youtube.jpg',
+    href: 'https://www.youtube.com/watch?v=YrY--rpZH_g',
+  },
+  {
+    title:
       '脆弱性を大幅に削減する、Docker 提供のセキュリティ強化コンテナイメージ「Docker Hardened Images」への移行方法',
     description:
       'この動画では、Docker で提供している脆弱性の少ない、セキュリティが強化されたコンテナイメージ Docker Hardened Images(DHI) への移行方法についてご紹介します。',
@@ -51,13 +59,6 @@ const featuredItemsData = [
       'Docker Model Runner は 大規模言語モデル(LLM) をDocker を使ったコンテナ開発と同じ体験でローカル環境で実行することができる、Docker Desktop の新たな機能です。',
     imgSrc: '/static/images/docker-model-runner.jpg',
     href: 'https://www.youtube.com/watch?v=b9dH0Q_BKcA',
-  },
-  {
-    title: 'Docker Scout を使ったコンテナセキュリティの可視化と管理',
-    description:
-      'Docker Scoutは、コンテナのセキュリティ管理を効率化し、ソフトウェアサプライチェーン全体の安全性を確保するための最新ツールです。本ウェビナーでは、Docker Scoutの最新機能や脆弱性の特定や対応方法、運用のベストプラクティスについて詳しく解説します。',
-    imgSrc: '/static/images/docker-scout-webinar-ja.jpeg',
-    href: 'https://www.youtube.com/watch?v=wuV8hO3Tm_0',
   },
   {
     title: 'Accelerate Your Docker Builds Using AWS CodeBuild and Docker Build Cloud | Docker',
