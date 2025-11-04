@@ -7,6 +7,13 @@ export type Article = {
 
 const articlesData: Article[] = [
   {
+    title: `進化した Docker Compose ではじめる AI エージェント開発 〜ローカル LLM・MCP サーバー・アプリケーションを全て1つの Compose ファイルで〜 | DevOps Hub | SB C&S`,
+    description:
+      '本ブログでは Docker で新たにリリースされた、本番環境向けに構築されたデフォルトで安全なコンテナイメージ「Docker Hardened Images」を紹介します。',
+    imgSrc: '/static/images/agentic_compose_blog.jpg',
+    href: 'https://licensecounter.jp/devops-hub/blog/docker-compose-ai/',
+  },
+  {
     title: `脆弱性管理を大幅に削減する、安全で強化されたコンテナイメージ「Docker Hardened Images」 | DevOps Hub | SB C&S`,
     description:
       '本ブログでは Docker で新たにリリースされた、本番環境向けに構築されたデフォルトで安全なコンテナイメージ「Docker Hardened Images」を紹介します。',
