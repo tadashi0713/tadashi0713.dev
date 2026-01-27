@@ -8,6 +8,14 @@ export type Talk = {
 const talksData: Talk[] = [
   {
     title:
+      'AI エージェント・MCP 活用における ソフトウェアサプライチェーンリスクと Docker の取り組み',
+    description:
+      'AIエージェントの構築やAIコーディングの活用が急速に進む中、MCP（Model Context Protocol）サーバーを通じてLLMと外部ツールや既存システムを連携させるケースが増えています。 一方で、MCPサーバーは外部リソースと直接接続する特性上、ソフトウェアサプライチェーン攻撃の新たな経路となるリスクを抱えており、加えてコンテナイメージの脆弱性を悪用した攻撃も増加しています。 本セッションでは、こうしたリスクに対してDockerが進める取り組み― Docker MCP、Docker Scout、Docker Hardened Images ― についてご紹介します',
+    imgSrc: '/static/images/cncf-security-meetup.png',
+    href: 'https://www.docswell.com/s/tadashi0713/Z742W8-docker-cncj-security-meetup',
+  },
+  {
+    title:
       '進化した Docker Compose ではじめるAI エージェント開発 〜ローカル LLM・MCP サーバー・アプリケーションを 1 つの Compose ファイルで〜',
     description:
       '多くの開発者がコンテナ開発で利用している Docker Compose がアップデートされ、Agentic Compose として AI エージェント開発に対応しました。',
