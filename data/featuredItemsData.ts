@@ -1,19 +1,19 @@
 const featuredItemsData = [
   {
     title:
+      'Dockerと考えるソフトウェアサプライチェーンセキュリティ 〜ビジネスアジリティと安全を両立する、持続可能なコンテナ開発の進め方〜',
+    description:
+      'Security Days Spring 2026: 2013年にDockerが広めたコンテナ技術は、その開発・運用のしやすさからクラウドネイティブ開発の標準となりました。一方で、多数のOSSで構成される「コンテナイメージ」は、脆弱性を狙ったサプライチェーン攻撃の標的となりつつあります。 本講演では、コンテナ技術の基礎からリスクの構造までを分かりやすく紐解きます。その上で、SBOMによる可視化や信頼できるベースイメージの選定などを通じ、開発者とセキュリティ担当者が連携してビジネスアジリティと安全性を両立させる、「DevSecOps」の実践的な仕組み作りについてご紹介します。',
+    imgSrc: '/static/images/security-dsys-spring-2026.jpg',
+    href: 'https://www.docswell.com/s/tadashi0713/ZN7RDD-security-days-spring-2026',
+  },
+  {
+    title:
       '進化した Docker Compose ではじめるAI エージェント開発 〜ローカル LLM・MCP サーバー・アプリケーションを 1 つの Compose ファイルで〜',
     description:
       '多くの開発者がコンテナ開発で利用している Docker Compose がアップデートされ、Agentic Compose として AI エージェント開発に対応しました。',
     imgSrc: '/static/images/agentic_compose_youtube.jpg',
     href: 'https://www.youtube.com/watch?v=YrY--rpZH_g',
-  },
-  {
-    title:
-      '脆弱性を大幅に削減する、Docker 提供のセキュリティ強化コンテナイメージ「Docker Hardened Images」への移行方法',
-    description:
-      'この動画では、Docker で提供している脆弱性の少ない、セキュリティが強化されたコンテナイメージ Docker Hardened Images(DHI) への移行方法についてご紹介します。',
-    imgSrc: '/static/images/dhi_migration_youtube.jpg',
-    href: 'https://www.youtube.com/watch?v=lukHCq1aVqs',
   },
   {
     title: `脆弱性管理を大幅に削減する、安全で強化されたコンテナイメージ「Docker Hardened Images」 | DevOps Hub | SB C&S`,
