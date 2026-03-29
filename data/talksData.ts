@@ -8,6 +8,14 @@ export type Talk = {
 const talksData: Talk[] = [
   {
     title:
+      'Dockerと考えるソフトウェアサプライチェーンセキュリティ 〜ビジネスアジリティと安全を両立する、持続可能なコンテナ開発の進め方〜',
+    description:
+      'Security Days Spring 2026: 2013年にDockerが広めたコンテナ技術は、その開発・運用のしやすさからクラウドネイティブ開発の標準となりました。一方で、多数のOSSで構成される「コンテナイメージ」は、脆弱性を狙ったサプライチェーン攻撃の標的となりつつあります。 本講演では、コンテナ技術の基礎からリスクの構造までを分かりやすく紐解きます。その上で、SBOMによる可視化や信頼できるベースイメージの選定などを通じ、開発者とセキュリティ担当者が連携してビジネスアジリティと安全性を両立させる、「DevSecOps」の実践的な仕組み作りについてご紹介します。',
+    imgSrc: '/static/images/security-dsys-spring-2026.jpg',
+    href: 'https://www.docswell.com/s/tadashi0713/ZN7RDD-security-days-spring-2026',
+  },
+  {
+    title:
       'AI エージェント・MCP 活用における ソフトウェアサプライチェーンリスクと Docker の取り組み',
     description:
       'AIエージェントの構築やAIコーディングの活用が急速に進む中、MCP（Model Context Protocol）サーバーを通じてLLMと外部ツールや既存システムを連携させるケースが増えています。 一方で、MCPサーバーは外部リソースと直接接続する特性上、ソフトウェアサプライチェーン攻撃の新たな経路となるリスクを抱えており、加えてコンテナイメージの脆弱性を悪用した攻撃も増加しています。 本セッションでは、こうしたリスクに対してDockerが進める取り組み― Docker MCP、Docker Scout、Docker Hardened Images ― についてご紹介します',
