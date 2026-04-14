@@ -7,6 +7,13 @@ export type Talk = {
 
 const talksData: Talk[] = [
   {
+    title: 'コンテナイメージの脆弱性を削減する新しいアプローチ：Hardened Container Images',
+    description:
+      'DevOpsDays Tokyo 2026: 多数の OSS で構成されているコンテナイメージは、近年急増する脆弱性を狙ったサプライチェーン攻撃の主要な標的となっています。一方で、イメージスキャンやアラートを導入しても、脆弱性や依存関係の多さから対応が後回しになってしまったり、修正対応が開発者の大きな負荷となっているケースも少なくありません。',
+    imgSrc: '/static/images/devopsdays-tokyo-2026.jpg',
+    href: 'https://www.docswell.com/s/tadashi0713/ZQ2RJJ-devopsdays-tokyo-2026',
+  },
+  {
     title:
       'Dockerと考えるソフトウェアサプライチェーンセキュリティ 〜ビジネスアジリティと安全を両立する、持続可能なコンテナ開発の進め方〜',
     description:
