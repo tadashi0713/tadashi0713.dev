@@ -1,6 +1,14 @@
 const featuredItemsData = [
   {
     title:
+      'Claude Code などのコーディングエージェントを隔離されたサンドボックス環境で実行 ー Docker Sandboxes',
+    description:
+      'Claude Code などのコーディングエージェントを隔離されたサンドボックス環境で実行することができる Docker Sandboxes を紹介します。',
+    imgSrc: '/static/images/sandboxes-youtube.jpg',
+    href: 'https://youtu.be/Jpu8-8xEDYU',
+  },
+  {
+    title:
       'Dockerと考えるソフトウェアサプライチェーンセキュリティ 〜ビジネスアジリティと安全を両立する、持続可能なコンテナ開発の進め方〜',
     description:
       'Security Days Spring 2026: 2013年にDockerが広めたコンテナ技術は、その開発・運用のしやすさからクラウドネイティブ開発の標準となりました。一方で、多数のOSSで構成される「コンテナイメージ」は、脆弱性を狙ったサプライチェーン攻撃の標的となりつつあります。 本講演では、コンテナ技術の基礎からリスクの構造までを分かりやすく紐解きます。その上で、SBOMによる可視化や信頼できるベースイメージの選定などを通じ、開発者とセキュリティ担当者が連携してビジネスアジリティと安全性を両立させる、「DevSecOps」の実践的な仕組み作りについてご紹介します。',
@@ -21,21 +29,6 @@ const featuredItemsData = [
       '本ブログでは Docker で新たにリリースされた、本番環境向けに構築されたデフォルトで安全なコンテナイメージ「Docker Hardened Images」を紹介します。',
     imgSrc: '/static/images/dhi_blog.png',
     href: 'https://licensecounter.jp/devops-hub/blog/docker-hardenedimages/',
-  },
-  {
-    title:
-      'Docker Hardened Images (DHI) Introduction 〜本番環境向けに構築した、デフォルトで安全なコンテナイメージ〜',
-    description:
-      'この動画では Docker Hardened Images (DHI) がどのようにソフトウェアサプライチェーンの課題を解決することができるのか、その背景からご紹介しています。',
-    imgSrc: '/static/images/dhi_introduction_youtube.jpg',
-    href: 'https://www.youtube.com/watch?v=OFPo0LmRMlg',
-  },
-  {
-    title: `Docker MCP Catalog and Toolkit ではじめる、コンテナを使った 簡単・安全な MCP サーバーの管理 | DevOps Hub | SB C&S`,
-    description:
-      '本ブログでは Docker で新たにリリースされた、MCP サーバーを簡単・安全に管理ができる「Docker MCP Catalog and Toolkit」を紹介します。',
-    imgSrc: '/static/images/docker_mcp_toolkit_blog.png',
-    href: 'https://licensecounter.jp/devops-hub/blog/docker-mcp/',
   },
   {
     title:
