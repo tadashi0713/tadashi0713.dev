@@ -8,6 +8,14 @@ export type Talk = {
 const talksData: Talk[] = [
   {
     title:
+      '脆弱性を削減し、安全なコンテナイメージを作るための新しいアプローチ：Hardened Container Images',
+    description:
+      'クラウドネイティブ会議: 多数の OSS で構成されているコンテナイメージは、近年急増する脆弱性を狙ったサプライチェーン攻撃の主要な標的となっています。一方で、イメージスキャンやアラートを導入しても、脆弱性や依存関係の多さから対応が後回しになってしまったり、修正対応が開発者の大きな負荷となっているケースも少なくありません。',
+    imgSrc: '/static/images/cloudnative-kaigi.jpg',
+    href: 'https://kaigi.cloudnativedays.jp/sessions/2899/',
+  },
+  {
+    title:
       'Claude Code などのコーディングエージェントを隔離されたサンドボックス環境で実行 ー Docker Sandboxes',
     description:
       'Claude Code などのコーディングエージェントを隔離されたサンドボックス環境で実行することができる Docker Sandboxes を紹介します。',
