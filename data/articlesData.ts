@@ -7,9 +7,16 @@ export type Article = {
 
 const articlesData: Article[] = [
   {
+    title: `Docker Sandboxes で実現する、コーディングエージェントの安全な自律実行 | DevOps Hub | SB C&S`,
+    description:
+      '本ブログでは Docker で新たにリリースされた、コーディングエージェントを隔離されたサンドボックス環境で実行することができる「Docker Sandboxes」を紹介します。',
+    imgSrc: '/static/images/sandboxes-blog.png',
+    href: 'https://licensecounter.jp/devops-hub/blog/docker-sandboxes/',
+  },
+  {
     title: `進化した Docker Compose ではじめる AI エージェント開発 〜ローカル LLM・MCP サーバー・アプリケーションを全て1つの Compose ファイルで〜 | DevOps Hub | SB C&S`,
     description:
-      '本ブログでは Docker で新たにリリースされた、本番環境向けに構築されたデフォルトで安全なコンテナイメージ「Docker Hardened Images」を紹介します。',
+      '本ブログでは進化した Docker Compose(Agentic Compose) を使った AI エージェント開発方法について紹介します。',
     imgSrc: '/static/images/agentic_compose_blog.jpg',
     href: 'https://licensecounter.jp/devops-hub/blog/docker-compose-ai/',
   },
