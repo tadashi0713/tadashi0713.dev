@@ -7,6 +7,13 @@ export type Talk = {
 
 const talksData: Talk[] = [
   {
+    title: '【ローカル LLM 対応】NanoClaw & Docker Sandboxes で作るセキュアな AI エージェント',
+    description:
+      '近年 OpenClaw をはじめとした AI エージェントが急伸しているのと同時に、そのセキュリティリスクが深刻化しています。この動画では、より軽量・安全に設計されたオープンソースの AI エージェント「NanoClaw」がどのようなものか紹介した後に、Docker Sandboxes を使ってより多層防御する方法について解説します。',
+    imgSrc: '/static/images/nanoclaw-youtube.png',
+    href: 'https://youtu.be/mqQ_IH3Bsqw',
+  },
+  {
     title:
       '脆弱性を削減し、安全なコンテナイメージを作るための新しいアプローチ：Hardened Container Images',
     description:

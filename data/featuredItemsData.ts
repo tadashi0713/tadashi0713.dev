@@ -1,5 +1,12 @@
 const featuredItemsData = [
   {
+    title: '【ローカル LLM 対応】NanoClaw & Docker Sandboxes で作るセキュアな AI エージェント',
+    description:
+      '近年 OpenClaw をはじめとした AI エージェントが急伸しているのと同時に、そのセキュリティリスクが深刻化しています。この動画では、より軽量・安全に設計されたオープンソースの AI エージェント「NanoClaw」がどのようなものか紹介した後に、Docker Sandboxes を使ってより多層防御する方法について解説します。',
+    imgSrc: '/static/images/nanoclaw-youtube.png',
+    href: 'https://youtu.be/mqQ_IH3Bsqw',
+  },
+  {
     title:
       '脆弱性を削減し、安全なコンテナイメージを作るための新しいアプローチ：Hardened Container Images',
     description:
@@ -52,14 +59,6 @@ const featuredItemsData = [
       'Docker Model Runner は弊社 COO Mark Cavage が Java One 2025 の基調講演にて発表を行い、Docker Desktop 4.40 にてベータ版としてリリースされました。',
     imgSrc: '/static/images/docker_model_command_630x360.png',
     href: 'https://licensecounter.jp/devops-hub/blog/docker-modelrunner/',
-  },
-  {
-    title:
-      'Docker Model Runner 〜ローカル環境で LLM を簡単に実行、Docker が提案する新しい生成AIアプリ開発体験〜',
-    description:
-      'Docker Model Runner は 大規模言語モデル(LLM) をDocker を使ったコンテナ開発と同じ体験でローカル環境で実行することができる、Docker Desktop の新たな機能です。',
-    imgSrc: '/static/images/docker-model-runner.jpg',
-    href: 'https://www.youtube.com/watch?v=b9dH0Q_BKcA',
   },
   {
     title: 'Accelerate Your Docker Builds Using AWS CodeBuild and Docker Build Cloud | Docker',
