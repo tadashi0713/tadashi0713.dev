@@ -7,6 +7,14 @@ export type Article = {
 
 const articlesData: Article[] = [
   {
+    title:
+      'NanoClaw と Docker Sandboxes で実現する、セキュリティファーストな AI エージェント運用 | DevOps Hub | SB C&S',
+    description:
+      '本ブログでは軽量・安全に設計された AI エージェント NanoClaw と Docker Sandboxes を使った、セキュリティファーストな AI エージェント運用について紹介します。',
+    imgSrc: '/static/images/nanoclaw-youtube.png',
+    href: 'https://licensecounter.jp/devops-hub/blog/docker-nanoclaw-sandboxes/',
+  },
+  {
     title: `Docker Sandboxes で実現する、コーディングエージェントの安全な自律実行 | DevOps Hub | SB C&S`,
     description:
       '本ブログでは Docker で新たにリリースされた、コーディングエージェントを隔離されたサンドボックス環境で実行することができる「Docker Sandboxes」を紹介します。',
