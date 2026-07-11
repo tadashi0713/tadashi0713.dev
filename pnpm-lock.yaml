@@ -40,7 +40,7 @@ importers:
         version: 4.0.0-beta.0
       contentlayer2:
         specifier: 0.5.8
-        version: 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
+        version: 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
       esbuild:
         specifier: 0.28.1
         version: 0.28.1
@@ -61,13 +61,13 @@ importers:
         version: 15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       next-contentlayer2:
         specifier: 0.5.8
-        version: 0.5.8(acorn@8.16.0)(contentlayer2@0.5.8(acorn@8.16.0)(esbuild@0.28.1))(esbuild@0.28.1)(next@15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 0.5.8(acorn@8.17.0)(contentlayer2@0.5.8(acorn@8.17.0)(esbuild@0.28.1))(esbuild@0.28.1)(next@15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       pliny:
         specifier: 0.4.1
-        version: 0.4.1(@algolia/client-search@5.31.0)(@types/react@19.2.17)(acorn@8.16.0)(esbuild@0.28.1)(next@15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(search-insights@2.17.3)
+        version: 0.4.1(@algolia/client-search@5.31.0)(@types/react@19.2.17)(acorn@8.17.0)(esbuild@0.28.1)(next@15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(search-insights@2.17.3)
       postcss:
         specifier: ^8.4.24
         version: 8.5.16
@@ -122,7 +122,7 @@ importers:
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.2.0
-        version: 3.3.5
+        version: 3.3.6
       '@eslint/js':
         specifier: ^9.16.0
         version: 9.39.4
@@ -1158,8 +1158,8 @@ packages:
     resolution: {integrity: sha512-yL/sLrpmtDaFEiUj1osRP4TI2MDz1AddJL+jZ7KSqvBuliN4xqYY54IfdN8qD8Toa6g1iloph1fxQNkjOxrrpQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/eslintrc@3.3.5':
-    resolution: {integrity: sha512-4IlJx0X0qftVsN5E+/vGujTRIFtwuLbNsVUe7TO6zYPDR1O6nFwvwhIKEKSrl6dZchmYBITazxKoUYOjdtjlRg==}
+  '@eslint/eslintrc@3.3.6':
+    resolution: {integrity: sha512-l2Ul9PrHsPCKcEY/ac7VgFj9D80C7S68sOKc618SyHDPK36s1XcFebXY0iTzUVn4Yq+YbwvSnDmCz9yxjX+QrA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/js@9.39.4':
@@ -2274,8 +2274,16 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
+  acorn@8.17.0:
+    resolution: {integrity: sha512-xRQbDb9BnwDafYNn6Vwl839DYVjqXYb1XVGtWAZ1kcDc6iwAL4hg3B1dZlRiuENFeO2H53gFG3in621AdERVAg==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+
   ajv@6.14.0:
     resolution: {integrity: sha512-IWrosm/yrn43eiKqkfkHis7QioDleaXQHdDVPKg0FSwwd/DuvyX79TZnFOnYpB7dcsFAMmtFztZuXPDvSePkFw==}
+
+  ajv@6.15.0:
+    resolution: {integrity: sha512-fgFx7Hfoq60ytK2c7DhnF8jIvzYgOMxfugjLOSMHjLIPgenqa7S7oaagATUq99mV6IYvN2tRmC0wnTYX6iPbMw==}
 
   algoliasearch@5.31.0:
     resolution: {integrity: sha512-LBpwGyNPOcprdu1OnRtgaWeKLjnDR3T+vp64WRiQEgHYACIXgU+djAvj88m3OQc+6MfWbw7rKUjXtdRMLfU7Aw==}
@@ -2423,8 +2431,8 @@ packages:
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
 
-  brace-expansion@1.1.14:
-    resolution: {integrity: sha512-MWPGfDxnyzKU7rNOW9SP/c50vi3xrmrua/+6hfPbCS2ABNWfx24vPidzvC7krjU/RTo235sV776ymlsMtGKj8g==}
+  brace-expansion@1.1.16:
+    resolution: {integrity: sha512-IDw48K2/2kRkg9LdJxurvq3lV3aBgq0REY89duEqFRthjlPdXHKMj7EnQOXVckxzgisinf3nHfrcE2FufFLXMw==}
 
   brace-expansion@5.0.7:
     resolution: {integrity: sha512-7oFy703dxfY3/NLxC1fh2SUCQ0H9rmAY+5EpDVfXjUTTs+HEwR2nYaqLv+GWcTsumwxPfiz6CzCNkwXwBUwqCA==}
@@ -3540,6 +3548,10 @@ packages:
 
   js-yaml@4.1.1:
     resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
+    hasBin: true
+
+  js-yaml@4.3.0:
+    resolution: {integrity: sha512-1td788aAnnZ5qs7V2QIRl1owjtYpbKt749Y3xauqQgwIIGF/xXWz1wMTEBx5O3LK3lXLVuqXPdPxj2BoFHaW9Q==}
     hasBin: true
 
   jsbi@4.3.2:
@@ -6074,9 +6086,9 @@ snapshots:
       '@citation-js/date': 0.5.1
       citeproc: 2.4.63
 
-  '@contentlayer2/cli@0.5.8(acorn@8.16.0)(esbuild@0.28.1)':
+  '@contentlayer2/cli@0.5.8(acorn@8.17.0)(esbuild@0.28.1)':
     dependencies:
-      '@contentlayer2/core': 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
+      '@contentlayer2/core': 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
       '@contentlayer2/utils': 0.5.8
       clipanion: 3.2.1(typanion@3.14.0)
       typanion: 3.14.0
@@ -6087,9 +6099,9 @@ snapshots:
       - markdown-wasm
       - supports-color
 
-  '@contentlayer2/client@0.5.8(acorn@8.16.0)(esbuild@0.28.1)':
+  '@contentlayer2/client@0.5.8(acorn@8.17.0)(esbuild@0.28.1)':
     dependencies:
-      '@contentlayer2/core': 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
+      '@contentlayer2/core': 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
     transitivePeerDependencies:
       - '@effect-ts/otel-node'
       - acorn
@@ -6097,13 +6109,13 @@ snapshots:
       - markdown-wasm
       - supports-color
 
-  '@contentlayer2/core@0.5.8(acorn@8.16.0)(esbuild@0.28.1)':
+  '@contentlayer2/core@0.5.8(acorn@8.17.0)(esbuild@0.28.1)':
     dependencies:
       '@contentlayer2/utils': 0.5.8
       camel-case: 4.1.2
       comment-json: 4.2.5
       gray-matter: 4.0.3
-      mdx-bundler: 10.1.1(acorn@8.16.0)(esbuild@0.28.1)
+      mdx-bundler: 10.1.1(acorn@8.17.0)(esbuild@0.28.1)
       rehype-stringify: 10.0.1
       remark-frontmatter: 5.0.0
       remark-parse: 11.0.0
@@ -6118,9 +6130,9 @@ snapshots:
       - acorn
       - supports-color
 
-  '@contentlayer2/source-files@0.5.8(acorn@8.16.0)(esbuild@0.28.1)':
+  '@contentlayer2/source-files@0.5.8(acorn@8.17.0)(esbuild@0.28.1)':
     dependencies:
-      '@contentlayer2/core': 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
+      '@contentlayer2/core': 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
       '@contentlayer2/utils': 0.5.8
       chokidar: 3.6.0
       fast-glob: 3.3.3
@@ -6138,10 +6150,10 @@ snapshots:
       - markdown-wasm
       - supports-color
 
-  '@contentlayer2/source-remote-files@0.5.8(acorn@8.16.0)(esbuild@0.28.1)':
+  '@contentlayer2/source-remote-files@0.5.8(acorn@8.17.0)(esbuild@0.28.1)':
     dependencies:
-      '@contentlayer2/core': 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
-      '@contentlayer2/source-files': 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
+      '@contentlayer2/core': 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
+      '@contentlayer2/source-files': 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
       '@contentlayer2/utils': 0.5.8
     transitivePeerDependencies:
       - '@effect-ts/otel-node'
@@ -6340,15 +6352,15 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
 
-  '@eslint/eslintrc@3.3.5':
+  '@eslint/eslintrc@3.3.6':
     dependencies:
-      ajv: 6.14.0
+      ajv: 6.15.0
       debug: 4.4.3
       espree: 10.4.0
       globals: 14.0.0
       ignore: 5.3.2
       import-fresh: 3.3.1
-      js-yaml: 4.1.1
+      js-yaml: 4.3.0
       minimatch: 3.1.5
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
@@ -6603,9 +6615,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@mdx-js/esbuild@3.1.0(acorn@8.16.0)(esbuild@0.28.1)':
+  '@mdx-js/esbuild@3.1.0(acorn@8.17.0)(esbuild@0.28.1)':
     dependencies:
-      '@mdx-js/mdx': 3.1.0(acorn@8.16.0)
+      '@mdx-js/mdx': 3.1.0(acorn@8.17.0)
       '@types/unist': 3.0.3
       esbuild: 0.28.1
       source-map: 0.7.4
@@ -6615,7 +6627,7 @@ snapshots:
       - acorn
       - supports-color
 
-  '@mdx-js/mdx@3.1.0(acorn@8.16.0)':
+  '@mdx-js/mdx@3.1.0(acorn@8.17.0)':
     dependencies:
       '@types/estree': 1.0.8
       '@types/estree-jsx': 1.0.5
@@ -6629,7 +6641,7 @@ snapshots:
       hast-util-to-jsx-runtime: 2.3.6
       markdown-extensions: 2.0.0
       recma-build-jsx: 1.0.0
-      recma-jsx: 1.0.0(acorn@8.16.0)
+      recma-jsx: 1.0.0(acorn@8.17.0)
       recma-stringify: 1.0.0
       rehype-recma: 1.0.0
       remark-mdx: 3.1.0
@@ -7340,9 +7352,9 @@ snapshots:
       next: 15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       react: 19.2.7
 
-  acorn-jsx@5.3.2(acorn@8.16.0):
+  acorn-jsx@5.3.2(acorn@8.17.0):
     dependencies:
-      acorn: 8.16.0
+      acorn: 8.17.0
 
   acorn-walk@8.3.4:
     dependencies:
@@ -7350,7 +7362,16 @@ snapshots:
 
   acorn@8.16.0: {}
 
+  acorn@8.17.0: {}
+
   ajv@6.14.0:
+    dependencies:
+      fast-deep-equal: 3.1.3
+      fast-json-stable-stringify: 2.1.0
+      json-schema-traverse: 0.4.1
+      uri-js: 4.4.1
+
+  ajv@6.15.0:
     dependencies:
       fast-deep-equal: 3.1.3
       fast-json-stable-stringify: 2.1.0
@@ -7536,7 +7557,7 @@ snapshots:
 
   boolbase@1.0.0: {}
 
-  brace-expansion@1.1.14:
+  brace-expansion@1.1.16:
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
@@ -7683,13 +7704,13 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  contentlayer2@0.5.8(acorn@8.16.0)(esbuild@0.28.1):
+  contentlayer2@0.5.8(acorn@8.17.0)(esbuild@0.28.1):
     dependencies:
-      '@contentlayer2/cli': 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
-      '@contentlayer2/client': 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
-      '@contentlayer2/core': 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
-      '@contentlayer2/source-files': 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
-      '@contentlayer2/source-remote-files': 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
+      '@contentlayer2/cli': 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
+      '@contentlayer2/client': 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
+      '@contentlayer2/core': 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
+      '@contentlayer2/source-files': 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
+      '@contentlayer2/source-remote-files': 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
       '@contentlayer2/utils': 0.5.8
     transitivePeerDependencies:
       - '@effect-ts/otel-node'
@@ -7721,7 +7742,7 @@ snapshots:
   cosmiconfig@8.3.6(typescript@5.9.3):
     dependencies:
       import-fresh: 3.3.1
-      js-yaml: 4.1.1
+      js-yaml: 4.3.0
       parse-json: 5.2.0
       path-type: 4.0.0
     optionalDependencies:
@@ -8015,7 +8036,7 @@ snapshots:
   esast-util-from-js@2.0.1:
     dependencies:
       '@types/estree-jsx': 1.0.5
-      acorn: 8.16.0
+      acorn: 8.17.0
       esast-util-from-estree: 2.0.0
       vfile-message: 4.0.2
 
@@ -8213,7 +8234,7 @@ snapshots:
       '@eslint/config-array': 0.21.2
       '@eslint/config-helpers': 0.4.2
       '@eslint/core': 0.17.0
-      '@eslint/eslintrc': 3.3.5
+      '@eslint/eslintrc': 3.3.6
       '@eslint/js': 9.39.4
       '@eslint/plugin-kit': 0.4.1
       '@humanfs/node': 0.16.7
@@ -8249,8 +8270,8 @@ snapshots:
 
   espree@10.4.0:
     dependencies:
-      acorn: 8.16.0
-      acorn-jsx: 5.3.2(acorn@8.16.0)
+      acorn: 8.17.0
+      acorn-jsx: 5.3.2(acorn@8.17.0)
       eslint-visitor-keys: 4.2.1
 
   esprima@4.0.1: {}
@@ -8933,6 +8954,10 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
+  js-yaml@4.3.0:
+    dependencies:
+      argparse: 2.0.1
+
   jsbi@4.3.2: {}
 
   jsesc@3.0.2: {}
@@ -9322,12 +9347,12 @@ snapshots:
 
   mdn-data@2.0.30: {}
 
-  mdx-bundler@10.1.1(acorn@8.16.0)(esbuild@0.28.1):
+  mdx-bundler@10.1.1(acorn@8.17.0)(esbuild@0.28.1):
     dependencies:
       '@babel/runtime': 7.27.6
       '@esbuild-plugins/node-resolve': 0.2.2(esbuild@0.28.1)
       '@fal-works/esbuild-plugin-global-externals': 2.1.2
-      '@mdx-js/esbuild': 3.1.0(acorn@8.16.0)(esbuild@0.28.1)
+      '@mdx-js/esbuild': 3.1.0(acorn@8.17.0)(esbuild@0.28.1)
       esbuild: 0.28.1
       gray-matter: 4.0.3
       remark-frontmatter: 5.0.0
@@ -9485,8 +9510,8 @@ snapshots:
 
   micromark-extension-mdxjs@3.0.0:
     dependencies:
-      acorn: 8.16.0
-      acorn-jsx: 5.3.2(acorn@8.16.0)
+      acorn: 8.17.0
+      acorn-jsx: 5.3.2(acorn@8.17.0)
       micromark-extension-mdx-expression: 3.0.1
       micromark-extension-mdx-jsx: 3.0.2
       micromark-extension-mdx-md: 2.0.0
@@ -9653,7 +9678,7 @@ snapshots:
 
   minimatch@3.1.5:
     dependencies:
-      brace-expansion: 1.1.14
+      brace-expansion: 1.1.16
 
   minimist@1.2.8: {}
 
@@ -9681,11 +9706,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  next-contentlayer2@0.5.8(acorn@8.16.0)(contentlayer2@0.5.8(acorn@8.16.0)(esbuild@0.28.1))(esbuild@0.28.1)(next@15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  next-contentlayer2@0.5.8(acorn@8.17.0)(contentlayer2@0.5.8(acorn@8.17.0)(esbuild@0.28.1))(esbuild@0.28.1)(next@15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
     dependencies:
-      '@contentlayer2/core': 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
+      '@contentlayer2/core': 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
       '@contentlayer2/utils': 0.5.8
-      contentlayer2: 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
+      contentlayer2: 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
       next: 15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
@@ -9887,18 +9912,18 @@ snapshots:
 
   picomatch@4.0.5: {}
 
-  pliny@0.4.1(@algolia/client-search@5.31.0)(@types/react@19.2.17)(acorn@8.16.0)(esbuild@0.28.1)(next@15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(search-insights@2.17.3):
+  pliny@0.4.1(@algolia/client-search@5.31.0)(@types/react@19.2.17)(acorn@8.17.0)(esbuild@0.28.1)(next@15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(search-insights@2.17.3):
     dependencies:
       '@docsearch/react': 3.9.0(@algolia/client-search@5.31.0)(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(search-insights@2.17.3)
       '@giscus/react': 3.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@mailchimp/mailchimp_marketing': 3.0.80
-      contentlayer2: 0.5.8(acorn@8.16.0)(esbuild@0.28.1)
+      contentlayer2: 0.5.8(acorn@8.17.0)(esbuild@0.28.1)
       copyfiles: 2.4.1
       github-slugger: 2.0.0
       js-yaml: 4.1.0
       kbar: 0.1.0-beta.45(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       next: 15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      next-contentlayer2: 0.5.8(acorn@8.16.0)(contentlayer2@0.5.8(acorn@8.16.0)(esbuild@0.28.1))(esbuild@0.28.1)(next@15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      next-contentlayer2: 0.5.8(acorn@8.17.0)(contentlayer2@0.5.8(acorn@8.17.0)(esbuild@0.28.1))(esbuild@0.28.1)(next@15.5.20(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       next-themes: 0.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       probe-image-size: 7.2.3
       react: 19.2.7
@@ -10031,9 +10056,9 @@ snapshots:
       estree-util-build-jsx: 3.0.1
       vfile: 6.0.3
 
-  recma-jsx@1.0.0(acorn@8.16.0):
+  recma-jsx@1.0.0(acorn@8.17.0):
     dependencies:
-      acorn-jsx: 5.3.2(acorn@8.16.0)
+      acorn-jsx: 5.3.2(acorn@8.17.0)
       estree-util-to-js: 2.0.0
       recma-parse: 1.0.0
       recma-stringify: 1.0.0
