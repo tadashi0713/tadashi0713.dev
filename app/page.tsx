@@ -8,7 +8,7 @@ import projectsData from '@/data/projectsData'
 
 const MAX_DISPLAY_ARTICLES = 9
 const MAX_DISPLAY_TALKS = 6
-const MAX_DISPLAY_PROJECTS = 6
+const MAX_DISPLAY_PROJECTS = 3
 
 export default function Home() {
   const articles = articlesData.slice(0, MAX_DISPLAY_ARTICLES)

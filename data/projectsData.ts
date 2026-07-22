@@ -7,30 +7,6 @@ export type Project = {
 
 const projectsData: Project[] = [
   {
-    title: 'Docker セキュリティ',
-    description: `Docker が提供するセキュリティ機能を学び、ベストプラクティスを探求しましょう。`,
-    imgSrc: '/static/images/docker-security-ja.png',
-    href: 'https://docs.tadashi0713.dev/docker-security-ja',
-  },
-  {
-    title: 'Testcontainers ガイド',
-    description: `以下のガイドでは、実践的なプロジェクトを通じて Testcontainers を学ぶことができます。初心者から上級者まで、どのレベルの方にも役立つガイドが用意されているはずです。スキルをゼロから習得したい方も、すでに専門的な知識をお持ちの方も、ぜひお試しください。`,
-    imgSrc: '/static/images/testcontainers-guides-ja.png',
-    href: 'https://docs.tadashi0713.dev/testcontainers-guides-ja',
-  },
-  {
-    title: 'Docker Scout',
-    description: `Docker Scout を使ってソフトウェアサプライチェーンのセキュリティを積極的に強化しましょう。`,
-    imgSrc: '/static/images/scout-ja.png',
-    href: 'https://docs.tadashi0713.dev/scout-ja',
-  },
-  {
-    title: 'Docker Build Cloud',
-    description: `Docker Build Cloud に関するドキュメントを見つけて、ローカルおよびCIでコンテナイメージをより速くビルドするために役立てましょう`,
-    imgSrc: '/static/images/build-cloud-ja.png',
-    href: 'https://docs.tadashi0713.dev/build-cloud-ja',
-  },
-  {
     title: 'GitHub - tadashi0713/howtheytest-jp',
     description: `日本のソフトウェア企業のテスト・テスト自動化に関する資料をまとめています.`,
     imgSrc: '/static/images/c2e04280-9b99-11ea-9ada-2270bd8dc602.png',
